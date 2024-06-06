@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://b1ut42sf6wx2f"
+path="res://.godot/imported/maya_dialogue.dialogue-c047a0d2463fc8278e25259780fa398d.tres"
+
+[deps]
+
+source_file="res://dialogue/maya_dialogue.dialogue"
+dest_files=["res://.godot/imported/maya_dialogue.dialogue-c047a0d2463fc8278e25259780fa398d.tres"]
+
+[params]
+
+defaults=true

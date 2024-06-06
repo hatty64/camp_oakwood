@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c3gcev2uir8vx"
+path="res://.godot/imported/bear.dialogue-acb3d7efbd839c5b491d60fc9314ea35.tres"
+
+[deps]
+
+source_file="res://dialogue/bear.dialogue"
+dest_files=["res://.godot/imported/bear.dialogue-acb3d7efbd839c5b491d60fc9314ea35.tres"]
+
+[params]
+
+defaults=true

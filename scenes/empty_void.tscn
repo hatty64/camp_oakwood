@@ -1,0 +1,233 @@
+[gd_scene load_steps=18 format=3 uid="uid://1dbd2dg64utf"]
+
+[ext_resource type="Script" path="res://scenes/empty_void.gd" id="1_dnh8i"]
+[ext_resource type="Texture2D" uid="uid://cj1e56gtjf12k" path="res://scenes/night_eye.png" id="1_h371s"]
+[ext_resource type="AudioStream" uid="uid://c4g03xahwv26f" path="res://scenes/hearbeat-71701.mp3" id="2_pqm0i"]
+[ext_resource type="AudioStream" uid="uid://bn5pvmjxb01ok" path="res://scenes/jumpscare.wav" id="4_rlcr4"]
+
+[sub_resource type="Animation" id="Animation_qjqlm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_u0c6r"]
+resource_name = "twitch"
+length = 0.30001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0453149, 0.088921, 0.132527, 0.172715, 0.215467, 0.255655, 0.296698),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_axhef"]
+_data = {
+"RESET": SubResource("Animation_qjqlm"),
+"twitch": SubResource("Animation_u0c6r")
+}
+
+[sub_resource type="Animation" id="Animation_ct7y7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_18w87"]
+resource_name = "zoom_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(13, 13), Vector2(19, 19)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fa0te"]
+_data = {
+"RESET": SubResource("Animation_ct7y7"),
+"zoom_in": SubResource("Animation_18w87")
+}
+
+[sub_resource type="Animation" id="Animation_wskys"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.184314, 0.0313726, 0.12549, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lqt31"]
+resource_name = "color"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.384314, 0.101961, 0.27451, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jbaet"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.184314, 0.0313726, 0.12549, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u318f"]
+_data = {
+"RESET": SubResource("Animation_wskys"),
+"color": SubResource("Animation_lqt31"),
+"fade": SubResource("Animation_jbaet")
+}
+
+[sub_resource type="Animation" id="Animation_xby1y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.953]
+}
+
+[sub_resource type="Animation" id="Animation_485b3"]
+resource_name = "music_fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.953, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_at03s"]
+_data = {
+"RESET": SubResource("Animation_xby1y"),
+"music_fade_out": SubResource("Animation_485b3")
+}
+
+[node name="empty_void" type="Node2D"]
+script = ExtResource("1_dnh8i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="night_eye" type="CharacterBody2D" parent="."]
+position = Vector2(835, 435)
+
+[node name="Sprite2D" type="Sprite2D" parent="night_eye"]
+texture = ExtResource("1_h371s")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="night_eye"]
+libraries = {
+"": SubResource("AnimationLibrary_axhef")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(836, 432)
+zoom = Vector2(13, 13)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+"": SubResource("AnimationLibrary_fa0te")
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.184314, 0.0313726, 0.12549, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate"]
+libraries = {
+"": SubResource("AnimationLibrary_u318f")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pqm0i")
+volume_db = 4.953
+autoplay = true
+panning_strength = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer2D"]
+libraries = {
+"": SubResource("AnimationLibrary_at03s")
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="jumpscare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rlcr4")
+volume_db = 11.886
+panning_strength = 0.0
+
+[connection signal="ready" from="." to="." method="_on_ready"]

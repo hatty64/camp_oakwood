@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://djtbsci0wqwch"
+path="res://.godot/imported/jacob_dialogue.dialogue-60e01069161cdc4c8c62337d653f72fc.tres"
+
+[deps]
+
+source_file="res://dialogue/jacob_dialogue.dialogue"
+dest_files=["res://.godot/imported/jacob_dialogue.dialogue-60e01069161cdc4c8c62337d653f72fc.tres"]
+
+[params]
+
+defaults=true

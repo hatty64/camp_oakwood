@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://donpy0pvm076f"
+path="res://.godot/imported/tent_ext_dialogue.dialogue-550aeded7d885a65ea8319d30b3df05d.tres"
+
+[deps]
+
+source_file="res://dialogue/tent_ext_dialogue.dialogue"
+dest_files=["res://.godot/imported/tent_ext_dialogue.dialogue-550aeded7d885a65ea8319d30b3df05d.tres"]
+
+[params]
+
+defaults=true

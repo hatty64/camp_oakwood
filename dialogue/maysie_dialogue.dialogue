@@ -1,0 +1,21 @@
+~ Start
+if maysie_first_talked == false
+	Christina: [#mood=happy] Hi, I'm Christina.
+	Maysie: [#mood=bored] ...
+	Christina: [#mood=smile] So... what's your name?
+	Maysie: [#mood=bored]  Maysie.
+	Christina: [#mood=happy] Oh, well hi Maysie, it's nice to meet you... again?
+	Maysie: [#mood=bored] ...
+	Christina: [#mood=default] ... Not much of a talker, are you?
+	Maysie: [#mood=bored] We barely know eachother, what is there to talk about?
+	Christina: [#mood=default] So... we're not friends?
+	Maysie: [#mood=bored] What do you think?
+	Christina: [#mood=default] ... Rude.
+	set maysie_first_talked = true
+	=> END
+else
+	Maysie: [#mood=angry] What are you looking at?
+	Christina: [#mood=nervous] [next=auto]Sorry, I thought-
+	Maysie: [#mood=angry] Just leave me alone!
+	Christina: [#mood=nervous] Okay, sheesh...
+	=> END

@@ -1,0 +1,41 @@
+~ Start
+if first_time_in_dining == true
+	Clancy: [#mood=default] Well, what are you waiting for?
+	Clancy: [#mood=default] Go say hi to your friends.
+	Christina: [#mood=confused] Aren't you coming with me?
+	Clancy: [#mood=bored] It's my break, got too much work done already.
+	Christina: [#mood=confused] Like what?
+	Clancy: [#mood=bored] Just say hi to your friends.
+
+
+=> END
+
+elif first_time_in_dining == false
+	Clancy: [#mood=default] So, how did it go?
+	Christina: [#mood=smile] Well, they were relieved to see me.
+	Christina: [#mood=thinking] But then they panicked when I told them I had amnesia.
+	Clancy: [#mood=bored] Figures.
+	Clancy: [#mood=default] Let's hope your memories return before summer ends.
+	Clancy: [#mood=smug] You don't wanna go back to school with an empty head.
+	Christina: [#mood=confused] What?
+	Clancy: [#mood=bored] Nevermind.
+	Clancy: [#mood=default] By the way, Barley wants to speak to you.
+	Clancy: [#mood=default] You'll find him in his office.
+	Christina: [#mood=confused] And where is that?
+	Clancy: [#mood=default] Just follow the path to the lake, go right and then go up,
+		you'll find him there.
+	Clancy: [#mood=default] got it?
+	Christina: [#mood=default] ...
+	Clancy: [#mood=bored] (Sigh)
+	Clancy: [#mood=bored] Y'know what, here's a map, you'll find Barley's office there.
+	You got a map!
+	Clancy: [#mood=default] If you have any questions, just let me know.
+	Christina: [#mood=confused] Why is the bottom-left part of the map torn?
+	Clancy: [#mood=bored] that's enough questions.
+	set got_map = true
+=> END
+
+
+~ Start_2
+Clancy: [#mood=bored] What are you still standing here, go to your dad!
+=> END

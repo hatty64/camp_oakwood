@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdxbensxlpmcp"]
+
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_7jvde"]
+[ext_resource type="Script" path="res://scenes/world_3.gd" id="1_ku6dr"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_d5flu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qav8s"]
+size = Vector2(82, 225)
+
+[node name="world3" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ku6dr")
+
+[node name="TileSet" parent="." instance=ExtResource("1_7jvde")]
+layer_0/tile_data = PackedInt32Array(2228224, 65539, 0, 2228228, 131075, 0, 2228232, 196611, 0, 2490376, 196611, 1, 2752520, 196611, 3, 2752516, 131075, 3, 2752512, 65539, 3, 2490372, 65539, 2, 2490368, 65539, 2, 2555916, 65540, 1, 2293772, 65540, 1, 2031628, 65540, 1, 1769484, 65540, 1, 1507340, 65540, 1, 1507344, 65540, 1, 1507348, 65540, 1, 1507352, 65540, 1, 1507356, 65540, 1, 1507360, 65540, 1, 1769504, 65540, 1, 2031648, 65540, 1, 2293792, 65540, 1, 2555936, 65540, 1, 2818080, 65540, 1, 3080224, 65540, 1, 3342368, 65540, 1, 3604512, 65540, 1, 3604508, 65540, 1, 3604504, 65540, 1, 3604500, 65540, 1, 3604496, 65540, 1, 3604492, 65540, 1, 3342348, 65540, 1, 3080204, 65540, 1, 2818060, 65540, 1, 1769488, 65540, 1, 1769492, 65540, 1, 1769496, 65540, 1, 1769500, 65540, 1, 2031644, 65540, 1, 2031640, 65540, 1, 2031636, 65540, 1, 2031632, 65540, 1, 2293776, 65540, 1, 2293780, 65540, 1, 2293784, 65540, 1, 2293788, 65540, 1, 2555932, 65540, 1, 2555928, 65540, 1, 2555924, 65540, 1, 2555920, 65540, 1, 2818064, 65540, 1, 2818068, 65540, 1, 2818072, 65540, 1, 2818076, 65540, 1, 3080220, 65540, 1, 3080216, 65540, 1, 3080212, 65540, 1, 3080208, 65540, 1, 3342352, 65540, 1, 3342356, 65540, 1, 3342360, 65540, 1, 3342364, 65540, 1)
+layer_1/tile_data = PackedInt32Array(2162710, 1, 0)
+
+[node name="Christina" parent="." instance=ExtResource("2_d5flu")]
+position = Vector2(101, 759)
+
+[node name="world3_exit_point" type="Area2D" parent="."]
+position = Vector2(-7, 698)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world3_exit_point"]
+position = Vector2(20, 17.5)
+shape = SubResource("RectangleShape2D_qav8s")
+
+[connection signal="body_entered" from="world3_exit_point" to="." method="_on_world_3_exit_point_body_entered"]
+[connection signal="body_exited" from="world3_exit_point" to="." method="_on_world_3_exit_point_body_exited"]

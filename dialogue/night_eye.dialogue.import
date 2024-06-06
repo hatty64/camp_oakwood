@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://co8u52jb2jeeo"
+path="res://.godot/imported/night_eye.dialogue-fcee5e184fa31d40b8387f56663175a0.tres"
+
+[deps]
+
+source_file="res://dialogue/night_eye.dialogue"
+dest_files=["res://.godot/imported/night_eye.dialogue-fcee5e184fa31d40b8387f56663175a0.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dfomt8gp5nu1p"
+path="res://.godot/imported/fence.dialogue-8f9a8fc71616ddc8b19ee50846e52dff.tres"
+
+[deps]
+
+source_file="res://dialogue/fence.dialogue"
+dest_files=["res://.godot/imported/fence.dialogue-8f9a8fc71616ddc8b19ee50846e52dff.tres"]
+
+[params]
+
+defaults=true

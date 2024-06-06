@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://6rqiu7bn7wu3"]
+
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_d0hic"]
+[ext_resource type="Script" path="res://scenes/barley_office_ext.gd" id="1_kyqgy"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_ujefu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd6hf"]
+size = Vector2(77, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nlpom"]
+radius = 16.0
+
+[node name="barley_office_ext" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_kyqgy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_d0hic")]
+layer_0/tile_data = PackedInt32Array(2555969, 393239, 1, 2490433, 393239, 1, 2490434, 327703, 2, 2555970, 393239, 1, 2555967, 393239, 1, 2490431, 393239, 1, 2490432, 327703, 1, 2555968, 393239, 1, 2555966, 458775, 4, 2490430, 458775, 3, 2555965, 327703, 4, 2490429, 327703, 3, 2293817, 393239, 1, 2359353, 393239, 1, 2424889, 393239, 1, 2490425, 393239, 1, 2490426, 393239, 1, 2490427, 393239, 1, 2490428, 458775, 0, 2424892, 393239, 1, 2424891, 393239, 0, 2424890, 393239, 1, 2424893, 393239, 1, 2424894, 393239, 1, 2424895, 393239, 1, 2424896, 393239, 1, 2424897, 393239, 1, 2424898, 458775, 1, 2359359, 393239, 1, 2359360, 393239, 1, 2359361, 458775, 2, 2359362, 393239, 1, 2359358, 393239, 1, 2359357, 458775, 1, 2359356, 393239, 1, 2359355, 393239, 1, 2359354, 393239, 1, 2293818, 393239, 1, 2293819, 393239, 1, 2293820, 458775, 2, 2293821, 393239, 1, 2293822, 393239, 1, 2293823, 393239, 1, 2293824, 393239, 1, 2293825, 393239, 1, 2293826, 393239, 1, 2555964, 393239, 1, 2555963, 393239, 1, 2555962, 393239, 1, 2555961, 393239, 1)
+layer_1/tile_data = PackedInt32Array(2228281, 65539, 1, 2228282, 65539, 1, 2228283, 65539, 1, 2228284, 65539, 1, 2228285, 65539, 1, 2228286, 65539, 1, 2228287, 65539, 1, 2228288, 65539, 1, 2228289, 65539, 1, 2228290, 65539, 1)
+layer_2/tile_data = PackedInt32Array(2228281, 458755, 1, 2293817, 458755, 1, 2359353, 458755, 1, 2424889, 458755, 1, 2490425, 458755, 1, 2555961, 393219, 3, 2555962, 393219, 0, 2555963, 393219, 0, 2555964, 458755, 0, 2555967, 327683, 0, 2555968, 393219, 0, 2555969, 393219, 0, 2555970, 327683, 3, 2490434, 327683, 1, 2424898, 327683, 1, 2359362, 327683, 1, 2293826, 327683, 1, 2228290, 327683, 1)
+layer_3/tile_data = PackedInt32Array(2293822, 28, 0)
+
+[node name="Christina" parent="." instance=ExtResource("2_ujefu")]
+position = Vector2(953, 580)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+zoom = Vector2(6, 6)
+limit_left = 793
+limit_top = 415
+limit_right = 1113
+limit_bottom = 595
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="barley_office_exit_point" type="Area2D" parent="."]
+position = Vector2(927, 605)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barley_office_exit_point"]
+position = Vector2(27.5, 0)
+shape = SubResource("RectangleShape2D_fd6hf")
+
+[node name="barley_office_transit_point" type="Area2D" parent="."]
+position = Vector2(953, 510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barley_office_transit_point"]
+shape = SubResource("CircleShape2D_nlpom")
+
+[connection signal="body_entered" from="barley_office_exit_point" to="." method="_on_barley_office_exit_point_body_entered"]
+[connection signal="body_exited" from="barley_office_exit_point" to="." method="_on_barley_office_exit_point_body_exited"]
+[connection signal="body_entered" from="barley_office_transit_point" to="." method="_on_barley_office_transit_point_body_entered"]
+[connection signal="body_exited" from="barley_office_transit_point" to="." method="_on_barley_office_transit_point_body_exited"]

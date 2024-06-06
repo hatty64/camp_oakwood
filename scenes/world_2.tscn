@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://di7e1ycuugfey"]
+
+[ext_resource type="Script" path="res://scenes/world_2.gd" id="1_so5l6"]
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="3_tanap"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="4_6o6qn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thma0"]
+size = Vector2(161.5, 374)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rec8b"]
+size = Vector2(114, 214)
+
+[node name="world2" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_so5l6")
+
+[node name="Christina" parent="." instance=ExtResource("4_6o6qn")]
+position = Vector2(73, 765)
+
+[node name="TileMap" parent="." instance=ExtResource("3_tanap")]
+layer_0/tile_data = PackedInt32Array(2293759, 65539, 0, 2555903, 65539, 1, 2818047, 65539, 3, 2228227, 131075, 0, 2490371, 65539, 1, 2752515, 131075, 3, 2228231, 65539, 0, 2490375, 65539, 1, 2752519, 65539, 3, 2228235, 131075, 0, 2490379, 65539, 1, 2752523, 131075, 3, 2228239, 65539, 0, 2490383, 65539, 1, 2752527, 65539, 3, 2228243, 131075, 0, 2490387, 65539, 1, 2752531, 131075, 3, 2228247, 65539, 0, 2490391, 65539, 1, 2752535, 65539, 3, 2228251, 131075, 0, 2490395, 65539, 1, 2752539, 131075, 3, 2228255, 65539, 0, 2490399, 65539, 1, 2752543, 65539, 3, 2228259, 131075, 0, 2490403, 65539, 1, 2752547, 131075, 3, 2228263, 65539, 0, 2490407, 65539, 1, 2752551, 65539, 3, 2228267, 131075, 0, 2490411, 65539, 1, 2752555, 131075, 3, 2293755, 3, 0, 2555899, 3, 1, 2818043, 3, 3, 2031611, 65540, 1, 2031615, 65540, 1, 1966083, 65540, 1, 1966087, 65540, 1, 1966091, 65540, 1, 1966095, 65540, 1, 1966099, 65540, 1, 1966103, 65540, 1, 1966107, 65540, 1, 1966111, 65540, 1, 1966115, 65540, 1, 1966119, 65540, 1, 1966123, 65540, 1, 3014699, 65540, 1, 3014695, 65540, 1, 3014691, 65540, 1, 3014687, 65540, 1, 3014683, 65540, 1, 3014679, 65540, 1, 3014675, 65540, 1, 3014671, 65540, 1, 3014667, 65540, 1, 3014663, 65540, 1, 3014659, 65540, 1, 3080191, 65540, 1, 3080187, 65540, 1, 1966127, 65540, 1, 1966131, 65540, 1, 2228271, 65539, 0, 2228275, 131075, 0, 2228279, 65539, 0, 2228283, 131075, 0, 2228287, 65539, 0, 2228291, 131075, 0, 2228295, 65539, 0, 2228299, 131075, 0, 2228303, 65539, 0, 2228307, 131075, 0, 2228311, 65539, 0, 2228315, 131075, 0, 2228319, 65539, 0, 2228323, 131075, 0, 2228327, 65539, 0, 2490415, 65539, 1, 2490419, 65539, 1, 2490423, 65539, 1, 2490427, 65539, 1, 2490431, 65539, 1, 2490435, 65539, 1, 2490439, 65539, 1, 2490443, 65539, 1, 2490447, 65539, 1, 2490451, 65539, 1, 2490455, 65539, 1, 2490459, 65539, 1, 2490463, 65539, 1, 2490467, 65539, 1, 2490471, 65539, 1, 2752559, 65539, 3, 2752563, 131075, 3, 2752567, 65539, 3, 2752571, 131075, 3, 2752575, 65539, 3, 2752579, 131075, 3, 2752583, 65539, 3, 2752587, 131075, 3, 2752591, 65539, 3, 2752595, 131075, 3, 2752599, 65539, 3, 2752603, 131075, 3, 2752607, 65539, 3, 2752611, 131075, 3, 2752615, 65539, 3)
+layer_1/tile_data = PackedInt32Array(1572862, 1, 0, 1507334, 1, 0, 1507342, 1, 0, 1507350, 1, 0, 1507358, 1, 0, 1507366, 1, 0, 1507374, 1, 0)
+
+[node name="world2_exit_point" type="Area2D" parent="."]
+position = Vector2(7, 742)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world2_exit_point"]
+position = Vector2(-44.75, -30)
+shape = SubResource("RectangleShape2D_thma0")
+
+[node name="world3_transition_point" type="Area2D" parent="."]
+position = Vector2(1917, 702)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world3_transition_point"]
+position = Vector2(-23, 12)
+shape = SubResource("RectangleShape2D_rec8b")
+
+[connection signal="body_entered" from="world2_exit_point" to="." method="_on_world_2_exit_point_body_entered"]
+[connection signal="body_exited" from="world2_exit_point" to="." method="_on_world_2_exit_point_body_exited"]
+[connection signal="body_entered" from="world3_transition_point" to="." method="_on_world_3_transition_point_body_entered"]
+[connection signal="body_exited" from="world3_transition_point" to="." method="_on_world_3_transition_point_body_exited"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dqb4gjpmb4m51"
+path="res://.godot/imported/cot_interact.dialogue-55e323098a07075c596cd03d4905e13e.tres"
+
+[deps]
+
+source_file="res://dialogue/cot_interact.dialogue"
+dest_files=["res://.godot/imported/cot_interact.dialogue-55e323098a07075c596cd03d4905e13e.tres"]
+
+[params]
+
+defaults=true

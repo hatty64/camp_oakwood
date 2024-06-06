@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://fp3nreq3vbyo"]
+
+[ext_resource type="Script" path="res://world1.gd" id="1_kkelm"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_7n6dd"]
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="3_3yv11"]
+[ext_resource type="PackedScene" uid="uid://cp7bqr3cqgc2a" path="res://scenes/npc.tscn" id="8_5e0x7"]
+[ext_resource type="PackedScene" uid="uid://bj37owxwin0ym" path="res://actionable.tscn" id="9_gh7dy"]
+[ext_resource type="Resource" uid="uid://17o15cwdybgx" path="res://dialogue_catboy.dialogue" id="10_05o6y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_igwbr"]
+radius = 48.0104
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obpjd"]
+size = Vector2(150, 364)
+
+[node name="world1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_kkelm")
+
+[node name="Christina" parent="." instance=ExtResource("2_7n6dd")]
+position = Vector2(981, 645)
+
+[node name="TileMap" parent="." instance=ExtResource("3_3yv11")]
+
+[node name="catboy" parent="." instance=ExtResource("8_5e0x7")]
+y_sort_enabled = true
+position = Vector2(792, 625)
+
+[node name="Actionable" parent="catboy" instance=ExtResource("9_gh7dy")]
+dialogue_resource = ExtResource("10_05o6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="catboy/Actionable"]
+position = Vector2(1, -37)
+shape = SubResource("CircleShape2D_igwbr")
+
+[node name="world2_transition_point" type="Area2D" parent="."]
+position = Vector2(1927, 715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world2_transition_point"]
+position = Vector2(17, -5)
+shape = SubResource("RectangleShape2D_obpjd")
+
+[connection signal="body_entered" from="world2_transition_point" to="." method="_on_world_2_transition_point_body_entered"]
+[connection signal="body_exited" from="world2_transition_point" to="." method="_on_world_2_transition_point_body_exited"]

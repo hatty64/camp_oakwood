@@ -1,0 +1,73 @@
+~ Start
+Barley: [#mood=worried] You're awake, thank goodness... you got me worried!
+Barley: [#mood=worried] H- how do you feel?
+
+=> END
+
+~ Start_2
+Christina: [#mood=confused] W- where... am I...?
+Christina: [#mood=confused] Who... are you?
+Barley: [#mood=worried] ...
+Barley: [#mood=worried] C'mon, you remember your old man... right?
+Christina: [#mood=thinking] ... Who?
+Barley: [#mood=worried] This isn't funny Christina, you're joking... right?
+
+=> END
+
+~ Start_3
+Barley: [#mood=default] You really don't remember a thing, huh?
+Barley: [#mood=worried] This is not good.
+Barley: [#mood=smile] Well, since you don't remember a thing, I guess I'll get you up to speed.
+Barley: [#mood=smile] My name is Barley, I am your father
+Barley: [#mood=smile] and you are Christina, my daughter.
+Christina: [#mood=default] You're... my dad?
+Barley: [#mood=default] Do you remember what happened?
+
+=> END
+
+~ Start_4
+Christina: [#mood=thinking] No... not a clue.
+Barley: [#mood=default] Then I'll go ask one of the other camp counselors... maybe they know what happened.
+Barley: [#mood=smile] You stay here and rest, I'll be right back!
+
+=> END
+
+~ Card
+A few minutes later.
+
+=> END
+
+~ Start_5
+Barley: [#mood=smile] There, I'm back.
+Barley: [#mood=smile] And I also brought Ester with me.
+
+=> END
+
+~ Start_6
+Ester: [#mood=worried] Christina!
+Ester: [#mood=worried] I'm so glad you're ok!
+Ester: [#mood=worried] Barley said you lost your memory... is that true?
+Christina: [#mood=thinking] I don't remember anything, so... yes?
+Ester: [#mood=smile] I see... well, my name is Ester, one of your camp counselors.
+Ester: [#mood=default] Do you have any injuries I need to know about?
+Christina: [#mood=thinking] I don't... feel any pain, so I guess not.
+Ester: [#mood=smile] Ok, that's good.
+Barley: [#mood=default] So, do you know exactly what happened this morning?
+
+=> END
+
+~ Start_7
+Ester: [#mood=thinking] Well, we were just taking our usual morning hikes around the woods, until I heard a loud noise coming from a distance.
+Ester: [#mood=default] That's when I realized Christina was missing.
+Ester: [#mood=worried] I don't know exactly what happened to her, but what I do know is that I should've been more vigilant.
+Ester: [#mood=worried] I'm sorry... I promise I'll do better next time.
+Barley: [#mood=smile] It's okay Ester, we all make mistakes.
+Barley: [#mood=default] But keep an eye on the others, we don't want to lose any more campers.
+Barley: [#mood=default] Now, let's let Christina rest for a few minutes.
+
+=> END
+
+~ Start_8
+Barley: [#mood=smile] Come out when you feel better, alright?
+
+=> END

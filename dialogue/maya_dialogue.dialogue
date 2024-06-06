@@ -1,0 +1,21 @@
+~ Start
+if maya_first_talked == false
+	Maya: [#mood=default] So... you lost... all your memories?
+	Christina: [#mood=thinking] Yeah, that's what I've been told.
+	Maya: [#mood=default] Oh... okay.
+	Maya: [#mood=default] I'm Maya...
+	Christina: [#mood=happy] Hi Maya.
+	Maya: [#mood=worried] ...
+	Christina: [#mood=default] ...
+	Christina: [#mood=smile] Okay, I'll see you around!
+	Maya: [#mood=default] Bye...
+	set maya_first_talked = true
+	=> END
+else
+	Maya: [#mood=crazy] [shake rate=20 level=20]OMG OMG OMG, She doesn't know anything... this is perfect![/shake]
+	Maya: [#mood=crazy] [shake rate=20 level=20]I CAN START OVER, ME AND HER CAN BE FINALLY TOGETHER!!![/shake]
+	Maya: [#mood=crazy] [shake rate=20 level=20]TOGETHER... [speed=0.2]FOREVER!!![/shake]
+	Christina: [#mood=wut] ...
+	Maya: [#mood=panic] [shake rate=20 level=20]SHOOT, DID I SAY THAT OUT LOUD?[/shake]
+	Maya: [#mood=panic] [shake rate=20 level=20]OKAY, CALM DOWN... ACT NATURAL![/shake]
+	=> END

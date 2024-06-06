@@ -1,0 +1,224 @@
+[gd_scene load_steps=27 format=3 uid="uid://bkixqnw5iujia"]
+
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_1j7jh"]
+[ext_resource type="Script" path="res://scenes/dining_area.gd" id="1_g0xk2"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_jlk4d"]
+[ext_resource type="Texture2D" uid="uid://d2nyvap8tjeqf" path="res://character_sprite/jacob_remake_full.png" id="4_xpk82"]
+[ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="5_t5dyu"]
+[ext_resource type="Resource" uid="uid://djtbsci0wqwch" path="res://dialogue/jacob_dialogue.dialogue" id="6_lnqfu"]
+[ext_resource type="Texture2D" uid="uid://cti6ui8tsuost" path="res://character_sprite/maysie_lean.png" id="7_obj02"]
+[ext_resource type="Resource" uid="uid://cm8xvq73gebjg" path="res://dialogue/maysie_dialogue.dialogue" id="8_vhjou"]
+[ext_resource type="Texture2D" uid="uid://dea4nf3i0le4n" path="res://character_sprite/maya_remake_full.png" id="9_urvbv"]
+[ext_resource type="Resource" uid="uid://b1ut42sf6wx2f" path="res://dialogue/maya_dialogue.dialogue" id="10_axy02"]
+[ext_resource type="Texture2D" uid="uid://bux5s8rddl3a1" path="res://character_sprite/damian_idle.png" id="11_dujxp"]
+[ext_resource type="Script" path="res://scenes/blush.gd" id="11_fvdew"]
+[ext_resource type="Texture2D" uid="uid://cdr2vdtilf0p7" path="res://character_sprite/dinah_remake_full.png" id="12_b6r04"]
+[ext_resource type="Resource" uid="uid://dti53iv5gduwt" path="res://dialogue/damian_and_dinah_dialogue.dialogue" id="13_earxy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53cvf"]
+size = Vector2(64, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rfd15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlmmk"]
+size = Vector2(5, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iyohw"]
+radius = 7.07107
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uuwb"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4cgy"]
+radius = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqqyg"]
+size = Vector2(37, 18)
+
+[sub_resource type="Animation" id="Animation_6q5ne"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_86aw4"]
+resource_name = "thinking"
+length = 9.00001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 2, 2.4, 3.4, 3.8, 4.2, 4.6, 5.4, 5.5, 6.4, 6.8, 7.2, 7.6, 8.4, 8.6, 8.7, 8.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 2, 0, 1, 0, 1, 0, 3, 4, 5, 4, 5, 4, 6, 4, 3, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_prhrn"]
+_data = {
+"RESET": SubResource("Animation_6q5ne"),
+"thinking": SubResource("Animation_86aw4")
+}
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kl8pr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tkm51"]
+radius = 15.0
+
+[node name="dining_area" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_g0xk2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_1j7jh")]
+layer_0/tile_data = PackedInt32Array(2752577, 0, 0, 2687041, 0, 0, 2621505, 0, 0, 2555969, 0, 0, 2555971, 0, 0, 2621507, 0, 0, 2621506, 0, 0, 2687042, 0, 0, 2752578, 0, 0, 2687043, 0, 0, 2555970, 0, 0, 2752575, 0, 0, 2687039, 0, 0, 2621503, 0, 0, 2555967, 0, 0, 2555968, 0, 0, 2621504, 0, 0, 2687040, 0, 0, 2752576, 0, 0, 2687038, 0, 0, 2621502, 0, 0, 2555966, 0, 0, 2752580, 0, 0, 2752579, 0, 0, 2752574, 0, 0, 2752573, 0, 0, 2752572, 0, 0, 2687036, 0, 0, 2687037, 0, 0, 2687044, 0, 0, 2621508, 0, 0, 2555972, 0, 0, 2555965, 0, 0, 2555964, 0, 0, 2621500, 0, 0, 2621501, 0, 0, 2752581, 0, 0, 2687045, 0, 0, 2621509, 0, 0, 2555973, 0, 0)
+layer_1/tile_data = PackedInt32Array(2490437, 65536, 0, 2490436, 65536, 0, 2490429, 65536, 0, 2490428, 65536, 0, 2490430, 65536, 0, 2490431, 65536, 0, 2490432, 65536, 0, 2490433, 65536, 0, 2490434, 65536, 0, 2490435, 65536, 0)
+layer_2/y_sort_enabled = true
+layer_2/tile_data = PackedInt32Array(2555964, 65542, 0, 2555965, 131078, 0, 2555966, 196614, 0, 2752572, 65542, 0, 2752573, 131078, 0, 2752574, 196614, 0, 2752579, 65542, 0, 2752580, 131078, 0, 2752581, 196614, 0, 2555971, 65542, 0, 2555972, 131078, 0, 2555973, 196614, 0)
+layer_3/tile_data = PackedInt32Array(2555971, 65543, 0, 2555966, 196615, 0, 2555964, 65543, 0, 2555965, 131079, 0, 2555972, 131079, 0, 2555973, 196615, 0, 2752579, 65543, 0, 2752580, 131079, 0, 2752581, 196615, 0, 2752572, 65543, 0, 2752573, 131079, 0, 2752574, 196615, 0)
+layer_4/y_sort_enabled = true
+layer_4/tile_data = PackedInt32Array(2621507, 262152, 0, 2555971, 65544, 0, 2555966, 196616, 0, 2621502, 262152, 0, 2752572, 65544, 0, 2752573, 131080, 0, 2752574, 196616, 0, 2555964, 65544, 0, 2555965, 131080, 0, 2555972, 131080, 0, 2555973, 196616, 0, 2752579, 65544, 0, 2752580, 131080, 0, 2752581, 196616, 0, 2621509, 262152, 0, 2621500, 262152, 0)
+layer_5/z_index = 1
+layer_5/tile_data = PackedInt32Array(2752571, 131072, 4, 2687035, 131072, 4, 2621499, 131072, 4, 2555963, 131072, 4, 2490427, 131072, 4, 2752582, 0, 4, 2687046, 0, 4, 2621510, 0, 4, 2555974, 0, 4, 2490438, 0, 4, 2424891, 65536, 7, 2424902, 0, 7, 2424901, 65536, 5, 2424900, 65536, 5, 2424899, 65536, 5, 2424898, 65536, 5, 2424897, 65536, 5, 2424896, 65536, 5, 2424895, 65536, 5, 2424894, 65536, 5, 2424893, 65536, 5, 2424892, 65536, 5, 2818107, 65536, 6, 2818108, 65536, 3, 2818109, 65536, 3, 2818110, 65536, 3, 2818111, 65536, 3, 2818114, 65536, 3, 2818115, 65536, 3, 2818116, 65536, 3, 2818117, 65536, 3, 2818118, 0, 6)
+
+[node name="Christina" parent="." instance=ExtResource("2_jlk4d")]
+position = Vector2(1048, 685)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+zoom = Vector2(6, 6)
+limit_left = 874
+limit_top = 530
+limit_right = 1222
+limit_bottom = 710
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="dining_exit_point" type="Area2D" parent="."]
+position = Vector2(1027, 710)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dining_exit_point"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_53cvf")
+
+[node name="Jacob" type="CharacterBody2D" parent="."]
+position = Vector2(961, 589)
+
+[node name="Sprite2D" type="Sprite2D" parent="Jacob"]
+texture = ExtResource("4_xpk82")
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="Actionable" parent="." instance=ExtResource("5_t5dyu")]
+position = Vector2(961, 594)
+dialogue_resource = ExtResource("6_lnqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_rfd15")
+
+[node name="maysie" type="CharacterBody2D" parent="."]
+position = Vector2(894, 633)
+
+[node name="Sprite2D" type="Sprite2D" parent="maysie"]
+texture = ExtResource("7_obj02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maysie"]
+position = Vector2(0.5, 7)
+shape = SubResource("RectangleShape2D_mlmmk")
+
+[node name="Actionable" parent="maysie" instance=ExtResource("5_t5dyu")]
+position = Vector2(0, 5)
+dialogue_resource = ExtResource("8_vhjou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maysie/Actionable"]
+shape = SubResource("CircleShape2D_iyohw")
+
+[node name="maya" type="CharacterBody2D" parent="."]
+position = Vector2(1141, 668)
+
+[node name="Sprite2D" type="Sprite2D" parent="maya"]
+texture = ExtResource("9_urvbv")
+hframes = 4
+vframes = 4
+
+[node name="Actionable" parent="maya" instance=ExtResource("5_t5dyu")]
+position = Vector2(0, 5)
+dialogue_resource = ExtResource("10_axy02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maya/Actionable"]
+shape = SubResource("CircleShape2D_5uuwb")
+
+[node name="blush" type="Area2D" parent="maya"]
+position = Vector2(0, 3)
+script = ExtResource("11_fvdew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maya/blush"]
+shape = SubResource("CircleShape2D_b4cgy")
+
+[node name="Timer" type="Timer" parent="maya"]
+wait_time = 5.0
+one_shot = true
+
+[node name="damian" type="CharacterBody2D" parent="."]
+position = Vector2(1028, 576)
+
+[node name="Sprite2D" type="Sprite2D" parent="damian"]
+texture = ExtResource("11_dujxp")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damian"]
+position = Vector2(11.5, 5)
+shape = SubResource("RectangleShape2D_pqqyg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="damian"]
+libraries = {
+"": SubResource("AnimationLibrary_prhrn")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="damian"]
+tree_root = SubResource("AnimationNodeStateMachine_kl8pr")
+
+[node name="dinah" type="CharacterBody2D" parent="."]
+position = Vector2(1050, 576)
+
+[node name="Sprite2D" type="Sprite2D" parent="dinah"]
+texture = ExtResource("12_b6r04")
+hframes = 4
+vframes = 4
+frame = 8
+
+[node name="Actionable2" parent="." instance=ExtResource("5_t5dyu")]
+position = Vector2(1039, 582)
+dialogue_resource = ExtResource("13_earxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
+shape = SubResource("CircleShape2D_tkm51")
+
+[connection signal="body_entered" from="dining_exit_point" to="." method="_on_dining_exit_point_body_entered"]
+[connection signal="body_exited" from="dining_exit_point" to="." method="_on_dining_exit_point_body_exited"]
+[connection signal="body_entered" from="maya/blush" to="maya/blush" method="_on_body_entered"]
+[connection signal="body_exited" from="maya/blush" to="maya/blush" method="_on_body_exited"]

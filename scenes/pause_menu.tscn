@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2v7g8rcl5jwc"]
+
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_jugwj"]
+[ext_resource type="Texture2D" uid="uid://4nx6s44ywtsg" path="res://scenes/tiles/dialogue_box_2.png" id="2_4fna8"]
+[ext_resource type="Texture2D" uid="uid://dou7e76oaml1g" path="res://scenes/tiles/dialogue_box.png" id="3_1rgtv"]
+[ext_resource type="FontFile" uid="uid://bgegjsrhmi013" path="res://scenes/tiles/joystix monospace.otf" id="4_0csbt"]
+[ext_resource type="Texture2D" uid="uid://ewiii3pqc373" path="res://scenes/tiles/response_box.png" id="5_6ks3m"]
+[ext_resource type="PackedScene" path="res://scenes/warning_quit.tscn" id="6_6kwjb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oiky1"]
+texture = ExtResource("3_1rgtv")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvv3h"]
+texture = ExtResource("5_6ks3m")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0k3d"]
+texture = ExtResource("5_6ks3m")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jugwj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -238.0
+offset_right = 3.00012
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.08, 2.08)
+texture = ExtResource("2_4fna8")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = 24.0
+offset_right = 12.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.76, 0.76)
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_0csbt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oiky1")
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_0csbt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dvv3h")
+text = "Resume"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_0csbt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_t0k3d")
+text = "Quit"
+
+[node name="WarningQuit" parent="." instance=ExtResource("6_6kwjb")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -515.0
+offset_top = -194.0
+offset_right = -253.0
+offset_bottom = -194.0
+scale = Vector2(1.5039, 1.5039)
+
+[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="WarningQuit" method="_on_quit_pressed"]

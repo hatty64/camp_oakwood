@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c2o0qg2v7jy31"
+path="res://.godot/imported/chair_interact.dialogue-c364e72108f061bcd733dfa4005657c8.tres"
+
+[deps]
+
+source_file="res://dialogue/chair_interact.dialogue"
+dest_files=["res://.godot/imported/chair_interact.dialogue-c364e72108f061bcd733dfa4005657c8.tres"]
+
+[params]
+
+defaults=true

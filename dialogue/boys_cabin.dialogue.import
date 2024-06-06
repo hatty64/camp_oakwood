@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://baw8gciiuwynm"
+path="res://.godot/imported/boys_cabin.dialogue-7801aa76ccb97ce1664522e39f8974f9.tres"
+
+[deps]
+
+source_file="res://dialogue/boys_cabin.dialogue"
+dest_files=["res://.godot/imported/boys_cabin.dialogue-7801aa76ccb97ce1664522e39f8974f9.tres"]
+
+[params]
+
+defaults=true

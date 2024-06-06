@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cm3l4onx5m7jh"
+path="res://.godot/imported/ester_dialogue.dialogue-616b1779c88a5c9449a0714b4bc92acf.tres"
+
+[deps]
+
+source_file="res://dialogue/ester_dialogue.dialogue"
+dest_files=["res://.godot/imported/ester_dialogue.dialogue-616b1779c88a5c9449a0714b4bc92acf.tres"]
+
+[params]
+
+defaults=true

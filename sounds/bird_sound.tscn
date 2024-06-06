@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf1dvnrqrjxuj"]
+
+[ext_resource type="Script" path="res://bird_sound.gd" id="2_7mn5d"]
+
+[node name="bird_sound" type="AudioStreamPlayer"]
+script = ExtResource("2_7mn5d")

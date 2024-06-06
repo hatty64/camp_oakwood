@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cj7nvseqivysd"
+path="res://.godot/imported/dining_dialogue.dialogue-862744f907857524c394ae346d21f069.tres"
+
+[deps]
+
+source_file="res://dialogue/dining_dialogue.dialogue"
+dest_files=["res://.godot/imported/dining_dialogue.dialogue-862744f907857524c394ae346d21f069.tres"]
+
+[params]
+
+defaults=true

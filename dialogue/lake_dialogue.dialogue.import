@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dx857vmqr01s6"
+path="res://.godot/imported/lake_dialogue.dialogue-80ad5fc052dc0cb0ace5209e8652af1e.tres"
+
+[deps]
+
+source_file="res://dialogue/lake_dialogue.dialogue"
+dest_files=["res://.godot/imported/lake_dialogue.dialogue-80ad5fc052dc0cb0ace5209e8652af1e.tres"]
+
+[params]
+
+defaults=true

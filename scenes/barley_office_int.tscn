@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://6d4tm5j8eqho"]
+
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_4413j"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_6thbn"]
+[ext_resource type="Texture2D" uid="uid://s53wb5eit7tb" path="res://character_sprite/barley_remake_full.png" id="3_adf51"]
+[ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="4_1mvjq"]
+[ext_resource type="Resource" uid="uid://c3gcev2uir8vx" path="res://dialogue/bear.dialogue" id="5_360q2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tfrxj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5y2h"]
+
+[node name="barley_office_int" type="Node2D"]
+y_sort_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_4413j")]
+layer_0/tile_data = PackedInt32Array(2621503, 0, 0, 2555967, 0, 0, 2490431, 0, 0, 2621502, 0, 0, 2555966, 0, 0, 2490430, 0, 0, 2621501, 0, 0, 2555965, 0, 0, 2490429, 0, 0)
+layer_1/name = "wall"
+layer_1/tile_data = PackedInt32Array(2424893, 65536, 0, 2424894, 65536, 0, 2424895, 65536, 0)
+layer_2/y_sort_enabled = true
+layer_2/tile_data = PackedInt32Array(2490430, 65562, 2, 2424894, 26, 1, 2424895, 131098, 1, 2490431, 131098, 2, 2490429, 26, 2, 2424893, 65562, 0)
+layer_3/name = "ceiling"
+layer_3/z_index = 1
+layer_3/tile_data = PackedInt32Array(2359357, 65536, 5, 2359358, 65536, 5, 2359359, 65536, 5, 2359356, 65536, 7, 2424892, 131072, 4, 2490428, 131072, 4, 2555964, 131072, 4, 2621500, 131072, 4, 2687036, 65536, 6, 2687037, 65536, 3, 2687039, 65536, 3, 2687040, 0, 6, 2621504, 0, 4, 2555968, 0, 4, 2490432, 0, 4, 2424896, 0, 4, 2359360, 0, 7)
+layer_4/tile_data = PackedInt32Array(2555965, 27, 1, 2621501, 27, 2, 2555966, 65563, 1, 2621502, 65563, 2, 2555967, 131099, 1, 2621503, 131099, 2, 2490429, 27, 0, 2490430, 65563, 0, 2490431, 131099, 0)
+layer_6/name = "chair"
+layer_6/y_sort_enabled = true
+layer_6/tile_data = PackedInt32Array(2490430, 196634, 2)
+
+[node name="Christina" parent="." instance=ExtResource("2_6thbn")]
+position = Vector2(968, 621)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+zoom = Vector2(6, 6)
+limit_left = 809
+limit_top = 481
+limit_right = 1129
+limit_bottom = 661
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="barley" type="CharacterBody2D" parent="."]
+position = Vector2(969, 557)
+
+[node name="Sprite2D" type="Sprite2D" parent="barley"]
+material = SubResource("ShaderMaterial_tfrxj")
+texture = ExtResource("3_adf51")
+hframes = 4
+vframes = 4
+
+[node name="Actionable" parent="." instance=ExtResource("4_1mvjq")]
+position = Vector2(1001, 529)
+dialogue_resource = ExtResource("5_360q2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_o5y2h")

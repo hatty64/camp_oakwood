@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://bu8ly0bugcxpy"]
+
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="1_24la7"]
+[ext_resource type="Script" path="res://scenes/tent.gd" id="1_k1ty7"]
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="2_trsy5"]
+[ext_resource type="Texture2D" uid="uid://co0yiecgie7lf" path="res://scenes/chair.png" id="4_rvj6w"]
+[ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="5_7ived"]
+[ext_resource type="Resource" uid="uid://c2o0qg2v7jy31" path="res://dialogue/chair_interact.dialogue" id="6_vbj0q"]
+[ext_resource type="Resource" uid="uid://dqb4gjpmb4m51" path="res://dialogue/cot_interact.dialogue" id="7_bxlky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ihu3"]
+size = Vector2(64, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvgm6"]
+size = Vector2(12, 11)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_30t43"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2t847"]
+
+[node name="Tent" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_k1ty7")
+
+[node name="TileMap" parent="." instance=ExtResource("2_trsy5")]
+layer_0/tile_data = PackedInt32Array(2621502, 11, 0, 2555966, 11, 0, 2555965, 11, 0, 2621501, 11, 0)
+layer_1/tile_data = PackedInt32Array(2424893, 262155, 2, 2424894, 327691, 2, 2490429, 262155, 3, 2490430, 327691, 3)
+layer_2/tile_data = PackedInt32Array(2555966, 13, 0)
+layer_3/tile_data = PackedInt32Array()
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Christina" parent="." instance=ExtResource("1_24la7")]
+position = Vector2(970, 597)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+zoom = Vector2(6, 6)
+limit_left = 794
+limit_top = 498
+limit_right = 1114
+limit_bottom = 678
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(921, 636, 921, 572, 985, 572, 985, 636, 994, 559, 911, 547, 895, 641)
+
+[node name="tent_exit_point" type="Area2D" parent="."]
+position = Vector2(931, 646)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tent_exit_point"]
+position = Vector2(22, -3.5)
+shape = SubResource("RectangleShape2D_5ihu3")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(927, 576)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("4_rvj6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_tvgm6")
+
+[node name="Actionable" parent="." instance=ExtResource("5_7ived")]
+position = Vector2(927, 577)
+dialogue_resource = ExtResource("6_vbj0q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_30t43")
+
+[node name="Actionable2" parent="." instance=ExtResource("5_7ived")]
+position = Vector2(968, 585)
+dialogue_resource = ExtResource("7_bxlky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
+shape = SubResource("CircleShape2D_2t847")
+
+[connection signal="body_entered" from="tent_exit_point" to="." method="_on_tent_exit_point_body_entered"]
+[connection signal="body_exited" from="tent_exit_point" to="." method="_on_tent_exit_point_body_exited"]
