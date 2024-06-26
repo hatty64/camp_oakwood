@@ -390,5 +390,9 @@ shape = SubResource("CircleShape2D_s5fwg")
 
 [node name="pause_menu_two" parent="CanvasLayer" instance=ExtResource("3_ksaay")]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.290196, 0.156863, 0.968627, 1)
+
 [connection signal="body_entered" from="Direction/ActionableFinder" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Direction/ActionableFinder" to="." method="_on_area_2d_body_exited"]

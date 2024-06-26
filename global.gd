@@ -90,6 +90,7 @@ var loadin_path_to_barley_3 = false
 var loadin_barley_office_ext = false
 var loadin_barley_office_ext_2 = false
 var loadin_stage = false
+var loadout_dining = false
 
 func finish_changescene_cabin():
 	if transition_scene == true:

@@ -10,6 +10,8 @@ extends CharacterBody2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
+var input_vector: Vector2 = Vector2.ZERO
+
 func _ready():
 	update_animation_parameters(starting_direction)
 
@@ -51,4 +53,5 @@ func _unhandled_input(_event: InputEvent) -> void:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			actionables[0].action()
+			input_vector = Vector2.ZERO
 			return

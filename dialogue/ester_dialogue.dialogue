@@ -5,7 +5,7 @@ if got_map == false and first_time_in_dining == true
 	Christina: [#mood=thinking] Still have amnesia though.
 	Ester: [#mood=smile] That's okay.
 	Ester: [#mood=smile] Did you say hi to your friends yet?
-	Christina: [#mood=smile] Not yet, I'm hust looking around.
+	Christina: [#mood=smile] Not yet, I'm just looking around.
 	Ester: [#mood=smile] Well, you better say hi to them, they might be worried about you.
 
 => END

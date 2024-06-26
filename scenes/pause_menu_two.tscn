@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bw3x0ddvicyea"]
+[gd_scene load_steps=32 format=3 uid="uid://bw3x0ddvicyea"]
 
 [ext_resource type="Script" path="res://scenes/pause_menu_two.gd" id="1_aq26k"]
 [ext_resource type="Texture2D" uid="uid://vvu15kb5fio5" path="res://textures/notebook_open_full.png" id="1_lxp7k"]
@@ -10,17 +10,21 @@
 [ext_resource type="Texture2D" uid="uid://bhkwkp60phtb6" path="res://textures/notebook_open_left.png" id="4_lhdis"]
 [ext_resource type="Texture2D" uid="uid://begow1ioms6kb" path="res://textures/quit_normal.png" id="5_hahlu"]
 [ext_resource type="Script" path="res://scenes/resume.gd" id="5_y4pu0"]
+[ext_resource type="Texture2D" uid="uid://d2h43sro3w2q5" path="res://textures/resume_pressed.png" id="5_yamx7"]
 [ext_resource type="Texture2D" uid="uid://6as0vow0ag6t" path="res://textures/quit_toggle.png" id="6_8ti88"]
 [ext_resource type="Texture2D" uid="uid://cftffxbi2ovn2" path="res://textures/map_normal.png" id="7_sd720"]
 [ext_resource type="Texture2D" uid="uid://cp85jf1ynf2kc" path="res://textures/map_toggle.png" id="8_xlbwr"]
 [ext_resource type="Texture2D" uid="uid://dmw38yw13i2co" path="res://textures/question.png" id="9_cseuw"]
+[ext_resource type="Texture2D" uid="uid://fvsvayronwhp" path="res://textures/map_pressed.png" id="9_xui8h"]
 [ext_resource type="Texture2D" uid="uid://bn0m8v60v770w" path="res://textures/notebook_map_open_full.png" id="12_45mya"]
 [ext_resource type="Script" path="res://scenes/quit.gd" id="12_mjaf5"]
 [ext_resource type="Texture2D" uid="uid://blok5k2fvw77k" path="res://textures/back_normal.png" id="13_3vhqn"]
+[ext_resource type="Texture2D" uid="uid://b338bkhm6xexn" path="res://textures/quit_pressed.png" id="13_nvype"]
 [ext_resource type="Texture2D" uid="uid://d2b5nv3em4rts" path="res://textures/back_toggle.png" id="14_x7vp3"]
 [ext_resource type="Texture2D" uid="uid://eslc6fo56qxg" path="res://textures/notebook_map_open_left.png" id="15_8xt7x"]
 [ext_resource type="Script" path="res://scenes/back.gd" id="18_1kweh"]
 [ext_resource type="FontFile" uid="uid://cxco3lwv0bs5r" path="res://scenes/joystix monospace.otf" id="18_5skil"]
+[ext_resource type="Texture2D" uid="uid://boardwho7nv41" path="res://textures/back_pressed.png" id="21_r8rg4"]
 
 [sub_resource type="Animation" id="Animation_tky77"]
 length = 0.001
@@ -733,6 +737,7 @@ size_flags_horizontal = 0
 focus_neighbor_bottom = NodePath("../map")
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_wih53")
+texture_pressed = ExtResource("5_yamx7")
 texture_hover = ExtResource("3_ta4ns")
 texture_focused = ExtResource("3_ta4ns")
 script = ExtResource("5_y4pu0")
@@ -744,6 +749,7 @@ focus_neighbor_bottom = NodePath("../quit")
 mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("7_sd720")
+texture_pressed = ExtResource("9_xui8h")
 texture_hover = ExtResource("8_xlbwr")
 texture_disabled = ExtResource("9_cseuw")
 texture_focused = ExtResource("8_xlbwr")
@@ -753,6 +759,7 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../map")
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_hahlu")
+texture_pressed = ExtResource("13_nvype")
 texture_hover = ExtResource("6_8ti88")
 texture_focused = ExtResource("6_8ti88")
 script = ExtResource("12_mjaf5")
@@ -827,6 +834,7 @@ scale = Vector2(3.16, 3.16)
 [node name="back" type="TextureButton" parent="notebook_map_open_full/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("13_3vhqn")
+texture_pressed = ExtResource("21_r8rg4")
 texture_hover = ExtResource("14_x7vp3")
 texture_focused = ExtResource("14_x7vp3")
 script = ExtResource("18_1kweh")

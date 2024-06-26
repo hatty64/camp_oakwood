@@ -3,11 +3,10 @@ extends TextureButton
 @onready var map = $"../map"
 @onready var quit = $"../quit"
 
-func _ready():
-	if Global.got_map == false:
-		focus_neighbor_bottom = get_path_to(quit)
-	else:
-		focus_neighbor_bottom = get_path_to(map)
+
+
+
+
 
 
 

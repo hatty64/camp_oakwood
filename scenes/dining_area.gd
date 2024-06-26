@@ -21,7 +21,9 @@ func _process(_delta):
 	if entered == true:
 		Transit.change_scene_to_file("res://scenes/main_camp_outside.tscn")
 		Global.first_time_in_dining = false
-		Global.loadin_dining == true
+		Global.loadin_main_camp = false
+		Global.loadout_dining = true
+		Global.loadin_dining = false
 
 
 

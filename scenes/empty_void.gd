@@ -10,6 +10,7 @@ extends Node2D
 
 
 func _on_ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	await get_tree().create_timer(6.0).timeout
 	DialogueManager.show_dialogue_night_balloon(load("res://dialogue/night_eye.dialogue"), "Start")
 	await DialogueManager.dialogue_ended

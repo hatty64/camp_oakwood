@@ -14,6 +14,7 @@ func _process(_delta):
 		Transit.change_scene_to_file("res://scenes/main_camp_outside.tscn")
 		Global.loadin_world2 == true
 		Global.loadin_dining == false
+		Global.loadin_main_camp = false
 
 
 

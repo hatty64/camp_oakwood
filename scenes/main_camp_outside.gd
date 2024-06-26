@@ -7,14 +7,14 @@ func _ready():
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
 		$Christina.position.x = Global.player_camp_out_positionx
 		$Christina.position.y = Global.player_camp_out_positiony
-	elif Global.loadin_dining == true:
+	elif Global.loadout_dining == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
-		$Christina.position.x = Global.player_dining_exit_positionx
-		$Christina.position.y = Global.player_dining_exit_positiony
+		$Christina.position.x = 1240
+		$Christina.position.y = 606
 	elif Global.loadin_world2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
-		$Christina.position.x = Global.player_cabin_f_exit_positionx
-		$Christina.position.y = Global.player_cabin_f_exit_positiony
+		$Christina.position.x = 1016
+		$Christina.position.y = 604
 	elif Global.loadin_main_camp_2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(1, 0))
 		$Christina.position.x = Global.player_main_camp_exit_positionx
