@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c5sb4t3lvqqf7"
+path="res://.godot/imported/casper_dialogue.dialogue-24c1af6d12da9b4f39cdd85bdbce2bef.tres"
+
+[deps]
+
+source_file="res://dialogue/casper_dialogue.dialogue"
+dest_files=["res://.godot/imported/casper_dialogue.dialogue-24c1af6d12da9b4f39cdd85bdbce2bef.tres"]
+
+[params]
+
+defaults=true

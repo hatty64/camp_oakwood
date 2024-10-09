@@ -3,12 +3,12 @@ extends Node2D
 func _ready():
 	if Global.loadin_tent_path == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
-		$Christina.position.x = Global.player_tent_path_start_positionx
-		$Christina.position.y = Global.player_tent_path_start_positiony
+		$Christina.position.x = 747
+		$Christina.position.y = 458
 	else:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
-		$Christina.position.x = Global.player_tent_path_exit_positionx
-		$Christina.position.y = Global.player_tent_path_exit_positiony
+		$Christina.position.x = 1002
+		$Christina.position.y = 844
 
 var entered = false
 

@@ -4,5 +4,3 @@ extends Control
 
 func _ready():
 	fish_minigame_ui.hide()
-
-

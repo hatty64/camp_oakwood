@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bep608fnulwb4"
+path="res://.godot/imported/just_a_dark_mirror.dialogue-fd752313402a6fe52ff28992087d461b.tres"
+
+[deps]
+
+source_file="res://dialogue/just_a_dark_mirror.dialogue"
+dest_files=["res://.godot/imported/just_a_dark_mirror.dialogue-fd752313402a6fe52ff28992087d461b.tres"]
+
+[params]
+
+defaults=true

@@ -25,6 +25,3 @@ func _on_ready():
 	DialogueManager.show_dialogue_night_balloon(load("res://dialogue/wake_up.dialogue"), "Start")
 	await DialogueManager.dialogue_ended
 	get_tree().change_scene_to_file("res://scenes/tent_cutscene.tscn")
-
-
-

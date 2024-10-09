@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cp6hcscid2cub"]
+[gd_scene load_steps=9 format=3 uid="uid://cp6hcscid2cub"]
 
 [ext_resource type="Script" path="res://scenes/my_dialogue_box.gd" id="1_k7dwg"]
 [ext_resource type="Texture2D" uid="uid://jubfnb1k5cve" path="res://scenes/dialogue_box_2.png" id="2_7qsbn"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="4_3aiil"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="5_n6gyv"]
 [ext_resource type="FontFile" uid="uid://bgegjsrhmi013" path="res://scenes/tiles/joystix monospace.otf" id="6_ttrrc"]
-[ext_resource type="Texture2D" uid="uid://3d876s3w0h4e" path="res://portraits/damian/sad.png" id="7_j4jv2"]
 [ext_resource type="Texture2D" uid="uid://ewiii3pqc373" path="res://scenes/tiles/response_box.png" id="7_ybnju"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f4ece"]
@@ -107,16 +106,14 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_f4ece")
 text = "Response example"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon"]
-visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_top = 21.0
 offset_right = 349.0
 offset_bottom = 353.0
 
-[node name="TextureRect" type="TextureRect" parent="Balloon/VBoxContainer"]
+[node name="Portrait" type="TextureRect" parent="Balloon/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("7_j4jv2")
 expand_mode = 4
 
 [node name="text_sound" type="AudioStreamPlayer2D" parent="."]

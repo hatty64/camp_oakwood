@@ -4,12 +4,13 @@ extends Node2D
 func _ready():
 	if Global.loadin_vertical_path == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
-		$Christina.position.x = Global.player_vertical_start_positionx
-		$Christina.position.y = Global.player_vertical_start_positiony
+		$Christina.position.x = 906
+		$Christina.position.y = 807
 	else:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
-		$Christina.position.x = Global.player_vertical_exit_positionx
-		$Christina.position.y = Global.player_vertical_exit_positiony
+		$Christina.position.x = 906
+		$Christina.position.y = 657
+
 
 var entered = false
 

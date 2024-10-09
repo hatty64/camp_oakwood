@@ -1,17 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://mul2lo64g5tv"]
+[gd_scene load_steps=10 format=3 uid="uid://mul2lo64g5tv"]
 
 [ext_resource type="Script" path="res://scenes/path_to_barley_and_stage.gd" id="1_2qtlp"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_7lfgw"]
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_umomj"]
+[ext_resource type="PackedScene" uid="uid://8v3obom8if5a" path="res://scenes/rain.tscn" id="4_fqujt"]
+[ext_resource type="PackedScene" uid="uid://vcypnq8pc4sq" path="res://scenes/sunset.tscn" id="5_or3fn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as6kd"]
-size = Vector2(20, 74)
+size = Vector2(20, 138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04755"]
-size = Vector2(74, 20)
+size = Vector2(160, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1co8"]
-size = Vector2(20, 74)
+size = Vector2(20, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8djmp"]
+size = Vector2(6, 137)
 
 [node name="path_to_barley_and_stage" type="Node2D"]
 y_sort_enabled = true
@@ -30,18 +35,20 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" parent="." instance=ExtResource("1_7lfgw")]
-layer_0/tile_data = PackedInt32Array(2490433, 65541, 1, 2490434, 5, 2, 2490431, 131077, 0, 2490432, 65541, 1, 2490430, 65541, 1, 2359353, 393221, 0, 2359354, 393221, 0, 2359355, 393221, 0, 2359356, 393221, 0, 2359359, 393221, 0, 2359360, 393221, 0, 2359361, 393221, 0, 2359362, 393221, 0, 2424889, 393221, 2, 2424890, 393221, 2, 2424891, 393221, 2, 2424892, 393221, 2, 2424893, 393221, 2, 2424894, 393221, 2, 2424895, 393221, 2, 2424896, 393221, 2, 2424897, 393221, 2, 2424898, 393221, 2, 2359358, 393221, 3, 2359357, 327685, 3, 2293821, 327685, 1, 2228285, 327685, 1, 2293822, 458757, 1, 2228286, 458757, 1, 2490425, 65541, 1, 2490426, 65541, 0, 2490427, 65541, 0, 2490428, 65541, 2, 2490429, 65541, 1, 2293820, 131077, 2, 2228284, 65541, 1, 2293823, 65541, 0, 2228287, 5, 1)
-layer_1/tile_data = PackedInt32Array(2293826, 65539, 1, 2293825, 65539, 1, 2293824, 65539, 1, 2293817, 65539, 1, 2293818, 65539, 1, 2293819, 65539, 1, 2228281, 3, 0, 2228282, 3, 0, 2228283, 3, 0, 2228288, 3, 0, 2228289, 3, 0, 2228290, 3, 0)
+layer_0/tile_data = PackedInt32Array(2555969, 65568, 2, 2490433, 393248, 2, 2490434, 393248, 2, 2555970, 65568, 4, 2555967, 65568, 2, 2490431, 393248, 2, 2490432, 393248, 2, 2555968, 65568, 2, 2490430, 393248, 2, 2555966, 65568, 4, 2359360, 393248, 0, 2359359, 393248, 0, 2359358, 393248, 3, 2359357, 393221, 1, 2424893, 393221, 1, 2424894, 393221, 1, 2359361, 393248, 0, 2359362, 393248, 0, 2293823, 65568, 6, 2293822, 458784, 1, 2293821, 393221, 1, 2293820, 327712, 1, 2424898, 393221, 1, 2490429, 393248, 2, 2490428, 393248, 2, 2424892, 393221, 1, 2424897, 393221, 1, 2424896, 393221, 1, 2424895, 393221, 1, 2359356, 327712, 3, 2555965, 65568, 2, 2555964, 131104, 4, 2359353, 393248, 0, 2359354, 393248, 0, 2359355, 393248, 0, 2424889, 393221, 1, 2424890, 393221, 1, 2424891, 393221, 1, 2228285, 393221, 1, 2228286, 458784, 1, 2490425, 393248, 2, 2490426, 393248, 2, 2490427, 393248, 2, 2228284, 327712, 1, 2228287, 131104, 1, 2555961, 65568, 2, 2555962, 65568, 4, 2555963, 32, 4, 2228283, 32, 1, 2293819, 32, 6, 2293818, 65568, 0, 2293817, 65568, 3, 2293824, 65568, 0, 2293825, 32, 3, 2293826, 65568, 0)
+layer_1/tile_data = PackedInt32Array(2228281, 65539, 1, 2228282, 65539, 1, 2228288, 65539, 1, 2228289, 65539, 1, 2228290, 65539, 1)
 layer_2/y_sort_enabled = true
 layer_2/z_index = 2
-layer_2/tile_data = PackedInt32Array(2490430, 393219, 0, 2228281, 393219, 2, 2228282, 393219, 2, 2228283, 393219, 2, 2228284, 458755, 2, 2228287, 327683, 2, 2228288, 393219, 2, 2228289, 393219, 2, 2228290, 393219, 2, 2490425, 393219, 0, 2490426, 393219, 0, 2490427, 393219, 0, 2490428, 393219, 0, 2490429, 393219, 0, 2490431, 393219, 0, 2490432, 393219, 0, 2490433, 393219, 0, 2490434, 393219, 0, 2555970, 393219, 1, 2555969, 393219, 1, 2555968, 393219, 1, 2555967, 393219, 1, 2555966, 393219, 1, 2555965, 393219, 1, 2555964, 393219, 1, 2555963, 393219, 1, 2555962, 393219, 1, 2555961, 393219, 1)
-layer_3/tile_data = PackedInt32Array()
+layer_2/tile_data = PackedInt32Array(2555970, 393219, 0, 2555969, 393219, 0, 2555968, 393219, 0, 2555967, 393219, 0, 2555966, 393219, 0, 2555965, 393219, 0, 2555964, 393219, 0, 2555963, 393219, 0, 2555962, 393219, 0, 2555961, 393219, 0)
+layer_4/z_index = -1
 layer_6/name = "shadow"
 layer_6/z_index = 1
-layer_6/tile_data = PackedInt32Array(2359353, 393241, 2, 2359354, 393241, 2, 2359355, 393241, 2, 2359356, 458777, 2, 2293820, 458777, 1, 2228284, 458777, 1, 2359359, 327705, 2, 2359360, 393241, 2, 2359361, 393241, 2, 2359362, 393241, 2, 2293823, 327705, 1, 2228287, 327705, 1, 2293819, 393241, 1, 2293818, 393241, 1, 2293817, 393241, 1, 2293824, 393241, 1, 2293825, 393241, 1, 2293826, 393241, 1, 2228290, 393241, 1, 2228289, 393241, 1, 2228288, 393241, 1, 2228283, 393241, 1, 2228282, 393241, 1, 2228281, 393241, 1)
+layer_6/tile_data = PackedInt32Array(2293823, 327705, 2, 2228287, 327705, 1, 2293819, 458777, 2, 2293818, 393241, 2, 2293817, 393241, 2, 2293824, 393241, 2, 2293825, 393241, 2, 2293826, 393241, 2, 2228290, 393241, 1, 2228289, 393241, 1, 2228288, 393241, 1, 2228283, 458777, 1, 2228282, 393241, 1, 2228281, 393241, 1)
+layer_7/name = "rain_splash"
+layer_7/tile_data = PackedInt32Array(2228284, 30, 0, 2228286, 30, 0, 2424895, 30, 0, 2490433, 30, 0, 2424897, 30, 0, 2359358, 30, 0, 2490426, 30, 0, 2424892, 30, 0, 2490430, 30, 0)
 
 [node name="Christina" parent="." instance=ExtResource("2_umomj")]
-position = Vector2(1104, 506)
+position = Vector2(1098, 520)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 zoom = Vector2(6, 6)
@@ -63,15 +70,28 @@ shape = SubResource("RectangleShape2D_as6kd")
 position = Vector2(928, 405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barley_office_ext_transit_point"]
-position = Vector2(27, 0)
+position = Vector2(9, 0)
 shape = SubResource("RectangleShape2D_04755")
 
 [node name="stage_transit_point" type="Area2D" parent="."]
 position = Vector2(1123, 486)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stage_transit_point"]
-position = Vector2(0, 27)
+position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_l1co8")
+disabled = true
+
+[node name="rain" parent="." instance=ExtResource("4_fqujt")]
+position = Vector2(975, 338)
+
+[node name="sunset" parent="." instance=ExtResource("5_or3fn")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1103, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7, -27.5)
+shape = SubResource("RectangleShape2D_8djmp")
 
 [connection signal="body_entered" from="path_barley_stage_exit_point" to="." method="_on_path_barley_stage_exit_point_body_entered"]
 [connection signal="body_exited" from="path_barley_stage_exit_point" to="." method="_on_path_barley_stage_exit_point_body_exited"]

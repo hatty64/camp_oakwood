@@ -15,4 +15,3 @@ var game_paused : bool = false:
 func _input(event: InputEvent):
 	if event.is_action_pressed("pause"):
 		game_paused = !game_paused
-

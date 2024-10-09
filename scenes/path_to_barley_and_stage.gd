@@ -3,16 +3,16 @@ extends Node2D
 func _ready():
 	if Global.loadin_path_to_barley == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(1, 0))
-		$Christina.position.x = 802
-		$Christina.position.y = 508
+		$Christina.position.x = 801
+		$Christina.position.y = 521
 	elif Global.loadin_path_to_barley_2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
-		$Christina.position.x = 955
-		$Christina.position.y = 429
+		$Christina.position.x = 937
+		$Christina.position.y = 430
 	elif Global.loadin_path_to_barley_3 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(-1, 0))
-		$Christina.position.x = 1104
-		$Christina.position.y = 508
+		$Christina.position.x = 1098
+		$Christina.position.y = 520
 
 var entered = false
 var entered_2 = false

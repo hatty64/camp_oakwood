@@ -54,6 +54,14 @@ func player():
 	pass
 
 
+func get_mirrored_frame():
+	var frame = $Sprite2D.frame
+	
+	if frame < 4 or frame > 7 and frame < 12:
+		return frame + 4
+		
+	return frame - 4
+
 #func current_camera():
 	#if global.current_scene == "world1":
 		#$world1_camera.enabled = true

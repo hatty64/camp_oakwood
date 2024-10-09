@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://8v3obom8if5a"]
+
+[ext_resource type="Texture2D" uid="uid://b5u8yb16ui0m8" path="res://textures/rain.png" id="1_7n3qo"]
+[ext_resource type="Script" path="res://scenes/rain.gd" id="1_j0tn4"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xprl5"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(300, 1, 1)
+gravity = Vector3(0, 98, 0)
+
+[node name="rain" type="StaticBody2D"]
+script = ExtResource("1_j0tn4")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.560784, 0.560784, 0.560784, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+scale = Vector2(1.76, 1)
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_xprl5")
+texture = ExtResource("1_7n3qo")
+lifetime = 4.0
+preprocess = 2.0
+speed_scale = 2.0
+randomness = 1.0
+visibility_rect = Rect2(-100, -100, 300, 300)

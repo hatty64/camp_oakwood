@@ -1,0 +1,32 @@
+~ Start
+
+Eavesdrop?
+- Yes
+	set input_blocked = true
+	do eavesdrop_boys_cabin()
+- No
+
+=> END
+
+~ Start_2
+
+Jacob: [#mood=default] So, aren't you worried?
+Damian: [#mood=sad] Worried... about what?
+Jacob: [#mood=default] Christina.
+Damian: [#mood=happy] Oooh, you mean the whole amnesia thing?
+Damian: [#mood=confident] She's just messing around, don't worry.
+Jacob: [#mood=thinking] I don't know, she sounded pretty serious about it.
+Damian: [#mood=confident] Relax, she always does this, trust me.
+Damian: [#mood=happy] She's just gonna forget about it the next day, as if nothing happened.
+Jacob: [#mood=thinking] Maybe you're right.
+Jacob: [#mood=default] I'm just worried, that's all.
+Damian: [#mood=happy] Everything's gonna be fine, don't worry.
+set eavesdrop_day0_finished = true
+
+=> END
+
+~ Start_3
+
+Christina: [#mood=default] Nothing to see here.
+
+=> END

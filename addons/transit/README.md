@@ -18,7 +18,7 @@ Now you can call `Transit.change_scene_to_file` in your scripts to change scenes
 
 ```GDScript
 func on_button_pressed():
-    Transit.change_scene_to_file("res://Game.tscn")
+	Transit.change_scene_to_file("res://Game.tscn")
 ```
 
 ## Documentation

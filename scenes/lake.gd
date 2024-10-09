@@ -1,9 +1,10 @@
 extends Node2D
 
+
 func _ready():
 	if Global.loadin_lake_1 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
-		$Christina.position.x = 890
+		$Christina.position.x = 873
 		$Christina.position.y = 685
 	elif Global.loadin_lake_2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(-1, 0))
@@ -43,11 +44,15 @@ func _on_lake_exit_point_body_exited(body):
 func _on_lake_exit_point_2_body_entered(body):
 	if body.has_method("player"):
 		if Global.first_time_in_dining == true:
-			DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/ester_dialogue.dialogue"), "Start_2")
-			$Christina.position.x = 1263
 			$Christina.input_vector = Vector2.ZERO
+			$Christina.position.x = 1263
+			$Christina.state_machine.travel("idle")
+			Global.input_blocked = true
 			$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(-1, 0))
+			DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/ester_dialogue.dialogue"), "Start_2")
 			Global.annoying_ester += 1
+			await DialogueManager.dialogue_ended
+			Global.input_blocked = false
 		else:
 			entered_2 = true
 

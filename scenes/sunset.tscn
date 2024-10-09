@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://vcypnq8pc4sq"]
+
+[ext_resource type="Script" path="res://scenes/sunset.gd" id="1_cyd4j"]
+
+[node name="sunset" type="CanvasModulate"]
+color = Color(0.764706, 0.529412, 0, 1)
+script = ExtResource("1_cyd4j")

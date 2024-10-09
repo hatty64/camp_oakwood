@@ -1,0 +1,176 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfw1v27reqexj"]
+
+[ext_resource type="Script" path="res://scenes/barley_office_int_cutscene.gd" id="1_s7en3"]
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_xioyn"]
+[ext_resource type="Texture2D" uid="uid://s53wb5eit7tb" path="res://character_sprite/barley_remake_full.png" id="2_5ywdv"]
+[ext_resource type="Texture2D" uid="uid://di2s7pajtr44" path="res://character_sprite/Christina_full_sprite_remake.png" id="3_a2ylb"]
+
+[sub_resource type="Animation" id="Animation_xtlh1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("christina:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("christina/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("christina:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(969, 649)]
+}
+
+[sub_resource type="Animation" id="Animation_eq7sv"]
+resource_name = "christina_takes_seat"
+length = 2.00001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("christina/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 13, 12, 15, 5, 4, 7, 12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("christina:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(969, 610), Vector2(952, 610), Vector2(952, 581), Vector2(969, 581)]
+}
+
+[sub_resource type="Animation" id="Animation_38jyr"]
+resource_name = "christina_walk_in"
+length = 2.00001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("christina:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("christina/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 12, 15, 14, 13, 14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("christina:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(969, 649), Vector2(969, 610)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3lvv"]
+_data = {
+"RESET": SubResource("Animation_xtlh1"),
+"christina_takes_seat": SubResource("Animation_eq7sv"),
+"christina_walk_in": SubResource("Animation_38jyr")
+}
+
+[node name="barley_office_int_cutscene" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_s7en3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_xioyn")]
+layer_0/tile_data = PackedInt32Array(2621503, 0, 0, 2555967, 0, 0, 2490431, 0, 0, 2490430, 0, 0, 2555966, 0, 0, 2621502, 0, 0, 2490429, 0, 0, 2555965, 0, 0, 2621501, 0, 0)
+layer_1/tile_data = PackedInt32Array(2359360, 0, 7, 2359359, 65536, 5, 2359358, 65536, 5, 2359357, 65536, 5, 2424893, 65536, 0, 2424894, 65536, 0, 2490428, 131072, 4, 2424892, 131072, 4, 2424896, 0, 4, 2424895, 65536, 0, 2359356, 65536, 7, 2555964, 131072, 4, 2621500, 131072, 4, 2687036, 65536, 6, 2687037, 65536, 3, 2621504, 0, 4, 2555968, 0, 4, 2490432, 0, 4, 2687039, 65536, 3, 2687040, 0, 6)
+layer_2/y_sort_enabled = true
+layer_2/tile_data = PackedInt32Array(2490430, 65562, 2, 2424893, 65562, 0, 2424894, 26, 1, 2424895, 131098, 1, 2490429, 26, 2, 2490431, 131098, 2, 2555966, 65562, 3)
+layer_3/tile_data = PackedInt32Array(2490430, 196634, 2)
+layer_4/tile_data = PackedInt32Array(2490429, 27, 0, 2555965, 27, 1, 2621501, 27, 2, 2490430, 65563, 0, 2555966, 65563, 1, 2621502, 65563, 2, 2490431, 131099, 0, 2555967, 131099, 1, 2621503, 131099, 2)
+
+[node name="barley" type="CharacterBody2D" parent="."]
+position = Vector2(969, 557)
+
+[node name="Sprite2D" type="Sprite2D" parent="barley"]
+texture = ExtResource("2_5ywdv")
+hframes = 4
+vframes = 4
+
+[node name="christina" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(969, 649)
+
+[node name="Sprite2D" type="Sprite2D" parent="christina"]
+texture = ExtResource("3_a2ylb")
+hframes = 4
+vframes = 4
+frame = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p3lvv")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+limit_left = 809
+limit_top = 481
+limit_right = 1129
+limit_bottom = 661
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

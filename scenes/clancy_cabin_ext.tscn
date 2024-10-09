@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgpempfyxoaqa"]
+
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_3rhn0"]
+[ext_resource type="Script" path="res://scenes/clancy_cabin_ext.gd" id="1_oy8sc"]
+[ext_resource type="PackedScene" uid="uid://8v3obom8if5a" path="res://scenes/rain.tscn" id="1_vd0o8"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_3xheo"]
+[ext_resource type="Texture2D" uid="uid://box8og8x4u0a6" path="res://scenes/tiles/clancy_cabin.png" id="3_esxao"]
+[ext_resource type="PackedScene" uid="uid://vcypnq8pc4sq" path="res://scenes/sunset.tscn" id="5_wpwmw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h4on"]
+size = Vector2(111, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrslj"]
+size = Vector2(133, 20)
+
+[node name="clancy_cabin_ext" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_oy8sc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_3rhn0")]
+layer_0/tile_data = PackedInt32Array(2228286, 327712, 1, 2228287, 393221, 1, 2228288, 458784, 1, 2293822, 327712, 1, 2293823, 393221, 1, 2293824, 458784, 1, 2359358, 327712, 1, 2359359, 393221, 1, 2359360, 458784, 1, 2424894, 327712, 1, 2424895, 393221, 1, 2424896, 458784, 1, 2490430, 327712, 1, 2490431, 393221, 1, 2490432, 458784, 1, 2555966, 327712, 1, 2555967, 393221, 1, 2555968, 458784, 1, 2162750, 327712, 0, 2162751, 393248, 0, 2162752, 458784, 0, 2162749, 32, 5, 2097213, 65568, 1, 2097214, 65568, 1, 2097215, 65568, 1, 2097216, 65568, 1, 2097217, 65568, 1, 2162753, 32, 5, 2162754, 65568, 1, 2097218, 65568, 1, 2031682, 65568, 5, 2031681, 32, 5, 2031680, 65568, 1, 2031679, 131104, 5, 2031678, 65568, 1, 2031677, 65568, 1, 2031676, 65568, 1, 2097212, 65568, 1, 2162748, 65568, 1, 1966140, 32, 3, 1966141, 131104, 3, 1966142, 65568, 0, 1966143, 65568, 3, 1966144, 65568, 0, 1966145, 131104, 3, 1966146, 65568, 0, 1966139, 32, 0, 2031675, 196640, 1, 2097211, 32, 1, 2162747, 196640, 2, 2228283, 32, 2, 2228284, 65568, 2, 2228285, 32, 7, 2293821, 32, 1, 2359357, 196640, 0, 2424893, 196640, 1, 2490429, 32, 1, 2555965, 196640, 0, 2555969, 262176, 0, 2490433, 262176, 2, 2424897, 262176, 1, 2359361, 262176, 0, 2293825, 131104, 1, 2228289, 65568, 7, 2228290, 65568, 2, 2228291, 131104, 2, 2162755, 131104, 1, 2097219, 131104, 1, 2031683, 131104, 1, 1966147, 131104, 0)
+layer_1/tile_data = PackedInt32Array(1900604, 65539, 1, 1900605, 65539, 1, 1900606, 65539, 1, 1900607, 65539, 1, 1900608, 65539, 1, 1900609, 65539, 1, 1900610, 65539, 1, 1835074, 3, 0, 1835073, 3, 0, 1835072, 3, 0, 1835071, 3, 0, 1835070, 3, 0, 1835069, 3, 0, 1835068, 3, 0, 1900611, 65539, 1, 1835075, 3, 0, 1900603, 65539, 1, 1835067, 3, 0)
+layer_2/z_index = 2
+layer_2/tile_data = PackedInt32Array(1835068, 393219, 2, 1835069, 393219, 2, 1835070, 393219, 2, 1835071, 393219, 2, 1835072, 393219, 2, 1835073, 393219, 2, 1835074, 393219, 2, 1835067, 393219, 4, 1835075, 327683, 4, 1900603, 458755, 1, 1966139, 458755, 1, 2031675, 458755, 1, 2097211, 458755, 1, 2162747, 458755, 1, 2228283, 393219, 3, 2228284, 393219, 0, 2228285, 458755, 0, 2293821, 458755, 1, 2359357, 458755, 1, 2424893, 458755, 1, 2490429, 458755, 1, 2555965, 458755, 1, 2293825, 327683, 1, 2359361, 327683, 1, 2424897, 327683, 1, 2490433, 327683, 1, 2555969, 327683, 1, 2228289, 327683, 0, 2228290, 393219, 0, 2228291, 327683, 3, 2162755, 327683, 1, 2097219, 327683, 1, 2031683, 327683, 1, 1966147, 327683, 1, 1900611, 327683, 1, 2293820, 393219, 1, 2359356, 393219, 1, 2424892, 393219, 1, 2490428, 393219, 1, 2555964, 393219, 1, 2555963, 393219, 1, 2490427, 393219, 1, 2424891, 393219, 1, 2359355, 393219, 1, 2293819, 393219, 1, 2293826, 393219, 1, 2359362, 393219, 1, 2424898, 393219, 1, 2490434, 393219, 1, 2555970, 393219, 1, 2555971, 393219, 1, 2490435, 393219, 1, 2424899, 393219, 1, 2359363, 393219, 1, 2293827, 393219, 1, 1835076, 393219, 1, 1900612, 393219, 1, 1966148, 393219, 1, 2031684, 393219, 1, 2097220, 393219, 1, 2162756, 393219, 1, 2228292, 393219, 1, 2293828, 393219, 1, 2359364, 393219, 1, 2424900, 393219, 1, 2490436, 393219, 1, 2555972, 393219, 1, 2555962, 393219, 1, 2490426, 393219, 1, 2424890, 393219, 1, 2359354, 393219, 1, 2293818, 393219, 1, 2228282, 393219, 1, 2162746, 393219, 1, 2097210, 393219, 1, 2031674, 393219, 1, 1966138, 393219, 1, 1900602, 393219, 1, 1835066, 393219, 1, 1769530, 393219, 1, 1769531, 393219, 1, 1769532, 393219, 1, 1769533, 393219, 1, 1769534, 393219, 1, 1769535, 393219, 1, 1769536, 393219, 1, 1769537, 393219, 1, 1769538, 393219, 1, 1769539, 393219, 1, 1769540, 393219, 1)
+layer_6/name = "shadow"
+layer_6/z_index = 1
+layer_6/tile_data = PackedInt32Array(1966140, 393241, 2, 1966141, 393241, 2, 1966142, 393241, 2, 1966143, 393241, 2, 1966144, 393241, 2, 1966145, 393241, 2, 1966146, 393241, 2, 1966139, 393241, 4, 1966147, 327705, 4, 1900610, 393241, 1, 1900609, 393241, 1, 1900608, 393241, 1, 1900607, 393241, 1, 1900606, 393241, 1, 1900605, 393241, 1, 1900604, 393241, 1, 1900603, 393241, 1, 1900611, 393241, 1, 1835074, 393241, 1, 1835073, 393241, 1, 1835072, 393241, 1, 1835071, 393241, 1, 1835070, 393241, 1, 1835069, 393241, 1, 1835068, 393241, 1, 1835067, 393241, 1, 1835075, 393241, 1)
+layer_7/name = "rain_splash"
+layer_7/tile_data = PackedInt32Array(2097218, 30, 0, 2162754, 30, 0, 2162753, 30, 0, 2031676, 30, 0, 2097213, 30, 0, 2424896, 30, 0, 2490430, 30, 0, 2293822, 30, 0, 2293824, 30, 0, 2031681, 30, 0)
+
+[node name="Christina" parent="." instance=ExtResource("2_3xheo")]
+position = Vector2(1004, 588)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+zoom = Vector2(6, 6)
+limit_left = 842
+limit_top = 188
+limit_right = 1162
+limit_bottom = 604
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1000, 319)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("3_esxao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 35)
+shape = SubResource("RectangleShape2D_0h4on")
+
+[node name="rain" parent="." instance=ExtResource("1_vd0o8")]
+z_index = 5
+position = Vector2(996, 171)
+
+[node name="GPUParticles2D" parent="rain" index="1"]
+visibility_rect = Rect2(-100, -100, 500, 500)
+trail_lifetime = 1.02
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1004, 604)
+
+[node name="sunset" parent="." instance=ExtResource("5_wpwmw")]
+visible = false
+
+[node name="horizontal_path_transit_point" type="Area2D" parent="."]
+position = Vector2(952, 614)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="horizontal_path_transit_point"]
+position = Vector2(49.5, 0)
+shape = SubResource("RectangleShape2D_hrslj")
+
+[connection signal="body_entered" from="horizontal_path_transit_point" to="." method="_on_horizontal_path_transit_point_body_entered"]
+[connection signal="body_exited" from="horizontal_path_transit_point" to="." method="_on_horizontal_path_transit_point_body_exited"]
+
+[editable path="rain"]

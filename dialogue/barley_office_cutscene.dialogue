@@ -1,0 +1,75 @@
+~ Start
+
+Barley: [#mood=default] Come in!
+
+=> END
+
+
+
+~ Start_2
+
+Barley: [#mood=smile] Ah, you're here!
+Barley: [#mood=smile] Please, take a seat.
+
+=> END
+
+~ Start_3
+
+Barley: [#mood=smile] So, I'm sure you have a lot of questions right now.
+Barley: [#mood=smile] But first, how do you feel?
+Christina: [#mood=default] Fine, I guess.
+Barley: [#mood=smile] That's good to hear.
+Barley: [#mood=default] Now, do you have any questions?
+- My dream?
+	Christina: [#mood=default] So, I was wondering about this dream I had.
+	Barley: [#mood=default] A... dream?
+	Barley: [#mood=default] What about it?
+	Christina: [#mood=thinking] Well, there was this giant, purple eye and it started talking to me.
+	Christina: [#mood=default] It said that it wats to see how far I can go... until I "break".
+	Barley: [#mood=default] Hmm... interesting.
+	Barley: [#mood=smile] It probably doesn't mean anything.
+	Barley: [#mood=smile] It's just a dream after all.
+	Christina: [#mood=thinking] Yeah... just a dream.
+	Barley: [#mood=default] Do you have any other questions?
+	- Why can't I remember?
+		Christina: [#mood=default] Why... can't I remember anything?
+		Christina: [#mood=default] If I wasn't hurt in any way, then what is the cause of my amnesia?
+		Barley: [#mood=default] That's a question I can't really answer, but maybe it has something to do with... trauma?
+		Barley: [#mood=default] Maybe your brain is trying to forget something horrible by erasing your memory.
+		Barley: [#mood=default] I know that doesn't make any sense, but it's the best answer I can give you right now.
+		Barley: [#mood=default] Do you remember seeing something traumatic in the woods?
+		Christina: [#mood=thinking] No, not that I know of.
+		Barley: [#mood=default] I see...
+- Why can't I remember?
+	Christina: [#mood=default] Why... can't I remember anything?
+	Christina: [#mood=default] If I wasn't hurt in any way, then what is the cause of my amnesia?
+	Barley: [#mood=default] That's a question I can't really answer, but maybe it has something to do with... trauma?
+	Barley: [#mood=default] Maybe your brain is trying to forget something horrible by erasing your memory.
+	Barley: [#mood=default] I know that doesn't make any sense, but it's the best answer I can give you right now.
+	Barley: [#mood=default] Do you remember seeing something traumatic in the woods?
+	Christina: [#mood=thinking] No, not that I know of.
+	Barley: [#mood=default] I see...
+	Barley: [#mood=default] Do you have any other questions?
+	- My dream?
+		Christina: [#mood=default] So, I was wondering about this dream I had.
+		Barley: [#mood=default] A... dream?
+		Barley: [#mood=default] What about it?
+		Christina: [#mood=thinking] Well, there was this giant, purple eye and it started talking to me.
+		Christina: [#mood=default] It said that it wats to see how far I can go... until I "break".
+		Barley: [#mood=default] Hmm... interesting.
+		Barley: [#mood=smile] It probably doesn't mean anything.
+		Barley: [#mood=smile] It's just a dream after all.
+		Christina: [#mood=thinking] Yeah... just a dream.
+Barley: [#mood=smile] I think that's enough chatter for today, we can continue this another time.
+Barley: [#mood=default] Say, do you still have your notebook?
+Christina: [#mood=default] Yeah, I found it in my jacket, why?
+Barley: [#mood=smile] Great!
+Barley: [#mood=smile] Just in case you lose your memories again, you can write down everything you've experience today in your notebook.
+Barley: [#mood=smile] That way you'll always know what's going on.
+Barley: [#mood=smile] Does that work for you?
+Christina: [#mood=thinking] I... think so.
+Barley: [#mood=smile] Good!
+Barley: [#mood=default] Now, you should probably head back to your cabin before it gets dark.
+Barley: [#mood=smile] And if you need me, I'll be in my office.
+
+=> END

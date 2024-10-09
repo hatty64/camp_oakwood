@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://6d4tm5j8eqho"]
+[gd_scene load_steps=10 format=3 uid="uid://6d4tm5j8eqho"]
 
+[ext_resource type="Script" path="res://scenes/barley_office_int.gd" id="1_74ww3"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_4413j"]
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_6thbn"]
 [ext_resource type="Texture2D" uid="uid://s53wb5eit7tb" path="res://character_sprite/barley_remake_full.png" id="3_adf51"]
@@ -10,8 +11,12 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5y2h"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppbtl"]
+size = Vector2(38, 20)
+
 [node name="barley_office_int" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_74ww3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
@@ -26,7 +31,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" parent="." instance=ExtResource("1_4413j")]
-layer_0/tile_data = PackedInt32Array(2621503, 0, 0, 2555967, 0, 0, 2490431, 0, 0, 2621502, 0, 0, 2555966, 0, 0, 2490430, 0, 0, 2621501, 0, 0, 2555965, 0, 0, 2490429, 0, 0)
+layer_0/tile_data = PackedInt32Array(2621503, 0, 0, 2555967, 0, 0, 2490431, 0, 0, 2490430, 0, 0, 2555966, 0, 0, 2621502, 0, 0, 2621501, 0, 0, 2555965, 0, 0, 2490429, 0, 0)
 layer_1/name = "wall"
 layer_1/tile_data = PackedInt32Array(2424893, 65536, 0, 2424894, 65536, 0, 2424895, 65536, 0)
 layer_2/y_sort_enabled = true
@@ -40,7 +45,7 @@ layer_6/y_sort_enabled = true
 layer_6/tile_data = PackedInt32Array(2490430, 196634, 2)
 
 [node name="Christina" parent="." instance=ExtResource("2_6thbn")]
-position = Vector2(968, 621)
+position = Vector2(969, 583)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 zoom = Vector2(6, 6)
@@ -66,3 +71,13 @@ dialogue_resource = ExtResource("5_360q2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 shape = SubResource("CircleShape2D_o5y2h")
+
+[node name="barley_office_exit_pos" type="Area2D" parent="."]
+position = Vector2(963, 646)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barley_office_exit_pos"]
+position = Vector2(6, 0)
+shape = SubResource("RectangleShape2D_ppbtl")
+
+[connection signal="body_entered" from="barley_office_exit_pos" to="." method="_on_barley_office_exit_pos_body_entered"]
+[connection signal="body_exited" from="barley_office_exit_pos" to="." method="_on_barley_office_exit_pos_body_exited"]

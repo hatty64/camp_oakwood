@@ -1,22 +1,22 @@
 ~ Start
 if jacob_first_talked == false
-	Jacob: [#mood=nervous] Hey, sorry about Damian, he can be a little dramatic sometimes.
-	Christina: [#mood=happy] It's okay, he seems pretty nice.
-	Christina: [#mood=smile] So, what's your name?
-	Jacob: [#mood=smile] Oh, umm... my name is Jacob.
-	Jacob: [#mood=smile] We were both classmates in middle school.
-	Jacob: [#mood=smile] I was the straight A studen and you were the average student.
-	Jacob: [#mood=smile] We used to hang out together after school.
-	Jacob: [#mood=smile] Go to the library, studying at my place
-	Jacob: [#mood=thinking] ...
-	Jacob: [#mood=smile] Go to the library.
-	Christina: [#mood=default] You already said that.
-	Jacob: [#mood=nervous] I know, I just couldn't think of anything else.
+	???: [#char=jacob] [#mood=nervous] Hey, sorry about Damian, he can be a little dramatic sometimes.
+	Christina: [#char=christina] [#mood=happy] It's okay, he seems pretty nice.
+	Christina: [#char=christina] [#mood=smile] So, what's your name?
+	???: [#char=jacob] [#mood=smile] Oh, umm... my name is Jacob.
+	Jacob: [#char=jacob] [#mood=smile] We were both classmates in middle school.
+	Jacob: [#char=jacob] [#mood=smile] I was the straight A student and you were the average student.
+	Jacob: [#char=jacob] [#mood=smile] We used to hang out together after school.
+	Jacob: [#char=jacob] [#mood=smile] Go to the library, studying at my place
+	Jacob: [#char=jacob] [#mood=thinking] ...
+	Jacob: [#char=jacob] [#mood=smile] Go to the library.
+	Christina: [#char=christina] [#mood=default] You already said that.
+	Jacob: [#char=jacob] [#mood=nervous] I know, I just couldn't think of anything else.
 	set jacob_first_talked = true
 	=> END
 else
-	Jacob: [#mood=smile] Anything else you wanna talk about?
-	Christina: [#mood=thinking] No, not that I know of.
-	Jacob: [#mood=smile] Well, if you need anything, just let me know.
+	Jacob: [#char=jacob] [#mood=smile] Anything else you wanna talk about?
+	Christina: [#char=christina] [#mood=thinking] No, not that I know of.
+	Jacob: [#char=jacob] [#mood=smile] Well, if you need anything, just let me know.
 	=> END
 

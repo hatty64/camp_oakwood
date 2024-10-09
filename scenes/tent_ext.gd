@@ -1,16 +1,17 @@
 extends Node2D
 
 func _ready():
-	BirdSound.play()
-	BirdSound.play_music_level()
+	Global.sprint_blocked = false
+	#BirdSound.play()
+	#BirdSound.play_music_level()
 	if Global.loadin_tent_ext == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
-		$Christina.position.x = Global.player_tent_ext_exit_positionx
-		$Christina.position.y = Global.player_tent_ext_exit_positiony
+		$Christina.position.x = 1001
+		$Christina.position.y = 812
 	else:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
-		$Christina.position.x = Global.player_tent_ext_start_positionx
-		$Christina.position.y = Global.player_tent_ext_start_positiony
+		$Christina.position.x = 1001
+		$Christina.position.y = 684
 
 var entered = false
 
@@ -47,5 +48,3 @@ func _on_tent_ext_exit_point_body_entered(body):
 func _on_tent_ext_exit_point_body_exited(body):
 	if body.has_method("player"):
 		entered_2 = false
-
-

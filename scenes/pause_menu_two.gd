@@ -52,7 +52,8 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _process(delta):
-	testEsc()
+	if Global.input_blocked != true:
+		testEsc()
 	if Global.got_map == true:
 		map_but.disabled = false
 	else:

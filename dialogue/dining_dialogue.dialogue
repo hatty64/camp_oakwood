@@ -1,81 +1,81 @@
 ~ Start
 
-Jacob: [#mood=thinking] I hope she's okay.
-Jacob: [#mood=default] Barley said she wasn't injured, but I'm still worried.
-Jacob: [#mood=thinking] All we can do now is just wait and hope for the best.
+???: [#char=jacob] [#mood=thinking] I hope she's okay.
+???: [#char=jacob] [#mood=default] Barley said she wasn't injured, but I'm still worried.
+???: [#char=jacob] [#mood=thinking] All we can do now is just wait and hope for the best.
 
 => END
 
 ~ Start_2
 
-Damian: [#mood=confident] I have a the-[next=auto]
-Jacob: [#mood=bored] No.
-Damian: [#mood=angry] Oh, come on! You never let me say anything!
-Jacob: [#mood=bored] That's because you've got nothing good to say.
-Damian: [#mood=bored] At least it's better than whining about Christina!
-Jacob: [#mood=angry] [shake rate=20 level=20]At least I try to care for my friend![/shake]
-Damian: [#mood=angry] Are you saying I don't care about my friend?
-Dinah: [#mood=bored] Guys, break it up!
+???: [#char=damian] [#mood=confident] I have a the-[next=auto]
+???: [#char=jacob] [#mood=bored] No.
+???: [#char=damian] [#mood=angry] Oh, come on! You never let me say anything!
+???: [#char=jacob] [#mood=bored] That's because you've got nothing good to say.
+???: [#char=damian] [#mood=bored] At least it's better than whining about Christina!
+???: [#char=jacob] [#mood=angry] [shake rate=20 level=20]At least I try to care for my friend![/shake]
+???: [#char=damian] [#mood=angry] Are you saying I don't care about my friend?
+???: [#char=dinah] [#mood=bored] Guys, break it up!
 
 => END
 
 ~ Start_3
 
-Jacob: [#mood=shocked] Christina!
+???: [#char=jacob] [#mood=shocked] Christina!
 
 => END
 
 ~ Start_4
 
-Jacob: [#mood=relieved] I'm so glad you're okay!
+???: [#char=jacob] [#mood=relieved] I'm so glad you're okay!
 
 => END
 
 ~ Start_5
 
-Damian: [#mood=shocked] [shake rate=20 level=20]ARE YOU OKAY, DID YOU SUFFER ANY BRAIN DAMAGE!?!?![/shake][next=3.0]
-Christina: [#mood=thinking] (Why does everyone keep saying that?)
-Christina: [#mood=default] I don't know... probably not.
-Damian: [#mood=sad] What do you mean "You don't know"?
-Christina: [#mood=thinking] I mean, I might have amnesia.
+???: [#char=damian] [#mood=shocked] [shake rate=20 level=20]ARE YOU OKAY, DID YOU SUFFER ANY BRAIN DAMAGE!?!?![/shake][next=3.0]
+Christina: [#char=christina] [#mood=thinking] (Why does everyone keep saying that?)
+Christina: [#char=christina] [#mood=default] I don't know... probably not.
+???: [#char=damian] [#mood=sad] What do you mean "You don't know"?
+Christina: [#char=christina] [#mood=thinking] I mean, I might have amnesia.
 
 => END
 
 ~ Start_6
 
-Damian: [#mood=sad] Am...nesia...
-Christina: [#mood=thinking] Well, at least that's what my dad told me.
-Dinah: [#mood=default] So... you don't know who we are?
-Christina: [#mood=thinking] No... sorry.
+???: [#char=damian] [#mood=sad] Am...nesia...
+Christina: [#char=christina] [#mood=thinking] Well, at least that's what my dad told me.
+???: [#char=dinah] [#mood=default] So... you don't know who we are?
+Christina: [#christina] [#mood=thinking] No... sorry.
 
 => END
 
 ~ Start_7
 
-Damian: [#mood=angry] Shoot, we knew this would happen!
+???: [#char=damian] [#mood=angry] Shoot, we knew this would happen!
 
 => END
 
 ~ Start_8
 
-Jacob: [#mood=confused] D- did we, though?
-Damian: [#mood=sad] N- no... but we should have!
+???: [#char=jacob] [#mood=confused] D- did we, though?
+???: [#char=damian] [#mood=sad] N- no... but we should have!
 
 => END
 
 ~ Start_9
 
-Damian: [#mood=confident] But do not fret my dear friend!
-Damian: [#mood=confident] I, Damian will do everything in my power to bring back your memories!
-Jacob: [#mood=confused] Don't you mean "We"?
-Damian: [#mood=bored] Yeah sure, "we" will bring back your memories.
-Damian: [#mood=confident] But before we can do that, we must think!
-Damian: [#mood=confident] Come my assistant, we must get to the bottom of this sudden memory loss!
+???: [#char=damian] [#mood=confident] But do not fret my dear friend!
+???: [#char=damian] [#mood=confident] I, Damian will do everything in my power to bring back your memories!
+???: [#char=jacob] [#mood=confused] Don't you mean "We"?
+Damian: [#char=damian] [#mood=bored] Yeah sure, "we" will bring back your memories.
+Damian: [#char=damian] [#mood=confident] But before we can do that, we must think!
+Damian: [#char=damian] [#mood=confident] Come my assistant, we must get to the bottom of this sudden memory loss!
 
 => END
 
 ~ Start_10
 
-Jacob: [#mood=nervous] Sorry about that... you can sit next to me if you want.
+???: [#char=jacob] [#mood=nervous] Sorry about that... you can sit next to me if you want.
 
 => END

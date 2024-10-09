@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dh4ixjf4mjlq5"
+path="res://.godot/imported/barley_office_cutscene.dialogue-c904ae88be60bd3ce0904301dc412977.tres"
+
+[deps]
+
+source_file="res://dialogue/barley_office_cutscene.dialogue"
+dest_files=["res://.godot/imported/barley_office_cutscene.dialogue-c904ae88be60bd3ce0904301dc412977.tres"]
+
+[params]
+
+defaults=true

@@ -8,8 +8,8 @@ extends Node2D
 
 func _ready():
 	Global.game_first_loadin = false
-	BirdSound.play()
-	BirdSound.play_music_level()
+	#BirdSound.play()
+	#BirdSound.play_music_level()
 	await get_tree().create_timer(3.0).timeout
 	camera_anim.speed_scale = 0.5
 	clancy_anim.speed_scale = 0.5

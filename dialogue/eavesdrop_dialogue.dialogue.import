@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://b5w1auckxno1l"
+path="res://.godot/imported/eavesdrop_dialogue.dialogue-2c1fe081026566db682f8f503fcd7c47.tres"
+
+[deps]
+
+source_file="res://dialogue/eavesdrop_dialogue.dialogue"
+dest_files=["res://.godot/imported/eavesdrop_dialogue.dialogue-2c1fe081026566db682f8f503fcd7c47.tres"]
+
+[params]
+
+defaults=true

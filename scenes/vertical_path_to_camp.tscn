@@ -1,16 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxmonvjy0q66y"]
+[gd_scene load_steps=11 format=3 uid="uid://dxmonvjy0q66y"]
 
 [ext_resource type="Script" path="res://scenes/vertical_path_to_camp.gd" id="1_f8l7l"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_glw8b"]
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_6v5x6"]
 [ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="4_nooar"]
 [ext_resource type="Resource" uid="uid://dfomt8gp5nu1p" path="res://dialogue/fence.dialogue" id="5_o2blt"]
+[ext_resource type="PackedScene" uid="uid://8v3obom8if5a" path="res://scenes/rain.tscn" id="6_yyxtp"]
+[ext_resource type="PackedScene" uid="uid://vcypnq8pc4sq" path="res://scenes/sunset.tscn" id="7_1h6wo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptbp5"]
-size = Vector2(78, 20)
+size = Vector2(109, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80453"]
-size = Vector2(76, 20)
+size = Vector2(109, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsfwd"]
 radius = 8.0
@@ -31,17 +33,18 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" parent="." instance=ExtResource("1_glw8b")]
-layer_0/tile_data = PackedInt32Array(2818113, 393221, 0, 2818112, 393221, 0, 2687038, 5, 2, 3014716, 327685, 1, 2949180, 327685, 1, 2883644, 327685, 1, 2818108, 327685, 1, 2752572, 327685, 1, 2687036, 327685, 1, 2687037, 458757, 1, 2752573, 458757, 1, 2818109, 393221, 3, 2883645, 393221, 4, 2949181, 458757, 1, 3014717, 458757, 1, 2687035, 5, 2, 2752571, 131077, 0, 2818107, 131077, 1, 2883643, 5, 1, 2949179, 5, 0, 3014715, 5, 0, 3014718, 131077, 2, 2949182, 131077, 0, 2883646, 393221, 2, 2818110, 393221, 0, 2752574, 131077, 2, 2818111, 393221, 0, 2883647, 393221, 2, 2883648, 393221, 2, 2883649, 393221, 2, 2949183, 131077, 1, 2949184, 65541, 1, 2949185, 65541, 0)
-layer_1/tile_data = PackedInt32Array(2752575, 65539, 1, 2752577, 65539, 1, 2752576, 65539, 1, 2687040, 65539, 0, 2687041, 3, 0, 2687039, 3, 0, 2818112, 196624, 0, 2883648, 196624, 1, 2949184, 196624, 2)
+layer_0/tile_data = PackedInt32Array(2818113, 393248, 0, 2687038, 131104, 1, 2818112, 393248, 0, 3014716, 393221, 1, 2949180, 393221, 1, 2883644, 393221, 1, 2818108, 393221, 1, 2752572, 393221, 1, 2687036, 393221, 1, 2687037, 458784, 1, 2752573, 458784, 1, 2818109, 393248, 3, 2883645, 393221, 1, 2949181, 393248, 4, 3014717, 458784, 1, 2687035, 327712, 1, 2752571, 327712, 1, 2818107, 327712, 1, 2883643, 327712, 1, 2949179, 327712, 1, 3014715, 327712, 1, 3014718, 65568, 7, 2949182, 393248, 2, 2883646, 393221, 1, 2818110, 393248, 0, 2752574, 65568, 6, 2818111, 393248, 0, 2883647, 393221, 1, 2883648, 393221, 1, 2883649, 393221, 1, 2949183, 393248, 2, 2949184, 393248, 2, 2949185, 393248, 2, 3014719, 65568, 2, 3014720, 131104, 4, 3014721, 65568, 4, 2687034, 32, 1, 2752570, 196640, 2, 2818106, 32, 1, 2883642, 196640, 0, 2949178, 32, 1, 3014714, 196640, 2, 2752575, 65568, 0, 2752576, 131104, 3, 2752577, 65568, 0)
+layer_1/tile_data = PackedInt32Array(2883648, 196624, 1, 2949184, 196624, 1, 3014720, 196624, 2, 2818112, 196624, 1, 2752576, 196624, 0, 2687039, 65539, 1, 2687040, 65539, 1, 2687041, 65539, 1)
 layer_2/z_index = 2
-layer_2/tile_data = PackedInt32Array(2687038, 327683, 2, 3014713, 393219, 1, 3014712, 393219, 1, 2949176, 393219, 1, 2883640, 393219, 1, 2818104, 393219, 1, 2752568, 393219, 1, 2687032, 393219, 1, 2687033, 393219, 1, 2687034, 393219, 1, 2752570, 393219, 1, 2818106, 393219, 1, 2883642, 393219, 1, 2949178, 393219, 1, 3014714, 393219, 1, 2949177, 393219, 1, 2883641, 393219, 1, 2818105, 393219, 1, 2752569, 393219, 1, 2687035, 458755, 1, 2752571, 458755, 1, 2818107, 458755, 1, 2883643, 458755, 1, 2949179, 458755, 1, 3014715, 458755, 1, 3014721, 393219, 1, 3014720, 393219, 1, 3014719, 393219, 1, 3014718, 327683, 1, 2949182, 327683, 0, 2949183, 393219, 0, 2949184, 393219, 0, 2949185, 393219, 0, 2687039, 393219, 2, 2687040, 393219, 2, 2687041, 393219, 2)
-layer_3/tile_data = PackedInt32Array()
+layer_2/tile_data = PackedInt32Array(3014713, 393219, 1, 3014712, 393219, 1, 2949176, 393219, 1, 2883640, 393219, 1, 2818104, 393219, 1, 2752568, 393219, 1, 2687032, 393219, 1, 2687033, 393219, 1, 2687034, 458755, 1, 2752570, 458755, 1, 2818106, 458755, 1, 2883642, 458755, 1, 2949178, 458755, 1, 3014714, 458755, 1, 2949177, 393219, 1, 2883641, 393219, 1, 2818105, 393219, 1, 2752569, 393219, 1, 3014721, 393219, 0, 3014720, 393219, 0, 3014719, 393219, 0, 3014718, 327683, 0)
 layer_6/name = "shadow"
 layer_6/z_index = 1
-layer_6/tile_data = PackedInt32Array(2752574, 327705, 1, 2687038, 327705, 1, 2752575, 393241, 1, 2752576, 393241, 1, 2752577, 393241, 1, 2687039, 393241, 1, 2687040, 393241, 1, 2687041, 393241, 1, 2818110, 327705, 2, 2818111, 393241, 2, 2818112, 393241, 2, 2818113, 393241, 2)
+layer_6/tile_data = PackedInt32Array(2752574, 327705, 2, 2687038, 327705, 1, 2752575, 393241, 2, 2752576, 393241, 2, 2752577, 393241, 2, 2687039, 393241, 1, 2687040, 393241, 1, 2687041, 393241, 1)
+layer_7/name = "rain_splash"
+layer_7/tile_data = PackedInt32Array(2687035, 30, 0, 2949179, 30, 0, 2818108, 30, 0, 2687037, 30, 0, 2949185, 30, 0, 2883646, 30, 0, 2949181, 30, 0)
 
 [node name="Christina" parent="." instance=ExtResource("2_6v5x6")]
-position = Vector2(922, 656)
+position = Vector2(906, 807)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 zoom = Vector2(6, 6)
@@ -53,24 +56,32 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(894, 833)
+position = Vector2(893, 833)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(29, 0)
+position = Vector2(13.5, 0)
 shape = SubResource("RectangleShape2D_ptbp5")
 
 [node name="vertical_to_tent_path_trans_point" type="Area2D" parent="."]
+position = Vector2(923, 631)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vertical_to_tent_path_trans_point"]
-position = Vector2(924, 632)
+position = Vector2(-16.5, 1)
 shape = SubResource("RectangleShape2D_80453")
 
 [node name="Actionable" parent="." instance=ExtResource("4_nooar")]
-position = Vector2(1033, 734)
+position = Vector2(1033, 746)
 dialogue_resource = ExtResource("5_o2blt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 shape = SubResource("CircleShape2D_dsfwd")
+
+[node name="rain" parent="." instance=ExtResource("6_yyxtp")]
+z_index = 5
+position = Vector2(920, 612)
+
+[node name="sunset" parent="." instance=ExtResource("7_1h6wo")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

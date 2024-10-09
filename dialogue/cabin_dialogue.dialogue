@@ -1,0 +1,179 @@
+~ Start_dinah
+
+if damian_and_dinah_first_talked == true
+	Christina: [#char=christina] [#mood=smile] Hey, how's it going?
+	Dinah: [#char=dinah] [#mood=smile] Nothing much, just thinking about my next chapter for my novel.
+	Christina: [#char=christina] [#mood=confused] You write novels?
+	Dinah: [#char=dinah] [#mood=smile] Yeah, It's still a first draft though.
+	Christina: [#char=christina] [#mood=smile] What is it about?
+	Dinah: [#char=dinah] [#mood=smile] It's about a princess who found her true love buried in an iceberg.
+	Christina: [#char=christina] [#mood=confused] O... k?
+	Dinah: [#char=dinah] [#mood=blush] It's... still a work in progress...
+	Dinah: [#char=dinah] [#mood=blush] If you want, I can show it to you when I'm done...
+	Christina: [#char=christina] [#mood=happy] Sure!
+else:
+	Christina: [#char=christina] [#mood=smile] Hey...
+	Christina: [#char=christina] [#mood=thinking] Umm...
+	???: [#char=dinah] [#mood=smile] It's Dinah.
+	Christina: [#char=christina] [#mood=default] Right, I didn't get your name, sorry.
+	Dinah: [#char=dinah] [#mood=dmile] It's okay.
+	Christina: [#char=christina] [#mood=smile] So, what's up?
+	Dinah: [#char=dinah] [#mood=smile] Nothing much, just thinking about my next chapter for my novel.
+	Christina: [#char=christina] [#mood=confused] You write novels?
+	Dinah: [#char=dinah] [#mood=smile] Yeah, It's still a first draft though.
+	Christina: [#char=christina] [#mood=smile] What is it about?
+	Dinah: [#char=dinah] [#mood=smile] It's about a princess who found her true love buried in an iceberg.
+	Christina: [#char=christina] [#mood=confused] O... k?
+	Dinah: [#char=dinah] [#mood=blush] It's... still a work in progress...
+	Dinah: [#char=dinah] [#mood=blush] If you want, I can show it to you when I'm done...
+	Christina: [#char=christina] [#mood=happy] Sure!
+	set damian_and_dinah_first_talked = true
+
+=> END
+
+~ Start_maysie
+if maysie_first_talked == true
+	Christina: [#char=christina] [#mood=happy] Hey... how's it going?
+	Maysie: [#char=maysie] [#mood=bored] ...
+	Maysie: [#char=maysie] [#mood=bored] Good.
+	Christina: [#char=christina] [#mood=happy] That's... great to hear...
+	Maysie: [#char=maysie] [#mood=bored] What do you want?
+	Christina: [#char=christina] [#mood=smile] Just seeing how you're doing.
+	Maysie: [#char=maysie] [#mood=bored] ...
+	Christina: [#char=christina] [#mood=default] ...
+	Christina: [#char=christina] [#mood=thinking] [next=auto]Do you have any hobbie-
+	Maysie: [#char=maysie] [#mood=bored] Leave.
+	Christina: [#char=christina] [#mood=blush] Ok.
+else
+	Christina: [#char=christina] [#mood=happy] Hey... I... never got your name...
+	???: [#char=maysie] [#mood=bored] Maysie
+	Christina: [#char=christina] [#mood=smile] Ah, ok.
+	Christina: [#char=christina] [#mood=happy] So, how's it going?
+	Maysie: [#char=maysie] [#mood=bored] ...
+	Maysie: [#char=maysie] [#mood=bored] Good.
+	Christina: [#char=christina] [#mood=happy] That's... great to hear...
+	Maysie: [#char=maysie] [#mood=bored] What do you want?
+	Christina: [#char=christina] [#mood=smile] Just seeing how you're doing.
+	Maysie: [#char=maysie] [#mood=bored] ...
+	Christina: [#char=christina] [#mood=default] ...
+	Christina: [#char=christina] [#mood=thinking] [next=auto]Do you have any hobbie-
+	Maysie: [#char=maysie] [#mood=bored] Leave.
+	Christina: [#char=christina] [#mood=blush] Ok.
+	set maysie_first_talked = true
+
+=> END
+
+~ Start_maya
+if maya_first_talked == true
+	Maya: [#char=maya] [#mood=default] Hey, sorry about my cousin, she's just having a bad day.
+	Christina: [#char=christina] [#mood=happy] You mean Maysie? it's okay, I'm sure she's a lovely person.
+	Maya: [#char=maya] [#mood=default] ... What about me?
+	Christina: [#char=christina] [#mood=thinking] You're... umm...
+	Maya: [#char=maya] [#mood=panicup] [shake rate=20 level=20]YEEEEES?![/shake]
+	Christina: [#char=christina] [#mood=default] [next=auto]You're... a... pretty
+	Maya: [#char=maya] [#mood=crazyup] [shake rate=20 level=20]I'm pretty!?[/shake]
+	Christina: [#char=christina] [#mood=default] Great person...
+	Maya: [#char=maya] [#mood=default] ...
+	Maya: [#char=maya] [#mood=worried] Thanks...
+elif maya_first_talked == true and maysie_first_talked == false
+	Maya: [#char=maya] [#mood=default] Hey, sorry about my cousin, she's just having a bad day.
+	Christina: [#char=christina] [#mood=happy] You mean the purple girl? it's okay, I'm sure she's a lovely person.
+	Maya: [#char=maya] [#mood=default] ... What about me?
+	Christina: [#char=christina] [#mood=thinking] You're... umm...
+	Maya: [#char=maya] [#mood=panicup] [shake rate=20 level=20]YEEEEES?![/shake]
+	Christina: [#char=christina] [#mood=default] [next=auto]You're... a... pretty
+	Maya: [#char=maya] [#mood=crazyup] [shake rate=20 level=20]I'm pretty!?[/shake]
+	Christina: [#char=christina] [#mood=default] Great person...
+	Maya: [#char=maya] [#mood=default] ...
+	Maya: [#char=maya] [#mood=worried] Thanks...
+elif maya_first_talked == false and maysie_first_talked == true
+	???: [#char=maya] [#mood=default] Hey, sorry about my cousin, she's just having a bad day.
+	Christina: [#char=christina] [#mood=happy] You mean Maysie? it's okay, I'm sure she's a lovely person.
+	???: [#char=maya] [#mood=default] ... What about me?
+	Christina: [#char=christina] [#mood=thinking] You're... umm...
+	???: [#char=maya] [#mood=panicup] [shake rate=20 level=20]YEEEEES?![/shake]
+	Christina: [#char=christina] [#mood=default] [next=auto]You're... a... pretty
+	???: [#char=maya] [#mood=crazyup] [shake rate=20 level=20]I'm pretty!?[/shake]
+	Christina: [#char=christina] [#mood=default] Great person...
+	???: [#char=maya] [#mood=default] ...
+	???: [#char=maya] [#mood=worried] Thanks...
+	???: [#char=maya] [#mood=default] I'm Maya, by the way.
+	Maya: [#char=maya] [#mood=default] I never told you my name, did I?
+	Christina: [#char=christina] [#mood=default] No, you have not.
+	Christina: [#char=christina] [#mood=smile] It's nice to meet you.
+	Christina: [#char=christina] [#mood=thinking] I guess...
+	set maya_first_talked = true
+else
+	???: [#char=maya] [#mood=default] Hey, sorry about my cousin, she's just having a bad day.
+	Christina: [#char=christina] [#mood=happy] You mean the purple girl? it's okay, I'm sure she's a lovely person.
+	???: [#char=maya] [#mood=default] ... What about me?
+	Christina: [#char=christina] [#mood=thinking] You're... umm...
+	???: [#char=maya] [#mood=panicup] [shake rate=20 level=20]YEEEEES?![/shake]
+	Christina: [#char=christina] [#mood=default] [next=auto]You're... a... pretty
+	???: [#char=maya] [#mood=crazyup] [shake rate=20 level=20]I'm pretty!?[/shake]
+	Christina: [#char=christina] [#mood=default] Great person...
+	???: [#char=maya] [#mood=default] ...
+	???: [#char=maya] [#mood=worried] Thanks...
+	???: [#char=maya] [#mood=default] I'm Maya, by the way.
+	Maya: [#char=maya] [#mood=default] I never told you my name, did I?
+	Christina: [#char=christina] [#mood=default] No, you have not.
+	Christina: [#char=christina] [#mood=smile] It's nice to meet you.
+	Christina: [#char=christina] [#mood=thinking] I guess...
+	set maya_first_talked = true
+
+=> END
+
+~ Start_maya_bed
+
+if maya_in_cabin == true
+	Maya: [#mood=default] Why are you looking at my bed?
+	Maya: [#mood=default] Do you want to sleep next to me?
+	Christina: [#mood=default] No... I was just looking around.
+	Christina: [#mood=thinking] And even if I wanted to, there's not enough room on there.
+	Maya: [#mood=default] I can move over if you want.
+	Christina: [#mood=default] [next=auto]Kind offer but
+	Maya: [#mood=panicup] [shake rate=20 level=20]SLEEP NEXT TO ME PLEEEEAAAASE![/shake]
+	Christina: [#mood=wut] ...
+	Maya: [#mood=default] I mean, it's your choice.
+	Christina: [#mood=wut] I'll... think about it...
+else:
+	Christina: [#mood=default] It's a bed.
+
+=> END
+
+~ Start_maysie_bed
+
+if maysie_in_cabin == true
+	Maysie: [#mood=angry] Hey, that's my bed, you weirdo!
+	Christina: [#mood=blush] Sorry, just looking around.
+else:
+	Christina: [#mood=default] It's a bed.
+
+=> END
+
+~ Start_dinah_bed
+
+if dinah_in_cabin == true
+	Dinah: [#mood=default] You know that's... my bed, right?
+	Christina: [#mood=default] Really?
+	Christina: [#mood=thinking] I was just looking around.
+	Dinah: [#mood=awkward] I mean... it's fine I'm just... letting you know.
+	Christina: [#mood=confused] Are you okay?
+	Dinah: [#mood=embarrassed] Sorry, I'm just... trying to get used to the new you.
+	Christina: [#mood=happy] It's okay.
+else:
+	Christina: [#mood=default] It's a bed.
+
+=> END
+
+~ Start_christina_bed
+
+if sleepable == true
+	Christina: [#mood=default] Should I go to bed?
+	- Yes
+		do thank_you()
+	- No
+else
+	Christina: [#mood=default] It's a bed.
+
+=> END

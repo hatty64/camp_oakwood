@@ -91,91 +91,15 @@ var loadin_barley_office_ext = false
 var loadin_barley_office_ext_2 = false
 var loadin_stage = false
 var loadout_dining = false
+var loadin_barley_office = false
+var first_time_in_office = false
+var loadin_horizontal_clancy = false
+var loadin_horizontal_clancy_2 = false
+var loadin_clancy_ext = false
 
-func finish_changescene_cabin():
-	if transition_scene == true:
-		transition_scene = false
-		if current_scene == "main_camp_outside":
-			current_scene = "cabin_int_female"
-		else:
-			current_scene = "main_camp_outside"
+var input_blocked = false
+var sprint_blocked = false
+var eavesdrop_yes = false
+var eavesdrop_day0_finished = false
 
-func finish_changescene_dining():
-	if transit_to_dining == true:
-		transit_to_dining = false
-		if current_scene == "main_camp_outside":
-			current_scene = "dining_area"
-		else:
-			current_scene = "main_camp_outside"
-
-func finish_changescene_vertical():
-	if transit_to_vertical_path == true:
-		transit_to_vertical_path = false
-		if current_scene == "main_camp_outside":
-			current_scene = "vertical_path_to_camp"
-		else:
-			current_scene = "main_camp_outside"
-
-func finish_changescene_tent_path():
-	if transit_to_tent_path == true:
-		transit_to_tent_path = false
-		if current_scene == "vertical_path_to_camp":
-			current_scene = "path_to_tent"
-		else:
-			current_scene = "vertical_path_to_camp"
-
-func finish_changescene_vertical_2():
-	if transit_to_vertical_2 == true:
-		transit_to_vertical_2 = false
-		if current_scene == "path_to_tent":
-			current_scene = "vertical_path_to_camp"
-		else:
-			current_scene = "path_to_tent"
-
-func finish_changescene_tent_ext():
-	if transit_to_tent_ext == true:
-		transit_to_tent_ext = false
-		if current_scene == "path_to_tent":
-			current_scene = "tent_ext"
-		else:
-			current_scene = "path_to_tent"
-
-func finish_changescene_tent_path_2():
-	if transit_to_tent_path_2 == true:
-		transit_to_tent_path_2 = false
-		if current_scene == "tent_ext":
-			current_scene = "path_to_tent"
-		else:
-			current_scene = "tent_ext"
-
-func finish_changescene_tent():
-	if transit_to_tent == true:
-		transit_to_tent = false
-		if current_scene == "tent_ext":
-			current_scene = "tent"
-		else:
-			current_scene = "tent_ext"
-
-func finish_changescene_tent_ext_2():
-	if transit_to_tent_ext_2 == true:
-		transit_to_tent_ext_2 = false
-		if current_scene == "tent":
-			current_scene = "tent_ext"
-		else:
-			current_scene = "tent"
-
-func finish_changescene_four_way():
-	if transit_to_four_way == true:
-		transit_to_four_way = false
-		if current_scene == "main_camp_outside":
-			current_scene = "four_way"
-		else:
-			current_scene = "main_camp_outside"
-
-func finish_changescene_main_camp_2():
-	if transit_to_main_camp_2 == true:
-		transit_to_main_camp_2 = false
-		if current_scene == "four_way":
-			current_scene = "main_camp_outside"
-		else:
-			current_scene = "four_way"
+var sunset = false

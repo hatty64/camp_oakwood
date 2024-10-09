@@ -29,6 +29,7 @@ func change_scene_to_file(path: String, duration: float = DEFAULT_DURATION, dela
 
 	_animator.speed_scale = 0.5 / duration
 	_animator.play("fade")
+	Global.input_blocked = true
 	await _animator.animation_finished
 
 	var err := get_tree().change_scene_to_file(path)
@@ -40,5 +41,6 @@ func change_scene_to_file(path: String, duration: float = DEFAULT_DURATION, dela
 
 	_animator.play_backwards("fade")
 	await _animator.animation_finished
+	Global.input_blocked = false
 
 	emit_signal("scene_changed")

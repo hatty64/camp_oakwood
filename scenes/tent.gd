@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	Global.sprint_blocked = true
 	if Global.game_first_loadin == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
 		$Christina.position.x = Global.player_first_tent_positionx
@@ -9,7 +10,7 @@ func _ready():
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = Global.player_tent_positionx
 		$Christina.position.y = Global.player_tent_positiony
-	BirdSound.stop()
+	#BirdSound.stop()
 
 
 var entered = false
@@ -31,5 +32,3 @@ func _process(_delta):
 			Transit.change_scene_to_file("res://scenes/tent_ext_cutscene.tscn")
 		else:
 			Transit.change_scene_to_file("res://scenes/tent_ext.tscn")
-
-

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbbkc3hhfnjtj"]
+
+[ext_resource type="FontFile" uid="uid://cxco3lwv0bs5r" path="res://scenes/joystix monospace.otf" id="1_6pch0"]
+[ext_resource type="Script" path="res://scenes/thank_you_test.gd" id="1_n0mha"]
+
+[node name="thank_you_test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n0mha")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="thank_you" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 111.0
+offset_top = 479.0
+offset_right = 1805.0
+offset_bottom = 551.0
+
+[node name="Label" type="Label" parent="CanvasLayer/thank_you"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6pch0")
+theme_override_font_sizes/font_size = 60
+text = "Thank you for playtesting my game."

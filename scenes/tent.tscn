@@ -24,10 +24,9 @@ y_sort_enabled = true
 script = ExtResource("1_k1ty7")
 
 [node name="TileMap" parent="." instance=ExtResource("2_trsy5")]
-layer_0/tile_data = PackedInt32Array(2621502, 11, 0, 2555966, 11, 0, 2555965, 11, 0, 2621501, 11, 0)
+layer_0/tile_data = PackedInt32Array(2555966, 11, 0, 2621502, 11, 0, 2555965, 11, 0, 2621501, 11, 0)
 layer_1/tile_data = PackedInt32Array(2424893, 262155, 2, 2424894, 327691, 2, 2490429, 262155, 3, 2490430, 327691, 3)
 layer_2/tile_data = PackedInt32Array(2555966, 13, 0)
-layer_3/tile_data = PackedInt32Array()
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
