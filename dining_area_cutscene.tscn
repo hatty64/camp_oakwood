@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=3 uid="uid://djs5qba45nutc"]
 
+[ext_resource type="Script" path="res://dining_area_cutscene_2.gd" id="1_hwufw"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_mve2l"]
-[ext_resource type="Script" path="res://scenes/dining_area_cutscene.gd" id="1_rc6er"]
 [ext_resource type="Texture2D" uid="uid://d2nyvap8tjeqf" path="res://character_sprite/jacob_remake_full.png" id="2_dqn4a"]
 [ext_resource type="Texture2D" uid="uid://s1pgk04kweej" path="res://character_sprite/damian_remake_full.png" id="3_mlso1"]
 [ext_resource type="Texture2D" uid="uid://dcwvjiyi43qhq" path="res://character_sprite/jacob_fall.png" id="4_mqsqe"]
@@ -842,7 +842,7 @@ _data = {
 
 [node name="dining_area_cutscene" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_rc6er")
+script = ExtResource("1_hwufw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5

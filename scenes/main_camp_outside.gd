@@ -4,6 +4,8 @@ extends Node2D
 @onready var casper_anim = $casper/casper_anim
 @onready var animation_player = $CanvasLayer2/AnimationPlayer
 @onready var eavesdrop = $eavesdrop
+@onready var eavesdrop_girls: Area2D = $eavesdrop_girls
+@onready var cutscenes: AnimationPlayer = $cutscenes
 
 func _ready():
 	Global.sprint_blocked = false
@@ -18,13 +20,17 @@ func _ready():
 	elif Global.loadin_world2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
 		$Christina.position.x = 1016
-		$Christina.position.y = 604
+		$Christina.position.y = 612
 	elif Global.loadin_main_camp_2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(1, 0))
 		$Christina.position.x = 801
 		$Christina.position.y = 647
 	
 	casper_anim.play("reading")
+	
+	#if GlobalDays.ep_one_day_one == true:
+		#GlobalDays.play_cutscene()
+		#squirrel_steals_cookie()
 
 
 var entered = false
@@ -64,7 +70,7 @@ func _process(_delta):
 				Global.loadin_main_camp = false
 				Global.loadin_main_camp_2 = false
 			else:
-				Transit.change_scene_to_file("res://scenes/dining_area_cutscene.tscn")
+				Transit.change_scene_to_file("res://scenes/dining_cutscene.tscn")
 				Global.loadin_dining = true
 	if entered_4 == true:
 		Transit.change_scene_to_file("res://scenes/four_way.tscn")
@@ -82,6 +88,8 @@ func _process(_delta):
 		$casper.position.y = 0
 		eavesdrop.position.x = 0
 		eavesdrop.position.y = 0
+		eavesdrop_girls.position.x = 0
+		eavesdrop_girls.position.y = 0
 	else:
 		$clancy.position.x = 0
 		$clancy.position.y = 0
@@ -89,9 +97,25 @@ func _process(_delta):
 		$casper.position.y = 592
 		eavesdrop.position.x = 919
 		eavesdrop.position.y = 589
+		eavesdrop_girls.position.x = 1048
+		eavesdrop_girls.position.y = 589
+		
+	#if GlobalDays.ep_one_day_one == true:
+		#$squirrel.position.x = 1191
+		#$squirrel.position.y = 643
+		#$maysie.position.x = 1192
+		#$maysie.position.y = 638
+	#else:
+		#$squirrel.position.x = 0
+		#$squirrel.position.y = 0
+		#$maysie.position.x = 0
+		#$maysie.position.y = 0
 	
-	if Global.eavesdrop_day0_finished == true:
+	if Global.eavesdrop_day0_finished_boys == true:
 		eavesdrop.dialogue_start = "Start_3"
+	
+	if Global.eavesdrop_day0_finished_girls == true:
+		eavesdrop_girls.dialogue_start = "Start_3"
 
 
 func _on_vertical_path_transition_point_body_entered(body):
@@ -147,8 +171,28 @@ func eavesdrop_boys_cabin() -> void:
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	await get_tree().create_timer(1.0).timeout
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/eavesdrop_dialogue.dialogue"), "Start_2")
+	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/eavesdrop_dialogue.dialogue"), "Start_boys")
 	await DialogueManager.dialogue_ended
 	animation_player.play_backwards("fade_out")
 	await animation_player.animation_finished
 	Global.input_blocked = false
+
+func eavesdrop_girls_cabin() -> void:
+	animation_player.play("fade_out")
+	await animation_player.animation_finished
+	await get_tree().create_timer(1.0).timeout
+	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/eavesdrop_dialogue.dialogue"), "Start_girls")
+	await DialogueManager.dialogue_ended
+	animation_player.play_backwards("fade_out")
+	await animation_player.animation_finished
+	Global.input_blocked = false
+
+#func squirrel_steals_cookie():
+	#$Christina.position.x = 1016
+	#$Christina.position.y = 612
+	#cutscenes.play("squirrel_run")
+	#await cutscenes.animation_finished
+	#$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(-1, 0))
+	#cutscenes.play("maysie_show_up")
+	#await cutscenes.animation_finished
+	#DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/ep_1_cutscenes.dialogue"), "Start_cookie_steal_1")

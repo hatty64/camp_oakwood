@@ -1,21 +1,21 @@
 ~ Start
 if maysie_first_talked == false
-	Christina: [#char=christina] [#mood=happy] Hi, I'm Christina.
-	???: [#char=maysie] [#mood=bored] ...
-	Christina: [#char=christina] [#mood=smile] So... what's your name?
-	???: [#char=maysie] [#mood=bored]  Maysie.
-	Christina: [#char=christina] [#mood=happy] Oh, well hi Maysie, it's nice to meet you... again?
-	Maysie: [#char=maysie] [#mood=bored] ...
-	Christina: [#char=christina] [#mood=default] ... Not much of a talker, are you?
-	Maysie: [#char=maysie] [#mood=bored] We barely know eachother, what is there to talk about?
-	Christina: [#char=christina] [#mood=default] So... we're not friends?
-	Maysie: [#char=maysie] [#mood=bored] What do you think?
-	Christina: [#char=christina] [#mood=default] ... Rude.
+	Christina: [#chr=christina] [#mood=happy] Hi, I'm Christina.
+	???: [#chr=maysie] [#mood=bored] ...
+	Christina: [#chr=christina] [#mood=smile] So... what's your name?
+	???: [#chr=maysie] [#mood=bored]  Maysie.
+	Christina: [#chr=christina] [#mood=happy] Oh, well hi Maysie, it's nice to meet you... again?
+	Maysie: [#chr=maysie] [#mood=bored] ...
+	Christina: [#chr=christina] [#mood=default] ... Not much of a talker, are you?
+	Maysie: [#chr=maysie] [#mood=bored] We barely know eachother, what is there to talk about?
+	Christina: [#chr=christina] [#mood=default] So... we're not friends?
+	Maysie: [#chr=maysie] [#mood=bored] What do you think?
+	Christina: [#chr=christina] [#mood=default] ... Rude.
 	set maysie_first_talked = true
 	=> END
 else
-	Maysie: [#char=maysie] [#mood=angry] What are you looking at?
-	Christina: [#char=christina] [#mood=nervous] [next=auto]Sorry, I thought-
-	Maysie: [#char=maysie] [#mood=angry] Just leave me alone!
-	Christina: [#char=christina] [#mood=nervous] Okay, sheesh...
+	Maysie: [#chr=maysie] [#mood=angry] What are you looking at?
+	Christina: [#chr=christina] [#mood=nervous] [next=auto]Sorry, I thought-
+	Maysie: [#chr=maysie] [#mood=angry] Just leave me alone!
+	Christina: [#chr=christina] [#mood=nervous] Okay, sheesh...
 	=> END

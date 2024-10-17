@@ -10,7 +10,7 @@ func _ready():
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = Global.player_tent_positionx
 		$Christina.position.y = Global.player_tent_positiony
-	#BirdSound.stop()
+	BGSPlayer.stop()
 
 
 var entered = false

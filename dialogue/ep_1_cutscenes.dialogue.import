@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c7i40bisg1d3g"
+path="res://.godot/imported/ep_1_cutscenes.dialogue-172b84d06d245c89fd3c4b4fe692231a.tres"
+
+[deps]
+
+source_file="res://dialogue/ep_1_cutscenes.dialogue"
+dest_files=["res://.godot/imported/ep_1_cutscenes.dialogue-172b84d06d245c89fd3c4b4fe692231a.tres"]
+
+[params]
+
+defaults=true

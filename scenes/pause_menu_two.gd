@@ -79,9 +79,9 @@ func _on_back_pressed():
 
 
 
-func _on_color_rect_mouse_entered():
-	barleys_office.show()
-
-
-func _on_color_rect_mouse_exited():
-	barleys_office.hide()
+#func _on_color_rect_mouse_entered():
+	#barleys_office.show()
+#
+#
+#func _on_color_rect_mouse_exited():
+	#barleys_office.hide()

@@ -1,15 +1,16 @@
-extends Node2D
+extends Node
 
-@onready var christina_anim := $christina/AnimationPlayer
-@onready var camera_anim := $Camera2D/AnimationPlayer
+
+@onready var christina_anim = $christina/AnimationPlayer
+@onready var camera_anim = $Camera2D/AnimationPlayer
 @onready var exclamation = $damian/exclamation
-@onready var jacob_anim := $jacob/AnimationPlayer
-@onready var dinah_anim := $dinah/AnimationPlayer
-@onready var maya_anim := $maya/AnimationPlayer
-@onready var damian_anim := $damian/AnimationPlayer
+@onready var jacob_anim = $jacob/AnimationPlayer
+@onready var dinah_anim = $dinah/AnimationPlayer
+@onready var maya_anim = $maya/AnimationPlayer
+@onready var damian_anim = $damian/AnimationPlayer
 
 
-func _ready():
+func _ready() -> void:
 	BirdSound.stop()
 	await get_tree().create_timer(3.0).timeout
 	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start")

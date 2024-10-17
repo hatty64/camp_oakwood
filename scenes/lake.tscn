@@ -13,13 +13,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prjtl"]
 size = Vector2(107, 20)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3xcn"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8p7e5"]
 size = Vector2(396, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjetm"]
 size = Vector2(20, 137)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_y3xcn"]
 
 [node name="lake" type="Node2D"]
 y_sort_enabled = true
@@ -46,7 +46,7 @@ layer_4/tile_data = PackedInt32Array(2228282, 29, 1, 2228283, 65565, 1, 2228284,
 layer_5/tile_data = PackedInt32Array(2228281, 19, 0, 2228282, 19, 0, 2228283, 19, 0, 2228284, 19, 0, 2228285, 19, 0, 2228286, 19, 0, 2162750, 19, 0, 2162751, 19, 0, 2162752, 19, 0, 2162749, 19, 0, 2162748, 19, 0, 2162747, 19, 0, 2162746, 19, 0, 2162745, 19, 0, 2162744, 19, 0, 2162743, 19, 0, 2097207, 19, 0, 2097208, 19, 0, 2097209, 19, 0, 2097210, 19, 0, 2097211, 19, 0, 2097212, 19, 0, 2097213, 19, 0, 2097214, 19, 0, 2097215, 19, 0, 2097216, 19, 0, 2031680, 19, 0, 2031679, 19, 0, 2031678, 19, 0, 2031677, 19, 0, 2031676, 19, 0, 2031675, 19, 0, 2031674, 19, 0, 2031673, 19, 0, 2031672, 19, 0, 2031671, 19, 0, 1966135, 19, 0, 1966136, 19, 0, 1966137, 19, 0, 1966138, 19, 0, 1966139, 19, 0, 1966140, 19, 0, 1966141, 19, 0, 1966142, 19, 0, 1966143, 19, 0, 1966144, 19, 0, 1900608, 19, 0, 1900607, 19, 0, 1900606, 19, 0, 1900605, 19, 0, 1900604, 19, 0, 1900603, 19, 0, 1900602, 19, 0, 1900601, 19, 0, 1900600, 19, 0, 1900599, 19, 0, 1835063, 19, 0, 1835064, 19, 0, 1835065, 19, 0, 1835066, 19, 0, 1835067, 19, 0, 1835068, 19, 0, 1835069, 19, 0, 1835070, 19, 0, 1835071, 19, 0, 1835072, 19, 0)
 layer_6/name = "shadow"
 layer_6/z_index = 1
-layer_6/tile_data = PackedInt32Array(2228290, 327705, 2, 2162754, 327705, 1, 2162755, 393241, 1, 2162756, 393241, 1, 2162757, 393241, 1, 2162758, 393241, 1, 2162759, 393241, 1, 2228295, 393241, 2, 2228294, 393241, 2, 2228293, 393241, 2, 2228292, 393241, 2, 2228291, 393241, 2, 2097218, 327705, 1)
+layer_6/tile_data = PackedInt32Array(2228290, 327705, 2, 2162754, 327705, 1, 2162755, 393241, 1, 2162756, 393241, 1, 2162757, 393241, 1, 2162758, 393241, 1, 2162759, 393241, 1, 2228295, 393241, 2, 2228294, 393241, 2, 2228293, 393241, 2, 2228292, 393241, 2, 2228291, 393241, 2, 2097218, 327705, 1, 2097219, 393241, 1, 2097220, 393241, 1, 2097221, 393241, 1, 2097222, 393241, 1, 2097223, 393241, 1)
 layer_7/name = "rain_splash"
 layer_7/tile_data = PackedInt32Array(1835062, 30, 0, 2031670, 30, 0, 2424888, 30, 0, 2424891, 30, 0, 2359361, 30, 0, 2162753, 30, 0, 2031681, 30, 0, 2359358, 30, 0, 2293823, 30, 0, 2293821, 30, 0, 2490427, 30, 0, 2490428, 30, 0, 2555962, 30, 0, 2359365, 30, 0, 2359366, 30, 0, 2424901, 30, 0, 2687035, 30, 0)
 
@@ -100,6 +100,13 @@ texture = ExtResource("5_mj48b")
 hframes = 4
 vframes = 4
 
+[node name="Actionable_2" parent="ester" instance=ExtResource("5_8316s")]
+position = Vector2(0, 5)
+dialogue_resource = ExtResource("8_na31b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ester/Actionable_2"]
+shape = SubResource("CircleShape2D_y3xcn")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(703, 210)
 
@@ -113,13 +120,6 @@ position = Vector2(1283, 481)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lake_exit_point_2"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_cjetm")
-
-[node name="Actionable_2" parent="." instance=ExtResource("5_8316s")]
-position = Vector2(777, 445)
-dialogue_resource = ExtResource("8_na31b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable_2"]
-shape = SubResource("CircleShape2D_y3xcn")
 
 [node name="sunset" parent="." instance=ExtResource("9_vh370")]
 

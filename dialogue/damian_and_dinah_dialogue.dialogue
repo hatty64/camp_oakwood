@@ -1,30 +1,31 @@
 ~ Start
+
 if damian_and_dinah_first_talked == false
-	Damian: [#char=damian] [#mood=thinking] Hmm... something isn't adding up.
-	Damian: [#char=damian] [#mood=thinking] How can someone get amnesia without being injured?
-	???: [#char=dinah] [#mood=confused] Maybe she has Alzheimer's?
-	Damian: [#char=damian] [#mood=laughing] Don't be ridiculous, if she had Alzheimer's we would've known by now.
-	Damian: [#char=damian] [#mood=confident] It's gotta be something supernatural.
-	???: [#char=dinah] [#mood=bored] Yup... supernatural...
-	Christina: [#char=christina] [#mood=confused] What are you guys doing?
-	Damian: [#char=damian] [#mood=happy] Investigating the cause of your sudden amnesia.
-	???: [#char=dinah] [#mood=default] It could just be Alzheimer's
-	Damian: [#char=damian] [#mood=mad] [shake rate=20 level=20]ITS NOT ALZHEIMERS!!![/shake]
-	Damian: [#char=damian] [#mood=confident] What my assistant meant was obviously something supernatural.
-	???: [#char=dinah] [#mood=bored] Yeah... that.
-	???: [#char=dinah] [#mood=smile] I'm Dinah by the way and you already met my brother.
-	Dinah: [#char=dinah] [#mood=smile]  He's really into roleplaying and fantasy stuff.
-	Dinah: [#char=dinah] [#mood=smile] I don't really like it, but I just play along.
-	Dinah: [#char=dinah] [#mood=smile] Today we're playing detectives.
-	Christina: [#char=christina] [#mood=happy] That sounds like fun.
-	Dinah: [#char=dinah] [#mood=bored] Not if you're the assistant.
+	Damian: [#chr=damian] [#mood=thinking] Hmm... something isn't adding up.
+	Damian: [#chr=damian] [#mood=thinking] How can someone get amnesia without being injured?
+	???: [#chr=dinah] [#mood=confused] Maybe she has Alzheimer's?
+	Damian: [#chr=damian] [#mood=laughing] Don't be ridiculous, if she had Alzheimer's we would've known by now.
+	Damian: [#chr=damian] [#mood=confident] It's gotta be something supernatural.
+	???: [#chr=dinah] [#mood=bored] Yup... supernatural...
+	Christina: [#chr=christina] [#mood=confused] What are you guys doing?
+	Damian: [#chr=damian] [#mood=happy] Investigating the cause of your sudden amnesia.
+	???: [#chr=dinah] [#mood=default] It could just be Alzheimer's
+	Damian: [#chr=damian] [#mood=mad] [shake rate=20 level=20]ITS NOT ALZHEIMERS!!![/shake]
+	Damian: [#chr=damian] [#mood=confident] What my assistant meant was obviously something supernatural.
+	???: [#chr=dinah] [#mood=bored] Yeah... that.
+	???: [#chr=dinah] [#mood=smile] I'm Dinah by the way and you already met my brother.
+	Dinah: [#chr=dinah] [#mood=smile]  He's really into roleplaying and fantasy stuff.
+	Dinah: [#chr=dinah] [#mood=smile] I don't really like it, but I just play along.
+	Dinah: [#chr=dinah] [#mood=smile] Today we're playing detectives.
+	Christina: [#chr=christina] [#mood=happy] That sounds like fun.
+	Dinah: [#chr=dinah] [#mood=bored] Not if you're the assistant.
 	set damian_and_dinah_first_talked = true
-	=> END
 else
-	Christina: [#char=christina] [#mood=smile] So, how's your research going?
-	Damian: [#char=damian] [#mood=thinking] Still thinking, but I'm getting close, I can feel it!
-	Christina: [#char=christina] [#mood=happy] Well, I'll leave you to it then.
-	Damian: [#char=damian] [#mood=happy] We'll let you know when we found something.
-	Dinah: [#char=dinah] [#mood=bored] [next=auto]It could just be Alzhe-
-	Damian: [#char=damian] [#mood=no] [shake rate=20 level=20]It's not Alzheimer's.[/shake]
-	=> END
+	Christina: [#chr=christina] [#mood=smile] So, how's your research going?
+	Damian: [#chr=damian] [#mood=thinking] Still thinking, but I'm getting close, I can feel it!
+	Christina: [#chr=christina] [#mood=happy] Well, I'll leave you to it then.
+	Damian: [#chr=damian] [#mood=happy] We'll let you know when we found something.
+	Dinah: [#chr=dinah] [#mood=bored] [next=auto]It could just be Alzhe-
+	Damian: [#chr=damian] [#mood=no] [shake rate=20 level=20]It's not Alzheimer's.[/shake]
+
+=> END

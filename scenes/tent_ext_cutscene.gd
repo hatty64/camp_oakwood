@@ -8,8 +8,7 @@ extends Node2D
 
 func _ready():
 	Global.game_first_loadin = false
-	#BirdSound.play()
-	#BirdSound.play_music_level()
+	BGSPlayer.play_rain()
 	await get_tree().create_timer(3.0).timeout
 	camera_anim.speed_scale = 0.5
 	clancy_anim.speed_scale = 0.5
@@ -29,4 +28,4 @@ func _ready():
 	await camera_anim.animation_finished
 	await get_tree().create_timer(1.0).timeout
 	Transit.change_scene_to_file("res://scenes/tent_ext.tscn")
-	BirdSound.stop()
+	BGSPlayer.stop()

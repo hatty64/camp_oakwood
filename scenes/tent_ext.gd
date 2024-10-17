@@ -2,8 +2,6 @@ extends Node2D
 
 func _ready():
 	Global.sprint_blocked = false
-	#BirdSound.play()
-	#BirdSound.play_music_level()
 	if Global.loadin_tent_ext == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 1001
@@ -12,6 +10,11 @@ func _ready():
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
 		$Christina.position.x = 1001
 		$Christina.position.y = 684
+	if Global.rain == true:
+		BGSPlayer.play_rain()
+		BGSPlayer.play()
+	else:
+		BGSPlayer.stop()
 
 var entered = false
 

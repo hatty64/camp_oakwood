@@ -16,22 +16,25 @@ func _ready():
 	update_animation_parameters(starting_direction)
 
 func _physics_process(_delta):
-	if Global.input_blocked != true:
-		var input_direction = Vector2(
-			Input.get_action_strength("right") - Input.get_action_strength("left"),
-			Input.get_action_strength("down") - Input.get_action_strength("up")
-	)
+	if not Global.input_blocked:
+		handle_player_input()
 	
-		update_animation_parameters(input_direction)
+
+
+func handle_player_input():
+	var input_direction = Vector2(
+	Input.get_action_strength("right") - Input.get_action_strength("left"),
+	Input.get_action_strength("down") - Input.get_action_strength("up"))
 	
-		sprinting()
+	update_animation_parameters(input_direction)
 	
-		velocity = input_direction * move_speed
+	sprinting()
 	
-		move_and_slide()
+	velocity = input_direction * move_speed
 	
-		pick_new_state()
+	move_and_slide()
 	
+	pick_new_state()
 
 
 func update_animation_parameters(move_input : Vector2):
@@ -66,12 +69,12 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
-			Global.input_blocked = true
+			GlobalDays.start_dialogue()
 			state_machine.travel("idle")
 			actionables[0].action()
 			input_vector = Vector2.ZERO
 			await DialogueManager.dialogue_ended
-			Global.input_blocked = false
+			GlobalDays.end_dialogue()
 			return
 
 func get_mirrored_frame():

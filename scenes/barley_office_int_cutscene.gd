@@ -15,4 +15,5 @@ func _ready():
 	await animation_player.animation_finished
 	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/barley_office_cutscene.dialogue"), "Start_3")
 	await DialogueManager.dialogue_ended
+	Global.rain = false
 	Transit.change_scene_to_file("res://scenes/barley_office_int.tscn")

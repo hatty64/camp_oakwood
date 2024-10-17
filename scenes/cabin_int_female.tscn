@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://0mlshwlcekgr"]
+[gd_scene load_steps=19 format=3 uid="uid://0mlshwlcekgr"]
 
 [ext_resource type="Script" path="res://scenes/cabin_int_female.gd" id="1_nxa5s"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="2_hbujl"]
@@ -19,6 +19,22 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_8iowk"]
 radius = 20.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_oojby"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_koh5k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4u0q"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjlxa"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5qly8"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g3dxe"]
+radius = 6.0
+
 [node name="cabin_int_female" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_nxa5s")
@@ -34,7 +50,7 @@ layer_4/z_index = 1
 layer_4/tile_data = PackedInt32Array(2752575, 65536, 3, 2752578, 65536, 3, 2359359, 65536, 5, 2359360, 65536, 5, 2359361, 65536, 5, 2359362, 65536, 5, 2687038, 131072, 4, 2621502, 131072, 4, 2555966, 131072, 4, 2490430, 131072, 4, 2687043, 0, 4, 2621507, 0, 4, 2555971, 0, 4, 2490435, 0, 4, 2424899, 0, 4, 2424894, 131072, 4, 2752574, 65536, 6, 2359358, 65536, 7, 2359363, 0, 7, 2752579, 0, 6)
 
 [node name="Christina" parent="." instance=ExtResource("3_koayt")]
-position = Vector2(1048, 653)
+position = Vector2(1048, 652)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 zoom = Vector2(6, 6)
@@ -96,6 +112,13 @@ one_shot = true
 texture = ExtResource("8_npj4i")
 flip_h = true
 
+[node name="Actionable" parent="maysie" instance=ExtResource("5_4jkbk")]
+dialogue_resource = ExtResource("6_2ji8e")
+dialogue_start = "Start_maysie"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maysie/Actionable"]
+shape = SubResource("CircleShape2D_oojby")
+
 [node name="dinah" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="dinah"]
@@ -103,6 +126,45 @@ texture = ExtResource("9_m62qw")
 hframes = 4
 vframes = 4
 frame = 4
+
+[node name="Actionable" parent="dinah" instance=ExtResource("5_4jkbk")]
+dialogue_resource = ExtResource("6_2ji8e")
+dialogue_start = "Start_dinah"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dinah/Actionable"]
+shape = SubResource("CircleShape2D_koh5k")
+
+[node name="maya_bed" parent="." instance=ExtResource("5_4jkbk")]
+position = Vector2(1097, 557)
+dialogue_resource = ExtResource("6_2ji8e")
+dialogue_start = "Start_maya_bed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maya_bed"]
+shape = SubResource("CircleShape2D_w4u0q")
+
+[node name="maysie_bed" parent="." instance=ExtResource("5_4jkbk")]
+position = Vector2(1097, 645)
+dialogue_resource = ExtResource("6_2ji8e")
+dialogue_start = "Start_maysie_bed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maysie_bed"]
+shape = SubResource("CircleShape2D_bjlxa")
+
+[node name="dinah_bed" parent="." instance=ExtResource("5_4jkbk")]
+position = Vector2(1001, 644)
+dialogue_resource = ExtResource("6_2ji8e")
+dialogue_start = "Start_dinah_bed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dinah_bed"]
+shape = SubResource("CircleShape2D_5qly8")
+
+[node name="christina_bed" parent="." instance=ExtResource("5_4jkbk")]
+position = Vector2(1001, 556)
+dialogue_resource = ExtResource("6_2ji8e")
+dialogue_start = "Start_christina_bed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="christina_bed"]
+shape = SubResource("CircleShape2D_g3dxe")
 
 [connection signal="body_entered" from="cabin_f_exit_point" to="." method="_on_cabin_f_exit_point_body_entered"]
 [connection signal="body_exited" from="cabin_f_exit_point" to="." method="_on_cabin_f_exit_point_body_exited"]

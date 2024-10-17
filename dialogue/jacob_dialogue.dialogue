@@ -1,22 +1,22 @@
 ~ Start
 if jacob_first_talked == false
-	???: [#char=jacob] [#mood=nervous] Hey, sorry about Damian, he can be a little dramatic sometimes.
-	Christina: [#char=christina] [#mood=happy] It's okay, he seems pretty nice.
-	Christina: [#char=christina] [#mood=smile] So, what's your name?
-	???: [#char=jacob] [#mood=smile] Oh, umm... my name is Jacob.
-	Jacob: [#char=jacob] [#mood=smile] We were both classmates in middle school.
-	Jacob: [#char=jacob] [#mood=smile] I was the straight A student and you were the average student.
-	Jacob: [#char=jacob] [#mood=smile] We used to hang out together after school.
-	Jacob: [#char=jacob] [#mood=smile] Go to the library, studying at my place
-	Jacob: [#char=jacob] [#mood=thinking] ...
-	Jacob: [#char=jacob] [#mood=smile] Go to the library.
-	Christina: [#char=christina] [#mood=default] You already said that.
-	Jacob: [#char=jacob] [#mood=nervous] I know, I just couldn't think of anything else.
+	???: [#chr=jacob] [#mood=nervous] Hey, sorry about Damian, he can be a little dramatic sometimes.
+	Christina: [#chr=christina] [#mood=happy] It's okay, he seems pretty nice.
+	Christina: [#chr=christina] [#mood=smile] So, what's your name?
+	???: [#chr=jacob] [#mood=smile] Oh, umm... my name is Jacob.
+	Jacob: [#chr=jacob] [#mood=smile] We were both classmates in middle school.
+	Jacob: [#chr=jacob] [#mood=smile] I was the straight A student and you were the average student.
+	Jacob: [#chr=jacob] [#mood=smile] We used to hang out together after school.
+	Jacob: [#chr=jacob] [#mood=smile] Go to the library, studying at my place
+	Jacob: [#chr=jacob] [#mood=thinking] ...
+	Jacob: [#chr=jacob] [#mood=smile] Go to the library.
+	Christina: [#chr=christina] [#mood=default] You already said that.
+	Jacob: [#chr=jacob] [#mood=nervous] I know, I just couldn't think of anything else.
 	set jacob_first_talked = true
 	=> END
 else
-	Jacob: [#char=jacob] [#mood=smile] Anything else you wanna talk about?
-	Christina: [#char=christina] [#mood=thinking] No, not that I know of.
-	Jacob: [#char=jacob] [#mood=smile] Well, if you need anything, just let me know.
+	Jacob: [#chr=jacob] [#mood=smile] Anything else you wanna talk about?
+	Christina: [#chr=christina] [#mood=thinking] No, not that I know of.
+	Jacob: [#chr=jacob] [#mood=smile] Well, if you need anything, just let me know.
 	=> END
 

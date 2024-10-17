@@ -29,6 +29,15 @@ func _process(_delta):
 		Global.loadin_lake_2 = false
 		Global.loadin_four_way_2 = false
 		Global.loadin_path_to_barley = true
+	
+	if Global.first_time_in_office != true:
+		$ester.position.x = 0
+		$ester.position.y = 0
+	else:
+		$ester.position.x = 777
+		$ester.position.y = 440
+	#if $Christina.input_vector == Vector2.ZERO:
+		#$Christina.state_machine.travel("idle")
 
 
 func _on_lake_exit_point_body_entered(body):
@@ -43,16 +52,17 @@ func _on_lake_exit_point_body_exited(body):
 
 func _on_lake_exit_point_2_body_entered(body):
 	if body.has_method("player"):
+		print($Christina.input_vector)
 		if Global.first_time_in_dining == true:
+			GlobalDays.cutscene_playing = true
 			$Christina.input_vector = Vector2.ZERO
 			$Christina.position.x = 1263
 			$Christina.state_machine.travel("idle")
-			Global.input_blocked = true
 			$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(-1, 0))
 			DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/ester_dialogue.dialogue"), "Start_2")
 			Global.annoying_ester += 1
 			await DialogueManager.dialogue_ended
-			Global.input_blocked = false
+			GlobalDays.cutscene_playing = false
 		else:
 			entered_2 = true
 

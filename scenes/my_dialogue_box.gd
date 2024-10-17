@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var portrait: TextureRect = $Balloon/Dialogue/HBoxContainer/Portrait
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
-@onready var night_talk: AudioStreamPlayer2D = $night_talk
+#@onready var night_talk: AudioStreamPlayer2D = $night_talk
 @onready var text_sound = $text_sound
 ## The dialogue resource
 var resource: DialogueResource
@@ -36,15 +36,15 @@ var dialogue_line: DialogueLine:
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line
-		var char = dialogue_line.get_tag_value("char")
-		var text_sound_path: String = "res://character_sounds/%s.wav" % [char.to_lower()]
+		var chr = dialogue_line.get_tag_value("chr")
+		var text_sound_path: String = "res://character_sounds/%s.wav" % [chr.to_lower()]
 		if ResourceLoader.exists(text_sound_path):
 			text_sound.stream = load(text_sound_path)
 		else:
 			text_sound.stream = null
 
 		var mood = dialogue_line.get_tag_value("mood")
-		var portrait_emotion_path: String = "res://portraits/%s/%s.png" % [char.to_lower(), mood]
+		var portrait_emotion_path: String = "res://portraits/%s/%s.png" % [chr.to_lower(), mood]
 		if ResourceLoader.exists(portrait_emotion_path):
 			portrait.texture = load(portrait_emotion_path)
 			portrait.custom_minimum_size.x = 300
@@ -146,6 +146,6 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_response_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
-func _on_dialogue_label_spoke(letter, letter_index, speed):
+func _on_dialogue_label_spoke(letter, _letter_index, _speed):
 	if not letter in [".", " "]:
 		text_sound.play()

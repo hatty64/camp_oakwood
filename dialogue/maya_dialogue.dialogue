@@ -1,21 +1,21 @@
 ~ Start
 if maya_first_talked == false
-	???: [#char=maya] [#mood=default] So... you lost... all your memories?
-	Christina: [#char=christina] [#mood=thinking] Yeah, that's what I've been told.
-	???: [#char=maya] [#mood=default] Oh... okay.
-	???: [#char=maya] [#mood=default] I'm Maya...
-	Christina: [#char=christina] [#mood=happy] Hi Maya.
-	Maya: [#char=maya] [#mood=default] ...
-	Christina: [#char=christina] [#mood=default] ...
-	Christina: [#char=christina] [#mood=smile] Okay, I'll see you around!
-	Maya: [#char=maya] [#mood=default] Bye...
+	???: [#chr=maya] [#mood=default] So... you lost... all your memories?
+	Christina: [#chr=christina] [#mood=thinking] Yeah, that's what I've been told.
+	???: [#chr=maya] [#mood=default] Oh... okay.
+	???: [#chr=maya] [#mood=default] I'm Maya...
+	Christina: [#chr=christina] [#mood=happy] Hi Maya.
+	Maya: [#chr=maya] [#mood=default] ...
+	Christina: [#chr=christina] [#mood=default] ...
+	Christina: [#chr=christina] [#mood=smile] Okay, I'll see you around!
+	Maya: [#chr=maya] [#mood=default] Bye...
 	set maya_first_talked = true
 	=> END
 else
-	Maya: [#char=maya] [#mood=crazy] [shake rate=20 level=20]OMG OMG OMG, She doesn't know anything... this is perfect![/shake]
-	Maya: [#char=maya] [#mood=crazy] [shake rate=20 level=20]I CAN START OVER, ME AND HER CAN BE FINALLY TOGETHER!!![/shake]
-	Maya: [#char=maya] [#mood=crazy] [shake rate=20 level=20]TOGETHER... [speed=0.2]FOREVER!!![/shake]
-	Christina: [#char=christina] [#mood=wut] ...
-	Maya: [#char=maya] [#mood=panic] [shake rate=20 level=20]SHOOT, DID I SAY THAT OUT LOUD?[/shake]
-	Maya: [#char=maya] [#mood=panic] [shake rate=20 level=20]OKAY, CALM DOWN... ACT NATURAL![/shake]
+	Maya: [#chr=maya] [#mood=crazy] [shake rate=20 level=20]OMG OMG OMG, She doesn't know anything... this is perfect![/shake]
+	Maya: [#chr=maya] [#mood=crazy] [shake rate=20 level=20]I CAN START OVER, ME AND HER CAN BE FINALLY TOGETHER!!![/shake]
+	Maya: [#chr=maya] [#mood=crazy] [shake rate=20 level=20]TOGETHER... [speed=0.2]FOREVER!!![/shake]
+	Christina: [#chr=christina] [#mood=wut] ...
+	Maya: [#chr=maya] [#mood=panic] [shake rate=20 level=20]SHOOT, DID I SAY THAT OUT LOUD?[/shake]
+	Maya: [#chr=maya] [#mood=panic] [shake rate=20 level=20]OKAY, CALM DOWN... ACT NATURAL![/shake]
 	=> END

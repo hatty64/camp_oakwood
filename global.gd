@@ -100,6 +100,8 @@ var loadin_clancy_ext = false
 var input_blocked = false
 var sprint_blocked = false
 var eavesdrop_yes = false
-var eavesdrop_day0_finished = false
+var eavesdrop_day0_finished_boys = false
+var eavesdrop_day0_finished_girls = false
 
 var sunset = false
+var rain = true

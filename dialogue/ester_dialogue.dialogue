@@ -1,63 +1,63 @@
 ~ Start
 if got_map == false and first_time_in_dining == true
-	Ester: [#mood=happy] Hey Christina, how do you feel?
-	Christina: [#mood=happy] I feel pretty good!
-	Christina: [#mood=thinking] Still have amnesia though.
-	Ester: [#mood=smile] That's okay.
-	Ester: [#mood=smile] Did you say hi to your friends yet?
-	Christina: [#mood=smile] Not yet, I'm just looking around.
-	Ester: [#mood=smile] Well, you better say hi to them, they might be worried about you.
+	Ester: [#chr=ester] [#mood=happy] Hey Christina, how do you feel?
+	Christina: [#chr=christina] [#mood=happy] I feel pretty good!
+	Christina: [#chr=christina] [#mood=thinking] Still have amnesia though.
+	Ester: [#chr=ester] [#mood=smile] That's okay.
+	Ester: [#chr=ester] [#mood=smile] Did you say hi to your friends yet?
+	Christina: [#chr=christina] [#mood=smile] Not yet, I'm just looking around.
+	Ester: [#chr=ester] [#mood=smile] Well, you better say hi to them, they might be worried about you.
 
 => END
 
 elif got_map == false and first_time_in_dining == false 
-	Ester: [#mood=happy] Hey Christina, how do you feel?
-	Christina: [#mood=happy] I feel pretty good!
-	Christina: [#mood=thinking] Still have amnesia though.
-	Ester: [#mood=smile] That's okay.
-	Ester: [#mood=smile] Did you say hi to your friends yet?
-	Christina: [#mood=happy] I did!
-	Christina: [#mood=smile] They were glad that I'm okay.
-	Christina: [#mood=thinking] Sort of...
-	Ester: [#mood=happy] That's good to hear!
-	Ester: [#mood=smile] By the way, Barley wants to speak to you.
-	Ester: [#mood=smile] Do you know where he's at?
-	Christina: [#mood=default] Not a clue.
-	Ester: [#mood=smile] Just follow the dirt path to the right and go straight up, you'll find his office there.
-	Ester: [#mood=smile] Or you can get a map from Clancy.
-	Ester: [#mood=default] Do you have a map?
-	Christina: [#mood=smile] No, but I'll figure it out.
-	Ester: [#mood=happy] Alrighty then, I'll see you around!
+	Ester: [#chr=ester] [#mood=happy] Hey Christina, how do you feel?
+	Christina: [#chr=christina] [#mood=happy] I feel pretty good!
+	Christina: [#chr=christina] [#mood=thinking] Still have amnesia though.
+	Ester: [#chr=ester] [#mood=smile] That's okay.
+	Ester: [#chr=ester] [#mood=smile] Did you say hi to your friends yet?
+	Christina: [#chr=christina] [#mood=happy] I did!
+	Christina: [#chr=christina] [#mood=smile] They were glad that I'm okay.
+	Christina: [#chr=christina] [#mood=thinking] Sort of...
+	Ester: [#chr=ester] [#mood=happy] That's good to hear!
+	Ester: [#chr=ester] [#mood=smile] By the way, Barley wants to speak to you.
+	Ester: [#chr=ester] [#mood=smile] Do you know where he's at?
+	Christina: [#chr=christina] [#mood=default] Not a clue.
+	Ester: [#chr=ester] [#mood=smile] Just follow the dirt path to the right and go straight up, you'll find his office there.
+	Ester: [#chr=ester] [#mood=smile] Or you can get a map from Clancy.
+	Ester: [#chr=ester] [#mood=default] Do you have a map?
+	Christina: [#chr=christina] [#mood=smile] No, but I'll figure it out.
+	Ester: [#chr=ester] [#mood=happy] Alrighty then, I'll see you around!
 
 => END
 
 elif got_map == true and first_time_in_dining == false 
-	Ester: [#mood=happy] Hey Christina, how do you feel?
-	Christina: [#mood=happy] I feel pretty good!
-	Christina: [#mood=thinking] Still have amnesia though.
-	Ester: [#mood=smile] That's okay.
-	Ester: [#mood=smile] Did you say hi to your friends yet?
-	Christina: [#mood=happy] I did!
-	Christina: [#mood=smile] They were glad that I'm okay.
-	Christina: [#mood=thinking] Sort of...
-	Ester: [#mood=happy] That's good to hear!
-	Ester: [#mood=smile] By the way, Barley wants to speak to you.
-	Ester: [#mood=smile] Do you know where he's at?
-	Christina: [#mood=default] Not a clue.
-	Ester: [#mood=smile] Just follow the dirt path to the right and go straight up, you'll find his office there.
-	Ester: [#mood=smile] Or you can get a map from Clancy.
-	Ester: [#mood=default] Do you have a map?
-	Christina: [#mood=smile] Yeah, Clancy gave it to me.
-	Ester: [#mood=happy] Alrighty then, I'll see you around!
+	Ester: [#chr=ester] [#mood=happy] Hey Christina, how do you feel?
+	Christina: [#chr=christina] [#mood=happy] I feel pretty good!
+	Christina: [#chr=christina] [#mood=thinking] Still have amnesia though.
+	Ester: [#chr=ester] [#mood=smile] That's okay.
+	Ester: [#chr=ester] [#mood=smile] Did you say hi to your friends yet?
+	Christina: [#chr=christina] [#mood=happy] I did!
+	Christina: [#chr=christina] [#mood=smile] They were glad that I'm okay.
+	Christina: [#chr=christina] [#mood=thinking] Sort of...
+	Ester: [#chr=ester] [#mood=happy] That's good to hear!
+	Ester: [#chr=ester] [#mood=smile] By the way, Barley wants to speak to you.
+	Ester: [#chr=ester] [#mood=smile] Do you know where he's at?
+	Christina: [#chr=christina] [#mood=default] Not a clue.
+	Ester: [#chr=ester] [#mood=smile] Just follow the dirt path to the right and go straight up, you'll find his office there.
+	Ester: [#chr=ester] [#mood=smile] Or you can get a map from Clancy.
+	Ester: [#chr=ester] [#mood=default] Do you have a map?
+	Christina: [#chr=christina] [#mood=smile] Yeah, Clancy gave it to me.
+	Ester: [#chr=ester] [#mood=happy] Alrighty then, I'll see you around!
 
 => END
 
 
 ~ Start_2
 if first_time_in_dining == true and annoying_ester >= 10
-	Ester: [#mood=bored] Can you... please stop doing that?
-	Ester: [#mood=bored] It's really annoying.
+	Ester: [#chr=ester] [#mood=bored] Can you... please stop doing that?
+	Ester: [#chr=ester] [#mood=bored] It's really annoying.
 else
-	Ester: [#mood=default] Maybe you should say hi to your friends first?
+	Ester: [#chr=ester] [#mood=default] Maybe you should say hi to your friends first?
 
 => END

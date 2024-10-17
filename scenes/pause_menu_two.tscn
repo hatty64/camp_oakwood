@@ -791,8 +791,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 274.0
 offset_top = 1000.0
-offset_right = 2194.0
-offset_bottom = 2080.0
+offset_right = 274.0
+offset_bottom = 1000.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(665, 561)
@@ -804,8 +804,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(666, 560)
@@ -851,7 +849,6 @@ mouse_filter = 1
 color = Color(1, 0, 0, 1)
 
 [node name="barleys_office" type="RichTextLabel" parent="notebook_map_open_full"]
-visible = false
 layout_mode = 0
 offset_left = 793.0
 offset_top = 487.0

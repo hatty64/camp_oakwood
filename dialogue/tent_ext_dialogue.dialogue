@@ -1,27 +1,27 @@
 ~ Start
-Clancy: [#mood=default] Oh, you're awake.
-Clancy: [#mood=default] I was just about to check up on you.
-Clancy: [#mood=default] So, how are you feeling?
-Clancy: [#mood=bored] No brain damage or anything?
+???: [#chr=clancy] [#mood=default] Oh, you're awake.
+???: [#chr=clancy] [#mood=default] I was just about to check up on you.
+???: [#chr=clancy] [#mood=default] So, how are you feeling?
+???: [#chr=clancy] [#mood=bored] No brain damage or anything?
 
-Christina: [#mood=thinking] No... I don't think so... who are you?
+Christina: [#chr=christina] [#mood=thinking] No... I don't think so... who are you?
 
-Clancy: [#mood=default] Right... your memories...
-Clancy: [#mood=default] I'm Clancy, one of your camp counselors.
+???: [#chr=clancy] [#mood=default] Right... your memories...
+???: [#chr=clancy] [#mood=default] I'm Clancy, one of your camp counselors.
 
-Christina: [#mood=confused] Can you tell me where I am?
+Christina: [#chr=christina] [#mood=confused] Can you tell me where I am?
 
-Clancy: [#mood=bored] You're in Camp Oakwood, the best place to spend your summer...
+Clancy: [#chr=clancy] [#mood=bored] You're in Camp Oakwood, the best place to spend your summer...
 
-Christina: [#mood=default] You don't sound very excited.
+Christina: [#chr=christina] [#mood=default] You don't sound very excited.
 
-Clancy: [#mood=bored] Well, when you're forced to stay here for four weeks with no pay, why would you?
+Clancy: [#chr=clancy] [#mood=bored] Well, when you're forced to stay here for four weeks with no pay, why would you?
 
-Christina: [#mood=confused] Is it that bad?
+Christina: [#chr=christina] [#mood=confused] Is it that bad?
 
-Clancy: [#mood=bored] You have no idea...
-Clancy: [#mood=default] Anyways, your friends are waiting for you in the dining area.
-Clancy: [#mood=default] just follow the dirt path to the camp, I'll see you there.
-Clancy: [#mood=bored] If you need anything... ask someone else.
+Clancy: [#chr=clancy] [#mood=bored] You have no idea...
+Clancy: [#chr=clancy] [#mood=default] Anyways, your friends are waiting for you in the dining area.
+Clancy: [#chr=clancy] [#mood=default] just follow the dirt path to the camp, I'll see you there.
+Clancy: [#chr=clancy] [#mood=bored] If you need anything... ask someone else.
 
 => END

@@ -10,23 +10,149 @@ Eavesdrop?
 
 ~ Start_2
 
-Jacob: [#mood=default] So, aren't you worried?
-Damian: [#mood=sad] Worried... about what?
-Jacob: [#mood=default] Christina.
-Damian: [#mood=happy] Oooh, you mean the whole amnesia thing?
-Damian: [#mood=confident] She's just messing around, don't worry.
-Jacob: [#mood=thinking] I don't know, she sounded pretty serious about it.
-Damian: [#mood=confident] Relax, she always does this, trust me.
-Damian: [#mood=happy] She's just gonna forget about it the next day, as if nothing happened.
-Jacob: [#mood=thinking] Maybe you're right.
-Jacob: [#mood=default] I'm just worried, that's all.
-Damian: [#mood=happy] Everything's gonna be fine, don't worry.
-set eavesdrop_day0_finished = true
+Eavesdrop?
+- Yes
+	set input_blocked = true
+	do eavesdrop_girls_cabin()
+- No
+
+=> END
+
+~ Start_boys
+
+if jacob_first_talked == true
+	Jacob: [#chr=jacob] [#mood=default] So, aren't you worried?
+	Damian: [#chr=damian] [#mood=sad] Worried... about what?
+	Jacob: [#chr=jacob] [#mood=default] Christina.
+	Damian: [#chr=damian] [#mood=happy] Oooh, you mean the whole amnesia thing?
+	Damian: [#chr=damian] [#mood=confident] She's just messing around, don't worry.
+	Jacob: [#chr=jacob] [#mood=thinking] I don't know, she sounded pretty serious about it.
+	Damian: [#chr=damian] [#mood=confident] Relax, she always does this, trust me.
+	Damian: [#chr=damian] [#mood=happy] She's just gonna forget about it the next day, as if nothing happened.
+	Jacob: [#chr=jacob] [#mood=thinking] Maybe you're right.
+	Jacob: [#chr=jacob] [#mood=default] I'm just worried, that's all.
+	Damian: [#chr=damian] [#mood=happy] Everything's gonna be fine, don't worry.
+else
+	???: [#chr=jacob] [#mood=default] So, aren't you worried?
+	Damian: [#chr=damian] [#mood=sad] Worried... about what?
+	???: [#chr=jacob] [#mood=default] Christina.
+	Damian: [#chr=damian] [#mood=happy] Oooh, you mean the whole amnesia thing?
+	Damian: [#chr=damian] [#mood=confident] She's just messing around, don't worry.
+	???: [#chr=jacob] [#mood=thinking] I don't know, she sounded pretty serious about it.
+	Damian: [#chr=damian] [#mood=confident] Relax, she always does this, trust me.
+	Damian: [#chr=damian] [#mood=happy] She's just gonna forget about it the next day, as if nothing happened.
+	???: [#chr=jacob] [#mood=thinking] Maybe you're right.
+	???: [#chr=jacob] [#mood=default] I'm just worried, that's all.
+	Damian: [#chr=damian] [#mood=happy] Everything's gonna be fine, don't worry.
+set eavesdrop_day0_finished_boys = true
 
 => END
 
 ~ Start_3
 
-Christina: [#mood=default] Nothing to see here.
+Christina: [#chr=christina] [#mood=default] Nothing to see here.
+
+=> END
+
+~ Start_girls
+
+if damian_and_dinah_first_talked == true and maysie_first_talked == true
+	Dinah: [#chr=dinah] [#mood=smile] Alright, it's your turn, Maya.
+	Dinah: [#chr=dinah] [#mood=smile] Truth or Dare?
+	Maya: [#chr=maya] [#mood=thinking] Umm...
+	Maya: [#chr=maya] [#mood=smile] Truth.
+	Dinah: [#chr=dinah] [#mood=bored] Really, again?
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]I'm not good with dares, okay![/shake]
+	Dinah: [#chr=dinah] [#mood=happy] Calm down, it's okay.
+	Dinah: [#chr=dinah] [#mood=smile] So...
+	Dinah: [#chr=dinah] [#mood=smug] What is your most embarrassing moment?
+	Maya: [#chr=maya] [#mood=thinking] Umm...
+	Maya: [#chr=maya] [#mood=worried] Sheesh, that's a hard one.
+	Maysie: [#chr=maysie] [#mood=smug] [next=auto]How about that one time when you sang a love song to Christina in front of the whole class
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]YOU PROMISED NOT TO BRING THAT UP!!![/shake]
+	Maysie: [#chr=maysie] [#mood=smug] How could I not? You screamed it at the top of your lungs.
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]IT WAS FIVE YEARS AGO!!![/shake]
+	Dinah: [#chr=dinah] [#mood=smile] Alright, calm down.
+	Dinah: [#chr=dinah] [#mood=happy] I guess it's my turn again.
+	Dinah: [#chr=dinah] [#mood=default] Are you sure you don't wanna play, Maysie?
+	Maysie: [#chr=maysie] [#mood=bored] No... why would I?
+	Dinah: [#chr=dinah] [#mood=worried] You're still worried about Christina, aren't you?
+	Maysie: [#chr=maysie] [#mood=angry] NO... WHY WOULD YOU EVEN SAY THAT!?
+	Maysie: [#chr=maysie] [#mood=blush] I'm just... not in the mood right now, okay.
+elif damian_and_dinah_first_talked == false and maysie_first_talked == false
+	???: [#chr=dinah] [#mood=smile] Alright, it's your turn, Maya.
+	???: [#chr=dinah] [#mood=smile] Truth or Dare?
+	Maya: [#chr=maya] [#mood=thinking] Umm...
+	Maya: [#chr=maya] [#mood=smile] Truth.
+	???: [#chr=dinah] [#mood=bored] Really, again?
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]I'm not good with dares, okay![/shake]
+	???: [#chr=dinah] [#mood=happy] Calm down, it's okay.
+	???: [#chr=dinah] [#mood=smile] So...
+	???: [#chr=dinah] [#mood=smug] What is your most embarrassing moment?
+	Maya: [#chr=maya] [#mood=thinking] Umm...
+	Maya: [#chr=maya] [#mood=worried] Sheesh, that's a hard one.
+	???: [#chr=maysie] [#mood=smug] [next=auto]How about that one time when you sang a love song to Christina in front of the whole class
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]YOU PROMISED NOT TO BRING THAT UP!!![/shake]
+	???: [#chr=maysie] [#mood=smug] How could I not? You screamed it at the top of your lungs.
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]IT WAS FIVE YEARS AGO!!![/shake]
+	???: [#chr=dinah] [#mood=smile] Alright, calm down.
+	???: [#chr=dinah] [#mood=happy] I guess it's my turn again.
+	???: [#chr=dinah] [#mood=default] Are you sure you don't wanna play, Maysie?
+	Maysie: [#chr=maysie] [#mood=bored] No... why would I?
+	???: [#chr=dinah] [#mood=worried] You're still worried about Christina, aren't you?
+	Maysie: [#chr=maysie] [#mood=angry] NO... WHY WOULD YOU EVEN SAY THAT!?
+	Maysie: [#chr=maysie] [#mood=blush] I'm just... not in the mood right now, okay.
+	set maysie_first_talked = true
+	set maya_first_talked = true
+elif damian_and_dinah_first_talked == true and maysie_first_talked == false
+	Dinah: [#chr=dinah] [#mood=smile] Alright, it's your turn, Maya.
+	Dinah: [#chr=dinah] [#mood=smile] Truth or Dare?
+	Maya: [#chr=maya] [#mood=thinking] Umm...
+	Maya: [#chr=maya] [#mood=smile] Truth.
+	Dinah: [#chr=dinah] [#mood=bored] Really, again?
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]I'm not good with dares, okay![/shake]
+	Dinah: [#chr=dinah] [#mood=happy] Calm down, it's okay.
+	Dinah: [#chr=dinah] [#mood=smile] So...
+	Dinah: [#chr=dinah] [#mood=smug] What is your most embarrassing moment?
+	Maya: [#chr=maya] [#mood=thinking] Umm...
+	Maya: [#chr=maya] [#mood=worried] Sheesh, that's a hard one.
+	???: [#chr=maysie] [#mood=smug] [next=auto]How about that one time when you sang a love song to Christina in front of the whole class
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]YOU PROMISED NOT TO BRING THAT UP!!![/shake]
+	???: [#chr=maysie] [#mood=smug] How could I not? You screamed it at the top of your lungs.
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]IT WAS FIVE YEARS AGO!!![/shake]
+	Dinah: [#chr=dinah] [#mood=smile] Alright, calm down.
+	Dinah: [#chr=dinah] [#mood=happy] I guess it's my turn again.
+	Dinah: [#chr=dinah] [#mood=default] Are you sure you don't wanna play, Maysie?
+	Maysie: [#chr=maysie] [#mood=bored] No... why would I?
+	Dinah: [#chr=dinah] [#mood=worried] You're still worried about Christina, aren't you?
+	Maysie: [#chr=maysie] [#mood=angry] NO... WHY WOULD YOU EVEN SAY THAT!?
+	Maysie: [#chr=maysie] [#mood=blush] I'm just... not in the mood right now, okay.
+	set maysie_first_talked = true
+	set maya_first_talked = true
+elif damian_and_dinah_first_talked == false and maysie_first_talked == true
+	???: [#chr=dinah] [#mood=smile] Alright, it's your turn, Maya.
+	???: [#chr=dinah] [#mood=smile] Truth or Dare?
+	Maya: [#chr=maya] [#mood=thinking] Umm...
+	Maya: [#chr=maya] [#mood=smile] Truth.
+	???: [#chr=dinah] [#mood=bored] Really, again?
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]I'm not good with dares, okay![/shake]
+	???: [#chr=dinah] [#mood=happy] Calm down, it's okay.
+	???: [#chr=dinah] [#mood=smile] So...
+	???: [#chr=dinah] [#mood=smug] What is your most embarrassing moment?
+	Maya: [#chr=maya] [#mood=thinking] Umm...
+	Maya: [#chr=maya] [#mood=worried] Sheesh, that's a hard one.
+	Maysie: [#chr=maysie] [#mood=smug] [next=auto]How about that one time when you sang a love song to Christina in front of the whole class
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]YOU PROMISED NOT TO BRING THAT UP!!![/shake]
+	Maysie: [#chr=maysie] [#mood=smug] How could I not? You screamed it at the top of your lungs.
+	Maya: [#chr=maya] [#mood=embarrassed] [shake rate=20 level=20]IT WAS FIVE YEARS AGO!!![/shake]
+	???: [#chr=dinah] [#mood=smile] Alright, calm down.
+	???: [#chr=dinah] [#mood=happy] I guess it's my turn again.
+	???: [#chr=dinah] [#mood=default] Are you sure you don't wanna play, Maysie?
+	Maysie: [#chr=maysie] [#mood=bored] No... why would I?
+	???: [#chr=dinah] [#mood=worried] You're still worried about Christina, aren't you?
+	Maysie: [#chr=maysie] [#mood=angry] NO... WHY WOULD YOU EVEN SAY THAT!?
+	Maysie: [#chr=maysie] [#mood=blush] I'm just... not in the mood right now, okay.
+	set maya_first_talked = true
+set eavesdrop_day0_finished_girls = true
 
 => END

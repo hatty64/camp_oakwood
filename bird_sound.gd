@@ -1,8 +1,9 @@
 extends AudioStreamPlayer
 
-const scene_music = preload("res://scenes/forest-wind-and-birds-6881.mp3")
+const bird_sound = preload("res://scenes/forest-wind-and-birds-6881.mp3")
+const rain = preload("res://sounds/rain-sound-188158.mp3")
 
-func play_sound(music: AudioStream, volume = 0.0):
+func play_sound(music: AudioStream, volume = -10.0):
 	if stream == music:
 		return
 	
@@ -11,5 +12,8 @@ func play_sound(music: AudioStream, volume = 0.0):
 	play()
 	
 
-func play_music_level():
-	play_sound(scene_music)
+func play_bird_sound():
+	play_sound(bird_sound)
+
+func play_rain():
+	play_sound(rain)
