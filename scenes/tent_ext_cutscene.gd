@@ -9,6 +9,7 @@ extends Node2D
 func _ready():
 	Global.game_first_loadin = false
 	BGSPlayer.play_rain()
+	BGSPlayer.play()
 	await get_tree().create_timer(3.0).timeout
 	camera_anim.speed_scale = 0.5
 	clancy_anim.speed_scale = 0.5

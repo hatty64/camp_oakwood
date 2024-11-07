@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://btcpjdktuymx"]
+[gd_scene load_steps=72 format=3 uid="uid://btcpjdktuymx"]
 
 [ext_resource type="Texture2D" uid="uid://cp30hw64ih7g8" path="res://scenes/cabin_tiles_resized.png" id="1_vtrw8"]
 [ext_resource type="Texture2D" uid="uid://d05ew8yvh1p8n" path="res://scenes/cabin_bed.png" id="2_rwm2m"]
@@ -33,6 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://drypgsj4bv5iu" path="res://scenes/tiles/rain_splash.png" id="25_0q42u"]
 [ext_resource type="Texture2D" uid="uid://box8og8x4u0a6" path="res://scenes/tiles/clancy_cabin.png" id="26_fcgx7"]
 [ext_resource type="Texture2D" uid="uid://bvm5qpgq7lplx" path="res://scenes/grass_tiles_resized_2.png" id="27_inguj"]
+[ext_resource type="Texture2D" uid="uid://ct8uw24p21b0a" path="res://scenes/tiles/dark_grass.png" id="28_w1s65"]
+[ext_resource type="Texture2D" uid="uid://cpwdyaxl7bswd" path="res://scenes/tiles/dark_tree.png" id="29_x3k2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5uol8"]
 texture = ExtResource("1_vtrw8")
@@ -645,6 +647,89 @@ texture_region_size = Vector2i(32, 32)
 1:7/0 = 0
 0:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3y2h"]
+texture = ExtResource("28_w1s65")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wyd53"]
+texture = ExtResource("29_x3k2b")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 2, 16, 2, 2, 16, 2)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, 2, -16, 2)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -2, 16, -2, 2, -16, 2)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, -16, 2, -16, 2, 16)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, -2, 16, -2, -16)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 2, -16, 2, -2, 16, -2)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -2, -16, -2)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -2, -16, -2, -2, -16, -2)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, -16, 16, -16, 2, 6, 2, 6, -16, 16, -16)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, 2, -6, 2, -6, -16, -16, -16)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, 2, 16, 2, -6, -16, -6, -16, -16)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, -2, 16, -2, -6, 16, -6, 16, -16)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwqhg"]
 texture = ExtResource("4_3om6g")
 texture_region_size = Vector2i(32, 32)
@@ -796,6 +881,8 @@ sources/29 = SubResource("TileSetAtlasSource_8y3gx")
 sources/30 = SubResource("TileSetAtlasSource_4x8xc")
 sources/31 = SubResource("TileSetAtlasSource_48q5w")
 sources/32 = SubResource("TileSetAtlasSource_phbtk")
+sources/33 = SubResource("TileSetAtlasSource_c3y2h")
+sources/34 = SubResource("TileSetAtlasSource_wyd53")
 
 [node name="TileMap" type="TileMap"]
 y_sort_enabled = true

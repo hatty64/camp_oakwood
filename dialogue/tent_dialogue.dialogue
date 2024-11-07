@@ -16,7 +16,7 @@
 
 ~ Start_3
 ???: [#chr=barley] [#mood=default] You really don't remember a thing, huh?
-???: [#chr=barley] [#mood=worried] This is not good.
+???: [#chr=barley] [#mood=madthink] I'm gone for five minutes and my daughter already has amnesia.
 ???: [#chr=barley] [#mood=smile] Well, since you don't remember a thing, I guess I'll get you up to speed.
 ???: [#chr=barley] [#mood=smile] My name is Barley, I am your father
 Barley: [#chr=barley] [#mood=smile] and you are Christina, my daughter.
@@ -39,7 +39,7 @@ A few minutes later.
 
 ~ Start_5
 Barley: [#chr=barley] [#mood=smile] There, I'm back.
-Barley: [#chr=barley] [#mood=smile] And I also brought Ester with me.
+Barley: [#chr=barley] [#mood=smile] And I also brought someone with me.
 
 => END
 
@@ -52,12 +52,13 @@ Christina: [#chr=christina] [#mood=thinking] I don't remember anything, so... ye
 Ester: [#chr=ester] [#mood=default] Do you have any injuries I need to know about?
 Christina: [#chr=christina] [#mood=thinking] I don't... feel any pain, so I guess not.
 Ester: [#chr=ester] [#mood=smile] Ok, that's good.
-Barley: [#mood=default] So, do you know exactly what happened this morning?
+Barley: [#chr=barley] [#mood=default] So, tell me exactly what happened.
 
 => END
 
 ~ Start_7
-Ester: [#chr=ester] [#mood=thinking] Well, we were just taking our usual morning hikes around the woods, until I heard a loud noise coming from a distance.
+Ester: [#chr=ester] [#mood=thinking] Well, we were just hanging out by the lake, until it started to rain.
+Ester: [#chr=ester] [#mood=default] So, I told everyone to get back inside.
 Ester: [#chr=ester] [#mood=default] That's when I realized Christina was missing.
 Ester: [#chr=ester] [#mood=worried] I don't know exactly what happened to her, but what I do know is that I should've been more vigilant.
 Ester: [#chr=ester] [#mood=worried] I'm sorry... I promise I'll do better next time.

@@ -1,12 +1,18 @@
 ~ Start_cookie_steal_1
 
-Maysie: [#chr=maysie] [#mood=angry] what the fuck, give me my fucking cookie back!
+if maysie_first_talked == true
+	Maysie: [#chr=maysie] [#mood=angry] HEY, GIVE ME MY COOKIE BACK YOU STUPID SQUIRREL!!!
+else
+	???: [#chr=maysie] [#mood=angry] HEY, GIVE ME MY COOKIE BACK YOU STUPID SQUIRREL!!!
 
 => END
 
 ~ Start_cookie_steal_2
-
-Maysie: [#chr=maysie] [#mood=angry] what the fuck are you looking at, go grab my cookie!
-Maysie: [#chr=maysie] [#mood=angry] son of a fucking bitch!
+if maysie_first_talked == true
+	Maysie: [#chr=maysie] [#mood=angry] What are you looking at!?
+	Maysie: [#chr=maysie] [#mood=angry] Go get my cookie back!
+else
+	???: [#chr=maysie] [#mood=angry] What are you looking at!?
+	???: [#chr=maysie] [#mood=angry] Go get my cookie back!
 
 => END

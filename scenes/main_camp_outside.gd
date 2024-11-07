@@ -28,9 +28,11 @@ func _ready():
 	
 	casper_anim.play("reading")
 	
-	#if GlobalDays.ep_one_day_one == true:
-		#GlobalDays.play_cutscene()
-		#squirrel_steals_cookie()
+	if Global.rain == true:
+		BGSPlayer.play_rain()
+		BGSPlayer.play()
+	else:
+		BGSPlayer.stop()
 
 
 var entered = false
@@ -45,6 +47,11 @@ var entered_4 = false
 func _process(_delta):
 	if Global.got_map == true and Global.first_time_in_dining == false:
 		actionable_2.dialogue_start = "Start_2"
+	
+	if GlobalDialogue.no_one_there == true:
+		eavesdrop_girls.dialogue_start = "Start_4"
+	else:
+		eavesdrop_girls.dialogue_start = "Start_2"
 	if entered == true:
 		Transit.change_scene_to_file("res://scenes/vertical_path_to_camp.tscn")
 		Global.loadin_tent_ext = false
@@ -54,6 +61,7 @@ func _process(_delta):
 		Global.loadin_world2 = false
 		Global.loadin_main_camp = false
 		Global.loadin_main_camp_2 = false
+		Global.loadout_dining = false
 	if entered_2 == true:
 		if Input.is_action_just_pressed("accept"):
 			Transit.change_scene_to_file("res://scenes/cabin_int_female.tscn")
@@ -61,6 +69,7 @@ func _process(_delta):
 			Global.loadin_world2 = true
 			Global.loadin_main_camp = false
 			Global.loadin_main_camp_2 = false
+			Global.loadout_dining = false
 	if entered_3 == true:
 		if Input.is_action_just_pressed("accept"):
 			if Global.first_time_in_dining == false:
@@ -72,6 +81,7 @@ func _process(_delta):
 			else:
 				Transit.change_scene_to_file("res://scenes/dining_cutscene.tscn")
 				Global.loadin_dining = true
+				Global.loadout_dining = false
 	if entered_4 == true:
 		Transit.change_scene_to_file("res://scenes/four_way.tscn")
 		Global.loadin_dining = false
@@ -100,22 +110,22 @@ func _process(_delta):
 		eavesdrop_girls.position.x = 1048
 		eavesdrop_girls.position.y = 589
 		
-	#if GlobalDays.ep_one_day_one == true:
-		#$squirrel.position.x = 1191
-		#$squirrel.position.y = 643
-		#$maysie.position.x = 1192
-		#$maysie.position.y = 638
-	#else:
-		#$squirrel.position.x = 0
-		#$squirrel.position.y = 0
-		#$maysie.position.x = 0
-		#$maysie.position.y = 0
+	if GlobalDays.ep_one_day_one == true:
+		$casper.position.x = 0
+		$casper.position.y = 0
+		$maysie.position.x = 1180
+		$maysie.position.y = 589
+	else:
+		$maysie.position.x = 0
+		$maysie.position.y = 0
 	
 	if Global.eavesdrop_day0_finished_boys == true:
 		eavesdrop.dialogue_start = "Start_3"
 	
 	if Global.eavesdrop_day0_finished_girls == true:
 		eavesdrop_girls.dialogue_start = "Start_3"
+	
+	night_vision_active()
 
 
 func _on_vertical_path_transition_point_body_entered(body):
@@ -187,12 +197,8 @@ func eavesdrop_girls_cabin() -> void:
 	await animation_player.animation_finished
 	Global.input_blocked = false
 
-#func squirrel_steals_cookie():
-	#$Christina.position.x = 1016
-	#$Christina.position.y = 612
-	#cutscenes.play("squirrel_run")
-	#await cutscenes.animation_finished
-	#$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(-1, 0))
-	#cutscenes.play("maysie_show_up")
-	#await cutscenes.animation_finished
-	#DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/ep_1_cutscenes.dialogue"), "Start_cookie_steal_1")
+func night_vision_active():
+	if GlobalCostume.night_vision == true:
+		$night_vision_stuff.visible = true
+	else:
+		$night_vision_stuff.visible = false

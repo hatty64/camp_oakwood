@@ -3,6 +3,7 @@ extends Node2D
 @onready var animation_player = $AnimationPlayer
 
 func _ready():
+	BGSPlayer.stop()
 	Global.sunset = true
 	await get_tree().create_timer(3.0).timeout
 	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/barley_office_cutscene.dialogue"), "Start")

@@ -6,7 +6,7 @@ var ep_one_day_three = false
 
 var finish_day_zero = false
 
-
+var start_transit = false
 
 
 var woke_up = false

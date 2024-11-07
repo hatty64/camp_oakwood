@@ -54,6 +54,12 @@ Christina: [#chr=christina] [#mood=default] Nothing to see here.
 
 => END
 
+~ Start_4
+
+Christina: [#chr=christina] [#mood=default] There's no one there.
+
+=> END
+
 ~ Start_girls
 
 if damian_and_dinah_first_talked == true and maysie_first_talked == true

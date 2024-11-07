@@ -19,4 +19,5 @@ func _ready() -> void:
 	Global.sunset = false
 	Global.rain = false
 	GlobalDays.ep1_day1_cutscene1 = true
+	GlobalDays.start_transit = false
 	Transit.change_scene_to_file("res://scenes/cabin_int_female.tscn")

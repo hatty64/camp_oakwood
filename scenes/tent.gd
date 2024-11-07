@@ -32,3 +32,9 @@ func _process(_delta):
 			Transit.change_scene_to_file("res://scenes/tent_ext_cutscene.tscn")
 		else:
 			Transit.change_scene_to_file("res://scenes/tent_ext.tscn")
+	if GlobalCostume.raincoat_unlocked == false:
+		$Actionable.dialogue_start = "Start_raincoat"
+		$raincoat_item.visible = true
+	else:
+		$Actionable.dialogue_start = "Start"
+		$raincoat_item.visible = false

@@ -40,6 +40,7 @@ func _process(_delta):
 		Transit.change_scene_to_file("res://scenes/path_to_tent.tscn")
 		Global.loadin_tent_path = true
 		Global.loadin_tent_ext = false
+	
 
 
 

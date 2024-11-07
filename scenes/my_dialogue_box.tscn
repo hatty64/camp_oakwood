@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cp6hcscid2cub"]
 
 [ext_resource type="Script" path="res://scenes/my_dialogue_box.gd" id="1_k7dwg"]
-[ext_resource type="Texture2D" uid="uid://jubfnb1k5cve" path="res://scenes/dialogue_box_2.png" id="2_7qsbn"]
+[ext_resource type="Texture2D" uid="uid://dinnc5sgko1th" path="res://textures/dialogue_box_two.png" id="2_1od2m"]
 [ext_resource type="FontFile" uid="uid://cxco3lwv0bs5r" path="res://scenes/joystix monospace.otf" id="3_4q38e"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="4_3aiil"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="5_n6gyv"]
@@ -26,12 +26,11 @@ offset_top = 811.0
 offset_right = 2523.0
 offset_bottom = 1156.0
 scale = Vector2(0.759995, 0.759995)
-texture = ExtResource("2_7qsbn")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 32
-patch_margin_top = 32
-patch_margin_right = 32
-patch_margin_bottom = 32
+texture = ExtResource("2_1od2m")
+patch_margin_left = 112
+patch_margin_top = 112
+patch_margin_right = 112
+patch_margin_bottom = 112
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon"]
 layout_mode = 1

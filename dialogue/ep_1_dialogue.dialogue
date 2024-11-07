@@ -1,0 +1,9 @@
+~ Start_maysie_cookie_stolen
+
+Christina: [#chr=christina] [#mood=happy] Hey... what's up?
+Maysie: [#chr=maysie] [#mood=bored] Did you get my cookie?
+Christina: [#chr=christina] [#mood=default] [next=auto]No... but-
+Maysie: [#chr=maysie] [#mood=bored] Then don't talk to me.
+Christina: [#chr=christina] [#mood=blush] Okay, sorry...
+
+=> END

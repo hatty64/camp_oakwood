@@ -1,5 +1,15 @@
 ~ Start
-Christina: [#mood=default] It's a wooden chair.
-Christina: [#mood=thinking] I wonder what it's doing here.
+Christina: [#chr=christina] [#mood=default] It's a wooden chair.
+Christina: [#chr=christina] [#mood=thinking] I wonder what it's doing here.
+
+=> END
+
+~ Start_raincoat
+
+It's a raincoat.
+Pick it up?
+- Yes
+	set raincoat_unlocked = true
+- No
 
 => END

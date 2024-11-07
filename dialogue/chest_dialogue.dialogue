@@ -1,0 +1,17 @@
+~ Start_christina
+if onesie_unlocked == false
+	You open the chest, there's a onesie inside.
+	Take it?
+	- Yes
+		set onesie_unlocked = true
+	- No
+else
+	Christina: [#chr=christina] [#mood=default] Nothing special inside.
+
+=> END
+
+~ Start_others
+
+Christina: [#chr=christina] [#mood=default] It's a chest.
+
+=> END

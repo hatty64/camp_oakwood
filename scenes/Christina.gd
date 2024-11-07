@@ -9,6 +9,10 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
+@onready var night_vision_module: CanvasModulate = $CanvasModulate
+@onready var rain_modulate: CanvasModulate = $"../rain/CanvasModulate"
+@onready var sunset_modulate: CanvasModulate = $"../sunset"
+@onready var canvas_layer_2: CanvasLayer = $CanvasLayer2
 
 var input_vector: Vector2 = Vector2.ZERO
 
@@ -18,7 +22,8 @@ func _ready():
 func _physics_process(_delta):
 	if not Global.input_blocked:
 		handle_player_input()
-	
+	costume_change()
+	night_vision()
 
 
 func handle_player_input():
@@ -84,3 +89,30 @@ func get_mirrored_frame():
 		return frame + 4
 		
 	return frame - 4
+
+func costume_change():
+	if GlobalCostume.raincoat == true:
+		$Sprite2D.texture = load("res://character_sprite/christina_raincoat.png")
+	elif GlobalCostume.onesie == true:
+		$Sprite2D.texture = load("res://character_sprite/christina_onesie.png")
+	elif GlobalCostume.dark == true:
+		$Sprite2D.texture = load("res://character_sprite/christina_dark_costume.png")
+	elif GlobalCostume.woodling == true:
+		$Sprite2D.texture = load("res://character_sprite/christina_woodling.png")
+	else:
+		$Sprite2D.texture = load("res://character_sprite/christina_full_sprite_sprint.png")
+
+func night_vision():
+	if GlobalCostume.dark == true:
+		if Input.is_action_pressed("night_vision"):
+			$DirectionalLight2D.visible = true
+			GlobalCostume.night_vision = true
+			BGSPlayer.volume_db = -30.0
+			MusicPlayer.volume_db = -30.0
+		else:
+			$DirectionalLight2D.visible = false
+			GlobalCostume.night_vision = false
+			BGSPlayer.volume_db = -10.0
+			MusicPlayer.volume_db = -10.0
+	elif GlobalCostume.dark == false:
+		$DirectionalLight2D.visible = false

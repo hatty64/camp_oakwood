@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Camp Oakwood"
-run/main_scene="res://scenes/empty_void.tscn"
+run/main_scene="res://scenes/splash_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon/camp_oakwood_logo.png"
 
@@ -27,10 +27,11 @@ GlobalDays="*res://global_days.gd"
 GlobalDialogue="*res://global_dialogue.gd"
 MusicManager="*res://addons/MusicManager/music_manager.tscn"
 MusicPlayer="*res://sounds/music_player.tscn"
+GlobalCostume="*res://global_costume.gd"
 
 [dialogue_manager]
 
-general/states=["MyDialogueBox", "GlobalDialogue", "Global", "GlobalDays"]
+general/states=["MyDialogueBox", "GlobalDialogue", "Global", "GlobalDays", "GlobalCostume"]
 general/balloon_path="res://scenes/my_dialogue_box.tscn"
 
 [display]
@@ -121,10 +122,15 @@ sprint={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+night_vision={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":86,"key_label":0,"unicode":118,"location":0,"echo":false,"script":null)
+]
+}
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/boys_cabin.dialogue", "res://dialogue/tree_eye.dialogue", "res://dialogue/night_eye.dialogue", "res://dialogue/wake_up.dialogue", "res://dialogue/tent_dialogue.dialogue", "res://dialogue/chair_interact.dialogue", "res://dialogue/cot_interact.dialogue", "res://dialogue/tent_ext_dialogue.dialogue", "res://dialogue/fence.dialogue", "res://dialogue/jacob_dialogue.dialogue", "res://dialogue/maysie_dialogue.dialogue", "res://dialogue/maya_dialogue.dialogue", "res://dialogue/damian_and_dinah_dialogue.dialogue", "res://dialogue/dining_dialogue.dialogue", "res://dialogue/clancy_dialogue.dialogue", "res://dialogue/lake_dialogue.dialogue", "res://dialogue/ester_dialogue.dialogue", "res://dialogue/test.dialogue", "res://dialogue/bear.dialogue", "res://dialogue/casper_dialogue.dialogue", "res://dialogue/just_a_dark_mirror.dialogue", "res://dialogue/barley_office_cutscene.dialogue", "res://dialogue/t.dialogue", "res://dialogue/eavesdrop_dialogue.dialogue", "res://dialogue/cabin_dialogue.dialogue", "res://dialogue/ep_1_cutscenes.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/boys_cabin.dialogue", "res://dialogue/tree_eye.dialogue", "res://dialogue/night_eye.dialogue", "res://dialogue/wake_up.dialogue", "res://dialogue/tent_dialogue.dialogue", "res://dialogue/chair_interact.dialogue", "res://dialogue/cot_interact.dialogue", "res://dialogue/tent_ext_dialogue.dialogue", "res://dialogue/fence.dialogue", "res://dialogue/jacob_dialogue.dialogue", "res://dialogue/maysie_dialogue.dialogue", "res://dialogue/maya_dialogue.dialogue", "res://dialogue/damian_and_dinah_dialogue.dialogue", "res://dialogue/dining_dialogue.dialogue", "res://dialogue/clancy_dialogue.dialogue", "res://dialogue/lake_dialogue.dialogue", "res://dialogue/ester_dialogue.dialogue", "res://dialogue/test.dialogue", "res://dialogue/bear.dialogue", "res://dialogue/casper_dialogue.dialogue", "res://dialogue/just_a_dark_mirror.dialogue", "res://dialogue/barley_office_cutscene.dialogue", "res://dialogue/t.dialogue", "res://dialogue/eavesdrop_dialogue.dialogue", "res://dialogue/cabin_dialogue.dialogue", "res://dialogue/ep_1_cutscenes.dialogue", "res://dialogue/ep_1_dialogue.dialogue", "res://dialogue/chest_dialogue.dialogue", "res://dialogue/night_temple_ext_cutscene.dialogue")
 
 [rendering]
 

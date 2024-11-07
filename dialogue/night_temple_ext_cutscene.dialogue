@@ -1,0 +1,43 @@
+~ Start
+
+Christina: [#chr=christina] [#mood=confused] Hmm, strange... the footprints stop here.
+???: [#chr=casper] Looking for something?
+
+=> END
+
+~ Start_2
+
+if casper_first_talked == true
+	Casper: [#chr=casper] [#mood=bored] Or someone?
+	Christina: [#chr=christina] [#mood=confused] What are you doing here?
+	Casper: [#chr=casper] [#mood=bored] I needed some alone time.
+	Casper: [#chr=casper] [#mood=bored] And to study this structure.
+	Christina: [#chr=christina] [#mood=default] What is that?
+	Casper: [#chr=casper] [#mood=bored] I heard some people call it "the Night Temple".
+	Casper: [#chr=casper] [#mood=bored] But unfortunately, I can't seem to get it open.
+	Casper: [#chr=casper] [#mood=bored] Now, what was it you were doing?
+	Christina: [#chr=christina] [#mood=thinking] A squirrel took Maysie's cookie and I'm trying to catch it.
+	Christina: [#chr=christina] [#mood=default] Did you see where it went?
+	Casper: [#chr=casper] [#mood=bored] I think I saw it go through that hole over there.
+	Christina: [#chr=christina] [#mood=confused] Why did't you catch it?
+	Casper: [#chr=casper] [#mood=bored] Didn't know I had to.
+	Christina: [#chr=christina] [#mood=thinking] I guess we gotta find a way inside.
+else
+	???: [#chr=casper] [#mood=bored] Or someone?
+	???: [#chr=casper] [#mood=bored] The name is Casper.
+	Casper: [#chr=casper] [#mood=bored] That's. Casper with a "C".
+	Christina: [#chr=christina] [#mood=confused] What are you doing here?
+	Casper: [#chr=casper] [#mood=bored] I needed some alone time.
+	Casper: [#chr=casper] [#mood=bored] And to study this structure.
+	Christina: [#chr=christina] [#mood=default] What is that?
+	Casper: [#chr=casper] [#mood=bored] I heard some people call it "the Night Temple".
+	Casper: [#chr=casper] [#mood=bored] But unfortunately, I can't seem to get it open.
+	Casper: [#chr=casper] [#mood=bored] Now, what was it you were doing?
+	Christina: [#chr=christina] [#mood=thinking] A squirrel took Maysie's cookie and I'm trying to catch it.
+	Christina: [#chr=christina] [#mood=default] Did you see where it went?
+	Casper: [#chr=casper] [#mood=bored] I think I saw it go through that hole over there.
+	Christina: [#chr=christina] [#mood=confused] Why did't you catch it?
+	Casper: [#chr=casper] [#mood=bored] Didn't know I had to.
+	Christina: [#chr=christina] [#mood=thinking] I guess we gotta find a way inside.
+
+=> END

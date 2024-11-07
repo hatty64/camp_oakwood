@@ -9,6 +9,11 @@ func _ready():
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
 		$Christina.position.x = 953
 		$Christina.position.y = 526
+	if Global.rain == true:
+		BGSPlayer.play_rain()
+		BGSPlayer.play()
+	else:
+		BGSPlayer.stop()
 
 var entered = false
 var entered_2 = false

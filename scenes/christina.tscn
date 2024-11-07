@@ -1,8 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://bhysbh3p85m13"]
+[gd_scene load_steps=44 format=3 uid="uid://bhysbh3p85m13"]
 
 [ext_resource type="Script" path="res://scenes/Christina.gd" id="1_rvncv"]
 [ext_resource type="Texture2D" uid="uid://d1g8imbn4uqjg" path="res://character_sprite/christina_full_sprite_sprint.png" id="2_pt51l"]
 [ext_resource type="PackedScene" uid="uid://bw3x0ddvicyea" path="res://scenes/pause_menu_two.tscn" id="3_ksaay"]
+[ext_resource type="AudioStream" uid="uid://c4g03xahwv26f" path="res://scenes/hearbeat-71701.mp3" id="4_2pmq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cb13"]
 size = Vector2(5, 13.5)
@@ -542,11 +543,32 @@ shape = SubResource("CircleShape2D_s5fwg")
 
 [node name="pause_menu_two" parent="CanvasLayer" instance=ExtResource("3_ksaay")]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(0.403922, 0.00784314, 0.447059, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.310617, 0.310617, 0.310617, 0.329412)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
-color = Color(0.290196, 0.156863, 0.968627, 1)
+top_level = true
+z_index = 205
+color = Color(0.515061, 0.0574603, 0.752962, 1)
 
-[node name="music" type="AudioStreamPlayer" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 31
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+color = Color(0.513726, 0.0588235, 0.752941, 1)
+blend_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2pmq7")
+volume_db = -8.958
 
 [connection signal="body_entered" from="Direction/ActionableFinder" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Direction/ActionableFinder" to="." method="_on_area_2d_body_exited"]

@@ -5,6 +5,7 @@ extends Node2D
 @onready var dinah = $dinah
 
 func _ready():
+	BGSPlayer.stop()
 	Global.sprint_blocked = true
 	if Global.loadin_world2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
@@ -32,6 +33,13 @@ func _process(_delta):
 			Global.loadout_dining = false
 			GlobalDays.woke_up = false
 	char_in_cabin()
+	if GlobalDays.ep_one_day_one == true:
+		MusicPlayer.play_a_new_day()
+	
+	if GlobalDays.start_transit == true:
+		Global.input_blocked = true
+	
+	night_vision_active()
 
 
 
@@ -55,7 +63,7 @@ func char_in_cabin():
 		GlobalDialogue.dinah_in_cabin = false
 		GlobalDialogue.maysie_in_cabin = false
 		GlobalDialogue.maya_in_cabin = false
-		
+		GlobalDialogue.no_one_there = true
 	else:
 		maysie.position.x = 1108
 		maysie.position.y = 608
@@ -66,8 +74,14 @@ func char_in_cabin():
 		GlobalDialogue.dinah_in_cabin = true
 		GlobalDialogue.maysie_in_cabin = true
 		GlobalDialogue.maya_in_cabin = true
+		GlobalDialogue.no_one_there = false
 		GlobalDialogue.sleepable = true
 
 func episode_one_day_one() -> void:
-	GlobalDays.play_cutscene()
 	Transit.change_scene_to_file("res://scenes/chapter_transit.tscn")
+
+func night_vision_active():
+	if GlobalCostume.night_vision == true:
+		$night_vision_stuff.visible = true
+	else:
+		$night_vision_stuff.visible = false

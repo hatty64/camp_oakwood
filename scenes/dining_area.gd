@@ -10,7 +10,7 @@ extends Node2D
 
 func _ready():
 	Global.sprint_blocked = true
-	MusicPlayer.play_music_level()
+	BGSPlayer.stop()
 	if Global.loadin_dining == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 1047

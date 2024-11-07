@@ -192,7 +192,7 @@ else:
 if sleepable == true
 	Christina: [#chr=christina] [#mood=default] Should I go to bed?
 	- Yes
-		do play_cutscene()
+		set start_transit = true
 		do episode_one_day_one()
 	- No
 else

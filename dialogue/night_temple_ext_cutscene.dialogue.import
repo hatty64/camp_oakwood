@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://chprhsjj4y40p"
+path="res://.godot/imported/night_temple_ext_cutscene.dialogue-ef5cf0a7e709d5ae0ad12b00593fb90a.tres"
+
+[deps]
+
+source_file="res://dialogue/night_temple_ext_cutscene.dialogue"
+dest_files=["res://.godot/imported/night_temple_ext_cutscene.dialogue-ef5cf0a7e709d5ae0ad12b00593fb90a.tres"]
+
+[params]
+
+defaults=true
