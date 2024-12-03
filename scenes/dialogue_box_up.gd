@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var portrait: TextureRect = $Balloon/Dialogue/HBoxContainer/Portrait
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
-@onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+@onready var responses_menu: DialogueResponsesMenu = %ResponseMenu
 #@onready var night_talk: AudioStreamPlayer2D = $night_talk
 @onready var text_sound = $text_sound
 ## The dialogue resource
@@ -59,7 +59,6 @@ var dialogue_line: DialogueLine:
 		# Show our balloon
 		balloon.show()
 		will_hide_balloon = false
-
 
 		dialogue_label.show()
 		if not dialogue_line.text.is_empty():
@@ -116,8 +115,6 @@ func _on_mutated(_mutation: Dictionary) -> void:
 	get_tree().create_timer(0.1).timeout.connect(func():
 		if will_hide_balloon:
 			will_hide_balloon = false
-			$AnimationPlayer.play_backwards("dialogue_show")
-			await $AnimationPlayer.animation_finished
 			balloon.hide()
 	)
 

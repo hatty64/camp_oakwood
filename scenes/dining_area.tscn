@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://bkixqnw5iujia"]
+[gd_scene load_steps=33 format=3 uid="uid://bkixqnw5iujia"]
 
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_1j7jh"]
 [ext_resource type="Script" path="res://scenes/dining_area.gd" id="1_g0xk2"]
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_jlk4d"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="4_qsj4v"]
 [ext_resource type="Texture2D" uid="uid://d2nyvap8tjeqf" path="res://character_sprite/jacob_remake_full.png" id="4_xpk82"]
 [ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="5_t5dyu"]
 [ext_resource type="Resource" uid="uid://djtbsci0wqwch" path="res://dialogue/jacob_dialogue.dialogue" id="6_lnqfu"]
@@ -14,6 +15,8 @@
 [ext_resource type="Script" path="res://scenes/blush.gd" id="11_fvdew"]
 [ext_resource type="Texture2D" uid="uid://cdr2vdtilf0p7" path="res://character_sprite/dinah_remake_full.png" id="12_b6r04"]
 [ext_resource type="Resource" uid="uid://dti53iv5gduwt" path="res://dialogue/damian_and_dinah_dialogue.dialogue" id="13_earxy"]
+[ext_resource type="Texture2D" uid="uid://s1pgk04kweej" path="res://character_sprite/damian_remake_full.png" id="15_cy6m2"]
+[ext_resource type="Texture2D" uid="uid://xnrvcvkeeeer" path="res://character_sprite/dinah_head_turn.png" id="16_qvonq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53cvf"]
 size = Vector2(64, 20)
@@ -76,7 +79,117 @@ _data = {
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kl8pr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tkm51"]
-radius = 15.0
+radius = 20.025
+
+[sub_resource type="Animation" id="Animation_igrit"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dinah_head_turn/Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Christina/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Christina/Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_57wu5"]
+resource_name = "dinah_head_turn"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dinah_head_turn/Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Christina/Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.2, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(10, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Christina/Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.2, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, -24)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.2, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.726223, 3.41728e-06, 5.77569e-07, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kchon"]
+_data = {
+"RESET": SubResource("Animation_igrit"),
+"dinah_head_turn": SubResource("Animation_57wu5")
+}
 
 [node name="dining_area" type="Node2D"]
 y_sort_enabled = true
@@ -106,9 +219,10 @@ layer_5/z_index = 1
 layer_5/tile_data = PackedInt32Array(2752571, 131072, 4, 2687035, 131072, 4, 2621499, 131072, 4, 2555963, 131072, 4, 2490427, 131072, 4, 2752582, 0, 4, 2687046, 0, 4, 2621510, 0, 4, 2555974, 0, 4, 2490438, 0, 4, 2424891, 65536, 7, 2424902, 0, 7, 2424901, 65536, 5, 2424900, 65536, 5, 2424899, 65536, 5, 2424898, 65536, 5, 2424897, 65536, 5, 2424896, 65536, 5, 2424895, 65536, 5, 2424894, 65536, 5, 2424893, 65536, 5, 2424892, 65536, 5, 2818107, 65536, 6, 2818108, 65536, 3, 2818109, 65536, 3, 2818110, 65536, 3, 2818111, 65536, 3, 2818114, 65536, 3, 2818115, 65536, 3, 2818116, 65536, 3, 2818117, 65536, 3, 2818118, 0, 6)
 
 [node name="Christina" parent="." instance=ExtResource("2_jlk4d")]
-position = Vector2(1048, 685)
+position = Vector2(1149, 606)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
+z_index = 5
 zoom = Vector2(6, 6)
 limit_left = 874
 limit_top = 530
@@ -116,6 +230,9 @@ limit_right = 1222
 limit_bottom = 710
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("4_qsj4v")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
 
 [node name="dining_exit_point" type="Area2D" parent="."]
 position = Vector2(1027, 710)
@@ -212,11 +329,33 @@ vframes = 4
 frame = 8
 
 [node name="Actionable2" parent="." instance=ExtResource("5_t5dyu")]
-position = Vector2(1039, 582)
+position = Vector2(1151, 582)
 dialogue_resource = ExtResource("13_earxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
 shape = SubResource("CircleShape2D_tkm51")
+
+[node name="damian_normal" type="CharacterBody2D" parent="."]
+position = Vector2(1142, 573)
+
+[node name="Sprite2D" type="Sprite2D" parent="damian_normal"]
+texture = ExtResource("15_cy6m2")
+hframes = 4
+vframes = 4
+
+[node name="dinah_head_turn" type="CharacterBody2D" parent="."]
+position = Vector2(1161, 573)
+
+[node name="Sprite2D" type="Sprite2D" parent="dinah_head_turn"]
+texture = ExtResource("16_qvonq")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kchon")
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [connection signal="body_entered" from="dining_exit_point" to="." method="_on_dining_exit_point_body_entered"]
 [connection signal="body_exited" from="dining_exit_point" to="." method="_on_dining_exit_point_body_exited"]

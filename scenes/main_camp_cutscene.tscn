@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyri3cmwatitg"]
+[gd_scene load_steps=13 format=3 uid="uid://cyri3cmwatitg"]
 
 [ext_resource type="Script" path="res://scenes/main_camp_cutscene.gd" id="1_58uup"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_ffa1h"]
 [ext_resource type="Texture2D" uid="uid://di2s7pajtr44" path="res://character_sprite/Christina_full_sprite_remake.png" id="2_a3eif"]
 [ext_resource type="Texture2D" uid="uid://ccntit7na4kbk" path="res://character_sprite/squirrel_run_left.png" id="3_igdtk"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="3_v2vkg"]
 [ext_resource type="Texture2D" uid="uid://bkip4i6pdqmen" path="res://textures/cookie.png" id="4_aeq06"]
 [ext_resource type="Texture2D" uid="uid://4cvtrh44ga85" path="res://character_sprite/maysie_remake_full.png" id="4_y75j4"]
 
@@ -248,6 +249,9 @@ limit_bottom = 709
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("3_v2vkg")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
 
 [node name="christina" type="CharacterBody2D" parent="."]
 position = Vector2(1016, 612)

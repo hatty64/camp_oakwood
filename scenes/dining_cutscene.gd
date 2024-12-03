@@ -10,6 +10,7 @@ extends Node2D
 
 
 func _ready():
+	$Camera2D.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
 	BGSPlayer.stop()
 	await get_tree().create_timer(3.0).timeout
 	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start")

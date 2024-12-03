@@ -75,10 +75,12 @@ func _unhandled_input(_event: InputEvent) -> void:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			GlobalDays.start_dialogue()
+			$Camera2D.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
 			state_machine.travel("idle")
 			actionables[0].action()
 			input_vector = Vector2.ZERO
 			await DialogueManager.dialogue_ended
+			$Camera2D.toggle_cinematic(false)
 			GlobalDays.end_dialogue()
 			return
 

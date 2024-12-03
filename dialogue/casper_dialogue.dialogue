@@ -47,12 +47,18 @@ Casper: [#chr=casper] [#mood=bored] Can I help you?
 	Casper: [#chr=casper] [#mood=bored] Some people say it's just fantasy, but those people are wrong.
 	Christina: [#chr=christina] [#mood=thinking] I... see.
 - The door
-	Christina: [#chr=christina] [#mood=thinking] Any ideas on how to open the door?
-	Casper: [#chr=casper] [#mood=bored] No idea.
-	Casper: [#chr=casper] [#mood=bored] Try staring at the door, maybe that'll help.
-	Christina: [#chr=christina] [#mood=confused] Are you being sarcastic?
-	Casper: [#chr=casper] [#mood=bored] I don't know, am I?
-	Christina: [#chr=christina] [#mood=confused] ... Was that sarcasm?
+	if door_open == false
+		Christina: [#chr=christina] [#mood=thinking] Any ideas on how to open the door?
+		Casper: [#chr=casper] [#mood=bored] No idea.
+		Casper: [#chr=casper] [#mood=bored] Try staring at the door, maybe that'll help.
+		Christina: [#chr=christina] [#mood=confused] Are you being sarcastic?
+		Casper: [#chr=casper] [#mood=bored] I don't know, am I?
+		Christina: [#chr=christina] [#mood=confused] ... Was that sarcasm?
+	else
+		Christina: [#chr=christina] [#mood=thinking] So... the door is open.
+		Casper: [#chr=casper] [#mood=bored] Yes, I can tell.
+		Christina: [#chr=christina] [#mood=default] Don't you wanna go first?
+		Casper: [#chr=casper] [#mood=bored] I'll go in once I'm done reading.
 - Hobbies
 	Christina: [#chr=christina] [#mood=thinking] So, do you have any hobbies?
 	Casper: [#chr=casper] [#mood=bored] I came here to avoid small talks, thank you very much.

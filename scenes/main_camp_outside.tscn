@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://er1uiyaq2g5q"]
+[gd_scene load_steps=36 format=3 uid="uid://er1uiyaq2g5q"]
 
 [ext_resource type="Script" path="res://scenes/main_camp_outside.gd" id="1_b6uca"]
 [ext_resource type="PackedScene" uid="uid://8v3obom8if5a" path="res://scenes/rain.tscn" id="2_6br2l"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="4_45e5m"]
 [ext_resource type="Resource" uid="uid://baw8gciiuwynm" path="res://dialogue/boys_cabin.dialogue" id="5_cj2xx"]
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="6_kvvf1"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="7_64c20"]
 [ext_resource type="Texture2D" uid="uid://bdq8ug0ec7q17" path="res://character_sprite/clancy_remake_full.png" id="7_kcsq4"]
 [ext_resource type="Resource" uid="uid://bfj6oykysj22h" path="res://dialogue/clancy_dialogue.dialogue" id="8_etvv3"]
 [ext_resource type="Texture2D" uid="uid://ulvedylt82wa" path="res://character_sprite/casper_reading.png" id="9_sxtly"]
@@ -263,6 +264,9 @@ limit_bottom = 709
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("7_64c20")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
 
 [node name="cabin_f_transition_point" type="Area2D" parent="."]
 position = Vector2(0, 36)

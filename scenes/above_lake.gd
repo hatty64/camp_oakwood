@@ -1,5 +1,6 @@
 extends Node2D
 
+
 func _ready() -> void:
 	if Global.loadin_above_lake_left == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
@@ -23,6 +24,15 @@ func _process(delta: float) -> void:
 		Transit.change_scene_to_file("res://scenes/lake.tscn")
 		Global.loadin_lake_3 = false
 		Global.loadin_lake_4 = true
+	if entered_3 == true:
+		Transit.change_scene_to_file("res://scenes/night_temple_ext_cutscene.tscn")
+		Global.loadin_lake_3 = false
+		Global.loadin_lake_4 = false
+	
+	if GlobalDays.ep_one_day_one == true:
+		$StaticBody2D2/CollisionShape2D.disabled = true
+	else:
+		$StaticBody2D2/CollisionShape2D.disabled = false
 
 
 
@@ -44,3 +54,13 @@ func _on_lake_transit_right_body_entered(body: Node2D) -> void:
 func _on_lake_transit_right_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		entered_2 = false
+
+
+func _on_night_forest_transit_body_entered(body: Node2D) -> void:
+	if body.has_method("player"):
+		entered_3 = true
+
+
+func _on_night_forest_transit_body_exited(body: Node2D) -> void:
+	if body.has_method("player"):
+		entered_3 = false

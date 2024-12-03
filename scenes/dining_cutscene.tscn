@@ -1,9 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://bfwo6aqybwvj0"]
+[gd_scene load_steps=40 format=3 uid="uid://bfwo6aqybwvj0"]
 
 [ext_resource type="Texture2D" uid="uid://d2nyvap8tjeqf" path="res://character_sprite/jacob_remake_full.png" id="1_7781q"]
 [ext_resource type="Script" path="res://scenes/dining_cutscene.gd" id="1_ujifp"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_uo7dl"]
 [ext_resource type="Texture2D" uid="uid://dcwvjiyi43qhq" path="res://character_sprite/jacob_fall.png" id="2_2uthq"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="3_e80o5"]
 [ext_resource type="Texture2D" uid="uid://s1pgk04kweej" path="res://character_sprite/damian_remake_full.png" id="3_oagix"]
 [ext_resource type="Texture2D" uid="uid://bq6rqnwgywknq" path="res://scenes/exclamation.png" id="4_yfd0i"]
 [ext_resource type="Texture2D" uid="uid://buxda2u73wncs" path="res://character_sprite/damian_push.png" id="5_8xw0l"]
@@ -874,6 +875,9 @@ limit_right = 1273
 limit_bottom = 764
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("3_e80o5")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 libraries = {

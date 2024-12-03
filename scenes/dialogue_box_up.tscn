@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckj8s3rgbjlr2"]
+
+[ext_resource type="Script" path="res://scenes/dialogue_box_up.gd" id="1_i0h8k"]
+[ext_resource type="Texture2D" uid="uid://dinnc5sgko1th" path="res://textures/dialogue_box_two.png" id="2_prswm"]
+[ext_resource type="FontFile" uid="uid://cxco3lwv0bs5r" path="res://scenes/joystix monospace.otf" id="3_4h0s4"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="4_07k0t"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="5_3r6ge"]
+[ext_resource type="FontFile" uid="uid://bgegjsrhmi013" path="res://scenes/tiles/joystix monospace.otf" id="6_amsxn"]
+[ext_resource type="Texture2D" uid="uid://ewiii3pqc373" path="res://scenes/tiles/response_box.png" id="7_ef0ce"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1cbgj"]
+texture = ExtResource("7_ef0ce")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[node name="dialogue_box_up" type="CanvasLayer"]
+script = ExtResource("1_i0h8k")
+
+[node name="Balloon" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 2523.0
+offset_bottom = 348.0
+scale = Vector2(0.759995, 0.759995)
+texture = ExtResource("2_prswm")
+patch_margin_left = 112
+patch_margin_top = 112
+patch_margin_right = 112
+patch_margin_bottom = 112
+
+[node name="Dialogue" type="MarginContainer" parent="Balloon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 32.0
+offset_right = -89.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/Dialogue"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Portrait" type="TextureRect" parent="Balloon/Dialogue/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Dialogue/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Dialogue/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.34902, 0.219608, 0.0901961, 1)
+theme_override_fonts/normal_font = ExtResource("3_4h0s4")
+theme_override_font_sizes/normal_font_size = 40
+text = "Character"
+fit_content = true
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Balloon/Dialogue/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_4h0s4")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Dialogue..."
+fit_content = true
+scroll_active = false
+script = ExtResource("4_07k0t")
+skip_action = &"skip"
+seconds_per_step = 0.03
+pause_at_characters = ".?!,"
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+
+[node name="Responses" type="MarginContainer" parent="Balloon"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1925.01
+offset_top = 363.16
+offset_right = 2501.01
+offset_bottom = 459.16
+
+[node name="ResponseMenu" type="VBoxContainer" parent="Balloon/Responses" node_paths=PackedStringArray("response_template")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_3r6ge")
+response_template = NodePath("ResponseExample")
+
+[node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_amsxn")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_1cbgj")
+text = "Response example"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 21.0
+offset_right = 349.0
+offset_bottom = 353.0
+
+[node name="Portrait" type="TextureRect" parent="Balloon/VBoxContainer"]
+layout_mode = 2
+expand_mode = 4
+
+[node name="text_sound" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0
+panning_strength = 0.0
+
+[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/Dialogue/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
+[connection signal="response_selected" from="Balloon/Responses/ResponseMenu" to="." method="_on_response_menu_response_selected"]

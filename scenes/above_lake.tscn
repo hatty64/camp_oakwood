@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c83ixfa2wc6c8"]
+[gd_scene load_steps=10 format=3 uid="uid://c83ixfa2wc6c8"]
 
 [ext_resource type="Script" path="res://scenes/above_lake.gd" id="1_87a6g"]
 [ext_resource type="PackedScene" uid="uid://8v3obom8if5a" path="res://scenes/rain.tscn" id="1_tovx6"]
@@ -11,6 +11,12 @@ size = Vector2(77, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xh7dl"]
 size = Vector2(66, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smxp0"]
+size = Vector2(96, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8otv"]
+size = Vector2(96, 11)
 
 [node name="above_lake" type="Node2D"]
 script = ExtResource("1_87a6g")
@@ -86,9 +92,25 @@ position = Vector2(1139, 806)
 position = Vector2(23, 0)
 shape = SubResource("RectangleShape2D_xh7dl")
 
+[node name="night_forest_transit" type="Area2D" parent="."]
+position = Vector2(931, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="night_forest_transit"]
+position = Vector2(38, 0)
+shape = SubResource("RectangleShape2D_smxp0")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(931, 347)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(38, -4.5)
+shape = SubResource("RectangleShape2D_x8otv")
+
 [connection signal="body_entered" from="lake_transit_left" to="." method="_on_lake_transit_left_body_entered"]
 [connection signal="body_exited" from="lake_transit_left" to="." method="_on_lake_transit_left_body_exited"]
 [connection signal="body_entered" from="lake_transit_right" to="." method="_on_lake_transit_right_body_entered"]
 [connection signal="body_exited" from="lake_transit_right" to="." method="_on_lake_transit_right_body_exited"]
+[connection signal="body_entered" from="night_forest_transit" to="." method="_on_night_forest_transit_body_entered"]
+[connection signal="body_exited" from="night_forest_transit" to="." method="_on_night_forest_transit_body_exited"]
 
 [editable path="rain"]

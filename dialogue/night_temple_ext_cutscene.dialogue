@@ -41,3 +41,12 @@ else
 	Christina: [#chr=christina] [#mood=thinking] I guess we gotta find a way inside.
 
 => END
+
+~ Start_door_open
+
+Casper: [#chr=casper] [#mood=bored] Hm, look at that, you got the door open.
+Christina: [#chr=christina] [#mood=thinking] Yeah... I did.
+Casper: [#chr=casper] [#mood=bored] You can go first if you want.
+Casper: [#chr=casper] [#mood=bored] I need to finish my reading.
+
+=> END

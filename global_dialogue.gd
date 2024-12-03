@@ -11,5 +11,6 @@ var maysie_in_cabin = false
 var maya_in_cabin = false
 
 var sleepable = false
+var door_open = false
 
 var no_one_there = false

@@ -6,6 +6,8 @@ extends Node2D
 @onready var damian = $damian
 @onready var dinah = $dinah
 @onready var actionable_2 = $Actionable2
+@onready var damian_normal: CharacterBody2D = $damian_normal
+@onready var dinah_head_turn: CharacterBody2D = $dinah_head_turn
 
 
 func _ready():
@@ -19,6 +21,7 @@ func _ready():
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 1048
 		$Christina.position.y = 672
+	$AnimationPlayer.play("RESET")
 
 var entered = false
 
@@ -59,6 +62,10 @@ func day0_finished():
 		dinah.position.y = 0
 		actionable_2.position.x = 0
 		actionable_2.position.y = 0
+		damian_normal.position.x = 0
+		damian_normal.position.y = 0
+		dinah_head_turn.position.x = 0
+		dinah_head_turn.position.y = 0
 	else:
 		jacob.position.x = 961
 		jacob.position.y = 589
@@ -72,3 +79,41 @@ func day0_finished():
 		dinah.position.y = 576
 		actionable_2.position.x = 1039
 		actionable_2.position.y = 582
+		actionable_2.dialogue_start = "Start"
+		damian_normal.position.x = 0
+		damian_normal.position.y = 0
+		dinah_head_turn.position.x = 0
+		dinah_head_turn.position.y = 0
+	if GlobalDays.ep_one_day_one == true:
+		jacob.position.x = 0
+		jacob.position.y = 0
+		damian.position.x = 0
+		damian.position.y = 0
+		maysie.position.x = 0
+		maysie.position.y = 0
+		maya.position.x = 1141
+		maya.position.y = 668
+		dinah.position.x = 0
+		dinah.position.y = 0
+		actionable_2.position.x = 1151
+		actionable_2.position.y = 582
+		actionable_2.dialogue_start = "Start_ep_one_day_one"
+		damian_normal.position.x = 1142
+		damian_normal.position.y = 573
+		dinah_head_turn.position.x = 1161
+		dinah_head_turn.position.y = 573
+
+func cutscene_play():
+	Global.input_blocked = true
+
+func cutscene_stop():
+	Global.input_blocked = false
+
+func dinah_turns_head():
+	cutscene_play()
+	MusicPlayer.stream_paused = true
+	await get_tree().create_timer(1.0).timeout
+	$AnimationPlayer.play("dinah_head_turn")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.play("RESET")
+	MusicPlayer.stream_paused = false

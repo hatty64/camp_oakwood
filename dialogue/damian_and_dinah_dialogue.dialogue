@@ -29,3 +29,27 @@ else
 	Damian: [#chr=damian] [#mood=no] [shake rate=20 level=20]It's not Alzheimer's.[/shake]
 
 => END
+
+
+~ Start_ep_one_day_one
+
+Damian: [#chr=damian] [#mood=happy] Hey Christina, did you sleep well?
+Christina: [#chr=christina] [#mood=smile] I guess... you're Damian, right?
+Damian: [#chr=damian] [#mood=happy] Yup!
+Damian: [#chr=damian] [#mood=happy] And I see you still have amnesia.
+Damian: [#chr=damian] [#mood=happy] So, what's up?
+- Hobbies
+- What are you doing?
+- Compliment
+	Christina: [#chr=christina] [#mood=smile] I like your eyes, they're pretty cool.
+	Damian: [#chr=damian] [#mood=happy] Why, thank you!
+	Damian: [#chr=damian] [#mood=confident] But, between you and me, I have the better looking eyes.
+	Dinah: [#chr=dinah] [#mood=confused] We... both have the same eye colors.
+	Damian: [#chr=damian] [#mood=confident] Yeah, but I'm 20 seconds older, and the older you are, the better you look.
+	Damian: [#chr=damian] [#mood=confident] So naturally, I have the better eyes.
+	do dinah_turns_head()
+	Damian: [#chr=damian] [#mood=sad] Let's just move onto something else...
+	do cutscene_stop()
+- Nevermind
+
+=> END

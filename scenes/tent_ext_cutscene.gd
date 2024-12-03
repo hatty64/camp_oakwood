@@ -3,10 +3,12 @@ extends Node2D
 @onready var clancy = $clancy
 @onready var clancy_anim := $clancy/AnimationPlayer
 @onready var exclamation = $clancy/exclamation
-@onready var camera_anim := $Camera2D/AnimationPlayer
+@onready var camera_anim := $Camera2DPlus/AnimationPlayer
 
 
 func _ready():
+	$Camera2DPlus.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
+	#$Camera2DPlus.horizontal_enabled = true
 	Global.game_first_loadin = false
 	BGSPlayer.play_rain()
 	BGSPlayer.play()

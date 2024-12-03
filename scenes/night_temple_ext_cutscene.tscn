@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cok5lp1grnpb2"]
+[gd_scene load_steps=88 format=3 uid="uid://cok5lp1grnpb2"]
 
 [ext_resource type="Script" path="res://scenes/night_temple_ext_cutscene.gd" id="1_ollai"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_ucdnw"]
@@ -40,6 +40,8 @@
 [ext_resource type="Texture2D" uid="uid://76r6cl7j1vlj" path="res://textures/night_temple.png" id="37_3eomm"]
 [ext_resource type="Texture2D" uid="uid://ulvedylt82wa" path="res://character_sprite/casper_reading.png" id="38_4un3t"]
 [ext_resource type="Texture2D" uid="uid://d1g8imbn4uqjg" path="res://character_sprite/christina_full_sprite_sprint.png" id="39_hu6hg"]
+[ext_resource type="Texture2D" uid="uid://dgqhbs8uu7gq3" path="res://textures/night_temple_door_locked.png" id="39_wqhiy"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="41_g3y6p"]
 [ext_resource type="Texture2D" uid="uid://bq6rqnwgywknq" path="res://scenes/exclamation.png" id="41_tblbo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kyyu3"]
@@ -1091,6 +1093,12 @@ texture = ExtResource("37_3eomm")
 position = Vector2(0, 48)
 shape = SubResource("RectangleShape2D_iybwy")
 
+[node name="door" type="Area2D" parent="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/door"]
+texture = ExtResource("39_wqhiy")
+hframes = 7
+
 [node name="casper" type="CharacterBody2D" parent="."]
 position = Vector2(919, 415)
 
@@ -1113,6 +1121,9 @@ limit_right = 1149
 limit_bottom = 852
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("41_g3y6p")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

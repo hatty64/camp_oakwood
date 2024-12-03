@@ -2,6 +2,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	$Camera2D.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
 	await get_tree().create_timer(1.0).timeout
 	animation_player.play("squirrel_running")
 	await animation_player.animation_finished

@@ -3,6 +3,8 @@ extends Node2D
 @onready var casper_anim: AnimationPlayer = $casper/casper_anim
 
 func _ready() -> void:
+	$Camera2D.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
+	MusicPlayer.stop()
 	casper_anim.play("reading")
 	await get_tree().create_timer(1.0).timeout
 	animation_player.play("christina_move_up")

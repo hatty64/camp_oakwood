@@ -1286,3 +1286,9 @@ func show_dialogue_night_balloon(resource: DialogueResource, title: String = "",
 	get_current_scene.call().add_child(balloon)
 	balloon.start(resource, title, extra_game_states)
 	return balloon
+
+func show_dialogue_regular_balloon_up(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> Node:
+	var balloon: Node = load("res://scenes/dialogue_box_up.tscn").instantiate()
+	get_current_scene.call().add_child(balloon)
+	balloon.start(resource, title, extra_game_states)
+	return balloon

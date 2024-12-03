@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://blc7pwy0hdfnv"
+path="res://.godot/imported/night_temple_ext_interact.dialogue-f8431ed051c0339bd7e50276d05b7185.tres"
+
+[deps]
+
+source_file="res://dialogue/night_temple_ext_interact.dialogue"
+dest_files=["res://.godot/imported/night_temple_ext_interact.dialogue-f8431ed051c0339bd7e50276d05b7185.tres"]
+
+[params]
+
+defaults=true
