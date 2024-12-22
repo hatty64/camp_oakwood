@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csbq8546m8n4o"
-path="res://.godot/imported/1st_tent_floor.png-68599ec5d5ce6b75a481db45ad5d0c25.ctex"
+uid="uid://dtabotgolcg3c"
+path="res://.godot/imported/library.png-fe95e80b155d896da7fd0d35a6954c27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/1st_tent_floor.png"
-dest_files=["res://.godot/imported/1st_tent_floor.png-68599ec5d5ce6b75a481db45ad5d0c25.ctex"]
+source_file="res://scenes/tiles/library.png"
+dest_files=["res://.godot/imported/library.png-fe95e80b155d896da7fd0d35a6954c27.ctex"]
 
 [params]
 

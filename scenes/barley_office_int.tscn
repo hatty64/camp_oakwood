@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://6d4tm5j8eqho"]
+[gd_scene load_steps=11 format=3 uid="uid://6d4tm5j8eqho"]
 
 [ext_resource type="Script" path="res://scenes/barley_office_int.gd" id="1_74ww3"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_4413j"]
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_6thbn"]
 [ext_resource type="Texture2D" uid="uid://s53wb5eit7tb" path="res://character_sprite/barley_remake_full.png" id="3_adf51"]
 [ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="4_1mvjq"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="4_itcxk"]
 [ext_resource type="Resource" uid="uid://c3gcev2uir8vx" path="res://dialogue/bear.dialogue" id="5_360q2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tfrxj"]
@@ -55,6 +56,9 @@ limit_right = 1129
 limit_bottom = 661
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("4_itcxk")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
 
 [node name="barley" type="CharacterBody2D" parent="."]
 position = Vector2(969, 557)

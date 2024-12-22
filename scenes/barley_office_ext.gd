@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	Global.sprint_blocked = false
 	if Global.loadin_barley_office_ext == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 953

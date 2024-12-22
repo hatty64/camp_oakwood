@@ -230,4 +230,6 @@ stream = ExtResource("4_rlcr4")
 volume_db = 11.886
 panning_strength = 0.0
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
 [connection signal="ready" from="." to="." method="_on_ready"]

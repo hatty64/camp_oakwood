@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7dp355w4r6vb"
-path="res://.godot/imported/1st_tent_wall_and_floor.png-65070ea8cceeb7d6ba489a4b95370981.ctex"
+uid="uid://bhlr384d3kbyj"
+path="res://.godot/imported/spot.png-9b485d3e20d06cc0987f91f7e0b58f0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/1st_tent_wall_and_floor.png"
-dest_files=["res://.godot/imported/1st_tent_wall_and_floor.png-65070ea8cceeb7d6ba489a4b95370981.ctex"]
+source_file="res://character_sprite/bg_characters/spot.png"
+dest_files=["res://.godot/imported/spot.png-9b485d3e20d06cc0987f91f7e0b58f0f.ctex"]
 
 [params]
 

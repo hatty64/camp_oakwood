@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bh1pdkg3tm034"
+path="res://.godot/imported/narrator_transit.dialogue-5270ee9083de1e22725e5fe00b7ae5e6.tres"
+
+[deps]
+
+source_file="res://dialogue/narrator_transit.dialogue"
+dest_files=["res://.godot/imported/narrator_transit.dialogue-5270ee9083de1e22725e5fe00b7ae5e6.tres"]
+
+[params]
+
+defaults=true

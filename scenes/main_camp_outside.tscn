@@ -210,6 +210,22 @@ radius = 7.0
 y_sort_enabled = true
 script = ExtResource("1_b6uca")
 
+[node name="Christina" parent="." instance=ExtResource("6_kvvf1")]
+position = Vector2(1016, 612)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+zoom = Vector2(6, 6)
+limit_left = 793
+limit_top = 476
+limit_right = 1451
+limit_bottom = 709
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("7_64c20")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
+
 [node name="rain" parent="." instance=ExtResource("2_6br2l")]
 visible = false
 z_index = 5
@@ -251,22 +267,6 @@ dialogue_resource = ExtResource("5_cj2xx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Actionable"]
 position = Vector2(0, -36)
 shape = SubResource("CircleShape2D_wcvuq")
-
-[node name="Christina" parent="." instance=ExtResource("6_kvvf1")]
-position = Vector2(1016, 612)
-
-[node name="Camera2D" type="Camera2D" parent="Christina"]
-zoom = Vector2(6, 6)
-limit_left = 793
-limit_top = 476
-limit_right = 1451
-limit_bottom = 709
-position_smoothing_speed = 10.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-script = ExtResource("7_64c20")
-HORIZONTAL_CUT_SIZE = 150
-CINEMATIC_LAYER = 0
 
 [node name="cabin_f_transition_point" type="Area2D" parent="."]
 position = Vector2(0, 36)
@@ -395,6 +395,9 @@ scale = Vector2(0.812248, 0.812248)
 
 [node name="Sprite2D" type="Sprite2D" parent="night_vision_stuff"]
 texture = ExtResource("15_lni31")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+z_index = 99
 
 [connection signal="body_entered" from="cabin_f_transition_point" to="." method="_on_cabin_f_transition_point_body_entered"]
 [connection signal="body_exited" from="cabin_f_transition_point" to="." method="_on_cabin_f_transition_point_body_exited"]

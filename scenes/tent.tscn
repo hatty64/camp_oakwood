@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bu8ly0bugcxpy"]
+[gd_scene load_steps=14 format=3 uid="uid://bu8ly0bugcxpy"]
 
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="1_24la7"]
 [ext_resource type="Script" path="res://scenes/tent.gd" id="1_k1ty7"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="2_trsy5"]
 [ext_resource type="Texture2D" uid="uid://co0yiecgie7lf" path="res://scenes/chair.png" id="4_rvj6w"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="4_sxqtv"]
 [ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="5_7ived"]
 [ext_resource type="Resource" uid="uid://c2o0qg2v7jy31" path="res://dialogue/chair_interact.dialogue" id="6_vbj0q"]
 [ext_resource type="Resource" uid="uid://dqb4gjpmb4m51" path="res://dialogue/cot_interact.dialogue" id="7_bxlky"]
@@ -52,6 +53,9 @@ limit_right = 1114
 limit_bottom = 678
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("4_sxqtv")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

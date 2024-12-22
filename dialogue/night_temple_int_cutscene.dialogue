@@ -1,0 +1,52 @@
+~ Start
+
+Christina: [#chr=christina] [#mood=confused] What... is that thing?
+
+=> END
+
+~ Start_2
+
+Christina: [#chr=christina] [#mood=thinking] "Here lies the creature of chaos, known as..."
+Christina: [#chr=christina] [#mood=thinking] "The Night."
+???: [#chr=casper] Interesting
+
+=> END
+
+~ Start_3
+
+Casper: [#chr=casper] [#mood=bored] Perhaps we should open up the coffin to see what's inside.
+Christina: [#chr=christina] [#mood=nervous] I don't know, I've got a bad feeling about this.
+Christina: [#chr=christina] [#mood=nervous] Maybe we should just leave it alone.
+Christina: [#chr=christina] [#mood=nervous] There could be something dangerous inside.
+Casper: [#chr=casper] [#mood=bored] Or there could be nothing inside.
+Casper: [#chr=casper] [#mood=bored] We'll never know if we just leave it there.
+Casper: [#chr=casper] [#mood=bored] Now, step aside.
+
+=> END
+
+~ Start_4
+
+???: [#chr=clancy] What do you think you're doing!?
+
+=> END
+
+~ Start_5
+
+Christina: [#chr=christina] [#mood=nervous] [next=auto]Clancy We were just-
+Clancy: [#chr=clancy] [#mood=angry] Do you have any idea how worried Barley will be if he found out you two snuck out!
+Christina: [#chr=christina] [#mood=nervous] I was just looking for a squirrel, I didn't mean to sneak out.
+Clancy: [#chr=clancy] [#mood=angry] And what's your excuse, Casper?
+Casper: [#chr=casper] [#mood=bored] I wanted to be alone.
+Clancy: [#chr=clancy] [#mood=bored] Look, I'm really tired and I don't wanna deal with this right now.
+Clancy: [#chr=clancy] [#mood=bored] So I'm just gonna let you off with a warning, for now.
+Clancy: [#chr=clancy] [#mood=angry] But don't sneak out like that again, okay?!
+Christina: [#chr=christina] [#mood=happy] Thank you, Clancy!
+Clancy: [#chr=clancy] [#mood=bored] Yeah, whatever.
+
+=> END
+
+~ Start_6
+
+Christina and Casper returned to the cafeteria.
+
+=> END

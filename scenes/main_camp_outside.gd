@@ -119,6 +119,10 @@ func _process(_delta):
 		$maysie.position.x = 0
 		$maysie.position.y = 0
 	
+	if GlobalDays.after_night_temple == true:
+		$maysie.position.x = 0
+		$maysie.position.y = 0
+	
 	if Global.eavesdrop_day0_finished_boys == true:
 		eavesdrop.dialogue_start = "Start_3"
 	

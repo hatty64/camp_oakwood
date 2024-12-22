@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bfwo6aqybwvj0"]
+[gd_scene load_steps=41 format=3 uid="uid://bfwo6aqybwvj0"]
 
 [ext_resource type="Texture2D" uid="uid://d2nyvap8tjeqf" path="res://character_sprite/jacob_remake_full.png" id="1_7781q"]
 [ext_resource type="Script" path="res://scenes/dining_cutscene.gd" id="1_ujifp"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dea4nf3i0le4n" path="res://character_sprite/maya_remake_full.png" id="7_kj862"]
 [ext_resource type="Texture2D" uid="uid://cti6ui8tsuost" path="res://character_sprite/maysie_lean.png" id="8_3w62v"]
 [ext_resource type="Texture2D" uid="uid://di2s7pajtr44" path="res://character_sprite/Christina_full_sprite_remake.png" id="9_m3bqc"]
+[ext_resource type="PackedScene" uid="uid://b1md5nvyr2iws" path="res://scenes/hold_skip.tscn" id="13_76sal"]
 
 [sub_resource type="Animation" id="Animation_k6fr6"]
 length = 0.001
@@ -974,3 +975,9 @@ frame = 13
 libraries = {
 "": SubResource("AnimationLibrary_w70qn")
 }
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="hold_skip" parent="CanvasLayer2" instance=ExtResource("13_76sal")]
+
+[editable path="CanvasLayer2/hold_skip"]

@@ -14,5 +14,10 @@ if maysie_first_talked == true
 else
 	???: [#chr=maysie] [#mood=angry] What are you looking at!?
 	???: [#chr=maysie] [#mood=angry] Go get my cookie back!
+	Christina: [#chr=christina] [#mood=smile] You got it!
+	Christina: [#chr=christina] [#mood=thinking] Umm...
+	???: [#chr=maysie] [#mood=bored] Maysie.
+	Maysie: [#chr=maysie] [#mood=angry] Now go get my cookie!
+	set maysie_first_talked = true
 
 => END

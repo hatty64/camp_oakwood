@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfjm4mt1hn8cg"]
+[gd_scene load_steps=16 format=3 uid="uid://dfjm4mt1hn8cg"]
 
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_em11b"]
 [ext_resource type="Script" path="res://scenes/tent_ext_cutscene.gd" id="1_yq6xj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bq6rqnwgywknq" path="res://scenes/exclamation.png" id="4_txo47"]
 [ext_resource type="PackedScene" uid="uid://8v3obom8if5a" path="res://scenes/rain.tscn" id="6_n2m7y"]
 [ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="7_pcgvh"]
+[ext_resource type="PackedScene" uid="uid://b1md5nvyr2iws" path="res://scenes/hold_skip.tscn" id="8_f2hm3"]
 
 [sub_resource type="Animation" id="Animation_krlgb"]
 length = 0.001
@@ -205,3 +206,9 @@ CINEMATIC_LAYER = 0
 libraries = {
 "": SubResource("AnimationLibrary_55bdi")
 }
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="hold_skip" parent="CanvasLayer2" instance=ExtResource("8_f2hm3")]
+
+[editable path="CanvasLayer2/hold_skip"]

@@ -14,3 +14,5 @@ var sleepable = false
 var door_open = false
 
 var no_one_there = false
+
+var skip_scene

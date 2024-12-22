@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cp6hcscid2cub"]
+[gd_scene load_steps=9 format=3 uid="uid://cp6hcscid2cub"]
 
 [ext_resource type="Script" path="res://scenes/my_dialogue_box.gd" id="1_k7dwg"]
 [ext_resource type="Texture2D" uid="uid://dinnc5sgko1th" path="res://textures/dialogue_box_two.png" id="2_1od2m"]
@@ -14,63 +14,6 @@ texture_margin_left = 24.0
 texture_margin_top = 24.0
 texture_margin_right = 24.0
 texture_margin_bottom = 24.0
-
-[sub_resource type="Animation" id="Animation_of5im"]
-resource_name = "dialogue_show"
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Balloon:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.7)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Balloon:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1100, -0.25, 0, 0.25, 0, 811, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.7)
-}
-
-[sub_resource type="Animation" id="Animation_ll30j"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Balloon:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Balloon:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(811, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_guo1s"]
-_data = {
-"RESET": SubResource("Animation_ll30j"),
-"dialogue_show": SubResource("Animation_of5im")
-}
 
 [node name="my_dialogue_box" type="CanvasLayer"]
 script = ExtResource("1_k7dwg")
@@ -175,11 +118,6 @@ expand_mode = 4
 [node name="text_sound" type="AudioStreamPlayer2D" parent="."]
 volume_db = 10.0
 panning_strength = 0.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_guo1s")
-}
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="spoke" from="Balloon/Dialogue/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1md5nvyr2iws"]
+
+[ext_resource type="Texture2D" uid="uid://2djcv7fagjjb" path="res://textures/fishing_bar_bg.png" id="1_qnjlq"]
+[ext_resource type="Script" path="res://scenes/hold_skip.gd" id="1_qt0cy"]
+[ext_resource type="Texture2D" uid="uid://4ulnpdmtb62y" path="res://textures/fishing_bar_border.png" id="2_p7l4h"]
+[ext_resource type="Texture2D" uid="uid://vlkji3otmew7" path="res://textures/fishing_bar.png" id="3_5bd2w"]
+[ext_resource type="FontFile" uid="uid://cxco3lwv0bs5r" path="res://scenes/joystix monospace.otf" id="5_g11q1"]
+
+[sub_resource type="Animation" id="Animation_3pvp1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j75d5"]
+resource_name = "fade_out"
+length = 3.20001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oaap8"]
+_data = {
+"RESET": SubResource("Animation_3pvp1"),
+"fade_out": SubResource("Animation_j75d5")
+}
+
+[node name="hold_skip" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qt0cy")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 144.0
+offset_bottom = 104.0
+scale = Vector2(2.48, 2.48)
+texture_under = ExtResource("1_qnjlq")
+texture_over = ExtResource("2_p7l4h")
+texture_progress = ExtResource("3_5bd2w")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 570.0
+offset_bottom = 76.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("5_g11q1")
+theme_override_font_sizes/normal_font_size = 35
+text = "Hold PAUSE to skip"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oaap8")
+}

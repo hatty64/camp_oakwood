@@ -1,9 +1,15 @@
-[gd_scene load_steps=44 format=3 uid="uid://bhysbh3p85m13"]
+[gd_scene load_steps=47 format=3 uid="uid://bhysbh3p85m13"]
 
 [ext_resource type="Script" path="res://scenes/Christina.gd" id="1_rvncv"]
 [ext_resource type="Texture2D" uid="uid://d1g8imbn4uqjg" path="res://character_sprite/christina_full_sprite_sprint.png" id="2_pt51l"]
+[ext_resource type="Script" path="res://scenes/sprite_2d.gd" id="3_0xamt"]
 [ext_resource type="PackedScene" uid="uid://bw3x0ddvicyea" path="res://scenes/pause_menu_two.tscn" id="3_ksaay"]
 [ext_resource type="AudioStream" uid="uid://c4g03xahwv26f" path="res://scenes/hearbeat-71701.mp3" id="4_2pmq7"]
+[ext_resource type="Shader" path="res://shaders/silhouette.gdshader" id="4_x5mhx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1co8o"]
+shader = ExtResource("4_x5mhx")
+shader_parameter/silhouette_color = Color(0, 0, 0, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cb13"]
 size = Vector2(5, 13.5)
@@ -263,7 +269,7 @@ tracks/1/keys = {
 resource_name = "walk down"
 length = 0.83335
 loop_mode = 1
-step = 0.166667
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -502,12 +508,17 @@ y_sort_enabled = true
 script = ExtResource("1_rvncv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-y_sort_enabled = true
 texture_filter = 1
 texture = ExtResource("2_pt51l")
 hframes = 4
 vframes = 8
 frame = 2
+script = ExtResource("3_0xamt")
+
+[node name="silhouette" type="Sprite2D" parent="Sprite2D"]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_1co8o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 7.25)
@@ -556,7 +567,6 @@ color = Color(0.310617, 0.310617, 0.310617, 0.329412)
 visible = false
 top_level = true
 z_index = 205
-color = Color(0.515061, 0.0574603, 0.752962, 1)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 31

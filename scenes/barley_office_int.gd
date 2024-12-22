@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	Global.sprint_blocked = true
 	BGSPlayer.stop()
 	if Global.loadin_barley_office == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))

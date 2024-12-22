@@ -10,6 +10,7 @@ func _ready() -> void:
 	$Christina/Camera2D/ColorRect.visible = false
 	$Christina/Camera2D/ColorRect2.visible = false
 	casper_anim.play("reading")
+	$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 
 
 func _process(delta: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c878u47myqv0b"]
+[gd_scene load_steps=30 format=3 uid="uid://c878u47myqv0b"]
 
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_eupv7"]
 [ext_resource type="Script" path="res://scenes/tent_cutscene.gd" id="1_ov0vw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://s53wb5eit7tb" path="res://character_sprite/barley_remake_full.png" id="5_xk46s"]
 [ext_resource type="Texture2D" uid="uid://bq6rqnwgywknq" path="res://scenes/exclamation.png" id="6_5vjlb"]
 [ext_resource type="Texture2D" uid="uid://bpw14t7dqoshe" path="res://character_sprite/ester_remake_full.png" id="7_uxglf"]
+[ext_resource type="PackedScene" uid="uid://b1md5nvyr2iws" path="res://scenes/hold_skip.tscn" id="8_k3lwm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hieky"]
 size = Vector2(12, 11)
@@ -531,4 +532,10 @@ position = Vector2(1.78814e-07, -21)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_5vjlb")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="hold_skip" parent="CanvasLayer2" instance=ExtResource("8_k3lwm")]
+
 [connection signal="ready" from="." to="." method="_on_ready"]
+
+[editable path="CanvasLayer2/hold_skip"]

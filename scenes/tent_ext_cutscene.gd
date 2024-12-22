@@ -5,6 +5,7 @@ extends Node2D
 @onready var exclamation = $clancy/exclamation
 @onready var camera_anim := $Camera2DPlus/AnimationPlayer
 
+var skipped = false
 
 func _ready():
 	$Camera2DPlus.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
@@ -23,8 +24,9 @@ func _ready():
 	await get_tree().create_timer(1.0).timeout
 	exclamation.hide()
 	await get_tree().create_timer(1.0).timeout
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/tent_ext_dialogue.dialogue"), "Start")
-	await DialogueManager.dialogue_ended
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/tent_ext_dialogue.dialogue"), "Start")
+		await DialogueManager.dialogue_ended
 	clancy_anim.speed_scale = 1.0
 	clancy_anim.play("move_down")
 	camera_anim.play_backwards("pan_down")
@@ -32,3 +34,14 @@ func _ready():
 	await get_tree().create_timer(1.0).timeout
 	Transit.change_scene_to_file("res://scenes/tent_ext.tscn")
 	BGSPlayer.stop()
+
+
+func _process(delta: float) -> void:
+	hold_to_skip()
+
+func hold_to_skip():
+	if $CanvasLayer2/hold_skip/ProgressBar.value == $CanvasLayer2/hold_skip/ProgressBar.max_value:
+		skipped = true
+		Transit.change_scene_to_file("res://scenes/tent_ext.tscn")
+		BGSPlayer.stop()
+		Global.game_first_loadin = false

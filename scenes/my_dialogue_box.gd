@@ -116,14 +116,13 @@ func _on_mutated(_mutation: Dictionary) -> void:
 	get_tree().create_timer(0.1).timeout.connect(func():
 		if will_hide_balloon:
 			will_hide_balloon = false
-			$AnimationPlayer.play_backwards("dialogue_show")
-			await $AnimationPlayer.animation_finished
 			balloon.hide()
 	)
 
 
 
-
+#func _process(delta: float) -> void:
+	#skip_dialogue()
 
 
 
@@ -141,10 +140,13 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	# When there are no response options the balloon itself is the clickable thing
 	get_viewport().set_input_as_handled()
 
-	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1 and get_tree().paused == true:
 		next(dialogue_line.next_id)
-	elif event.is_action_pressed("accept") and get_viewport().gui_get_focus_owner() == balloon:
-		next(dialogue_line.next_id)
+		print("WEF`1")
+	elif event.is_action_pressed("accept") and get_viewport().gui_get_focus_owner() == balloon and get_tree().paused != true:
+		next(dialogue_line.next_id) 
+		
+
 
 func _on_response_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
@@ -153,3 +155,7 @@ func _on_dialogue_label_spoke(letter, _letter_index, _speed):
 	if not letter in [".", " "]:
 		#text_sound.pitch_scale = randf_range(0.9, 1.1)
 		text_sound.play()
+
+#func skip_dialogue():
+	#if Input.is_action_just_pressed("skip_all"):
+		#queue_free()

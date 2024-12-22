@@ -8,16 +8,20 @@ extends Node2D
 @onready var maya_anim := $maya/AnimationPlayer
 @onready var damian_anim := $damian/AnimationPlayer
 
+var skipped = false
 
 func _ready():
+	
 	$Camera2D.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
 	BGSPlayer.stop()
 	await get_tree().create_timer(3.0).timeout
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start")
-	await DialogueManager.dialogue_ended
-	await get_tree().create_timer(3.0).timeout
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_2")
-	await DialogueManager.dialogue_ended
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start")
+		await DialogueManager.dialogue_ended
+		await get_tree().create_timer(3.0).timeout
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_2")
+		await DialogueManager.dialogue_ended
 	christina_anim.speed_scale = 0.5
 	camera_anim.speed_scale = 0.5
 	christina_anim.play("move_up")
@@ -32,14 +36,16 @@ func _ready():
 	dinah_anim.play("look_down")
 	await  dinah_anim.animation_finished
 	await get_tree().create_timer(1.0).timeout
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_3")
-	await DialogueManager.dialogue_ended
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_3")
+		await DialogueManager.dialogue_ended
 	jacob_anim.speed_scale = 1.5
 	jacob_anim.play("move_down")
 	await jacob_anim.animation_finished
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_4")
-	await DialogueManager.dialogue_ended
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_5")
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_4")
+		await DialogueManager.dialogue_ended
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_5")
 	damian_anim.play("move_down")
 	await damian_anim.animation_finished
 	await get_tree().create_timer(1.0).timeout
@@ -47,29 +53,45 @@ func _ready():
 	jacob_anim.play("move_back")
 	await DialogueManager.dialogue_ended
 	await get_tree().create_timer(2.0).timeout
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_6")
-	await DialogueManager.dialogue_ended
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_6")
+		await DialogueManager.dialogue_ended
 	await get_tree().create_timer(2.0).timeout
 	damian_anim.play("turn_left")
 	await damian_anim.animation_finished
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_7")
-	await DialogueManager.dialogue_ended
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_7")
+		await DialogueManager.dialogue_ended
 	jacob_anim.play("turn_right")
 	await jacob_anim.animation_finished
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_8")
-	await DialogueManager.dialogue_ended
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_8")
+		await DialogueManager.dialogue_ended
 	damian_anim.play("turn_down")
 	await damian_anim.animation_finished
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_9")
-	await DialogueManager.dialogue_ended
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_9")
+		await DialogueManager.dialogue_ended
 	damian_anim.play("move_up")
 	await damian_anim.animation_finished
 	jacob_anim.play("move_right")
 	await jacob_anim.animation_finished
-	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_10")
-	await DialogueManager.dialogue_ended
+	if skipped != true:
+		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_10")
+		await DialogueManager.dialogue_ended
 	jacob_anim.play("move_up")
 	await jacob_anim.animation_finished
 	camera_anim.play("move_to_christina")
 	await camera_anim.animation_finished
 	Transit.change_scene_to_file("res://scenes/dining_area.tscn")
+
+
+
+func _process(delta: float) -> void:
+	hold_to_skip()
+
+func hold_to_skip():
+	if $CanvasLayer2/hold_skip/ProgressBar.value == $CanvasLayer2/hold_skip/ProgressBar.max_value:
+		skipped = true
+		#DialogueManager.queue_free()
+		Transit.change_scene_to_file("res://scenes/dining_area.tscn")

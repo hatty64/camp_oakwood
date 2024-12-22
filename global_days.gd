@@ -8,6 +8,7 @@ var finish_day_zero = false
 
 var start_transit = false
 
+var after_night_temple = false
 
 var woke_up = false
 

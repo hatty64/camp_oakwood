@@ -1,11 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkqqi72i0fwhg"]
+[gd_scene load_steps=7 format=3 uid="uid://dkqqi72i0fwhg"]
 
+[ext_resource type="Script" path="res://scenes/night_temple_int.gd" id="1_0lk4n"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_ixkla"]
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_jlgyn"]
 [ext_resource type="Texture2D" uid="uid://pbmlg36t3vxf" path="res://scenes/tiles/night_coffin.png" id="3_h23bn"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpbvl"]
+size = Vector2(94, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1cqd"]
+size = Vector2(95, 20)
+
 [node name="night_temple_int" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_0lk4n")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
@@ -26,7 +34,7 @@ layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array(3342394, 131107, 4, 3276858, 131107, 4, 3211322, 131107, 4, 3145786, 131107, 4, 3080250, 131107, 4, 3014714, 131107, 4, 2949178, 131107, 4, 2883642, 131107, 4, 2818106, 131107, 4, 2752570, 131107, 4, 2687034, 131107, 4, 2621498, 131107, 4, 2555962, 131107, 4, 2490426, 131107, 4, 2424890, 131107, 4, 2359354, 131107, 3, 2293817, 131107, 3, 2228280, 131107, 3, 2162743, 131107, 4, 2097207, 131107, 4, 2031671, 131107, 4, 1966135, 131107, 4, 1900599, 131107, 4, 1835063, 131107, 4, 1769528, 131107, 5, 1703993, 131107, 5, 1638458, 65571, 5, 1638459, 65571, 5, 1638460, 65571, 5, 1638461, 65571, 5, 1638462, 65571, 5, 1703999, 35, 5, 1769536, 35, 5, 1835073, 35, 4, 1900609, 35, 4, 1966145, 35, 4, 2031681, 35, 4, 2097217, 35, 4, 2162753, 35, 4, 2228288, 35, 3, 2293823, 35, 3, 2359358, 35, 3, 2424894, 35, 4, 2490430, 35, 4, 2555966, 35, 4, 2621502, 35, 4, 2687038, 35, 4, 2752574, 35, 4, 2818110, 35, 4, 2883646, 35, 4, 2949182, 35, 4, 3014718, 35, 4, 3080254, 35, 4, 3145790, 35, 4, 3211326, 35, 4, 3276862, 35, 4, 3342398, 35, 4, 2359359, 35, 6, 2293824, 35, 6, 2228289, 35, 6, 1769537, 35, 7, 1704000, 35, 7, 1638463, 35, 7, 1638457, 65571, 7, 1703992, 65571, 7, 1769527, 65571, 7, 2228279, 65571, 6, 2293816, 65571, 6, 2359353, 65571, 6)
 
 [node name="Christina" parent="." instance=ExtResource("2_jlgyn")]
-position = Vector2(904, 961)
+position = Vector2(899, 417)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 zoom = Vector2(6, 6)
@@ -63,3 +71,20 @@ texture = ExtResource("3_h23bn")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(904, 125)
+
+[node name="cutscene_transit_point" type="Area2D" parent="."]
+position = Vector2(868, 487)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cutscene_transit_point"]
+position = Vector2(37, 5)
+shape = SubResource("RectangleShape2D_tpbvl")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(867, 998)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(37.5, 0)
+shape = SubResource("RectangleShape2D_e1cqd")
+
+[connection signal="body_entered" from="cutscene_transit_point" to="." method="_on_cutscene_transit_point_body_entered"]
+[connection signal="body_exited" from="cutscene_transit_point" to="." method="_on_cutscene_transit_point_body_exited"]

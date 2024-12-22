@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://0mlshwlcekgr"]
+[gd_scene load_steps=23 format=3 uid="uid://0mlshwlcekgr"]
 
 [ext_resource type="Script" path="res://scenes/cabin_int_female.gd" id="1_riydw"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="2_6bshk"]
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="3_lebbo"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="4_0a0eq"]
 [ext_resource type="Texture2D" uid="uid://dea4nf3i0le4n" path="res://character_sprite/maya_remake_full.png" id="4_t8366"]
 [ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="5_cjpre"]
 [ext_resource type="Resource" uid="uid://b6801yitm3tlw" path="res://dialogue/cabin_dialogue.dialogue" id="6_76u7e"]
@@ -65,6 +66,9 @@ limit_right = 1209
 limit_bottom = 677
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("4_0a0eq")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5

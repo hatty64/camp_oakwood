@@ -39,7 +39,13 @@ Damian: [#chr=damian] [#mood=happy] Yup!
 Damian: [#chr=damian] [#mood=happy] And I see you still have amnesia.
 Damian: [#chr=damian] [#mood=happy] So, what's up?
 - Hobbies
-- What are you doing?
+	Christina: [#chr=christina] [#mood=smile] So, do you have any hobbies?
+	Damian: [#chr=damian] [#mood=happy] Well, I like to play video games in my spare time.
+	Damian: [#chr=damian] [#mood=confident] I especially love to speedrun them.
+	Christina: [#chr=christina] [#mood=confused] Speed... run?
+	Dinah: [#chr=dinah] [#mood=default] Trying to finish a game as fast as possible.
+	Damian: [#chr=damian] [#mood=sad] The worst part is that the game I'm currently playing doesn't have a skip function.
+	Damian: [#chr=damian] [#mood=bored] So, I'm forced to repeatedly tap the interact button.
 - Compliment
 	Christina: [#chr=christina] [#mood=smile] I like your eyes, they're pretty cool.
 	Damian: [#chr=damian] [#mood=happy] Why, thank you!
@@ -51,5 +57,41 @@ Damian: [#chr=damian] [#mood=happy] So, what's up?
 	Damian: [#chr=damian] [#mood=sad] Let's just move onto something else...
 	do cutscene_stop()
 - Nevermind
+
+=> END
+
+
+~ Start_quest
+
+#Betelgeuse: You could use a buddy, 
+Christina: [#chr=christina] [#mood=smile] Hey guys, what's up?
+Damian: [#chr=damian] [#mood=happy] Nothing much, just chilling.
+Dinah: [#chr=dinah] [#mood=smile] Yeah, we have nothing to do today, so we're taking it easy.
+Dinah: [#chr=dinah] [#mood=smile] Say... since we have nothing to do...
+Dinah: [#chr=dinah] [#mood=blush] Do you wanna go for a walk with me?
+Dinah: [#chr=dinah] [#mood=blush] I can show you my novel, if you want.
+Damian: [#chr=damian] [#mood=sad] Wait, hold on.
+Damian: [#chr=damian] [#mood=sad] Christina promised me we'd go to the library.
+Christina: [#chr=christina] [#mood=confused] Since when?
+Damian: [#chr=damian] [#mood=sad] Since yesterday.
+Dinah: [#chr=dinah] [#mood=default] Amnesia, remember?
+Damian: [#chr=damian] [#mood=sad] Oh... right.
+Dinah: [#chr=dinah] [#mood=confused] Why do you need to go to the library, anyway?
+Damian: [#chr=damian] [#mood=sad] Because I forgot to return a book to the library.
+Dinah: [#chr=dinah] [#mood=confused] Why did you bring it here in the first place?
+Damian: [#chr=damian] [#mood=sad] Because I wanted to read the final chapter.
+Dinah: [#chr=dinah] [#mood=bored] And was it worth it?
+Damian: [#chr=damian] [#mood=confident] Heck yeah, it was!
+Damian: [#chr=damian] [#mood=happy] So, who will it be?
+Damian: [#chr=damian] [#mood=happy] Me, or my sister?
+- Go with Dinah
+- Go with Damian
+	Christina: [#chr=christina] [#mood=smile] I guess I'll go with Damian
+	Damian: [#chr=damian] [#mood=happy] Awesome!
+	Dinah: [#chr=dinah] [#mood=smile] I have to finish my novel anyway.
+	Dinah: [#chr=dinah] [#mood=smile] You two have fun.
+	Damian: [#chr=damian] [#mood=happy] We'll do!
+	do fade_out()
+- I need some time to think
 
 => END
