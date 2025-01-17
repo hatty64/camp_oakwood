@@ -1175,6 +1175,30 @@ tracks/19/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Christina/Camera2D:drag_horizontal_enabled")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Christina/Camera2D:drag_vertical_enabled")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_o6ul8"]
 resource_name = "door_open"
@@ -1187,9 +1211,9 @@ tracks/0/path = NodePath("Christina/Camera2D:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6, 13.3, 14.5)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6, 6.8, 13.3, 14.5)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -1198,9 +1222,9 @@ tracks/1/path = NodePath("Christina/Camera2D:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -43, -0.25, 0, 0.25, 0, -43, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6, 13.3, 14.5)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -43, -0.25, 0, 0.25, 0, -43, -0.25, 0, 0.25, 0, -43, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6, 6.8, 13.3, 14.5)
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1412,6 +1436,30 @@ tracks/19/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Christina/Camera2D:drag_horizontal_enabled")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Christina/Camera2D:drag_vertical_enabled")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p8qub"]
 _data = {
@@ -1513,19 +1561,19 @@ CINEMATIC_LAYER = 0
 [node name="ColorRect" type="ColorRect" parent="Christina/Camera2D"]
 visible = false
 z_index = 3
-offset_left = -436.0
-offset_top = -145.0
-offset_right = 458.0
-offset_bottom = -31.0
+offset_left = -160.0
+offset_top = -133.0
+offset_right = 734.0
+offset_bottom = -19.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Christina/Camera2D"]
 visible = false
 z_index = 3
-offset_left = -456.0
-offset_top = 71.0
-offset_right = 494.0
-offset_bottom = 201.0
+offset_left = -160.0
+offset_top = 93.0
+offset_right = 790.0
+offset_bottom = 223.0
 color = Color(0, 0, 0, 1)
 
 [node name="Marker2D" type="Marker2D" parent="."]

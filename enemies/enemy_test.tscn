@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://2vop8p0nqtgf"]
+
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_q2lh7"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="1_ypo6o"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="2_dg2of"]
+[ext_resource type="PackedScene" uid="uid://c88of0gqo3elp" path="res://enemies/regular_mushroom_enemy.tscn" id="3_jgjwe"]
+
+[node name="enemy_test" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_q2lh7")]
+layer_0/tile_data = PackedInt32Array(2031662, 65569, 0, 2097198, 65569, 1, 2162734, 65569, 2, 2031663, 65569, 0, 2097199, 65569, 1, 2162735, 65569, 2, 2031664, 65569, 0, 2097200, 65569, 1, 2162736, 65569, 2, 2031665, 65569, 0, 2097201, 65569, 1, 2162737, 65569, 2, 2031666, 65569, 0, 2097202, 65569, 1, 2162738, 65569, 2, 2031667, 65569, 0, 2097203, 65569, 1, 2162739, 65569, 2, 2031668, 65569, 0, 2097204, 65569, 1, 2162740, 65569, 2, 2031669, 65569, 0, 2097205, 65569, 1, 2162741, 65569, 2, 2031661, 65569, 0, 2097197, 65569, 1, 2162733, 65569, 2, 2031660, 65569, 0, 2097196, 65569, 1, 2162732, 65569, 2, 2031659, 65569, 0, 2097195, 65569, 1, 2162731, 65569, 2)
+layer_1/tile_data = PackedInt32Array(1966123, 65570, 1, 1966124, 65570, 1, 1966125, 65570, 1, 1966126, 65570, 1, 1966127, 65570, 1, 1966128, 65570, 1, 1966129, 65570, 1, 1966130, 65570, 1, 1966131, 65570, 1, 1966132, 65570, 1, 1966133, 65570, 1, 1900597, 34, 0, 1900596, 34, 0, 1900595, 34, 0, 1900594, 34, 0, 1900593, 34, 0, 1900592, 34, 0, 1900591, 34, 0, 1900590, 34, 0, 1900589, 34, 0, 1900588, 34, 0, 1900587, 34, 0)
+layer_2/tile_data = PackedInt32Array(1900587, 393250, 2, 1900588, 393250, 2, 1900589, 393250, 2, 1900590, 393250, 2, 1900591, 393250, 2, 1900592, 393250, 2, 1900593, 393250, 2, 1900594, 393250, 2, 1900595, 393250, 2, 1900596, 393250, 2, 1900597, 393250, 2, 2162731, 393250, 0, 2162732, 393250, 0, 2162733, 393250, 0, 2162734, 393250, 0, 2162735, 393250, 0, 2162736, 393250, 0, 2162737, 393250, 0, 2162738, 393250, 0, 2162739, 393250, 0, 2162740, 393250, 0, 2162741, 393250, 0)
+
+[node name="Christina" parent="." instance=ExtResource("1_ypo6o")]
+position = Vector2(508, 372)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+z_index = 5
+zoom = Vector2(6, 6)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("2_dg2of")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
+
+[node name="regular_mushroom_enemy" parent="." instance=ExtResource("3_jgjwe")]
+position = Vector2(650, 352)
+
+[node name="regular_mushroom_enemy2" parent="." instance=ExtResource("3_jgjwe")]
+position = Vector2(378, 447)
+
+[node name="regular_mushroom_enemy3" parent="." instance=ExtResource("3_jgjwe")]
+position = Vector2(432, 348)

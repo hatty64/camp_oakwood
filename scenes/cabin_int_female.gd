@@ -77,7 +77,7 @@ func char_in_cabin():
 		GlobalDialogue.no_one_there = false
 		GlobalDialogue.sleepable = true
 
-func episode_one_day_one() -> void:
+func episode_one_day_one():
 	Transit.change_scene_to_file("res://scenes/chapter_transit.tscn")
 
 func night_vision_active():

@@ -1,0 +1,14 @@
+~ Start_librarian
+Librarian: Can I help you?
+- How is work?
+- Cat
+	Christina: [#chr=christina] [#mood=default] Did you know there's a cat on your desk?
+	Librarian: He's my... emotional support.
+	Librarian: I take him wherever I go.
+	Librarian: Apart from the shower... or the bathroom.
+	Librarian: His name is Spot.
+	Christina: [#chr=christina] [#mood=happy] Aaww, That's adorable.
+	Librarian: You can... pet him if you want.
+	Librarian: (Yawn) don't worry... he doesn't bite.
+- Nevermind
+=> END

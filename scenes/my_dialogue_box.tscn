@@ -85,10 +85,10 @@ skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 1925.01
-offset_top = -101.316
-offset_right = 2501.01
-offset_bottom = -5.3165
+offset_left = 951.322
+offset_top = -580.267
+offset_right = 1527.32
+offset_bottom = -484.267
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/Responses" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true

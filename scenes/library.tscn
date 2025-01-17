@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://blv2ib22hwk6k"]
+[gd_scene load_steps=35 format=3 uid="uid://blv2ib22hwk6k"]
 
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_53hvl"]
 [ext_resource type="Script" path="res://scenes/library.gd" id="1_v4w5j"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://uh5sbsejkkli" path="res://textures/books/books_4.png" id="7_0682h"]
 [ext_resource type="Texture2D" uid="uid://by6qd2h5cr0k4" path="res://scenes/tiles/counter.png" id="8_cxq0k"]
 [ext_resource type="Texture2D" uid="uid://bhlr384d3kbyj" path="res://character_sprite/bg_characters/spot.png" id="9_12msf"]
+[ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="9_i8r0b"]
+[ext_resource type="Resource" uid="uid://dir7lrnlu7oc6" path="res://dialogue/library_bgc.dialogue" id="10_t8j30"]
 [ext_resource type="Texture2D" uid="uid://rdl0x717x38q" path="res://character_sprite/bg_characters/heart.png" id="11_arygb"]
 [ext_resource type="Texture2D" uid="uid://bkxelcrpj4dg1" path="res://character_sprite/bg_characters/librarian.png" id="12_a44xt"]
 [ext_resource type="Texture2D" uid="uid://p66dmwj2wuxe" path="res://character_sprite/bg_characters/librarian_arm.png" id="13_q1rda"]
@@ -212,6 +214,8 @@ _data = {
 "librarian": SubResource("Animation_td6ne")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rk3cl"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2raqb"]
 size = Vector2(8, 12)
 
@@ -323,6 +327,14 @@ hframes = 5
 libraries = {
 "": SubResource("AnimationLibrary_tatqj")
 }
+
+[node name="Actionable" parent="librarian" instance=ExtResource("9_i8r0b")]
+position = Vector2(-5, 47)
+dialogue_resource = ExtResource("10_t8j30")
+dialogue_start = "Start_librarian"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="librarian/Actionable"]
+shape = SubResource("CircleShape2D_rk3cl")
 
 [node name="LibrarianArm" type="Sprite2D" parent="."]
 position = Vector2(825, 935)

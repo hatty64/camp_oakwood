@@ -16,7 +16,16 @@ extends CharacterBody2D
 
 var input_vector: Vector2 = Vector2.ZERO
 
+var deadzone_input = 0.35
+var deadzone_move = 0.32
+
+var move_dir = Vector2.ZERO
+
 func _ready():
+	InputMap.action_set_deadzone("left", deadzone_input)
+	InputMap.action_set_deadzone("right", deadzone_input)
+	InputMap.action_set_deadzone("up", deadzone_input)
+	InputMap.action_set_deadzone("down", deadzone_input)
 	update_animation_parameters(starting_direction)
 
 func _physics_process(_delta):
@@ -24,6 +33,13 @@ func _physics_process(_delta):
 		handle_player_input()
 	costume_change()
 	night_vision()
+	
+
+#func _process(delta: float) -> void:
+	#if Vector2.ZERO.distance_to(input_vector) > deadzone_move*sqrt(2.0):
+		#move_dir = input_vector.normalized()
+	#else:
+		#move_dir = Vector2.ZERO
 
 
 func handle_player_input():

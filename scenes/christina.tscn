@@ -503,8 +503,9 @@ graph_offset = Vector2(-48.398, 24)
 [sub_resource type="CircleShape2D" id="CircleShape2D_s5fwg"]
 radius = 8.0
 
-[node name="Christina" type="CharacterBody2D"]
+[node name="Christina" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
+motion_mode = 1
 script = ExtResource("1_rvncv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

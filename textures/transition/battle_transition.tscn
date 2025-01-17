@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://f8v4db3mjj2y"]
+
+[ext_resource type="Script" path="res://textures/transition/battle_transition.gd" id="1_smwuk"]
+[ext_resource type="Texture2D" uid="uid://c8pl07021fr66" path="res://textures/transition/battle_transit.png" id="1_ydw5t"]
+
+[sub_resource type="Animation" id="Animation_c53t1"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BattleTransit:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3526, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BattleTransit:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_d1lta"]
+resource_name = "fade_in"
+length = 0.60001
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BattleTransit:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3526, -0.25, 0, 0.25, 0, 954, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BattleTransit:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(625, -0.25, 0, 0.25, 0, 625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_brbwy"]
+resource_name = "fade_out"
+length = 0.60001
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BattleTransit:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(954, -0.25, 0, 0.25, 0, -1662, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BattleTransit:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(625, -0.25, 0, 0.25, 0, 625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1qr3"]
+_data = {
+"RESET": SubResource("Animation_c53t1"),
+"fade_in": SubResource("Animation_d1lta"),
+"fade_out": SubResource("Animation_brbwy")
+}
+
+[node name="battle_transition" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_smwuk")
+
+[node name="BattleTransit" type="Sprite2D" parent="."]
+position = Vector2(3526, 625)
+scale = Vector2(-13.0377, -7.83769)
+texture = ExtResource("1_ydw5t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s1qr3")
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://er1uiyaq2g5q"]
+[gd_scene load_steps=37 format=3 uid="uid://er1uiyaq2g5q"]
 
 [ext_resource type="Script" path="res://scenes/main_camp_outside.gd" id="1_b6uca"]
 [ext_resource type="PackedScene" uid="uid://8v3obom8if5a" path="res://scenes/rain.tscn" id="2_6br2l"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cti6ui8tsuost" path="res://character_sprite/maysie_lean.png" id="13_b40rf"]
 [ext_resource type="Resource" uid="uid://bj3r8av6ng75i" path="res://dialogue/ep_1_dialogue.dialogue" id="14_mcbgo"]
 [ext_resource type="Texture2D" uid="uid://bhgaqyanusjre" path="res://night_vision/does_he_know.png" id="15_lni31"]
+[ext_resource type="PackedScene" uid="uid://c88of0gqo3elp" path="res://enemies/regular_mushroom_enemy.tscn" id="17_7vfs0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wcvuq"]
 radius = 8.06226
@@ -398,6 +399,9 @@ texture = ExtResource("15_lni31")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="."]
 z_index = 99
+
+[node name="regular_mushroom_enemy" parent="." instance=ExtResource("17_7vfs0")]
+position = Vector2(1257, 685)
 
 [connection signal="body_entered" from="cabin_f_transition_point" to="." method="_on_cabin_f_transition_point_body_entered"]
 [connection signal="body_exited" from="cabin_f_transition_point" to="." method="_on_cabin_f_transition_point_body_exited"]

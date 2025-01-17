@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dir7lrnlu7oc6"
+path="res://.godot/imported/library_bgc.dialogue-3430fc3470549c8437e46d942ff17eca.tres"
+
+[deps]
+
+source_file="res://dialogue/library_bgc.dialogue"
+dest_files=["res://.godot/imported/library_bgc.dialogue-3430fc3470549c8437e46d942ff17eca.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,197 @@
+[gd_scene load_steps=13 format=3 uid="uid://cappywdcny84x"]
+
+[ext_resource type="Script" path="res://combat/battle.gd" id="1_cbixg"]
+[ext_resource type="Texture2D" uid="uid://byjhk6i2auxrw" path="res://character_sprite/battle/christina_combat.png" id="1_yan0w"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="2_klnpc"]
+[ext_resource type="PackedScene" uid="uid://er1uiyaq2g5q" path="res://scenes/main_camp_outside.tscn" id="2_on0uy"]
+[ext_resource type="Texture2D" uid="uid://dycb0uhny4y1n" path="res://combat/character_select.png" id="3_gwvm2"]
+[ext_resource type="Texture2D" uid="uid://dw7105swjl2j3" path="res://character_sprite/enemies/normal_mushroom_2.png" id="6_cbpsx"]
+
+[sub_resource type="Animation" id="Animation_xra5r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nrr57"]
+resource_name = "idle"
+length = 0.60001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_lngvq"]
+resource_name = "low_health"
+length = 1.10001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_pdrtt"]
+resource_name = "punch"
+length = 1.20001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_ftaue"]
+resource_name = "victory"
+length = 1.20001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 24, 25, 26, 22]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uxuoa"]
+_data = {
+"RESET": SubResource("Animation_xra5r"),
+"idle": SubResource("Animation_nrr57"),
+"low_health": SubResource("Animation_lngvq"),
+"punch": SubResource("Animation_pdrtt"),
+"victory": SubResource("Animation_ftaue")
+}
+
+[node name="battle" type="Node2D"]
+script = ExtResource("1_cbixg")
+world = ExtResource("2_on0uy")
+
+[node name="CharacterSelect" type="Sprite2D" parent="."]
+position = Vector2(522, 388)
+texture = ExtResource("3_gwvm2")
+
+[node name="christina_battle" type="CharacterBody2D" parent="."]
+position = Vector2(538, 426)
+
+[node name="Sprite2D" type="Sprite2D" parent="christina_battle"]
+texture = ExtResource("1_yan0w")
+hframes = 6
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="christina_battle"]
+libraries = {
+"": SubResource("AnimationLibrary_uxuoa")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 5
+position = Vector2(583, 416)
+zoom = Vector2(8, 8)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("2_klnpc")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
+
+[node name="christina_menu" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="christina_menu"]
+offset_left = 35.0
+offset_top = 862.0
+offset_right = 555.0
+offset_bottom = 1007.0
+
+[node name="Attack" type="Button" parent="christina_menu/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Attack"
+
+[node name="Run" type="Button" parent="christina_menu/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Run"
+
+[node name="christina_battle2" type="CharacterBody2D" parent="."]
+position = Vector2(522, 388)
+
+[node name="Sprite2D" type="Sprite2D" parent="christina_battle2"]
+texture = ExtResource("1_yan0w")
+hframes = 6
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="christina_battle2"]
+libraries = {
+"": SubResource("AnimationLibrary_uxuoa")
+}
+
+[node name="partner_menu" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="partner_menu"]
+offset_left = 35.0
+offset_top = 862.0
+offset_right = 455.0
+offset_bottom = 1007.0
+
+[node name="Cast" type="Button" parent="partner_menu/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Cast"
+
+[node name="Run" type="Button" parent="partner_menu/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Run"
+
+[node name="enemy" type="CharacterBody2D" parent="."]
+position = Vector2(632, 388)
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy"]
+texture = ExtResource("6_cbpsx")
+hframes = 4
+vframes = 4
+frame = 4
+
+[connection signal="visibility_changed" from="christina_menu" to="." method="_on_christina_menu_visibility_changed"]
+[connection signal="pressed" from="christina_menu/HBoxContainer/Run" to="." method="_on_button_pressed"]
+[connection signal="visibility_changed" from="partner_menu" to="." method="_on_partner_menu_visibility_changed"]
+[connection signal="pressed" from="partner_menu/HBoxContainer/Run" to="." method="_on_button_pressed"]
