@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://5y30cnpnjj1m"
+path="res://.godot/imported/librarby_cutscene.dialogue-9a95c56cbfb65ac5a322b68dcec23e04.tres"
+
+[deps]
+
+source_file="res://dialogue/librarby_cutscene.dialogue"
+dest_files=["res://.godot/imported/librarby_cutscene.dialogue-9a95c56cbfb65ac5a322b68dcec23e04.tres"]
+
+[params]
+
+defaults=true

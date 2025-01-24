@@ -1,0 +1,38 @@
+~ Start
+
+Christina: [#chr=christina] [#mood=nervous] Are you sure this is okay?
+Christina: [#chr=christina] [#mood=nervous] What if my dad finds out?
+Damian: [#chr=damian] [#mood=happy] Relax, I asked if it was okay, and he said yes.
+Damian: [#chr=damian] [#mood=happy] Come on, let's just return the book, shall we.
+
+=> END
+
+~ Start_2
+
+Librarian: Can I help you?
+Damian: [#chr=damian] [#mood=happy] I would like to return this book, please.
+
+=> END
+
+~ Start_3
+
+Librarian: This book is... two days late.
+Damian: [#chr=damian] [#mood=nervous] I... needed to know how it ended...
+Damian: [#chr=damian] [#mood=sad] Do I need to pay the late fee?
+Librarian: Well, since this is your first time being late... I'll let it slide...
+Librarian: And also because I'm tired...
+Librarian: If you need anything... feel free to ask.
+
+=> END
+
+~ Start_4
+
+Damian: [#chr=damian] [#mood=happy] I'll be upstairs looking for a new book.
+Damian: [#chr=damian] [#mood=happy] You can come with me, if you want.
+Christina: [#chr=christina] [#mood=smile] I think I'll stay down here, this place looks pretty cool.
+Damian: [#chr=damian] [#mood=sad] You've... been here before, Y'know?
+Christina: [#chr=christina] [#mood=confused] ...
+Damian: [#chr=damian] [#mood=sad] Right, your amnesia.
+Damian: [#chr=damian] [#mood=happy] Well, I'll see you upstairs then.
+
+=> END

@@ -5,6 +5,8 @@ extends Node2D
 var pet = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.sprint_blocked = true
+	$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 	$librarian/AnimationPlayer_librarian.play("librarian")
 
 

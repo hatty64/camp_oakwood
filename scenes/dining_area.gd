@@ -149,7 +149,7 @@ func dinah_turns_head():
 	MusicPlayer.stream_paused = true
 	await get_tree().create_timer(1.0).timeout
 	$dinah_head_turn/AnimationPlayer.play("dinah_head_turn")
-	await $AnimationPlayer.animation_finished
+	await $dinah_head_turn/AnimationPlayer.animation_finished
 	$dinah_head_turn/AnimationPlayer.play("RESET")
 	MusicPlayer.stream_paused = false
 
@@ -158,3 +158,6 @@ func fade_out():
 	$AnimationPlayer.play("fade_out")
 	await $AnimationPlayer.animation_finished
 	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/narrator_transit.dialogue"), "Start_damian_quest")
+	await DialogueManager.dialogue_ended
+	Transit.change_scene_to_file("res://scenes/librarby_cutscene.tscn")
+	

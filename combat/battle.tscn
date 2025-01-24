@@ -1,11 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://cappywdcny84x"]
+[gd_scene load_steps=31 format=3 uid="uid://cappywdcny84x"]
 
 [ext_resource type="Script" path="res://combat/battle.gd" id="1_cbixg"]
 [ext_resource type="Texture2D" uid="uid://byjhk6i2auxrw" path="res://character_sprite/battle/christina_combat.png" id="1_yan0w"]
 [ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="2_klnpc"]
 [ext_resource type="PackedScene" uid="uid://er1uiyaq2g5q" path="res://scenes/main_camp_outside.tscn" id="2_on0uy"]
 [ext_resource type="Texture2D" uid="uid://dycb0uhny4y1n" path="res://combat/character_select.png" id="3_gwvm2"]
+[ext_resource type="Texture2D" uid="uid://c2q5j252pi0qg" path="res://combat/Backround fighting/fighting backround.png" id="3_o6vs6"]
 [ext_resource type="Texture2D" uid="uid://dw7105swjl2j3" path="res://character_sprite/enemies/normal_mushroom_2.png" id="6_cbpsx"]
+[ext_resource type="Texture2D" uid="uid://btg47po360mph" path="res://textures/Camp oakwood assets/atk button-export.png" id="6_lcm76"]
+[ext_resource type="Texture2D" uid="uid://dkpyetsl0gn6d" path="res://textures/Camp oakwood assets/atk button selected-export.png" id="7_jv5f1"]
+[ext_resource type="Texture2D" uid="uid://bquvfsle7vlh5" path="res://textures/Camp oakwood assets/run button-export.png" id="8_lnney"]
+[ext_resource type="Texture2D" uid="uid://bn4pwq5sbkohm" path="res://textures/Camp oakwood assets/run button selected.png" id="9_3vjko"]
+[ext_resource type="Texture2D" uid="uid://b46p7xemcu7oo" path="res://character_sprite/battle/acorn_combat-Sheet.png" id="11_4ykm2"]
+[ext_resource type="Texture2D" uid="uid://blywknmvr1aij" path="res://textures/Camp oakwood assets/cast button-export.png" id="11_7d7f0"]
+[ext_resource type="Texture2D" uid="uid://dptfqcdfjq46x" path="res://textures/Camp oakwood assets/cast button selected-export.png" id="12_esq00"]
+[ext_resource type="Texture2D" uid="uid://c4wjb5ah5xm1w" path="res://textures/Camp oakwood assets/run button selected-export.png" id="13_iogns"]
 
 [sub_resource type="Animation" id="Animation_xra5r"]
 length = 0.001
@@ -102,21 +111,302 @@ _data = {
 "victory": SubResource("Animation_ftaue")
 }
 
+[sub_resource type="Animation" id="Animation_2amy0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("christina_battle2/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_lil8u"]
+resource_name = "idle"
+length = 0.70001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("christina_battle2/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e1n7w"]
+_data = {
+"RESET": SubResource("Animation_2amy0"),
+"idle": SubResource("Animation_lil8u")
+}
+
+[sub_resource type="Animation" id="Animation_fy2fx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_p0qul"]
+resource_name = "idle"
+length = 1.20001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oj08b"]
+_data = {
+"RESET": SubResource("Animation_fy2fx"),
+"idle": SubResource("Animation_p0qul")
+}
+
+[sub_resource type="Animation" id="Animation_oi3rk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("christina_battle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(478, 425)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("christina_battle/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [29]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:zoom:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(583, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(416, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("christina_battle2/Sprite2D:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_xn3dq"]
+resource_name = "battle_start"
+length = 1.50001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("christina_battle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(478, 425), Vector2(531, 425)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("christina_battle/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [29, 28, 30, 28, 5]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(13, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.6, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:zoom:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(13, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.6, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(523, -0.25, 0, 0.25, 0, 583, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.6, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(416, -0.25, 0, 0.25, 0, 416, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.6, 1)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("christina_battle2/Sprite2D:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8, 0.9, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62tno"]
+_data = {
+"RESET": SubResource("Animation_oi3rk"),
+"battle_start": SubResource("Animation_xn3dq")
+}
+
 [node name="battle" type="Node2D"]
 script = ExtResource("1_cbixg")
 world = ExtResource("2_on0uy")
+
+[node name="button_border" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="button_border"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 842.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.424577, 0.570524, 0.967126, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 448.0
+offset_top = 343.0
+offset_right = 640.0
+offset_bottom = 451.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.36, 1.36)
+texture = ExtResource("3_o6vs6")
+
+[node name="bg" type="CanvasLayer" parent="."]
+layer = -5
 
 [node name="CharacterSelect" type="Sprite2D" parent="."]
 position = Vector2(522, 388)
 texture = ExtResource("3_gwvm2")
 
 [node name="christina_battle" type="CharacterBody2D" parent="."]
-position = Vector2(538, 426)
+position = Vector2(478, 425)
 
 [node name="Sprite2D" type="Sprite2D" parent="christina_battle"]
 texture = ExtResource("1_yan0w")
 hframes = 6
-vframes = 5
+vframes = 6
+frame = 29
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="christina_battle"]
 libraries = {
@@ -127,13 +417,12 @@ libraries = {
 z_index = 5
 position = Vector2(583, 416)
 zoom = Vector2(8, 8)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 script = ExtResource("2_klnpc")
 HORIZONTAL_CUT_SIZE = 150
 CINEMATIC_LAYER = 0
 
 [node name="christina_menu" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="christina_menu"]
 offset_left = 35.0
@@ -141,27 +430,33 @@ offset_top = 862.0
 offset_right = 555.0
 offset_bottom = 1007.0
 
-[node name="Attack" type="Button" parent="christina_menu/HBoxContainer"]
+[node name="Attack" type="TextureButton" parent="christina_menu/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "Attack"
+texture_normal = ExtResource("6_lcm76")
+texture_pressed = ExtResource("6_lcm76")
+texture_hover = ExtResource("7_jv5f1")
+texture_focused = ExtResource("7_jv5f1")
 
-[node name="Run" type="Button" parent="christina_menu/HBoxContainer"]
+[node name="Run" type="TextureButton" parent="christina_menu/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "Run"
+texture_normal = ExtResource("8_lnney")
+texture_pressed = ExtResource("8_lnney")
+texture_hover = ExtResource("9_3vjko")
+texture_focused = ExtResource("9_3vjko")
 
 [node name="christina_battle2" type="CharacterBody2D" parent="."]
-position = Vector2(522, 388)
+position = Vector2(511, 393)
 
 [node name="Sprite2D" type="Sprite2D" parent="christina_battle2"]
-texture = ExtResource("1_yan0w")
-hframes = 6
-vframes = 5
+texture = ExtResource("11_4ykm2")
+hframes = 4
+vframes = 3
+frame = 7
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="christina_battle2"]
+[node name="AnimationPlayer_partner" type="AnimationPlayer" parent="christina_battle2"]
+root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_uxuoa")
+"": SubResource("AnimationLibrary_e1n7w")
 }
 
 [node name="partner_menu" type="CanvasLayer" parent="."]
@@ -172,24 +467,38 @@ offset_top = 862.0
 offset_right = 455.0
 offset_bottom = 1007.0
 
-[node name="Cast" type="Button" parent="partner_menu/HBoxContainer"]
+[node name="Cast" type="TextureButton" parent="partner_menu/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "Cast"
+texture_normal = ExtResource("11_7d7f0")
+texture_pressed = ExtResource("11_7d7f0")
+texture_hover = ExtResource("12_esq00")
+texture_focused = ExtResource("12_esq00")
 
-[node name="Run" type="Button" parent="partner_menu/HBoxContainer"]
+[node name="Run" type="TextureButton" parent="partner_menu/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "Run"
+texture_normal = ExtResource("8_lnney")
+texture_pressed = ExtResource("8_lnney")
+texture_hover = ExtResource("13_iogns")
+texture_focused = ExtResource("13_iogns")
 
 [node name="enemy" type="CharacterBody2D" parent="."]
-position = Vector2(632, 388)
+position = Vector2(640, 411)
 
 [node name="Sprite2D" type="Sprite2D" parent="enemy"]
 texture = ExtResource("6_cbpsx")
 hframes = 4
 vframes = 4
-frame = 4
+frame = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy"]
+libraries = {
+"": SubResource("AnimationLibrary_oj08b")
+}
+
+[node name="battle_stuff" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_62tno")
+}
 
 [connection signal="visibility_changed" from="christina_menu" to="." method="_on_christina_menu_visibility_changed"]
 [connection signal="pressed" from="christina_menu/HBoxContainer/Run" to="." method="_on_button_pressed"]

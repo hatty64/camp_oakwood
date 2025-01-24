@@ -14,9 +14,11 @@ func _ready() -> void:
 	$christina_menu.visible = false
 	$partner_menu.visible = false
 	get_tree().paused = false
-	$christina_battle/AnimationPlayer.play("idle")
-	await get_tree().create_timer(1.0).timeout
-	chr_select = true
+	battle_start()
+	$enemy/AnimationPlayer.play("idle")
+	#$christina_battle/AnimationPlayer.play("idle")
+	#await get_tree().create_timer(1.0).timeout
+	#chr_select = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,6 +34,13 @@ func _process(delta: float) -> void:
 	
 	choose_character()
 	
+	if christina_selected == true or partner_selected == true:
+		$button_border.visible = true
+	else:
+		$button_border.visible = false
+	
+	
+	
 	if christina_selected == true:
 		$christina_menu.visible = true
 		$partner_menu.visible = false
@@ -40,11 +49,9 @@ func _process(delta: float) -> void:
 		$partner_menu.visible = true
 	
 	if christina_hover == true:
-		$CharacterSelect.position.x = 538
-		$CharacterSelect.position.y = 426
+		$CharacterSelect.position = $christina_battle.position
 	elif partner_hover == true:
-		$CharacterSelect.position.x = 522
-		$CharacterSelect.position.y = 388
+		$CharacterSelect.position = $christina_battle2.position
 		
 	
 	if chr_select == true:
@@ -66,17 +73,19 @@ func choose_character():
 		partner_hover = false
 	
 	if Input.is_action_just_pressed("accept") and christina_hover == true:
-		christina_selected = true
-		partner_selected = false
-		#christina_hover = false
-		#partner_hover = false
-		chr_select = false
+		if chr_select == true:
+			christina_selected = true
+			partner_selected = false
+			#christina_hover = false
+			#partner_hover = false
+			chr_select = false
 	elif Input.is_action_just_pressed("accept") and partner_hover == true:
-		christina_selected = false
-		partner_selected = true
-		#christina_hover = false
-		#partner_hover = false
-		chr_select = false
+		if chr_select == true:
+			christina_selected = false
+			partner_selected = true
+			#christina_hover = false
+			#partner_hover = false
+			chr_select = false
 	
 	if Input.is_action_just_pressed("back") and chr_select == false:
 		chr_select = true
@@ -88,7 +97,12 @@ func choose_character():
 		$christina_menu/HBoxContainer/Attack.release_focus()
 
 
-
+func battle_start():
+	$battle_stuff.play("battle_start")
+	await $battle_stuff.animation_finished
+	$christina_battle/AnimationPlayer.play("idle")
+	$christina_battle2/AnimationPlayer_partner.play("idle")
+	chr_select = true
 
 
 func _on_partner_menu_visibility_changed() -> void:
