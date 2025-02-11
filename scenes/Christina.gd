@@ -118,7 +118,7 @@ func costume_change():
 	elif GlobalCostume.woodling == true:
 		$Sprite2D.texture = load("res://character_sprite/christina_woodling.png")
 	else:
-		$Sprite2D.texture = load("res://character_sprite/christina_full_sprite_sprint.png")
+		$Sprite2D.texture = load("res://character_sprite/color_outline/christina_color_outline.png")
 
 func night_vision():
 	if GlobalCostume.dark == true:

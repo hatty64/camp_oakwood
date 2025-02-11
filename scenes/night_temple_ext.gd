@@ -21,6 +21,8 @@ func _process(delta: float) -> void:
 				$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 				cutscene_play()
 				cutscene.play("door_open")
+				#await get_tree().create_timer(6.8).timeout
+				#$Christina/Camera2D.set_shake(20)
 				await cutscene.animation_finished
 				DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/night_temple_ext_cutscene.dialogue"), "Start_door_open")
 				await DialogueManager.dialogue_ended

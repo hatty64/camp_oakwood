@@ -22,6 +22,8 @@ func _ready() -> void:
 	night_eye.play("twitch")
 	zoom.play("zoom_in")
 	fade.play("color")
+	await get_tree().create_timer(0.1).timeout
+	$Camera2D.add_shake(3)
 	DialogueManager.show_dialogue_night_balloon(load("res://dialogue/wake_up.dialogue"), "Start")
 	await DialogueManager.dialogue_ended
 	get_tree().change_scene_to_file("res://scenes/tent_cutscene.tscn")

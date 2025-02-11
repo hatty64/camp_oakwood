@@ -536,6 +536,8 @@ texture = ExtResource("6_5vjlb")
 
 [node name="hold_skip" parent="CanvasLayer2" instance=ExtResource("8_k3lwm")]
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 
 [editable path="CanvasLayer2/hold_skip"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://da34whfpkqqpj"]
+
+[ext_resource type="PackedScene" uid="uid://chokjif1i7hhe" path="res://wolf.tscn" id="1_s3xay"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="2_3hd3l"]
+[ext_resource type="Shader" path="res://scenes/minigame/crt.gdshader" id="3_y0mt7"]
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="4_4rn3i"]
+[ext_resource type="Texture2D" uid="uid://3il8coeid7ap" path="res://character_sprite/minigame/retro_squirrel.png" id="5_jygl7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ra1hr"]
+shader = ExtResource("3_y0mt7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_hnml1"]
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
+
+[node name="wolf_room_3" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="wolf" parent="." instance=ExtResource("1_s3xay")]
+position = Vector2(1255, 461)
+
+[node name="Camera2DPlus" type="Camera2D" parent="wolf"]
+zoom = Vector2(9, 9)
+limit_left = 1145
+limit_right = 1358
+limit_bottom = 476
+script = ExtResource("2_3hd3l")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer3"]
+material = SubResource("ShaderMaterial_ra1hr")
+mesh = SubResource("QuadMesh_hnml1")
+
+[node name="TileMap" parent="." instance=ExtResource("4_4rn3i")]
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(2293830, 65574, 1, 2228294, 65574, 1, 2162758, 65574, 1, 2097222, 65574, 1, 2031686, 65574, 1, 2293832, 196646, 1, 2228296, 196646, 1, 2162760, 196646, 1, 2097224, 196646, 1, 2031688, 196646, 1, 1966152, 196646, 1, 1966150, 65574, 1, 1900614, 38, 3, 1900616, 65574, 3, 1900613, 131110, 2, 1900612, 65574, 2, 1900617, 131110, 2, 1900618, 196646, 2, 1638468, 65574, 0, 1638469, 131110, 0, 1638470, 131110, 0, 1638471, 131110, 0, 1638472, 131110, 0, 1638473, 131110, 0, 1638474, 196646, 0, 1572932, 38, 2, 1572933, 38, 2, 1572934, 38, 2, 1572935, 38, 2, 1572936, 38, 2, 1572937, 38, 2, 1572938, 38, 2, 1835076, 65574, 1, 1769540, 65574, 1, 1704004, 65574, 1, 1704010, 196646, 1, 1769546, 196646, 1, 1835082, 196646, 1)
+layer_1/z_index = -5
+layer_1/tile_data = PackedInt32Array(1507396, 38, 0, 1572932, 38, 1, 1507397, 38, 0, 1572933, 38, 1, 1507398, 38, 0, 1572934, 38, 1, 1507399, 38, 0, 1572935, 38, 1, 1507400, 38, 0, 1572936, 38, 1, 1507401, 38, 0, 1572937, 38, 1, 1507402, 38, 0, 1572938, 38, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1209, 476, 1305, 476, 1305, 284, 1369, 284, 1369, 60, 1145, 60, 1145, 284, 1209, 284, 1209, 476, 1125, 371, 1043, 55, 1226, -8, 1415, 32, 1411, 328, 1330, 519, 1201, 499)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = -1
+position = Vector2(1259, 188)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("5_jygl7")

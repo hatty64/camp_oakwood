@@ -2,7 +2,7 @@
 Christina: [#chr=christina] [#mood=default] It's a wooden chair.
 Christina: [#chr=christina] [#mood=thinking] I wonder what it's doing here.
 
-=> END
+=> END!
 
 ~ Start_raincoat
 
@@ -12,4 +12,4 @@ Pick it up?
 	set raincoat_unlocked = true
 - No
 
-=> END
+=> END!

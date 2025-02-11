@@ -195,6 +195,7 @@ if sleepable == true
 #		set start_transit = true
 		do episode_one_day_one()
 	- No
+		=> END
 else
 	Christina: [#chr=christina] [#mood=default] It's a bed.
 

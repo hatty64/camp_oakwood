@@ -1,15 +1,15 @@
 [gd_scene load_steps=47 format=3 uid="uid://bhysbh3p85m13"]
 
 [ext_resource type="Script" path="res://scenes/Christina.gd" id="1_rvncv"]
-[ext_resource type="Texture2D" uid="uid://d1g8imbn4uqjg" path="res://character_sprite/christina_full_sprite_sprint.png" id="2_pt51l"]
+[ext_resource type="Texture2D" uid="uid://blg063ey3ju5i" path="res://character_sprite/color_outline/christina_color_outline.png" id="2_1ncug"]
 [ext_resource type="Script" path="res://scenes/sprite_2d.gd" id="3_0xamt"]
 [ext_resource type="PackedScene" uid="uid://bw3x0ddvicyea" path="res://scenes/pause_menu_two.tscn" id="3_ksaay"]
 [ext_resource type="AudioStream" uid="uid://c4g03xahwv26f" path="res://scenes/hearbeat-71701.mp3" id="4_2pmq7"]
 [ext_resource type="Shader" path="res://shaders/silhouette.gdshader" id="4_x5mhx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1co8o"]
+render_priority = 0
 shader = ExtResource("4_x5mhx")
-shader_parameter/silhouette_color = Color(0, 0, 0, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cb13"]
 size = Vector2(5, 13.5)
@@ -506,11 +506,12 @@ radius = 8.0
 [node name="Christina" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 motion_mode = 1
+wall_min_slide_angle = 0.785398
 script = ExtResource("1_rvncv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_pt51l")
+texture = ExtResource("2_1ncug")
 hframes = 4
 vframes = 8
 frame = 2

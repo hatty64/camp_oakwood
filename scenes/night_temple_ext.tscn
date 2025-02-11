@@ -1419,7 +1419,7 @@ tracks/18/path = NodePath("door_open:playing")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(3.2, 6.2),
+"times": PackedFloat32Array(3.2, 5.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1555,6 +1555,7 @@ limit_bottom = 852
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("45_akg6u")
+SHAKE_DECAY = 0.005
 HORIZONTAL_CUT_SIZE = 150
 CINEMATIC_LAYER = 0
 

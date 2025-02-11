@@ -12,29 +12,42 @@ extends Node2D
 var skipped = false
 
 func _on_ready():
+	add_child($Timer)
 	awake.play("awake")
 	await awake.animation_finished
-	await get_tree().create_timer(3.0).timeout
+	$Timer.wait_time = 3
+	$Timer.start()
+	await $Timer.timeout
 	barley.show()
 	barley_anim.play("move_up")
 	await barley_anim.animation_finished
 	exclamation.show()
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	exclamation.hide()
 	awake.play("look_down")
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/tent_dialogue.dialogue"), "Start")
 		await DialogueManager.dialogue_ended
-	await get_tree().create_timer(3.0).timeout
+	$Timer.wait_time = 3
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/tent_dialogue.dialogue"), "Start_2")
 		await DialogueManager.dialogue_ended
-	await get_tree().create_timer(3.0).timeout
+	$Timer.wait_time = 3
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/tent_dialogue.dialogue"), "Start_3")
 		await DialogueManager.dialogue_ended
-	await get_tree().create_timer(3.0).timeout
+	$Timer.wait_time = 3
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/tent_dialogue.dialogue"), "Start_4")
 		await DialogueManager.dialogue_ended
@@ -43,17 +56,23 @@ func _on_ready():
 	barley.hide()
 	barley_anim.play("RESET")
 	await barley_anim.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	awake.play("look_left")
 	screen.play("fade_in_out")
 	await screen.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/tent_dialogue.dialogue"), "Card")
 		await DialogueManager.dialogue_ended
 	screen.play_backwards("fade_in_out")
 	await screen.animation_finished
-	await get_tree().create_timer(2.0).timeout
+	$Timer.wait_time = 2
+	$Timer.start()
+	await $Timer.timeout
 	barley.show()
 	barley_anim.play("move_up")
 	await barley_anim.animation_finished
@@ -69,7 +88,9 @@ func _on_ready():
 	await ester_anim.animation_finished
 	awake.play("look_down")
 	exclamation_ester.show()
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	exclamation_ester.hide()
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/tent_dialogue.dialogue"), "Start_6")
@@ -81,7 +102,9 @@ func _on_ready():
 	ester_anim.play("move_down")
 	await ester_anim.animation_finished
 	ester.hide()
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	barley_anim.play("move_right")
 	await barley_anim.animation_finished
 	if skipped != true:
@@ -90,10 +113,14 @@ func _on_ready():
 	barley_anim.play("move_down")
 	await barley_anim.animation_finished
 	barley.hide()
-	await get_tree().create_timer(3.0).timeout
+	$Timer.wait_time = 3
+	$Timer.start()
+	await $Timer.timeout
 	awake.play("get_up")
 	await awake.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	Transit.change_scene_to_file("res://scenes/tent.tscn")
 
 

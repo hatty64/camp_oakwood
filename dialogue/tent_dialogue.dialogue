@@ -2,7 +2,7 @@
 ???: [#chr=barley] [#mood=worried] You're awake, thank goodness... you got me worried!
 ???: [#chr=barley] [#mood=worried] H- how do you feel?
 
-=> END
+=> END!
 
 ~ Start_2
 ???: [#chr=christina] [#mood=confused] W- where... am I...?
@@ -12,7 +12,7 @@
 ???: [#chr=christina] [#mood=thinking] ... Who?
 ???: [#chr=barley] [#mood=worried] This isn't funny Christina, you're joking... right?
 
-=> END
+=> END!
 
 ~ Start_3
 ???: [#chr=barley] [#mood=default] You really don't remember a thing, huh?
@@ -23,25 +23,25 @@ Barley: [#chr=barley] [#mood=smile] and you are Christina, my daughter.
 Christina: [#chr=christina] [#mood=default] You're... my dad?
 Barley: [#chr=barley] [#mood=default] Do you remember what happened?
 
-=> END
+=> END!
 
 ~ Start_4
 Christina: [#chr=christina] [#mood=thinking] No... not a clue.
 Barley: [#chr=barley] [#mood=default] Then I'll go ask one of the other camp counselors... maybe they know what happened.
 Barley: [#chr=barley] [#mood=smile] You stay here and rest, I'll be right back!
 
-=> END
+=> END!
 
 ~ Card
 A few minutes later.
 
-=> END
+=> END!
 
 ~ Start_5
 Barley: [#chr=barley] [#mood=smile] There, I'm back.
 Barley: [#chr=barley] [#mood=smile] And I also brought someone with me.
 
-=> END
+=> END!
 
 ~ Start_6
 ???: [#chr=ester] [#mood=worried] Christina!
@@ -54,7 +54,7 @@ Christina: [#chr=christina] [#mood=thinking] I don't... feel any pain, so I gues
 Ester: [#chr=ester] [#mood=smile] Ok, that's good.
 Barley: [#chr=barley] [#mood=default] So, tell me exactly what happened.
 
-=> END
+=> END!
 
 ~ Start_7
 Ester: [#chr=ester] [#mood=thinking] Well, we were just hanging out by the lake, until it started to rain.
@@ -66,9 +66,9 @@ Barley: [#chr=barley] [#mood=smile] It's okay Ester, we all make mistakes.
 Barley: [#chr=barley] [#mood=default] But keep an eye on the others, we don't want to lose any more campers.
 Barley: [#chr=barley] [#mood=default] Now, let's let Christina rest for a few minutes.
 
-=> END
+=> END!
 
 ~ Start_8
 Barley: [#chr=barley] [#mood=smile] Come out when you feel better, alright?
 
-=> END
+=> END!

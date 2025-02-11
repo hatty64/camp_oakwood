@@ -1,0 +1,169 @@
+[gd_scene load_steps=15 format=3 uid="uid://u7grbdjp2dy5"]
+
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_0n0in"]
+[ext_resource type="Script" path="res://scenes/library_top_floor.gd" id="1_fc12g"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_wr8hb"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="3_h3u1f"]
+[ext_resource type="Texture2D" uid="uid://bbammlmhxvmyl" path="res://textures/library/cutout_blue.png" id="4_niq6n"]
+[ext_resource type="Texture2D" uid="uid://60vxgijyee2a" path="res://textures/library/cutout_red.png" id="5_4qr0l"]
+[ext_resource type="Texture2D" uid="uid://bo7yr1uvbw8e" path="res://textures/library/rug.png" id="6_20b2a"]
+[ext_resource type="Texture2D" uid="uid://cgd3hvidd6qge" path="res://textures/library/table.png" id="7_n85kv"]
+[ext_resource type="Texture2D" uid="uid://chlyv322xyoig" path="res://textures/library/chair_2.png" id="8_drdho"]
+[ext_resource type="Texture2D" uid="uid://bypptk1ehrsq0" path="res://textures/library/kids_corner.png" id="9_b4i6x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_578nt"]
+size = Vector2(20, 11.72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fops"]
+size = Vector2(20, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0b2v"]
+size = Vector2(30, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48ymf"]
+size = Vector2(66, 20)
+
+[node name="library_top_floor" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_fc12g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_0n0in")]
+layer_0/z_index = -2
+layer_0/tile_data = PackedInt32Array(2883642, 393252, 4, 2883643, 393252, 4, 2883644, 393252, 4, 2883645, 393252, 4, 2883646, 393252, 4, 2883647, 393252, 4, 2818111, 393252, 4, 2818110, 393252, 4, 2818109, 393252, 4, 2818108, 393252, 4, 2818107, 393252, 4, 2818106, 393252, 4, 2818105, 393252, 4, 2883641, 393252, 4, 2883648, 393252, 4, 2818112, 393252, 4, 2752576, 393252, 4, 2752575, 393252, 4, 2752574, 393252, 4, 2752573, 393252, 4, 2752572, 393252, 4, 2752571, 393252, 4, 2752570, 393252, 4, 2752569, 393252, 4, 2687033, 393252, 4, 2687034, 393252, 4, 2687035, 393252, 4, 2687036, 393252, 4, 2687037, 393252, 4, 2687038, 393252, 4, 2687039, 393252, 4, 2687040, 393252, 4, 2621504, 393252, 4, 2621503, 393252, 4, 2621502, 393252, 4, 2621501, 393252, 4, 2621500, 393252, 4, 2621499, 393252, 4, 2621498, 393252, 4, 2621497, 393252, 4, 2555961, 393252, 4, 2555962, 393252, 4, 2555963, 393252, 4, 2555964, 393252, 4, 2555965, 393252, 4, 2555966, 393252, 4, 2555967, 393252, 4, 2555968, 393252, 4, 2949181, 196644, 7, 3014717, 196644, 7, 2949180, 196644, 7, 3014716, 196644, 7, 2490432, 393252, 4, 2490431, 393252, 4, 2490430, 393252, 4, 2490429, 393252, 4, 2490428, 393252, 4, 2490427, 393252, 4, 2424891, 393252, 4, 2359355, 393252, 4, 2359356, 393252, 4, 2359357, 393252, 4, 2359358, 393252, 4, 2359359, 393252, 4, 2359360, 393252, 4, 2424896, 393252, 4, 2424895, 393252, 4, 2424894, 393252, 4, 2424893, 393252, 4, 2424892, 393252, 4, 2424890, 393252, 4, 2490426, 393252, 4, 2490425, 393252, 4, 2424889, 393252, 4, 2359353, 393252, 4, 2359354, 393252, 4, 2359352, 393252, 4, 2424888, 393252, 4, 2490424, 393252, 4, 2555960, 393252, 4, 2621496, 393252, 4, 2687032, 393252, 4, 2752568, 393252, 4, 2818104, 393252, 4, 2883640, 393252, 4, 2883639, 393252, 4, 2818103, 393252, 4, 2752567, 393252, 4, 2687031, 393252, 4, 2621495, 393252, 4, 2555959, 393252, 4, 2490423, 393252, 4, 2424887, 393252, 4, 2359351, 393252, 4, 2359350, 393252, 4, 2424886, 393252, 4, 2490422, 393252, 4, 2555958, 393252, 4, 2621494, 393252, 4, 2687030, 393252, 4, 2752566, 393252, 4, 2818102, 393252, 4, 2883638, 393252, 4, 2883637, 393252, 4, 2818101, 393252, 4, 2752565, 393252, 4, 2687029, 393252, 4, 2621493, 393252, 4, 2555957, 393252, 4, 2490421, 393252, 4, 2424885, 393252, 4, 2359349, 393252, 4, 2359348, 393252, 4, 2424884, 393252, 4, 2490420, 393252, 4, 2555956, 393252, 4, 2621492, 393252, 4, 2687028, 393252, 4, 2752564, 393252, 4, 2818100, 393252, 4, 2883636, 393252, 4, 2883635, 393252, 4, 2818099, 393252, 4, 2752563, 393252, 4, 2687027, 393252, 4, 2621491, 393252, 4, 2555955, 393252, 4, 2490419, 393252, 4, 2424883, 393252, 4, 2359347, 393252, 4, 2359346, 393252, 4, 2424882, 393252, 4, 2490418, 393252, 4, 2555954, 393252, 4, 2621490, 393252, 4, 2687026, 393252, 4, 2752562, 393252, 4, 2818098, 393252, 4, 2883634, 393252, 4)
+layer_1/tile_data = PackedInt32Array(2228281, 458788, 3, 2293817, 458788, 4, 2228282, 458788, 3, 2293818, 458788, 4, 2228283, 458788, 3, 2293819, 458788, 4, 2228284, 458788, 3, 2293820, 458788, 4, 2228285, 458788, 3, 2293821, 458788, 4, 2228286, 458788, 3, 2293822, 458788, 4, 2228287, 458788, 3, 2293823, 458788, 4, 2228288, 458788, 3, 2293824, 458788, 4, 2228280, 458788, 3, 2293816, 458788, 4, 2228279, 458788, 3, 2293815, 458788, 4, 2228278, 458788, 3, 2293814, 458788, 4, 2228277, 458788, 3, 2293813, 458788, 4, 2228276, 458788, 3, 2293812, 458788, 4, 2228275, 458788, 3, 2293811, 458788, 4, 2228274, 458788, 3, 2293810, 458788, 4)
+layer_2/y_sort_enabled = true
+layer_2/tile_data = PackedInt32Array(2359357, 327716, 2, 2359358, 393252, 2, 2359359, 458788, 2, 2293821, 327716, 0, 2293822, 393252, 0, 2293823, 458788, 0, 2424894, 37, 3, 2490429, 65573, 3, 2490431, 131109, 3, 2293817, 458789, 0, 2359353, 458789, 1, 2424889, 458789, 2, 2490425, 458789, 3, 2293815, 458789, 0, 2359351, 458789, 1, 2424887, 458789, 2, 2490423, 458789, 3, 2293813, 458789, 0, 2359349, 458789, 1, 2424885, 458789, 2, 2490421, 458789, 3, 2687033, 458789, 0, 2752569, 458789, 1, 2818105, 458789, 2, 2883641, 458789, 3, 2687031, 458789, 0, 2752567, 458789, 1, 2818103, 458789, 2, 2883639, 458789, 3, 2687029, 458789, 0, 2752565, 458789, 1, 2818101, 458789, 2, 2883637, 458789, 3)
+layer_3/z_index = 2
+layer_3/tile_data = PackedInt32Array(3014715, 458788, 6, 2949179, 458788, 5, 3014718, 327716, 6, 2949182, 327716, 5)
+layer_4/z_index = -1
+
+[node name="Christina" parent="." instance=ExtResource("2_wr8hb")]
+position = Vector2(922, 811)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+z_index = 5
+zoom = Vector2(6, 6)
+limit_bottom = 828
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("3_h3u1f")
+HORIZONTAL_CUT_SIZE = 150
+CINEMATIC_LAYER = 0
+
+[node name="blue" type="StaticBody2D" parent="."]
+position = Vector2(920, 657.72)
+
+[node name="Sprite2D" type="Sprite2D" parent="blue"]
+texture = ExtResource("4_niq6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blue"]
+position = Vector2(-1, 18.14)
+shape = SubResource("RectangleShape2D_578nt")
+
+[node name="red" type="StaticBody2D" parent="."]
+position = Vector2(1026, 657.72)
+
+[node name="Sprite2D" type="Sprite2D" parent="red"]
+texture = ExtResource("5_4qr0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="red"]
+position = Vector2(1.28003, 17.78)
+shape = SubResource("RectangleShape2D_5fops")
+
+[node name="Rug" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(970.72, 554.72)
+scale = Vector2(1.64, 1.64)
+texture = ExtResource("6_20b2a")
+
+[node name="table" type="StaticBody2D" parent="."]
+position = Vector2(627, 613)
+
+[node name="Table" type="Sprite2D" parent="table"]
+texture = ExtResource("7_n85kv")
+
+[node name="table2" type="StaticBody2D" parent="."]
+position = Vector2(627, 613)
+
+[node name="Table" type="Sprite2D" parent="table2"]
+texture = ExtResource("7_n85kv")
+
+[node name="chair" type="StaticBody2D" parent="."]
+position = Vector2(606, 609)
+
+[node name="Sprite2D" type="Sprite2D" parent="chair"]
+texture = ExtResource("8_drdho")
+
+[node name="chair2" type="StaticBody2D" parent="."]
+position = Vector2(606, 581)
+
+[node name="Sprite2D" type="Sprite2D" parent="chair2"]
+texture = ExtResource("8_drdho")
+
+[node name="chair3" type="StaticBody2D" parent="."]
+position = Vector2(606, 636)
+
+[node name="Sprite2D" type="Sprite2D" parent="chair3"]
+texture = ExtResource("8_drdho")
+
+[node name="chair4" type="StaticBody2D" parent="."]
+position = Vector2(648, 609)
+
+[node name="Sprite2D" type="Sprite2D" parent="chair4"]
+texture = ExtResource("8_drdho")
+flip_h = true
+
+[node name="chair5" type="StaticBody2D" parent="."]
+position = Vector2(648, 581)
+
+[node name="Sprite2D" type="Sprite2D" parent="chair5"]
+texture = ExtResource("8_drdho")
+flip_h = true
+
+[node name="chair6" type="StaticBody2D" parent="."]
+position = Vector2(648, 636)
+
+[node name="Sprite2D" type="Sprite2D" parent="chair6"]
+texture = ExtResource("8_drdho")
+flip_h = true
+
+[node name="rainbow" type="StaticBody2D" parent="."]
+position = Vector2(972.28, 619)
+
+[node name="KidsCorner" type="Sprite2D" parent="rainbow"]
+position = Vector2(-64.28, -64)
+texture = ExtResource("9_b4i6x")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rainbow"]
+position = Vector2(-47.28, 22.5)
+shape = SubResource("RectangleShape2D_n0b2v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="rainbow"]
+position = Vector2(48.72, 23)
+shape = SubResource("RectangleShape2D_n0b2v")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(920, 828)
+
+[node name="library_transit" type="Area2D" parent="."]
+position = Vector2(898, 838)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="library_transit"]
+position = Vector2(23, 0)
+shape = SubResource("RectangleShape2D_48ymf")
+
+[connection signal="body_entered" from="library_transit" to="." method="_on_library_transit_body_entered"]
+[connection signal="body_exited" from="library_transit" to="." method="_on_library_transit_body_exited"]

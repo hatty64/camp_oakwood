@@ -100,6 +100,8 @@ var loadin_horizontal_clancy_2 = false
 var loadin_clancy_ext = false
 var loadin_above_lake_left = false
 var loadin_above_lake_right = false
+var loadin_library = false
+var loadin_library_top = false
 
 var input_blocked = false
 var sprint_blocked = false
@@ -109,3 +111,6 @@ var eavesdrop_day0_finished_girls = false
 
 var sunset = false
 var rain = true
+
+var hunted_1 = false
+var hunted_2 = false

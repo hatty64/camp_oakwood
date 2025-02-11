@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://blv2ib22hwk6k"]
+[gd_scene load_steps=36 format=3 uid="uid://blv2ib22hwk6k"]
 
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_53hvl"]
 [ext_resource type="Script" path="res://scenes/library.gd" id="1_v4w5j"]
@@ -222,6 +222,9 @@ size = Vector2(8, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lad26"]
 size = Vector2(4, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x60l4"]
+size = Vector2(64, 20)
+
 [node name="library" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_v4w5j")
@@ -239,7 +242,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Christina" parent="." instance=ExtResource("2_5sguk")]
-position = Vector2(849, 972)
+position = Vector2(921, 458)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 z_index = 5
@@ -669,5 +672,14 @@ frame = 1
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_lad26")
 
+[node name="top_floor_transit" type="Area2D" parent="."]
+position = Vector2(899, 434)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_floor_transit"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_x60l4")
+
 [connection signal="body_entered" from="spot/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="spot/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="top_floor_transit" to="." method="_on_top_floor_transit_body_entered"]
+[connection signal="body_exited" from="top_floor_transit" to="." method="_on_top_floor_transit_body_exited"]

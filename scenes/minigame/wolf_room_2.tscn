@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://vigd0w71crgo"]
+
+[ext_resource type="Script" path="res://scenes/minigame/wolf_room_2.gd" id="1_07nyv"]
+[ext_resource type="PackedScene" uid="uid://chokjif1i7hhe" path="res://wolf.tscn" id="1_jlkwm"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="2_xjl5y"]
+[ext_resource type="Shader" path="res://scenes/minigame/crt.gdshader" id="3_jb1gd"]
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="4_g4t7b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fpmck"]
+shader = ExtResource("3_jb1gd")
+
+[sub_resource type="QuadMesh" id="QuadMesh_v7go4"]
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7m1c"]
+size = Vector2(96, 20)
+
+[node name="wolf_room_2" type="Node2D"]
+script = ExtResource("1_07nyv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="wolf" parent="." instance=ExtResource("1_jlkwm")]
+position = Vector2(1336, 435)
+
+[node name="Camera2DPlus" type="Camera2D" parent="wolf"]
+zoom = Vector2(9, 9)
+limit_left = 1145
+limit_top = 356
+limit_right = 1358
+limit_bottom = 476
+script = ExtResource("2_xjl5y")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer3"]
+material = SubResource("ShaderMaterial_fpmck")
+mesh = SubResource("QuadMesh_v7go4")
+
+[node name="TileMap" parent="." instance=ExtResource("4_g4t7b")]
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(2228298, 131110, 0, 2228297, 131110, 0, 2228296, 196646, 3, 2162760, 196646, 1, 2097224, 196646, 1, 2162762, 38, 2, 2162761, 38, 2, 2293834, 131110, 2, 2293833, 131110, 2, 2293832, 131110, 2, 2293831, 131110, 2, 2293830, 65574, 2, 2228294, 65574, 1, 2162758, 65574, 1, 2097222, 65574, 1, 2228293, 38, 0, 2293829, 38, 1, 2228292, 38, 0, 2293828, 38, 1, 2162757, 38, 0, 2162756, 38, 0, 2097220, 38, 0, 2097221, 38, 0)
+layer_1/z_index = -5
+layer_1/tile_data = PackedInt32Array(2097225, 38, 0, 2162761, 38, 1, 2097226, 38, 0, 2162762, 38, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1358, 412, 1358, 476, 1209, 476, 1345, 514, 1388, 461)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1219, 346)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(38, 0)
+shape = SubResource("RectangleShape2D_i7m1c")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

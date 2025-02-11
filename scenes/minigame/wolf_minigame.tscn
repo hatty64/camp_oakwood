@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://by43pjmesrc7e"]
+
+[ext_resource type="PackedScene" uid="uid://chokjif1i7hhe" path="res://wolf.tscn" id="1_0v4u0"]
+[ext_resource type="Script" path="res://scenes/minigame/wolf_minigame.gd" id="1_q573k"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="2_6l5c3"]
+[ext_resource type="Texture2D" uid="uid://bbammlmhxvmyl" path="res://textures/library/cutout_blue.png" id="3_24jdo"]
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="5_vb624"]
+[ext_resource type="FontFile" uid="uid://bgegjsrhmi013" path="res://scenes/tiles/joystix monospace.otf" id="6_5emoj"]
+[ext_resource type="Shader" path="res://scenes/minigame/crt.gdshader" id="7_uehsx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xht8s"]
+shader = ExtResource("7_uehsx")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bx1wl"]
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jirc7"]
+size = Vector2(20, 64)
+
+[node name="wolf_minigame" type="Node2D"]
+script = ExtResource("1_q573k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="wolf" parent="." instance=ExtResource("1_0v4u0")]
+position = Vector2(1336, 435)
+
+[node name="Camera2DPlus" type="Camera2D" parent="wolf"]
+zoom = Vector2(9, 9)
+limit_left = 1145
+limit_top = 356
+limit_right = 1358
+limit_bottom = 476
+script = ExtResource("2_6l5c3")
+
+[node name="CutoutBlue" type="Sprite2D" parent="."]
+position = Vector2(901, 562)
+texture = ExtResource("3_24jdo")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1358, 404)
+
+[node name="TileMap" parent="." instance=ExtResource("5_vb624")]
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(2162756, 38, 2, 2162757, 38, 2, 2162758, 38, 2, 2162759, 38, 2, 2162760, 38, 2, 2162761, 38, 2, 2162762, 38, 2, 2162755, 38, 2, 2228297, 131110, 0, 2228296, 131110, 0, 2228295, 131110, 0, 2228294, 131110, 0, 2228293, 131110, 0, 2228292, 131110, 0, 2228291, 131110, 0, 2293827, 131110, 2, 2293828, 131110, 2, 2293829, 131110, 2, 2293830, 131110, 2, 2293831, 131110, 2, 2293832, 131110, 2, 2293833, 131110, 2, 2293834, 131110, 2, 2228298, 131110, 0)
+layer_1/z_index = -5
+layer_1/tile_data = PackedInt32Array(2097220, 38, 0, 2162756, 38, 1, 2097221, 38, 0, 2162757, 38, 1, 2097222, 38, 0, 2162758, 38, 1, 2097223, 38, 0, 2162759, 38, 1, 2097224, 38, 0, 2162760, 38, 1, 2097225, 38, 0, 2162761, 38, 1, 2097226, 38, 0, 2162762, 38, 1, 2097219, 38, 0, 2162755, 38, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+offset_left = 844.0
+offset_top = 20.0
+offset_right = 1085.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_5emoj")
+theme_override_font_sizes/font_size = 100
+text = "Hunt"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+offset_left = 1201.0
+offset_top = 43.0
+offset_right = 1292.0
+offset_bottom = 134.0
+color = Color(0.4, 0.223529, 0.192157, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1369, 412, 1369, 476, 1112, 476, 1400, 506, 1395, 410)
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer3"]
+material = SubResource("ShaderMaterial_xht8s")
+mesh = SubResource("QuadMesh_bx1wl")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1135, 466)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_jirc7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

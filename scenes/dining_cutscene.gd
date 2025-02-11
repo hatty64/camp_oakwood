@@ -14,11 +14,15 @@ func _ready():
 	
 	$Camera2D.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
 	BGSPlayer.stop()
-	await get_tree().create_timer(3.0).timeout
+	$Timer.wait_time = 3
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start")
 		await DialogueManager.dialogue_ended
-		await get_tree().create_timer(3.0).timeout
+	$Timer.wait_time = 3
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_2")
 		await DialogueManager.dialogue_ended
@@ -28,14 +32,20 @@ func _ready():
 	camera_anim.play("move_down")
 	await christina_anim.animation_finished
 	exclamation.show()
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	exclamation.hide()
-	await get_tree().create_timer(0.5).timeout
+	$Timer.wait_time = 0.5
+	$Timer.start()
+	await $Timer.timeout
 	jacob_anim.play("look_down")
 	maya_anim.play("look_down")
 	dinah_anim.play("look_down")
-	await  dinah_anim.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	await dinah_anim.animation_finished
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_3")
 		await DialogueManager.dialogue_ended
@@ -48,15 +58,21 @@ func _ready():
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_5")
 	damian_anim.play("move_down")
 	await damian_anim.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	jacob_anim.speed_scale = 1.0
 	jacob_anim.play("move_back")
 	await DialogueManager.dialogue_ended
-	await get_tree().create_timer(2.0).timeout
+	$Timer.wait_time = 2
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/dining_dialogue.dialogue"), "Start_6")
 		await DialogueManager.dialogue_ended
-	await get_tree().create_timer(2.0).timeout
+	$Timer.wait_time = 2
+	$Timer.start()
+	await $Timer.timeout
 	damian_anim.play("turn_left")
 	await damian_anim.animation_finished
 	if skipped != true:
