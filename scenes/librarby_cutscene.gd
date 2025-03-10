@@ -8,7 +8,9 @@ func _ready() -> void:
 	$CanvasModulate.visible = false
 	$librarian/AnimationPlayer_librarian.play("librarian")
 	$Camera2D.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
-	await get_tree().create_timer(2.0).timeout
+	$Timer.wait_time = 2
+	$Timer.start()
+	await $Timer.timeout
 	$AnimationPlayer.play("turn_to_each_other")
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/librarby_cutscene.dialogue"), "Start")
@@ -20,11 +22,17 @@ func _ready() -> void:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/librarby_cutscene.dialogue"), "Start_2")
 		await DialogueManager.dialogue_ended
 	$Book.visible = true
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	$CanvasModulate.visible = true
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	$CanvasModulate.visible = false
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/librarby_cutscene.dialogue"), "Start_3")
 		await DialogueManager.dialogue_ended

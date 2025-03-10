@@ -13,17 +13,25 @@ func _ready():
 	Global.game_first_loadin = false
 	BGSPlayer.play_rain()
 	BGSPlayer.play()
-	await get_tree().create_timer(3.0).timeout
+	$Timer.wait_time = 3
+	$Timer.start()
+	await $Timer.timeout
 	camera_anim.speed_scale = 0.5
 	clancy_anim.speed_scale = 0.5
 	camera_anim.play("pan_down")
 	clancy_anim.play("move_up")
 	await clancy_anim.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	exclamation.show()
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	exclamation.hide()
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/tent_ext_dialogue.dialogue"), "Start")
 		await DialogueManager.dialogue_ended
@@ -31,7 +39,9 @@ func _ready():
 	clancy_anim.play("move_down")
 	camera_anim.play_backwards("pan_down")
 	await camera_anim.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	Transit.change_scene_to_file("res://scenes/tent_ext.tscn")
 	BGSPlayer.stop()
 

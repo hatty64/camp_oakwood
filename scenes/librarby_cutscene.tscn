@@ -1796,4 +1796,6 @@ texture = ExtResource("58_oxd7s")
 visible = false
 color = Color(0.980558, 0, 0.119791, 1)
 
+[node name="Timer" type="Timer" parent="."]
+
 [editable path="CanvasLayer2/hold_skip"]

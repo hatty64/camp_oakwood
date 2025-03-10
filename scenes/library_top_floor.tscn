@@ -50,7 +50,7 @@ layer_3/tile_data = PackedInt32Array(3014715, 458788, 6, 2949179, 458788, 5, 301
 layer_4/z_index = -1
 
 [node name="Christina" parent="." instance=ExtResource("2_wr8hb")]
-position = Vector2(922, 811)
+position = Vector2(809, 610)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 z_index = 5
@@ -89,51 +89,51 @@ scale = Vector2(1.64, 1.64)
 texture = ExtResource("6_20b2a")
 
 [node name="table" type="StaticBody2D" parent="."]
-position = Vector2(627, 613)
+position = Vector2(637, 106)
 
 [node name="Table" type="Sprite2D" parent="table"]
 texture = ExtResource("7_n85kv")
 
 [node name="table2" type="StaticBody2D" parent="."]
-position = Vector2(627, 613)
+position = Vector2(637, 106)
 
 [node name="Table" type="Sprite2D" parent="table2"]
 texture = ExtResource("7_n85kv")
 
 [node name="chair" type="StaticBody2D" parent="."]
-position = Vector2(606, 609)
+position = Vector2(616, 102)
 
 [node name="Sprite2D" type="Sprite2D" parent="chair"]
 texture = ExtResource("8_drdho")
 
 [node name="chair2" type="StaticBody2D" parent="."]
-position = Vector2(606, 581)
+position = Vector2(616, 74)
 
 [node name="Sprite2D" type="Sprite2D" parent="chair2"]
 texture = ExtResource("8_drdho")
 
 [node name="chair3" type="StaticBody2D" parent="."]
-position = Vector2(606, 636)
+position = Vector2(616, 129)
 
 [node name="Sprite2D" type="Sprite2D" parent="chair3"]
 texture = ExtResource("8_drdho")
 
 [node name="chair4" type="StaticBody2D" parent="."]
-position = Vector2(648, 609)
+position = Vector2(658, 102)
 
 [node name="Sprite2D" type="Sprite2D" parent="chair4"]
 texture = ExtResource("8_drdho")
 flip_h = true
 
 [node name="chair5" type="StaticBody2D" parent="."]
-position = Vector2(648, 581)
+position = Vector2(658, 74)
 
 [node name="Sprite2D" type="Sprite2D" parent="chair5"]
 texture = ExtResource("8_drdho")
 flip_h = true
 
 [node name="chair6" type="StaticBody2D" parent="."]
-position = Vector2(648, 636)
+position = Vector2(658, 129)
 
 [node name="Sprite2D" type="Sprite2D" parent="chair6"]
 texture = ExtResource("8_drdho")

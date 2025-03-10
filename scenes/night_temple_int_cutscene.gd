@@ -11,25 +11,33 @@ func _ready() -> void:
 	$Camera2D.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
 	animation_player.play("fade_in")
 	await animation_player.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/night_temple_int_cutscene.dialogue"), "Start")
 		await DialogueManager.dialogue_ended
 	animation_player.play("christina_walk_up")
 	await animation_player.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/night_temple_int_cutscene.dialogue"), "Start_2")
 		await DialogueManager.dialogue_ended
 	animation_player.play("casper_walk_in")
 	await animation_player.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/night_temple_int_cutscene.dialogue"), "Start_3")
 		await DialogueManager.dialogue_ended
 	animation_player.play("step_aside")
 	await animation_player.animation_finished
-	await get_tree().create_timer(2.0).timeout
+	$Timer.wait_time = 2
+	$Timer.start()
+	await $Timer.timeout
 	MusicPlayer.stop()
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/night_temple_int_cutscene.dialogue"), "Start_4")
@@ -41,7 +49,9 @@ func _ready() -> void:
 		await DialogueManager.dialogue_ended
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/night_temple_int_cutscene.dialogue"), "Start_6")
 		await DialogueManager.dialogue_ended

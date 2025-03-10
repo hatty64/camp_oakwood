@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfw1v27reqexj"]
+[gd_scene load_steps=9 format=3 uid="uid://bfw1v27reqexj"]
 
 [ext_resource type="Script" path="res://scenes/barley_office_int_cutscene.gd" id="1_s7en3"]
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_xioyn"]
 [ext_resource type="Texture2D" uid="uid://s53wb5eit7tb" path="res://character_sprite/barley_remake_full.png" id="2_5ywdv"]
 [ext_resource type="Texture2D" uid="uid://di2s7pajtr44" path="res://character_sprite/Christina_full_sprite_remake.png" id="3_a2ylb"]
-[ext_resource type="PackedScene" uid="uid://b1md5nvyr2iws" path="res://scenes/hold_skip.tscn" id="5_iaani"]
 
 [sub_resource type="Animation" id="Animation_xtlh1"]
 length = 0.001
@@ -178,6 +177,4 @@ drag_vertical_enabled = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="hold_skip" parent="CanvasLayer2" instance=ExtResource("5_iaani")]
-
-[editable path="CanvasLayer2/hold_skip"]
+[node name="Timer" type="Timer" parent="."]

@@ -211,4 +211,6 @@ libraries = {
 
 [node name="hold_skip" parent="CanvasLayer2" instance=ExtResource("8_f2hm3")]
 
+[node name="Timer" type="Timer" parent="."]
+
 [editable path="CanvasLayer2/hold_skip"]

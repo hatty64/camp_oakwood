@@ -8,16 +8,22 @@ func _ready() -> void:
 	$Camera2D.toggle_cinematic(HORIZONTAL_ALIGNMENT_CENTER)
 	MusicPlayer.stop()
 	casper_anim.play("reading")
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	animation_player.play("christina_move_up")
 	await animation_player.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/night_temple_ext_cutscene.dialogue"), "Start")
 		await DialogueManager.dialogue_ended
 	animation_player.play("look_up")
 	await animation_player.animation_finished
-	await get_tree().create_timer(1.0).timeout
+	$Timer.wait_time = 1
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/night_temple_ext_cutscene.dialogue"), "Start_2")
 		await DialogueManager.dialogue_ended

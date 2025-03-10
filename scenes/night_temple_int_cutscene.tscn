@@ -1402,4 +1402,6 @@ frame = 13
 
 [node name="hold_skip" parent="CanvasLayer3" instance=ExtResource("44_7gkwt")]
 
+[node name="Timer" type="Timer" parent="."]
+
 [editable path="CanvasLayer3/hold_skip"]

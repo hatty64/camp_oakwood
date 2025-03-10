@@ -7,7 +7,9 @@ var skipped = false
 func _ready():
 	BGSPlayer.stop()
 	Global.sunset = true
-	await get_tree().create_timer(3.0).timeout
+	$Timer.wait_time = 3
+	$Timer.start()
+	await $Timer.timeout
 	if skipped != true:
 		DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/barley_office_cutscene.dialogue"), "Start")
 		await DialogueManager.dialogue_ended
@@ -25,13 +27,13 @@ func _ready():
 	Transit.change_scene_to_file("res://scenes/barley_office_int.tscn")
 
 
-func _process(delta: float) -> void:
-	hold_to_skip()
+#func _process(delta: float) -> void:
+	#hold_to_skip()
 
 
-func hold_to_skip():
-	if $CanvasLayer2/hold_skip/ProgressBar.value == $CanvasLayer2/hold_skip/ProgressBar.max_value:
-		skipped = true
-		Global.rain = false
-		Global.sunset = true
-		Transit.change_scene_to_file("res://scenes/barley_office_int.tscn")
+#func hold_to_skip():
+	#if $CanvasLayer2/hold_skip/ProgressBar.value == $CanvasLayer2/hold_skip/ProgressBar.max_value:
+		#skipped = true
+		#Global.rain = false
+		#Global.sunset = true
+		#Transit.change_scene_to_file("res://scenes/barley_office_int.tscn")
