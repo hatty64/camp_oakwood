@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxhkirkcdsbcf"]
+
+[ext_resource type="Script" path="res://scenes/nightmare/room_nightmare_hallway.gd" id="1_df65y"]
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_f8wep"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_bf3os"]
+[ext_resource type="Texture2D" uid="uid://cxx17sydf777n" path="res://scenes/nightmare/painting_move.png" id="3_nnmin"]
+
+[sub_resource type="Animation" id="Animation_4i7ae"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lqx4d"]
+resource_name = "move"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 2, 1, 2, 3, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qytt6"]
+_data = {
+"RESET": SubResource("Animation_4i7ae"),
+"move": SubResource("Animation_lqx4d")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t18cs"]
+size = Vector2(20, 64)
+
+[node name="room_nightmare_hallway" type="Node2D"]
+script = ExtResource("1_df65y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_f8wep")]
+layer_0/tile_data = PackedInt32Array(2359346, 65575, 1, 2424882, 65575, 1, 2359347, 65575, 1, 2424883, 65575, 1, 2359348, 65575, 1, 2424884, 65575, 1, 2359349, 65575, 1, 2424885, 65575, 1, 2359350, 65575, 1, 2424886, 65575, 1, 2359351, 65575, 1, 2424887, 65575, 1, 2359352, 65575, 1, 2424888, 65575, 1, 2359353, 65575, 1, 2424889, 65575, 1, 2359354, 65575, 1, 2424890, 65575, 1, 2359355, 65575, 1, 2424891, 65575, 1, 2359356, 65575, 1, 2424892, 65575, 1, 2359357, 65575, 1, 2424893, 65575, 1, 2359358, 65575, 1, 2424894, 65575, 1, 2359359, 65575, 1, 2424895, 65575, 1, 2359360, 65575, 1, 2424896, 65575, 1)
+layer_1/tile_data = PackedInt32Array(2293810, 393255, 5, 2293811, 393255, 5, 2293812, 393255, 5, 2293813, 393255, 5, 2293814, 393255, 5, 2293815, 393255, 5, 2293816, 393255, 5, 2293817, 393255, 5, 2293818, 393255, 5, 2293819, 393255, 5, 2293820, 393255, 5, 2293821, 393255, 5, 2293822, 393255, 5, 2293823, 393255, 5, 2293824, 393255, 5, 2228274, 393255, 5, 2228275, 393255, 5, 2228276, 393255, 5, 2228277, 393255, 5, 2228278, 393255, 5, 2228279, 393255, 5, 2228280, 393255, 5, 2228281, 393255, 5, 2228282, 393255, 5, 2228283, 393255, 5, 2228284, 393255, 5, 2228285, 393255, 5, 2228286, 393255, 5, 2228287, 393255, 5, 2228288, 393255, 5, 2162738, 393255, 0, 2162739, 393255, 0, 2162740, 393255, 0, 2162741, 393255, 0, 2162742, 393255, 0, 2162743, 393255, 0, 2162744, 393255, 0, 2162745, 393255, 0, 2162746, 393255, 0, 2162747, 393255, 0, 2162748, 393255, 0, 2162749, 393255, 0, 2162750, 393255, 0, 2162751, 393255, 0, 2162752, 393255, 0)
+layer_2/z_index = 2
+layer_2/tile_data = PackedInt32Array(2490418, 393255, 2, 2490419, 393255, 2, 2490420, 393255, 2, 2490421, 393255, 2, 2490422, 393255, 2, 2490423, 393255, 2, 2490424, 393255, 2, 2490425, 393255, 2, 2490426, 393255, 2, 2490427, 393255, 2, 2490428, 393255, 2, 2490429, 393255, 2, 2490430, 393255, 2, 2490431, 393255, 2, 2490432, 393255, 2)
+
+[node name="Christina" parent="." instance=ExtResource("2_bf3os")]
+position = Vector2(622, 496)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+zoom = Vector2(6, 6)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(734, 438)
+scale = Vector2(0.72001, 0.72001)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("3_nnmin")
+hframes = 2
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_qytt6")
+}
+speed_scale = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(841, 486)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_t18cs")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

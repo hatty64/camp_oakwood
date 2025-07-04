@@ -1,0 +1,253 @@
+[gd_scene load_steps=13 format=3 uid="uid://21cuabmkk2nq"]
+
+[ext_resource type="Script" path="res://scenes/nightmare/wound.gd" id="1_ie25r"]
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_sf0mj"]
+[ext_resource type="Texture2D" uid="uid://cv8itnwvda7ws" path="res://character_sprite/christina_wounded.png" id="2_mdd3w"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="3_3kcy4"]
+[ext_resource type="Texture2D" uid="uid://c0e86gg2kr7bi" path="res://textures/nightmare_trees.png" id="5_0q6ss"]
+[ext_resource type="Texture2D" uid="uid://bm502godr5pb1" path="res://textures/nightmare_trees_forground.png" id="6_5cn5k"]
+[ext_resource type="Shader" path="res://scenes/nightmare/blur.gdshader" id="7_tcymm"]
+
+[sub_resource type="Animation" id="Animation_mlvtb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(358, 563)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StaticBody2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(396, 514)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer2/ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer3/ColorRect:material:shader_parameter/lod")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.585]
+}
+
+[sub_resource type="Animation" id="Animation_43nvb"]
+resource_name = "wound"
+length = 15.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4, 3, 3.6, 4.2, 4.8, 5.4, 6, 6.6, 7.2, 7.8, 8.4, 9, 9.6, 10.2, 10.8, 11.4, 12, 12.6, 13.2, 13.8, 14.4, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 2, 0, 1, 0, 2, 0, 1, 0, 2, 0, 1, 0, 2, 0, 1, 0, 2, 0, 1, 0, 2, 0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(358, 563), Vector2(663, 563)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StaticBody2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(396, 514), Vector2(-27, 514)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer2/ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.8, 2.9, 3.6, 4.3, 5.6, 7.1, 8.1, 9, 10.3, 13.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0.376471), Color(0, 0, 0, 0.376471), Color(0, 0, 0, 1), Color(0, 0, 0, 0.486275), Color(0, 0, 0, 0.486275), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0.427451), Color(0, 0, 0, 0.427451), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer3/ColorRect:material:shader_parameter/lod")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.4, 1.7, 3.3, 3.6, 4.1, 4.6, 7.1, 7.7, 8.7, 9.2, 11.4, 11.9, 12.5, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.585, 0.235, 0.235, 1.39, 0.19, 1.29, 1.29, 0.69, 0.69, 1.44, 1.44, 0.0, 1.65, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_76jyi"]
+_data = {
+"RESET": SubResource("Animation_mlvtb"),
+"wound": SubResource("Animation_43nvb")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kltig"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_en1n5"]
+shader = ExtResource("7_tcymm")
+shader_parameter/lod = 1.585
+
+[node name="wound" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ie25r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_sf0mj")]
+layer_0/tile_data = PackedInt32Array(2490405, 65576, 0, 2490406, 65576, 0, 2490407, 65576, 0, 2490408, 65576, 0, 2490409, 65576, 0, 2490410, 65576, 0, 2490411, 65576, 0, 2490412, 65576, 0, 2490413, 65576, 0, 2490414, 65576, 0, 2490415, 65576, 0, 2490416, 65576, 0, 2490417, 65576, 0, 2490418, 65576, 0, 2490419, 65576, 0, 2490420, 65576, 0, 2490421, 65576, 0, 2490422, 65576, 0, 2490423, 65576, 0, 2490424, 65576, 0, 2490425, 65576, 0, 2490426, 65576, 0, 2490427, 65576, 0, 2490428, 65576, 0, 2490429, 65576, 0, 2490430, 65576, 0, 2490431, 65576, 0, 2490432, 65576, 0, 2490433, 65576, 0, 2490434, 65576, 0, 2490435, 65576, 0, 2490436, 65576, 0, 2490437, 65576, 0, 2490438, 65576, 0, 2490439, 65576, 0, 2490440, 65576, 0, 2490441, 65576, 0, 2490442, 65576, 0, 2490443, 65576, 0, 2490444, 65576, 0, 2490445, 65576, 0, 2490446, 65576, 0, 2490447, 65576, 0, 2490448, 65576, 0, 2490449, 65576, 0, 2490450, 65576, 0, 2490451, 65576, 0, 2490452, 65576, 0, 2490453, 65576, 0, 2490454, 65576, 0, 2555941, 65576, 2, 2555942, 65576, 2, 2555943, 65576, 2, 2555944, 65576, 2, 2555945, 65576, 2, 2555946, 65576, 2, 2555947, 65576, 2, 2555948, 65576, 2, 2555949, 65576, 2, 2555950, 65576, 2, 2555951, 65576, 2, 2555952, 65576, 2, 2555953, 65576, 2, 2555954, 65576, 2, 2555955, 65576, 2, 2555956, 65576, 2, 2555957, 65576, 2, 2555958, 65576, 2, 2555959, 65576, 2, 2555960, 65576, 2, 2555961, 65576, 2, 2555962, 65576, 2, 2555963, 65576, 2, 2555964, 65576, 2, 2555965, 65576, 2, 2555966, 65576, 2, 2555967, 65576, 2, 2555968, 65576, 2, 2555969, 65576, 2, 2555970, 65576, 2, 2555971, 65576, 2, 2555972, 65576, 2, 2555973, 65576, 2, 2555974, 65576, 2, 2555975, 65576, 2, 2555976, 65576, 2, 2555977, 65576, 2, 2555978, 65576, 2, 2555979, 65576, 2, 2555980, 65576, 2, 2555981, 65576, 2, 2555982, 65576, 2, 2555983, 65576, 2, 2555984, 65576, 2, 2555985, 65576, 2, 2555986, 65576, 2, 2555987, 65576, 2, 2555988, 65576, 2, 2555989, 65576, 2, 2555990, 65576, 2)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(358, 563)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_mdd3w")
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Camera2DPlus" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, -49)
+zoom = Vector2(6, 6)
+script = ExtResource("3_3kcy4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(325, 479)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-12, -4)
+texture = ExtResource("5_0q6ss")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(235, -4)
+texture = ExtResource("5_0q6ss")
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(441, -4)
+texture = ExtResource("5_0q6ss")
+
+[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(688, -4)
+texture = ExtResource("5_0q6ss")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_76jyi")
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(396, 514)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+z_index = 2
+scale = Vector2(1.48247, 1.48247)
+texture = ExtResource("6_5cn5k")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D2"]
+z_index = 2
+position = Vector2(368, 0)
+scale = Vector2(1.48247, 1.48247)
+texture = ExtResource("6_5cn5k")
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D2"]
+z_index = 2
+position = Vector2(829.522, 0)
+scale = Vector2(1.48247, 1.48247)
+texture = ExtResource("6_5cn5k")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.513726, 0.0588235, 0.752941, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_kltig")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer3"]
+material = SubResource("ShaderMaterial_en1n5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

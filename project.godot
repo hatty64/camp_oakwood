@@ -29,6 +29,7 @@ MusicManager="*res://addons/MusicManager/music_manager.tscn"
 MusicPlayer="*res://sounds/music_player.tscn"
 GlobalCostume="*res://global_costume.gd"
 BattleTransition="*res://textures/transition/battle_transition.tscn"
+Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 
 [dialogue_manager]
 
@@ -45,7 +46,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/MusicManager/plugin.cfg", "res://addons/camera_2d_plus/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/transit/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/MusicManager/plugin.cfg", "res://addons/camera_2d_plus/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/transit/plugin.cfg")
 
 [input]
 
@@ -143,6 +144,10 @@ back={
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://dialogue/boys_cabin.dialogue", "res://dialogue/tree_eye.dialogue", "res://dialogue/night_eye.dialogue", "res://dialogue/wake_up.dialogue", "res://dialogue/tent_dialogue.dialogue", "res://dialogue/chair_interact.dialogue", "res://dialogue/cot_interact.dialogue", "res://dialogue/tent_ext_dialogue.dialogue", "res://dialogue/fence.dialogue", "res://dialogue/jacob_dialogue.dialogue", "res://dialogue/maysie_dialogue.dialogue", "res://dialogue/maya_dialogue.dialogue", "res://dialogue/damian_and_dinah_dialogue.dialogue", "res://dialogue/dining_dialogue.dialogue", "res://dialogue/clancy_dialogue.dialogue", "res://dialogue/lake_dialogue.dialogue", "res://dialogue/ester_dialogue.dialogue", "res://dialogue/test.dialogue", "res://dialogue/bear.dialogue", "res://dialogue/casper_dialogue.dialogue", "res://dialogue/just_a_dark_mirror.dialogue", "res://dialogue/barley_office_cutscene.dialogue", "res://dialogue/t.dialogue", "res://dialogue/eavesdrop_dialogue.dialogue", "res://dialogue/cabin_dialogue.dialogue", "res://dialogue/ep_1_cutscenes.dialogue", "res://dialogue/ep_1_dialogue.dialogue", "res://dialogue/chest_dialogue.dialogue", "res://dialogue/night_temple_ext_cutscene.dialogue", "res://dialogue/night_temple_ext_interact.dialogue", "res://dialogue/night_temple_int_cutscene.dialogue", "res://dialogue/narrator_transit.dialogue", "res://dialogue/library_bgc.dialogue", "res://dialogue/librarby_cutscene.dialogue")
+
+[navigation]
+
+2d/default_cell_size=4.0
 
 [rendering]
 

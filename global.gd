@@ -114,3 +114,6 @@ var rain = true
 
 var hunted_1 = false
 var hunted_2 = false
+
+var lights_on = true
+var sprinting = false

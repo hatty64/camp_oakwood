@@ -113,7 +113,7 @@ func next(next_id: String) -> void:
 func _on_mutated(_mutation: Dictionary) -> void:
 	is_waiting_for_input = false
 	will_hide_balloon = true
-	get_tree().create_timer(0.1).timeout.connect(func():
+	$TimerDialogue.timeout.connect(func():
 		if will_hide_balloon:
 			will_hide_balloon = false
 			balloon.hide()

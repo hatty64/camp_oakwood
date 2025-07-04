@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd7l8f1d4vgcq"]
+
+[ext_resource type="Script" path="res://textures/stamina/stamina_nightmare.gd" id="1_kq7qi"]
+[ext_resource type="Texture2D" uid="uid://ciw0tb1amch1q" path="res://textures/stamina/stamina_bg.png" id="1_r200x"]
+[ext_resource type="Texture2D" uid="uid://ck0pqop3ppmrv" path="res://textures/stamina/stamina_border.png" id="2_jrdiq"]
+[ext_resource type="Texture2D" uid="uid://em73vx27snkm" path="res://textures/stamina/stamina_bar.png" id="3_w1cxq"]
+
+[node name="stamina_nightmare" type="CanvasLayer"]
+script = ExtResource("1_kq7qi")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -650.0
+offset_top = -204.0
+offset_right = -522.0
+offset_bottom = -164.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(5.08629, 5.08629)
+value = 100.0
+texture_under = ExtResource("1_r200x")
+texture_over = ExtResource("2_jrdiq")
+texture_progress = ExtResource("3_w1cxq")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

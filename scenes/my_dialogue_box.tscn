@@ -119,6 +119,10 @@ expand_mode = 4
 volume_db = 10.0
 panning_strength = 0.0
 
+[node name="TimerDialogue" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="spoke" from="Balloon/Dialogue/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_response_menu_response_selected"]

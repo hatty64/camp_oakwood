@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://b81k8qt1hg685"]
+
+[ext_resource type="Script" path="res://combat/battle_test_2.gd" id="1_raysq"]
+[ext_resource type="PackedScene" uid="uid://cbhsl1c3avuvn" path="res://combat/christina_bullet.tscn" id="1_wbhcl"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="2_p27r3"]
+[ext_resource type="PackedScene" uid="uid://bkr6ata7ki4h7" path="res://enemies/regular_mushroom_combat.tscn" id="10_aqe7d"]
+[ext_resource type="Script" path="res://combat/path_2d.gd" id="11_17iem"]
+
+[sub_resource type="Curve2D" id="Curve2D_y2jf4"]
+bake_interval = 146.12
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -112, 20, 0, 0, 0, 0, -174, 3, 0, 0, 0, 0, -232, 21, 0, 0, 0, 0, -293, 1, 0, 0, 0, 0, -350, 22)
+}
+point_count = 6
+
+[node name="battle_test_2" type="Node2D"]
+script = ExtResource("1_raysq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="christina_bullet" parent="." instance=ExtResource("1_wbhcl")]
+position = Vector2(270, 119)
+move_speed = 95.0
+dash_speed = 200.0
+
+[node name="Camera2DPlus" type="Camera2D" parent="."]
+position = Vector2(270, 119)
+zoom = Vector2(5, 5)
+script = ExtResource("2_p27r3")
+
+[node name="regular_mushroom_combat" parent="." instance=ExtResource("10_aqe7d")]
+position = Vector2(395, 113)
+scale = Vector2(3, 3)
+
+[node name="Path2D" type="Path2D" parent="regular_mushroom_combat"]
+scale = Vector2(0.333333, 0.333333)
+curve = SubResource("Curve2D_y2jf4")
+script = ExtResource("11_17iem")

@@ -217,14 +217,14 @@ y_sort_enabled = true
 script = ExtResource("1_b6uca")
 
 [node name="Christina" parent="." instance=ExtResource("6_kvvf1")]
-position = Vector2(1016, 612)
+position = Vector2(1123, 625)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 zoom = Vector2(6, 6)
 limit_left = 793
 limit_top = 476
 limit_right = 1451
-limit_bottom = 709
+limit_bottom = 732
 position_smoothing_speed = 2.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -261,6 +261,7 @@ layer_4/tile_data = PackedInt32Array(2555970, 65544, 0, 2555971, 131080, 0, 2621
 layer_5/z_index = 2
 layer_6/name = "shadow"
 layer_6/z_index = 1
+layer_6/tile_data = PackedInt32Array(2359368, 458777, 2)
 layer_7/name = "rain_splash"
 layer_7/tile_data = PackedInt32Array(2687043, 30, 0, 2687042, 30, 0, 2687039, 30, 0, 2752570, 30, 0, 2752574, 30, 0, 2752576, 30, 0, 2752580, 30, 0, 2752587, 30, 0, 2687051, 30, 0, 2555978, 30, 0, 2621500, 30, 0, 2621499, 30, 0, 2621497, 30, 0, 2687048, 30, 0, 2424905, 30, 0)
 

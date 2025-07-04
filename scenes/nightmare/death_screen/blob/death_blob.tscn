@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://3o5w8t2456y6"]
+
+[ext_resource type="Texture2D" uid="uid://5o46lnw5vjjg" path="res://scenes/nightmare/death_screen/blob/blob_top.png" id="1_58okh"]
+[ext_resource type="Script" path="res://scenes/nightmare/death_screen/blob/death_blob.gd" id="1_gcffn"]
+[ext_resource type="Texture2D" uid="uid://qv8m8afeoolt" path="res://scenes/nightmare/death_screen/blob/blob_bottom.png" id="2_opb1b"]
+[ext_resource type="AudioStream" uid="uid://brv17i453f481" path="res://sounds/sfx/jumpscare/jumpscare_sound_blob.mp3" id="3_q0i3v"]
+
+[sub_resource type="Animation" id="Animation_jurjf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(964, 646)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D/BlobTop:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 84)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer2/ColorRect2:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.501961, 0.207843, 0.737255, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qf4vl"]
+resource_name = "death"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(964, 646), Vector2(964, 557), Vector2(964, 514), Vector2(964, 503), Vector2(964, 494)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D/BlobTop:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 84), Vector2(0, 72), Vector2(0, 48), Vector2(0, 27), Vector2(0, 1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0), Vector2(0, 1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0), Vector2(0, 1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0), Vector2(0, 1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0), Vector2(0, 1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0), Vector2(0, 1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0), Vector2(0, 1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0), Vector2(0, 1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0), Vector2(0, 1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer2/ColorRect2:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.2, 4.4, 4.6, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0.501961, 0.207843, 0.737255, 0), Color(0.501961, 0.207843, 0.737255, 1), Color(0.155697, 0.0359094, 0.247987, 1), Color(0.0967555, 0.0163148, 0.163241, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gng3i"]
+_data = {
+"RESET": SubResource("Animation_jurjf"),
+"death": SubResource("Animation_qf4vl")
+}
+
+[node name="death_blob" type="Node2D"]
+script = ExtResource("1_gcffn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(964, 475)
+zoom = Vector2(4, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gng3i")
+}
+speed_scale = 3.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(964, 646)
+
+[node name="BlobTop" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, 84)
+texture = ExtResource("1_58okh")
+
+[node name="BlobBottom" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_opb1b")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q0i3v")
+autoplay = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.501961, 0.207843, 0.737255, 0)

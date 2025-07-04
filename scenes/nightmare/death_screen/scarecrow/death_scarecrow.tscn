@@ -1,0 +1,283 @@
+[gd_scene load_steps=15 format=3 uid="uid://cxhupb2rd5myl"]
+
+[ext_resource type="Script" path="res://death_scarecrow.gd" id="1_xdto1"]
+[ext_resource type="Texture2D" uid="uid://dcqldwwdrr4jf" path="res://scenes/nightmare/death_screen/scarecrow/scarecrow_head.png" id="2_8nc65"]
+[ext_resource type="Texture2D" uid="uid://bkgu6osk60vb7" path="res://scenes/nightmare/death_screen/scarecrow/scarecrow_arm_right.png" id="3_x27cl"]
+[ext_resource type="Texture2D" uid="uid://c4tbn4ibkbb11" path="res://scenes/nightmare/death_screen/scarecrow/scarecrow_arm_left.png" id="4_i33jb"]
+[ext_resource type="Texture2D" uid="uid://dtry1484qcpei" path="res://scenes/nightmare/death_screen/scarecrow/scarecrow_body.png" id="5_jgjnh"]
+[ext_resource type="Texture2D" uid="uid://ct18us0poxaj3" path="res://scenes/nightmare/death_screen/scarecrow/scarecrow_eyes.png" id="6_nkpfs"]
+[ext_resource type="AudioStream" uid="uid://bapihklbdwmek" path="res://sounds/sfx/jumpscare/jumpscare_sound_scarecrow.mp3" id="7_1p377"]
+[ext_resource type="AudioStream" uid="uid://dyaje7fulq8qr" path="res://sounds/death_quotes/scarecrow/scarecrow_1.mp3" id="8_xefqx"]
+[ext_resource type="AudioStream" uid="uid://cfh861p03d1jc" path="res://sounds/death_quotes/scarecrow/scarecrow_2.mp3" id="9_63la2"]
+[ext_resource type="AudioStream" uid="uid://3qdicod5pjd4" path="res://sounds/death_quotes/scarecrow/scarecrow_3.mp3" id="10_tyqol"]
+
+[sub_resource type="Animation" id="Animation_rnijl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScarecrowArmLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(906, 999)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ScarecrowArmRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1047, 1002)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ScarecrowArmLeft:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.09111]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ScarecrowArmRight:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.09083]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer2/ColorRect2:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.501961, 0.207843, 0.737255, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hkudj"]
+resource_name = "death"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0.858824), Color(0, 0, 0, 0.713726), Color(0, 0, 0, 0.517647), Color(0, 0, 0, 0.301961), Color(0, 0, 0, 0.235294), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScarecrowArmLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(906, 999), Vector2(906, 885.781), Vector2(906, 746.781)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ScarecrowArmRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(1047, 1002), Vector2(1047, 888.781), Vector2(1047, 749.781)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ScarecrowArmLeft:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 1.4, 1.6, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [-1.09111, -0.715533, -0.419275, -0.282858, -0.044603]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ScarecrowArmRight:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.2, 1.4, 1.6, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1.09083, 0.715585, 0.418879, 0.282743, 0.0453786]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.2, 3.4, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.0, 0.622609, 1.21383]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer2/ColorRect2:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.4, 3.6, 3.8, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0.501961, 0.207843, 0.737255, 0), Color(0.501961, 0.207843, 0.737255, 0.494118), Color(0.155697, 0.0359094, 0.247987, 1), Color(0.0967555, 0.0163148, 0.163241, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pdu5f"]
+_data = {
+"RESET": SubResource("Animation_rnijl"),
+"death": SubResource("Animation_hkudj")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a30em"]
+streams_count = 3
+stream_0/stream = ExtResource("8_xefqx")
+stream_1/stream = ExtResource("9_63la2")
+stream_2/stream = ExtResource("10_tyqol")
+
+[node name="death_scarecrow" type="Node2D"]
+script = ExtResource("1_xdto1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ScarecrowHead" type="Sprite2D" parent="."]
+position = Vector2(972.64, 453.96)
+scale = Vector2(3.24, 3.24)
+texture = ExtResource("2_8nc65")
+
+[node name="ScarecrowArmRight" type="Sprite2D" parent="."]
+position = Vector2(1047, 1002)
+rotation = 1.09083
+scale = Vector2(6.64, 3.24)
+texture = ExtResource("3_x27cl")
+offset = Vector2(-27.2711, -86.1235)
+
+[node name="ScarecrowArmLeft" type="Sprite2D" parent="."]
+position = Vector2(906, 999)
+rotation = -1.09111
+scale = Vector2(6.64, 3.24)
+texture = ExtResource("4_i33jb")
+offset = Vector2(27.247, -85.1975)
+
+[node name="ScarecrowBody" type="Sprite2D" parent="."]
+position = Vector2(972.64, 453.96)
+scale = Vector2(3.24, 3.24)
+texture = ExtResource("5_jgjnh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 257.0
+offset_top = 53.0
+offset_right = 297.0
+offset_bottom = 93.0
+scale = Vector2(36.1158, 24.7396)
+color = Color(0, 0, 0, 1)
+
+[node name="ScarecrowEyes" type="Sprite2D" parent="."]
+position = Vector2(972.64, 453.96)
+scale = Vector2(3.24, 3.24)
+texture = ExtResource("6_nkpfs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(991, 512)
+ignore_rotation = false
+zoom = Vector2(1.5, 1.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pdu5f")
+}
+speed_scale = 3.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.501961, 0.207843, 0.737255, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1p377")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_a30em")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bu8ly0bugcxpy"]
+[gd_scene load_steps=15 format=3 uid="uid://bu8ly0bugcxpy"]
 
 [ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="1_24la7"]
 [ext_resource type="Script" path="res://scenes/tent.gd" id="1_k1ty7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://co0yiecgie7lf" path="res://scenes/chair.png" id="4_rvj6w"]
 [ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="4_sxqtv"]
 [ext_resource type="PackedScene" uid="uid://c4unx6bdwbf2e" path="res://scenes/actionable.tscn" id="5_7ived"]
+[ext_resource type="Texture2D" uid="uid://b7r3t6fvcgba8" path="res://textures/cabins/tent_shadow.png" id="5_uv8u2"]
 [ext_resource type="Resource" uid="uid://c2o0qg2v7jy31" path="res://dialogue/chair_interact.dialogue" id="6_vbj0q"]
 [ext_resource type="Resource" uid="uid://dqb4gjpmb4m51" path="res://dialogue/cot_interact.dialogue" id="7_bxlky"]
 [ext_resource type="Texture2D" uid="uid://lxpbj42yx0uj" path="res://textures/raincoat_pickable.png" id="8_umm41"]
@@ -98,6 +99,13 @@ position = Vector2(927, 576)
 
 [node name="RaincoatPickable" type="Sprite2D" parent="raincoat_item"]
 texture = ExtResource("8_umm41")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(953, 604)
+
+[node name="TentShadow" type="Sprite2D" parent="Area2D"]
+z_index = 2
+texture = ExtResource("5_uv8u2")
 
 [connection signal="body_entered" from="tent_exit_point" to="." method="_on_tent_exit_point_body_entered"]
 [connection signal="body_exited" from="tent_exit_point" to="." method="_on_tent_exit_point_body_exited"]

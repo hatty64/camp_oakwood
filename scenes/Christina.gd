@@ -16,16 +16,16 @@ extends CharacterBody2D
 
 var input_vector: Vector2 = Vector2.ZERO
 
-var deadzone_input = 0.35
+var deadzone_input = 0.5
 var deadzone_move = 0.32
 
 var move_dir = Vector2.ZERO
 
 func _ready():
-	InputMap.action_set_deadzone("left", deadzone_input)
-	InputMap.action_set_deadzone("right", deadzone_input)
-	InputMap.action_set_deadzone("up", deadzone_input)
-	InputMap.action_set_deadzone("down", deadzone_input)
+	#InputMap.action_set_deadzone("left", deadzone_input)
+	#InputMap.action_set_deadzone("right", deadzone_input)
+	#InputMap.action_set_deadzone("up", deadzone_input)
+	#InputMap.action_set_deadzone("down", deadzone_input)
 	update_animation_parameters(starting_direction)
 
 func _physics_process(_delta):
@@ -51,7 +51,7 @@ func handle_player_input():
 	
 	sprinting()
 	
-	velocity = input_direction * move_speed
+	velocity = input_direction.normalized() * move_speed
 	
 	move_and_slide()
 	
@@ -76,8 +76,10 @@ func pick_new_state():
 func sprinting():
 	if Global.sprint_blocked != true:
 		if Input.is_action_pressed("sprint"):
+			Global.sprinting = true
 			move_speed = 110
 		else:
+			Global.sprinting = false
 			move_speed = 65
 
 
@@ -118,7 +120,7 @@ func costume_change():
 	elif GlobalCostume.woodling == true:
 		$Sprite2D.texture = load("res://character_sprite/christina_woodling.png")
 	else:
-		$Sprite2D.texture = load("res://character_sprite/color_outline/christina_color_outline.png")
+		$Sprite2D.texture = load("res://character_sprite/color_outline/christina_color_outline_recolored.png")
 
 func night_vision():
 	if GlobalCostume.dark == true:

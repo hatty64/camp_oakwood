@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0orwd5cq81c"]
+
+[ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_3es50"]
+[ext_resource type="PackedScene" uid="uid://bhysbh3p85m13" path="res://scenes/christina.tscn" id="2_beijh"]
+
+[node name="christina_room_nightmare" type="Node2D"]
+y_sort_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_3es50")]
+layer_0/tile_data = PackedInt32Array(2293819, 65575, 1, 2293820, 65575, 1, 2293821, 65575, 1, 2359357, 65575, 1, 2359356, 65575, 1, 2359355, 65575, 1, 2293818, 65575, 1, 2359354, 65575, 1)
+layer_1/tile_data = PackedInt32Array(2228285, 458791, 5, 2228284, 458791, 5, 2228283, 458791, 5, 2228282, 458791, 5)
+layer_2/tile_data = PackedInt32Array(2293818, 39, 6)
+layer_3/z_index = 2
+layer_3/tile_data = PackedInt32Array(2162749, 393255, 0, 2162748, 393255, 0, 2162747, 393255, 0, 2162746, 393255, 0, 2162745, 327719, 0, 2162750, 458791, 0, 2228286, 458791, 1, 2424894, 458791, 2, 2424893, 393255, 2, 2424892, 393255, 2, 2424891, 393255, 2, 2424890, 393255, 2, 2424889, 327719, 2, 2359353, 327719, 1, 2293817, 327719, 1, 2228281, 327719, 1)
+layer_4/y_sort_enabled = true
+layer_4/tile_data = PackedInt32Array(2228284, 196647, 6, 2293820, 196647, 7, 2228285, 262183, 6, 2293821, 262183, 7)
+
+[node name="Christina" parent="." instance=ExtResource("2_beijh")]
+position = Vector2(908, 468)
+
+[node name="Camera2D" type="Camera2D" parent="Christina"]
+zoom = Vector2(6, 6)
+limit_left = 744
+limit_top = 125
+limit_right = 1064
+limit_bottom = 988
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
