@@ -59,7 +59,7 @@ layer_4/tile_data = PackedInt32Array(2752575, 65536, 3, 2752578, 65536, 3, 23593
 position = Vector2(1048, 652)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
-zoom = Vector2(6, 6)
+zoom = Vector2(7, 7)
 limit_left = 889
 limit_top = 497
 limit_right = 1209

@@ -1,7 +1,8 @@
 extends Control
 
-@onready var animation_player := $AnimationPlayer
-@onready var color_rect = $ColorRect
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var color_rect: ColorRect = $ColorRect
 @onready var map_button = $notebook_open_full/VBoxContainer/map
 @onready var barleys_office = $notebook_map_open_full/barleys_office
 @onready var christina = $"../.."
