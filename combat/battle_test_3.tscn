@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://k3tjynx31bid"]
+
+[ext_resource type="Script" path="res://combat/battle_test_3.gd" id="1_cyrt1"]
+[ext_resource type="Texture2D" uid="uid://cpj8qqjub0vct" path="res://textures/combat/battle_background.png" id="1_ig4yn"]
+[ext_resource type="Shader" path="res://shaders/battle_bg.gdshader" id="2_goxef"]
+[ext_resource type="PackedScene" uid="uid://dmvjte005afdn" path="res://combat/enemies/mushroom_battle.tscn" id="2_rgw2a"]
+[ext_resource type="PackedScene" uid="uid://boenlhj4g1505" path="res://combat/combat_ui.tscn" id="5_wk5jd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kljai"]
+shader = ExtResource("2_goxef")
+shader_parameter/waveAmplitude = 0.25
+shader_parameter/correctVertex = true
+shader_parameter/waveFrequency = 10.0
+shader_parameter/verticalWave = true
+shader_parameter/keepTransparency = true
+shader_parameter/useTime = true
+shader_parameter/waveSpeed = 1.0
+shader_parameter/progress = 0.0
+shader_parameter/firstHalf = 0.5
+shader_parameter/secondHalf = 0.5
+shader_parameter/freezeFirstHalf = false
+shader_parameter/freezeSecondHalf = false
+
+[node name="battle_test_3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cyrt1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.239842, 0.151888, 0.374675, 1)
+material = SubResource("ShaderMaterial_kljai")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ig4yn")
+
+[node name="Sprite2D" parent="." instance=ExtResource("2_rgw2a")]
+position = Vector2(982, 369)
+
+[node name="combat_ui" parent="." instance=ExtResource("5_wk5jd")]
+
+[editable path="combat_ui"]

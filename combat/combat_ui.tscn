@@ -1,0 +1,226 @@
+[gd_scene load_steps=24 format=3 uid="uid://boenlhj4g1505"]
+
+[ext_resource type="Script" path="res://combat/combat_ui.gd" id="1_aeawp"]
+[ext_resource type="Texture2D" uid="uid://m34nfco3aaip" path="res://portraits/christina/smile.png" id="1_blo1h"]
+[ext_resource type="Texture2D" uid="uid://btg47po360mph" path="res://textures/Camp oakwood assets/atk button-export.png" id="2_gq67g"]
+[ext_resource type="Texture2D" uid="uid://dkpyetsl0gn6d" path="res://textures/Camp oakwood assets/atk button selected-export.png" id="3_0nu4y"]
+[ext_resource type="FontFile" uid="uid://cxco3lwv0bs5r" path="res://scenes/joystix monospace.otf" id="3_cov3s"]
+[ext_resource type="Texture2D" uid="uid://ciw0tb1amch1q" path="res://textures/stamina/stamina_bg.png" id="3_kgtis"]
+[ext_resource type="Texture2D" uid="uid://ck0pqop3ppmrv" path="res://textures/stamina/stamina_border.png" id="4_2hhkn"]
+[ext_resource type="Texture2D" uid="uid://bquvfsle7vlh5" path="res://textures/Camp oakwood assets/run button-export.png" id="4_aq75q"]
+[ext_resource type="Texture2D" uid="uid://em73vx27snkm" path="res://textures/stamina/stamina_bar.png" id="5_a6ahw"]
+[ext_resource type="Texture2D" uid="uid://bn4pwq5sbkohm" path="res://textures/Camp oakwood assets/run button selected.png" id="5_f4y0u"]
+[ext_resource type="Texture2D" uid="uid://bjq80mljlewb8" path="res://textures/Camp oakwood assets/back_button.png" id="6_5w804"]
+[ext_resource type="Texture2D" uid="uid://blywknmvr1aij" path="res://textures/Camp oakwood assets/cast button-export.png" id="6_fofs4"]
+[ext_resource type="Texture2D" uid="uid://dxs5hfsxax66u" path="res://textures/Camp oakwood assets/back_button_selected.png" id="7_1fbbm"]
+[ext_resource type="Texture2D" uid="uid://dptfqcdfjq46x" path="res://textures/Camp oakwood assets/cast button selected-export.png" id="7_kfyem"]
+[ext_resource type="Texture2D" uid="uid://bahovq2xykdel" path="res://portraits/placeholder.png" id="10_igt0x"]
+[ext_resource type="Texture2D" uid="uid://bfaytrw3hd8ck" path="res://textures/Camp oakwood assets/christina_button.png" id="12_6e2s6"]
+[ext_resource type="Texture2D" uid="uid://disb6sjgx51bp" path="res://textures/Camp oakwood assets/christina_select.png" id="13_4u7da"]
+[ext_resource type="Texture2D" uid="uid://dfse6u335lgmj" path="res://textures/Camp oakwood assets/christina_disabled.png" id="14_21tbm"]
+[ext_resource type="Texture2D" uid="uid://dsisku75fmwxi" path="res://textures/Camp oakwood assets/woodling_button.png" id="15_i8f8f"]
+[ext_resource type="Texture2D" uid="uid://benw6o3dro5us" path="res://textures/Camp oakwood assets/woodling_select.png" id="16_scp48"]
+[ext_resource type="Texture2D" uid="uid://r2u5ndc603q1" path="res://textures/Camp oakwood assets/woodling_disabled.png" id="17_levkn"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_x8nb6"]
+color = Color(1, 0, 0, 1)
+thickness = 100
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_lb1ul"]
+color = Color(0, 1, 0, 1)
+thickness = 100
+
+[node name="combat_ui" type="CanvasLayer"]
+script = ExtResource("1_aeawp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 835.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="christina_stats" type="HBoxContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 840.0
+offset_right = -1162.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -40
+
+[node name="TextureRect" type="TextureRect" parent="christina_stats"]
+layout_mode = 2
+texture = ExtResource("1_blo1h")
+expand_mode = 2
+
+[node name="christina_health" type="TextureProgressBar" parent="christina_stats"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 4.1
+value = 50.0
+texture_under = ExtResource("3_kgtis")
+texture_over = ExtResource("4_2hhkn")
+texture_progress = ExtResource("5_a6ahw")
+
+[node name="Label" type="Label" parent="christina_stats/christina_health"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_cov3s")
+theme_override_font_sizes/font_size = 56
+text = "43"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="christina_ui" type="HBoxContainer" parent="."]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -793.0
+offset_top = -219.0
+offset_right = -21.0
+offset_bottom = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+
+[node name="Attack" type="TextureButton" parent="christina_ui"]
+layout_mode = 2
+texture_normal = ExtResource("2_gq67g")
+texture_pressed = ExtResource("2_gq67g")
+texture_hover = ExtResource("3_0nu4y")
+texture_focused = ExtResource("3_0nu4y")
+
+[node name="Back" type="TextureButton" parent="christina_ui"]
+layout_mode = 2
+texture_normal = ExtResource("6_5w804")
+texture_pressed = ExtResource("6_5w804")
+texture_hover = ExtResource("7_1fbbm")
+texture_focused = ExtResource("7_1fbbm")
+
+[node name="Run" type="TextureButton" parent="christina_ui"]
+layout_mode = 2
+texture_normal = ExtResource("4_aq75q")
+texture_pressed = ExtResource("4_aq75q")
+texture_hover = ExtResource("5_f4y0u")
+texture_focused = ExtResource("5_f4y0u")
+
+[node name="woodling_ui" type="HBoxContainer" parent="."]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 744.0
+offset_top = -219.0
+offset_right = 1904.0
+offset_bottom = -27.0
+grow_vertical = 0
+
+[node name="Cast" type="TextureButton" parent="woodling_ui"]
+layout_mode = 2
+texture_normal = ExtResource("6_fofs4")
+texture_pressed = ExtResource("6_fofs4")
+texture_hover = ExtResource("7_kfyem")
+texture_focused = ExtResource("7_kfyem")
+
+[node name="Back_wood" type="TextureButton" parent="woodling_ui"]
+layout_mode = 2
+texture_normal = ExtResource("6_5w804")
+texture_pressed = ExtResource("6_5w804")
+texture_hover = ExtResource("7_1fbbm")
+texture_focused = ExtResource("7_1fbbm")
+
+[node name="Run" type="TextureButton" parent="woodling_ui"]
+layout_mode = 2
+texture_normal = ExtResource("4_aq75q")
+texture_pressed = ExtResource("4_aq75q")
+texture_hover = ExtResource("5_f4y0u")
+texture_focused = ExtResource("5_f4y0u")
+
+[node name="woodling_stats" type="HBoxContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 840.0
+offset_right = -1273.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="woodling_stats"]
+layout_mode = 2
+texture = ExtResource("10_igt0x")
+expand_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="woodling_stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxLine_x8nb6")
+theme_override_styles/fill = SubResource("StyleBoxLine_lb1ul")
+value = 50.0
+show_percentage = false
+
+[node name="select_character" type="HBoxContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = 840.0
+offset_right = -297.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 620
+
+[node name="Christina" type="TextureButton" parent="select_character"]
+layout_mode = 2
+texture_normal = ExtResource("12_6e2s6")
+texture_pressed = ExtResource("12_6e2s6")
+texture_hover = ExtResource("13_4u7da")
+texture_disabled = ExtResource("14_21tbm")
+texture_focused = ExtResource("13_4u7da")
+
+[node name="Woodling" type="TextureButton" parent="select_character"]
+layout_mode = 2
+texture_normal = ExtResource("15_i8f8f")
+texture_pressed = ExtResource("15_i8f8f")
+texture_hover = ExtResource("16_scp48")
+texture_disabled = ExtResource("17_levkn")
+texture_focused = ExtResource("16_scp48")
+
+[node name="strength" type="ProgressBar" parent="."]
+visible = false
+offset_left = 144.0
+offset_top = 738.0
+offset_right = 647.0
+offset_bottom = 908.0
+rotation = -1.5708
+max_value = 200.0
+
+[connection signal="visibility_changed" from="christina_ui" to="." method="_on_christina_ui_visibility_changed"]
+[connection signal="pressed" from="christina_ui/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="christina_ui/Back" to="." method="_on_back_pressed"]
+[connection signal="visibility_changed" from="woodling_ui" to="." method="_on_woodling_ui_visibility_changed"]
+[connection signal="pressed" from="woodling_ui/Back_wood" to="." method="_on_back_wood_pressed"]
+[connection signal="visibility_changed" from="select_character" to="." method="_on_select_character_visibility_changed"]
+[connection signal="pressed" from="select_character/Christina" to="." method="_on_christina_pressed"]
+[connection signal="pressed" from="select_character/Woodling" to="." method="_on_woodling_pressed"]
