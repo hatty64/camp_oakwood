@@ -4,7 +4,7 @@ var flicker = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
-	#light_off()
+	light_off()
 
 func  _physics_process(delta: float) -> void:
 	if Global.lights_on == false:

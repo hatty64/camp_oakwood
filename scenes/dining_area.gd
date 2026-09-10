@@ -18,7 +18,7 @@ func _ready():
 	if Global.loadin_dining == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 1047
-		$Christina.position.y = 685
+		$Christina.position.y = 677
 	elif Global.first_time_in_dining == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 1048
@@ -156,6 +156,7 @@ func dinah_turns_head():
 func fade_out():
 	cutscene_play()
 	$AnimationPlayer.play("fade_out")
+	MusicPlayer.fadeout_music()
 	await $AnimationPlayer.animation_finished
 	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/narrator_transit.dialogue"), "Start_damian_quest")
 	await DialogueManager.dialogue_ended

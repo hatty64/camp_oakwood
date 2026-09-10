@@ -223,7 +223,7 @@ position = Vector2(1123, 625)
 zoom = Vector2(7, 7)
 limit_left = 793
 limit_top = 476
-limit_right = 1451
+limit_right = 1465
 limit_bottom = 732
 position_smoothing_speed = 2.0
 drag_horizontal_enabled = true
@@ -311,6 +311,7 @@ vframes = 4
 frame = 12
 
 [node name="Actionable_2" parent="clancy" instance=ExtResource("4_45e5m")]
+position = Vector2(0, 7)
 dialogue_resource = ExtResource("8_etvv3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clancy/Actionable_2"]
@@ -436,6 +437,9 @@ texture = ExtResource("19_th6tl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="female_cabin2"]
 position = Vector2(43, -4.5)
 shape = SubResource("RectangleShape2D_we310")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1189, 732)
 
 [connection signal="body_entered" from="cabin_f_transition_point" to="." method="_on_cabin_f_transition_point_body_entered"]
 [connection signal="body_exited" from="cabin_f_transition_point" to="." method="_on_cabin_f_transition_point_body_exited"]

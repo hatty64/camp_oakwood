@@ -19,6 +19,7 @@ var entered = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	MusicPlayer.play_dining()
 	if entered == true:
 		Transit.change_scene_to_file("res://scenes/library_top_floor.tscn")
 		Global.loadin_library_top = true

@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://cjetecf7f745j"]
+
+[ext_resource type="Texture2D" uid="uid://o2opp3w5265l" path="res://textures/combat/enemy/mushroom/mushroom_frame_1.png" id="1_6fsge"]
+[ext_resource type="Texture2D" uid="uid://c1o42sfh1243b" path="res://textures/combat/enemy/mushroom/mushroom_frame_2.png" id="2_1r0uf"]
+[ext_resource type="Texture2D" uid="uid://duycwmm4cmwlk" path="res://textures/combat/enemy/mushroom/mushroom_frame_3.png" id="3_0pujx"]
+[ext_resource type="Texture2D" uid="uid://cjt0e0ii5k2hw" path="res://textures/combat/enemy/mushroom/mushroom_frame_4.png" id="4_h6ium"]
+[ext_resource type="Texture2D" uid="uid://dao6iixxhytk6" path="res://textures/combat/enemy/mushroom/mushroom_frame_5.png" id="5_u2ulc"]
+[ext_resource type="Texture2D" uid="uid://be1076gar7kru" path="res://textures/combat/enemy/mushroom/mushroom_frame_6.png" id="6_l430k"]
+[ext_resource type="Script" path="res://combat/enemies/enemy.gd" id="7_j3mjy"]
+[ext_resource type="Resource" uid="uid://rvgcqw575tjk" path="res://combat/battle_actors/mushroom.tres" id="8_mo1wj"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_3p2u3"]
+frames = 6
+speed_scale = 6.0
+frame_0/texture = ExtResource("1_6fsge")
+frame_1/texture = ExtResource("2_1r0uf")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_0pujx")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_h6ium")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_u2ulc")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_l430k")
+frame_5/duration = 1.0
+
+[sub_resource type="Animation" id="Animation_7wpms"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_k0mjd"]
+resource_name = "focus"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.443137)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w61mk"]
+_data = {
+"RESET": SubResource("Animation_7wpms"),
+"focus": SubResource("Animation_k0mjd")
+}
+
+[node name="enemy" type="TextureButton"]
+texture_normal = SubResource("AnimatedTexture_3p2u3")
+script = ExtResource("7_j3mjy")
+data = ExtResource("8_mo1wj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w61mk")
+}
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

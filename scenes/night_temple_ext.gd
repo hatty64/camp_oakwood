@@ -57,7 +57,7 @@ func _on_exit_point_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		Global.input_blocked = true
 		$Christina.input_vector = Vector2.ZERO
-		$Christina.position.y = 836
+		$Christina.position.y = 833
 		$Christina.state_machine.travel("idle")
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
 		DialogueManager.show_dialogue_regular_balloon_up(load("res://dialogue/night_temple_ext_interact.dialogue"), "Start_walk_away")

@@ -33,7 +33,7 @@ func resume():
 
 func pause():
 	get_tree().paused = true
-	#christina.input_vector = Vector2.ZERO
+	christina.input_vector = Vector2.ZERO
 	color_rect.show()
 	animation_player.play("notebook_opening")
 	await animation_player.animation_finished

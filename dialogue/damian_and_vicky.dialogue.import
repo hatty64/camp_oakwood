@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cku7wt6daywcn"
+path="res://.godot/imported/damian_and_vicky.dialogue-c81aafc817aac864c6d57f2bc2a8ddfe.tres"
+
+[deps]
+
+source_file="res://dialogue/damian_and_vicky.dialogue"
+dest_files=["res://.godot/imported/damian_and_vicky.dialogue-c81aafc817aac864c6d57f2bc2a8ddfe.tres"]
+
+[params]
+
+defaults=true

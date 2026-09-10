@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://xmbjarsq5hd"]
+
+[ext_resource type="Script" path="res://combat/player/player_window.gd" id="1_80uy0"]
+[ext_resource type="PackedScene" uid="uid://bj4bkoap1ts5j" path="res://combat/player/christina_button.tscn" id="2_rpjpy"]
+[ext_resource type="Texture2D" uid="uid://dsisku75fmwxi" path="res://textures/Camp oakwood assets/woodling_button.png" id="4_adry7"]
+[ext_resource type="Texture2D" uid="uid://benw6o3dro5us" path="res://textures/Camp oakwood assets/woodling_select.png" id="5_4lvpa"]
+[ext_resource type="Texture2D" uid="uid://r2u5ndc603q1" path="res://textures/Camp oakwood assets/woodling_disabled.png" id="6_y53t4"]
+
+[node name="player_window" type="HBoxContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -386.0
+offset_top = -192.0
+offset_right = 386.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme_override_constants/separation = 335
+script = ExtResource("1_80uy0")
+
+[node name="christina_button" parent="." instance=ExtResource("2_rpjpy")]
+layout_mode = 2
+
+[node name="woodling_button" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("4_adry7")
+texture_pressed = ExtResource("4_adry7")
+texture_hover = ExtResource("5_4lvpa")
+texture_disabled = ExtResource("6_y53t4")
+texture_focused = ExtResource("5_4lvpa")

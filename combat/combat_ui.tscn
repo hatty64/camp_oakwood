@@ -1,8 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://boenlhj4g1505"]
+[gd_scene load_steps=27 format=3 uid="uid://boenlhj4g1505"]
 
 [ext_resource type="Script" path="res://combat/combat_ui.gd" id="1_aeawp"]
-[ext_resource type="Texture2D" uid="uid://m34nfco3aaip" path="res://portraits/christina/smile.png" id="1_blo1h"]
 [ext_resource type="Texture2D" uid="uid://btg47po360mph" path="res://textures/Camp oakwood assets/atk button-export.png" id="2_gq67g"]
+[ext_resource type="Resource" uid="uid://cksavk6hbp1ov" path="res://combat/player/christina.tres" id="2_n8fic"]
 [ext_resource type="Texture2D" uid="uid://dkpyetsl0gn6d" path="res://textures/Camp oakwood assets/atk button selected-export.png" id="3_0nu4y"]
 [ext_resource type="FontFile" uid="uid://cxco3lwv0bs5r" path="res://scenes/joystix monospace.otf" id="3_cov3s"]
 [ext_resource type="Texture2D" uid="uid://ciw0tb1amch1q" path="res://textures/stamina/stamina_bg.png" id="3_kgtis"]
@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://dsisku75fmwxi" path="res://textures/Camp oakwood assets/woodling_button.png" id="15_i8f8f"]
 [ext_resource type="Texture2D" uid="uid://benw6o3dro5us" path="res://textures/Camp oakwood assets/woodling_select.png" id="16_scp48"]
 [ext_resource type="Texture2D" uid="uid://r2u5ndc603q1" path="res://textures/Camp oakwood assets/woodling_disabled.png" id="17_levkn"]
+[ext_resource type="Texture2D" uid="uid://cgwkn7e4dgn8n" path="res://textures/stamina/strength_bg.png" id="22_vgo27"]
+[ext_resource type="Texture2D" uid="uid://5i3wnuu5ee0r" path="res://textures/stamina/strength_border.png" id="23_1o0xn"]
+[ext_resource type="Texture2D" uid="uid://cltheese3yopd" path="res://textures/stamina/strength_bar.png" id="24_7riok"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_x8nb6"]
 color = Color(1, 0, 0, 1)
@@ -32,6 +35,7 @@ thickness = 100
 
 [node name="combat_ui" type="CanvasLayer"]
 script = ExtResource("1_aeawp")
+stats = ExtResource("2_n8fic")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -53,11 +57,11 @@ offset_right = -1162.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
 theme_override_constants/separation = -40
 
 [node name="TextureRect" type="TextureRect" parent="christina_stats"]
 layout_mode = 2
-texture = ExtResource("1_blo1h")
 expand_mode = 2
 
 [node name="christina_health" type="TextureProgressBar" parent="christina_stats"]
@@ -207,14 +211,17 @@ texture_hover = ExtResource("16_scp48")
 texture_disabled = ExtResource("17_levkn")
 texture_focused = ExtResource("16_scp48")
 
-[node name="strength" type="ProgressBar" parent="."]
+[node name="strength" type="TextureProgressBar" parent="."]
 visible = false
 offset_left = 144.0
 offset_top = 738.0
-offset_right = 647.0
-offset_bottom = 908.0
+offset_right = 656.0
+offset_bottom = 871.0
 rotation = -1.5708
 max_value = 200.0
+texture_under = ExtResource("22_vgo27")
+texture_over = ExtResource("23_1o0xn")
+texture_progress = ExtResource("24_7riok")
 
 [connection signal="visibility_changed" from="christina_ui" to="." method="_on_christina_ui_visibility_changed"]
 [connection signal="pressed" from="christina_ui/Attack" to="." method="_on_attack_pressed"]

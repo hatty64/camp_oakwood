@@ -117,3 +117,13 @@ var hunted_2 = false
 
 var lights_on = true
 var sprinting = false
+
+var flashlighting = false
+var flitsable = false
+var flashlight_disabled = false
+var battery_percentage = 3
+var flashlight_unlocked = true
+
+var st_man_dead = false
+var awake = false
+var max_st_man = 0

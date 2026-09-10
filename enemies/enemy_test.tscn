@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://2vop8p0nqtgf"]
+[gd_scene load_steps=11 format=3 uid="uid://2vop8p0nqtgf"]
 
 [ext_resource type="PackedScene" uid="uid://btcpjdktuymx" path="res://scenes/tile_map.tscn" id="1_q2lh7"]
 [ext_resource type="Script" path="res://enemies/enemy_test.gd" id="1_skm0p"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c88of0gqo3elp" path="res://enemies/regular_mushroom_enemy.tscn" id="3_jgjwe"]
 [ext_resource type="PackedScene" uid="uid://d4mv2rywd08xj" path="res://scenes/nightmare/monsters/scarecrow.tscn" id="5_7r7cu"]
 [ext_resource type="PackedScene" uid="uid://kuxv4u38rfsx" path="res://scenes/nightmare/monsters/blob.tscn" id="7_urrt7"]
+[ext_resource type="PackedScene" uid="uid://fqa3apwq32jw" path="res://enemies/static_man.tscn" id="8_0ycxk"]
+[ext_resource type="PackedScene" uid="uid://cu7poigwh0vor" path="res://combat/bullets/bullet_smoke.tscn" id="9_gqmw4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lk2tu"]
 vertices = PackedVector2Array(552.977, 361.977, 553.977, 660, 521, 660, 521, 333.977, 908, 363.023, 1226, 331.977, 931, 362, 1554, 144, 1554, 168, 1256, 168, 1226, 144, 1256, 362, 931, 620, 908, 653, 1266, 653, 1266, 620)
@@ -24,7 +26,7 @@ layer_0/tile_data = PackedInt32Array(2031666, 65569, 1, 2031667, 65569, 1, 20316
 layer_1/tile_data = PackedInt32Array(1966128, 65570, 1, 1966129, 65570, 1, 1966130, 65570, 1, 1966131, 65570, 1, 1966132, 65570, 1, 1966133, 65570, 1, 1966134, 65570, 1, 1966135, 65570, 1, 1966136, 65570, 1, 1966137, 65570, 1, 1966138, 65570, 1, 1966139, 65570, 1, 1966140, 65570, 1, 1966141, 65570, 1, 1966142, 65570, 1, 1966143, 65570, 1, 1966144, 65570, 1, 1966145, 65570, 1, 1966146, 65570, 1, 1966147, 65570, 1, 1966148, 65570, 1, 1966149, 65570, 1, 1900613, 65570, 0, 1900612, 65570, 0, 1900611, 65570, 0, 1900610, 65570, 0, 1900609, 65570, 0, 1900608, 65570, 0, 1900607, 65570, 0, 1900606, 65570, 0, 1900605, 65570, 0, 1900604, 65570, 0, 1900603, 65570, 0, 1900602, 65570, 0, 1900601, 65570, 0, 1900600, 65570, 0, 1900599, 65570, 0, 1900598, 65570, 0, 1900597, 65570, 0, 1900596, 65570, 0, 1900595, 65570, 0, 1900594, 65570, 0, 1900593, 65570, 0, 1900592, 65570, 0, 2687023, 34, 0, 2621487, 34, 0, 2555951, 34, 0, 2490415, 34, 0, 2424879, 34, 0, 2359343, 34, 0, 2293807, 34, 0, 2228271, 34, 0, 2162735, 34, 0, 2097199, 34, 0, 2031663, 34, 0, 1966127, 34, 0, 1900591, 34, 0, 2687026, 34, 0, 2621490, 34, 0, 2555954, 34, 0, 2490418, 34, 0, 2424882, 34, 0, 2359346, 34, 0, 2293810, 34, 0, 2228274, 34, 0, 2162738, 34, 0, 2162739, 34, 0, 2162740, 34, 0, 2162741, 34, 0, 2162742, 34, 0, 2162743, 34, 0, 2162744, 34, 0, 2162745, 34, 0, 2162746, 34, 0, 2162747, 34, 0, 2162751, 34, 0, 2162752, 34, 0, 2162753, 34, 0, 2162754, 34, 0, 2162755, 34, 0, 2162756, 34, 0, 2162757, 34, 0, 2162758, 34, 0, 2162759, 34, 0, 2162760, 34, 0, 2097224, 34, 0, 2031688, 34, 0, 1966152, 34, 0, 1900616, 34, 0, 1835080, 34, 0, 1769544, 34, 0, 1769545, 34, 0, 1769546, 34, 0, 1769547, 34, 0, 1769548, 34, 0, 1769549, 34, 0, 1769550, 34, 0, 1769551, 34, 0, 1769552, 34, 0, 1572944, 34, 0, 1572943, 34, 0, 1572942, 34, 0, 1572941, 34, 0, 1572940, 34, 0, 1572939, 34, 0, 1572938, 34, 0, 1572937, 34, 0, 1572936, 34, 0, 1572935, 34, 0, 1572934, 34, 0, 1572933, 34, 0, 1638469, 34, 0, 1704005, 34, 0, 1769541, 34, 0, 1835077, 34, 0, 2162750, 34, 0, 2228286, 65570, 0, 2293822, 65570, 0, 2359358, 65570, 0, 2424894, 65570, 0, 2490430, 65570, 0, 2555966, 65570, 0, 2555967, 65570, 0, 2555968, 65570, 0, 2555969, 65570, 0, 2555970, 65570, 0, 2555971, 65570, 0, 2555972, 65570, 0, 2555973, 65570, 0, 2555974, 65570, 0, 2555975, 65570, 0, 2490439, 65570, 0, 2490438, 65570, 0, 2490437, 65570, 0, 2490436, 65570, 0, 2490435, 65570, 0, 2490434, 65570, 0, 2490433, 65570, 0, 2490432, 65570, 0, 2490431, 65570, 0, 2752583, 65570, 0, 2752582, 65570, 0, 2752581, 65570, 0, 2752580, 65570, 0, 2752579, 65570, 0, 2752578, 65570, 0, 2752577, 65570, 0, 2752576, 65570, 0, 2752575, 65570, 0, 2752574, 65570, 0, 2752573, 65570, 0, 2752572, 65570, 0, 2752571, 65570, 0, 2687035, 65570, 0, 2621499, 65570, 0, 2555963, 65570, 0, 2490427, 65570, 0, 2424891, 65570, 0, 2359355, 65570, 0, 2293819, 65570, 0, 2228283, 65570, 0)
 
 [node name="Christina" parent="." instance=ExtResource("1_ypo6o")]
-position = Vector2(697, 799)
+position = Vector2(197, 102)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 z_index = 5
@@ -36,16 +38,16 @@ HORIZONTAL_CUT_SIZE = 150
 CINEMATIC_LAYER = 0
 
 [node name="regular_mushroom_enemy" parent="." instance=ExtResource("3_jgjwe")]
-position = Vector2(817, 35)
+position = Vector2(337, 65)
 
 [node name="regular_mushroom_enemy2" parent="." instance=ExtResource("3_jgjwe")]
-position = Vector2(75, 13)
+position = Vector2(172, 107)
 
 [node name="regular_mushroom_enemy3" parent="." instance=ExtResource("3_jgjwe")]
-position = Vector2(271, 35)
+position = Vector2(264, 31)
 
 [node name="scarecrow" parent="." instance=ExtResource("5_7r7cu")]
-position = Vector2(619, 348)
+position = Vector2(475, 168)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -62,5 +64,14 @@ navigation_polygon = SubResource("NavigationPolygon_lk2tu")
 [node name="blob" parent="." instance=ExtResource("7_urrt7")]
 position = Vector2(680, 806)
 rotation = 0.0144918
+
+[node name="StaticMan" parent="." instance=ExtResource("8_0ycxk")]
+position = Vector2(537, 560)
+move_speed = 1.0
+
+[node name="bullet_smoke" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_gqmw4")]
+position = Vector2(204, 123)
+speed = 1.2
+target = NodePath("../Christina")
 
 [editable path="blob"]

@@ -31,3 +31,9 @@ func start_dialogue():
 
 func end_dialogue():
 	Global.input_blocked = false
+
+func dazed():
+	Global.input_blocked = true
+
+func undazed():
+	Global.input_blocked = false

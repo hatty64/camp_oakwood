@@ -5,11 +5,11 @@ func _ready() -> void:
 	if Global.loadin_above_lake_left == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 809
-		$Christina.position.y = 781
+		$Christina.position.y = 776
 	elif Global.loadin_above_lake_right == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 1159
-		$Christina.position.y = 781
+		$Christina.position.y = 776
 
 var entered = false
 var entered_2 = false

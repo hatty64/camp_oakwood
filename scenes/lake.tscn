@@ -68,7 +68,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Christina" parent="." instance=ExtResource("2_d4jyo")]
-position = Vector2(1067, 234)
+position = Vector2(873, 681)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 zoom = Vector2(6, 6)

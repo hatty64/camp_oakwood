@@ -31,10 +31,11 @@ GlobalCostume="*res://global_costume.gd"
 BattleTransition="*res://textures/transition/battle_transition.tscn"
 Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 GlobalBattle="*res://combat/global_battle.gd"
+PartyData="*res://combat/player/party_data.gd"
 
 [dialogue_manager]
 
-general/states=["MyDialogueBox", "GlobalDialogue", "Global", "GlobalDays", "GlobalCostume"]
+general/states=["MyDialogueBox", "GlobalDialogue", "Global", "GlobalDays", "GlobalCostume", "MusicPlayer"]
 general/balloon_path="res://scenes/my_dialogue_box.tscn"
 
 [display]
@@ -48,6 +49,12 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/MusicManager/plugin.cfg", "res://addons/camera_2d_plus/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/transit/plugin.cfg")
+
+[global_group]
+
+static_man=""
+mushroom=""
+enemy=""
 
 [input]
 
@@ -141,10 +148,22 @@ back={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194308,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+flashlight={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":1.0,"script":null)
+]
+}
+reload_flashlight={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":3,"pressure":0.0,"pressed":true,"script":null)
+]
+}
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/boys_cabin.dialogue", "res://dialogue/tree_eye.dialogue", "res://dialogue/night_eye.dialogue", "res://dialogue/wake_up.dialogue", "res://dialogue/tent_dialogue.dialogue", "res://dialogue/chair_interact.dialogue", "res://dialogue/cot_interact.dialogue", "res://dialogue/tent_ext_dialogue.dialogue", "res://dialogue/fence.dialogue", "res://dialogue/jacob_dialogue.dialogue", "res://dialogue/maysie_dialogue.dialogue", "res://dialogue/maya_dialogue.dialogue", "res://dialogue/damian_and_dinah_dialogue.dialogue", "res://dialogue/dining_dialogue.dialogue", "res://dialogue/clancy_dialogue.dialogue", "res://dialogue/lake_dialogue.dialogue", "res://dialogue/ester_dialogue.dialogue", "res://dialogue/test.dialogue", "res://dialogue/bear.dialogue", "res://dialogue/casper_dialogue.dialogue", "res://dialogue/just_a_dark_mirror.dialogue", "res://dialogue/barley_office_cutscene.dialogue", "res://dialogue/t.dialogue", "res://dialogue/eavesdrop_dialogue.dialogue", "res://dialogue/cabin_dialogue.dialogue", "res://dialogue/ep_1_cutscenes.dialogue", "res://dialogue/ep_1_dialogue.dialogue", "res://dialogue/chest_dialogue.dialogue", "res://dialogue/night_temple_ext_cutscene.dialogue", "res://dialogue/night_temple_ext_interact.dialogue", "res://dialogue/night_temple_int_cutscene.dialogue", "res://dialogue/narrator_transit.dialogue", "res://dialogue/library_bgc.dialogue", "res://dialogue/librarby_cutscene.dialogue", "res://dialogue/combat.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/boys_cabin.dialogue", "res://dialogue/tree_eye.dialogue", "res://dialogue/night_eye.dialogue", "res://dialogue/wake_up.dialogue", "res://dialogue/tent_dialogue.dialogue", "res://dialogue/chair_interact.dialogue", "res://dialogue/cot_interact.dialogue", "res://dialogue/tent_ext_dialogue.dialogue", "res://dialogue/fence.dialogue", "res://dialogue/jacob_dialogue.dialogue", "res://dialogue/maysie_dialogue.dialogue", "res://dialogue/maya_dialogue.dialogue", "res://dialogue/damian_and_dinah_dialogue.dialogue", "res://dialogue/dining_dialogue.dialogue", "res://dialogue/clancy_dialogue.dialogue", "res://dialogue/lake_dialogue.dialogue", "res://dialogue/ester_dialogue.dialogue", "res://dialogue/test.dialogue", "res://dialogue/bear.dialogue", "res://dialogue/casper_dialogue.dialogue", "res://dialogue/just_a_dark_mirror.dialogue", "res://dialogue/barley_office_cutscene.dialogue", "res://dialogue/t.dialogue", "res://dialogue/eavesdrop_dialogue.dialogue", "res://dialogue/cabin_dialogue.dialogue", "res://dialogue/ep_1_cutscenes.dialogue", "res://dialogue/ep_1_dialogue.dialogue", "res://dialogue/chest_dialogue.dialogue", "res://dialogue/night_temple_ext_cutscene.dialogue", "res://dialogue/night_temple_ext_interact.dialogue", "res://dialogue/night_temple_int_cutscene.dialogue", "res://dialogue/narrator_transit.dialogue", "res://dialogue/library_bgc.dialogue", "res://dialogue/librarby_cutscene.dialogue", "res://dialogue/combat.dialogue", "res://dialogue/damian_and_vicky.dialogue")
 
 [navigation]
 

@@ -25,12 +25,10 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="bullet_smoke" type="PathFollow2D"]
-rotates = false
-loop = false
+[node name="bullet_smoke" type="CharacterBody2D"]
 script = ExtResource("1_nhnuc")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_me47i")
 frame = 1
-frame_progress = 0.593537
+frame_progress = 0.627916

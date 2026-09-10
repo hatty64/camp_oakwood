@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1l3atv5a7ayw"]
+
+[ext_resource type="FontFile" uid="uid://cxco3lwv0bs5r" path="res://scenes/joystix monospace.otf" id="1_yt21k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0m44"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6n7r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x305c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_weqq7"]
+
+[node name="DialogueButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.741176, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.741176, 0, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.741176, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_yt21k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s0m44")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c6n7r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_x305c")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_weqq7")

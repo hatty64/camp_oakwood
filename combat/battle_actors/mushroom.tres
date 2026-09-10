@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BattleActor" load_steps=2 format=3 uid="uid://rvgcqw575tjk"]
+
+[ext_resource type="Script" path="res://combat/scripts/battle_actor.gd" id="1_px1cd"]
+
+[resource]
+script = ExtResource("1_px1cd")
+actor_name = "Mushroom"
+hp_max = 25
+mp_max = 0

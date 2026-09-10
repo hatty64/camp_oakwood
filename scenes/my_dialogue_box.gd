@@ -41,7 +41,7 @@ var dialogue_line: DialogueLine:
 		if ResourceLoader.exists(text_sound_path):
 			text_sound.stream = load(text_sound_path)
 		else:
-			text_sound.stream = null
+			text_sound.stream = load("res://character_sounds/default.wav")
 
 		var mood = dialogue_line.get_tag_value("mood")
 		var portrait_emotion_path: String = "res://portraits/%s/%s.png" % [chr.to_lower(), mood]

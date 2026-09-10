@@ -5,7 +5,7 @@ func _ready():
 	if Global.loadin_lake_1 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 873
-		$Christina.position.y = 685
+		$Christina.position.y = 681
 	elif Global.loadin_lake_2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(-1, 0))
 		$Christina.position.x = 1266

@@ -1,20 +1,39 @@
 extends CanvasLayer
 
-@export var current_health: int = 50
-@export var max_health: int = 50
-@export var attack: int = 25
+@export var stats: BattleActor = null:
+	set(value):
+		stats = value
+		if stats:
+			stats = stats.copy()
+
+#@export var current_health: int = 50
+#@export var max_health: int = 50
+#@export var attack: int = 25
+
+@onready var texture_rect: TextureRect = $christina_stats/TextureRect
+@onready var christina_health: TextureProgressBar = $christina_stats/christina_health
+@onready var label: Label = $christina_stats/christina_health/Label
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_health()
+	texture_rect.texture = stats.portrait
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	attacking()
+	
+	if GlobalBattle.christina_finished:
+		$select_character/Christina.disabled = true
 
 
+#func copy() -> BattleActor:
+	#var dup : BattleActor = duplicate()
+	#dup.init()
+	#return dup
 
 
 
@@ -53,9 +72,9 @@ func _on_select_character_visibility_changed() -> void:
 
 
 func set_health():
-	$christina_stats/christina_health.value = current_health
-	$christina_stats/christina_health.max_value = max_health
-	$christina_stats/christina_health/Label.text = "%d/%d" % [current_health, max_health]
+	christina_health.value = stats.hp
+	christina_health.max_value = stats.hp_max
+	label.text = "%d/%d" % [stats.hp, stats.hp_max]
 
 
 
@@ -83,10 +102,12 @@ func attacking():
 		$christina_ui.visible = false
 		$strength.visible = true
 		$strength.value += 1
+		GlobalBattle.christina_finished = true
 	
 	if $strength.value == 200:
 		GlobalBattle.player_attacking = false
 		$select_character.visible = true
 		$strength.visible = false
 		$strength.value = 0
+		GlobalBattle.christina_finished = true
 	

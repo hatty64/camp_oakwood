@@ -1,0 +1,22 @@
+~ Start
+
+Damian: [#chr=damian] [#mood=happy] It's been a while since we've talked, hasn't it?
+???: [#chr=vicky] Yeah... it has...
+Damian: [#chr=damian] [#mood=happy] So... how's your new house?
+Damian: [#chr=damian] [#mood=confident] Is it better than the one here?
+???: [#chr=vicky] Eh, It's a bit smaller than our old house...
+???: [#chr=vicky] but it's nice, I guess.
+???: [#chr=vicky] How's camp going?
+Damian: [#chr=damian] [#mood=happy] Not too bad.
+Damian: [#chr=damian] [#mood=sad] I mean, apart from the fact that Christina got hurt.
+???: [#chr=vicky] What... is she okay?
+Damian: [#chr=damian] [#mood=happy] Yeah, she's fine, don't worry.
+Damian: [#chr=damian] [#mood=confident] We're playing a game where she has "amnesia".
+
+=> END
+
+~ Start_2
+
+???: [#chr=vicky] ...
+???: [#chr=vicky] What...
+???: [#chr=vicky] When did this happen?

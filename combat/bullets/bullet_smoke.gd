@@ -1,18 +1,21 @@
-extends PathFollow2D
-@onready var regular_mushroom_combat: CharacterBody2D = $"../.."
+extends CharacterBody2D
 
-var speed = 0.2
+@export var speed : float = 100
+@export var target : CharacterBody2D = null
 
-# Called when the node enters the scene tree for the first time.
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+
+var move_direction : Vector2 = Vector2.ZERO
+var dir : float
+var spawn_pos : Vector2
+
 func _ready() -> void:
-	$Sprite2D.play("default")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if regular_mushroom_combat.bullet_move == true:
-		visible = true
-		progress_ratio += delta * speed
+	sprite_2d.play("default")
+	global_position = spawn_pos
 	
-	if loop == false and get_progress_ratio() == 1:
-		queue_free()
+	
+
+func _physics_process(delta: float) -> void:
+	move_direction = Vector2(target.position.x, target.position.y)
+	velocity = move_direction * speed
+	move_and_slide()

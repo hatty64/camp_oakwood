@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cbhsl1c3avuvn"]
+[gd_scene load_steps=41 format=3 uid="uid://cbhsl1c3avuvn"]
 
 [ext_resource type="Texture2D" uid="uid://d208o6uasgx2a" path="res://character_sprite/battle/christina_bullet.png" id="1_dqe6t"]
 [ext_resource type="Script" path="res://combat/christina_bullet.gd" id="1_g3xh5"]
@@ -351,8 +351,13 @@ states/move/position = Vector2(500, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_c4ujm"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_sxnmw"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_d5mbo"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_kpe7e"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_7j3yu"), "dash", "move", SubResource("AnimationNodeStateMachineTransition_lpqrv"), "move", "dash", SubResource("AnimationNodeStateMachineTransition_fvdh3")]
 graph_offset = Vector2(-198, 18)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f4oa"]
+size = Vector2(15, 18)
+
 [node name="christina_bullet" type="CharacterBody2D"]
 script = ExtResource("1_g3xh5")
+move_speed = 100.0
+dash_speed = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dqe6t")
@@ -376,6 +381,10 @@ wait_time = 0.2
 
 [node name="can_dash_timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_7f4oa")
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="can_dash_timer" to="." method="_on_can_dash_timer_timeout"]

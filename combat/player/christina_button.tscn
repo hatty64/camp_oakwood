@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj4bkoap1ts5j"]
+
+[ext_resource type="Texture2D" uid="uid://bfaytrw3hd8ck" path="res://textures/Camp oakwood assets/christina_button.png" id="1_ot24p"]
+[ext_resource type="Texture2D" uid="uid://disb6sjgx51bp" path="res://textures/Camp oakwood assets/christina_select.png" id="2_ecmd1"]
+[ext_resource type="Texture2D" uid="uid://dfse6u335lgmj" path="res://textures/Camp oakwood assets/christina_disabled.png" id="3_u1tih"]
+[ext_resource type="Script" path="res://combat/player/christina_button.gd" id="4_bomru"]
+
+[node name="christina_button" type="TextureButton"]
+texture_normal = ExtResource("1_ot24p")
+texture_pressed = ExtResource("1_ot24p")
+texture_hover = ExtResource("2_ecmd1")
+texture_disabled = ExtResource("3_u1tih")
+texture_focused = ExtResource("2_ecmd1")
+script = ExtResource("4_bomru")

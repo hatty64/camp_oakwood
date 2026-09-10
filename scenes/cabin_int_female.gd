@@ -10,7 +10,7 @@ func _ready():
 	if Global.loadin_world2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 1048
-		$Christina.position.y = 652
+		$Christina.position.y = 648
 	elif GlobalDays.woke_up == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(1, 0))
 		$Christina.position.x = 1014

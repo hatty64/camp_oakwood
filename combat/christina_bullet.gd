@@ -10,11 +10,11 @@ extends CharacterBody2D
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
-@onready var actionable_finder: Area2D = $Direction/ActionableFinder
-@onready var night_vision_module: CanvasModulate = $CanvasModulate
-@onready var rain_modulate: CanvasModulate = $"../rain/CanvasModulate"
-@onready var sunset_modulate: CanvasModulate = $"../sunset"
-@onready var canvas_layer_2: CanvasLayer = $CanvasLayer2
+#@onready var actionable_finder: Area2D = $Direction/ActionableFinder
+#@onready var night_vision_module: CanvasModulate = $CanvasModulate
+#@onready var rain_modulate: CanvasModulate = $"../rain/CanvasModulate"
+#@onready var sunset_modulate: CanvasModulate = $"../sunset"
+#@onready var canvas_layer_2: CanvasLayer = $CanvasLayer2
 
 var input_vector: Vector2 = Vector2.ZERO
 

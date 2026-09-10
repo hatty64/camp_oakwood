@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bls8se4nlexs4"]
+
+[ext_resource type="PackedScene" uid="uid://cu7poigwh0vor" path="res://combat/bullets/bullet_smoke.tscn" id="1_bkaqx"]
+
+[node name="bullet_spread" type="Node2D"]
+
+[node name="bullet_smoke" parent="." instance=ExtResource("1_bkaqx")]
+position = Vector2(10, 0)
+speed_y = 0.0
+speed_x = 280.0
+
+[node name="bullet_smoke2" parent="." instance=ExtResource("1_bkaqx")]
+position = Vector2(-10, 0)
+speed_y = 0.0
+speed_x = -280.0
+
+[node name="bullet_smoke3" parent="." instance=ExtResource("1_bkaqx")]
+position = Vector2(0, 10)
+
+[node name="bullet_smoke4" parent="." instance=ExtResource("1_bkaqx")]
+position = Vector2(0, -10)
+speed_y = -280.0

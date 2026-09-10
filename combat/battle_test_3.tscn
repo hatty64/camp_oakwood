@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://k3tjynx31bid"]
+[gd_scene load_steps=14 format=3 uid="uid://k3tjynx31bid"]
 
 [ext_resource type="Script" path="res://combat/battle_test_3.gd" id="1_cyrt1"]
 [ext_resource type="Texture2D" uid="uid://cpj8qqjub0vct" path="res://textures/combat/battle_background.png" id="1_ig4yn"]
 [ext_resource type="Shader" path="res://shaders/battle_bg.gdshader" id="2_goxef"]
-[ext_resource type="PackedScene" uid="uid://dmvjte005afdn" path="res://combat/enemies/mushroom_battle.tscn" id="2_rgw2a"]
+[ext_resource type="Texture2D" uid="uid://o2opp3w5265l" path="res://textures/combat/enemy/mushroom/mushroom_frame_1.png" id="4_57hia"]
 [ext_resource type="PackedScene" uid="uid://boenlhj4g1505" path="res://combat/combat_ui.tscn" id="5_wk5jd"]
+[ext_resource type="Texture2D" uid="uid://c1o42sfh1243b" path="res://textures/combat/enemy/mushroom/mushroom_frame_2.png" id="5_ybwgp"]
+[ext_resource type="Texture2D" uid="uid://duycwmm4cmwlk" path="res://textures/combat/enemy/mushroom/mushroom_frame_3.png" id="6_hytv0"]
+[ext_resource type="PackedScene" uid="uid://djii67mbgp8cm" path="res://combat/player/enemy_turn.tscn" id="6_lg0x8"]
+[ext_resource type="Texture2D" uid="uid://cjt0e0ii5k2hw" path="res://textures/combat/enemy/mushroom/mushroom_frame_4.png" id="7_v8fuv"]
+[ext_resource type="Texture2D" uid="uid://dao6iixxhytk6" path="res://textures/combat/enemy/mushroom/mushroom_frame_5.png" id="8_lvlst"]
+[ext_resource type="Texture2D" uid="uid://be1076gar7kru" path="res://textures/combat/enemy/mushroom/mushroom_frame_6.png" id="9_8od86"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kljai"]
 shader = ExtResource("2_goxef")
@@ -20,6 +26,21 @@ shader_parameter/firstHalf = 0.5
 shader_parameter/secondHalf = 0.5
 shader_parameter/freezeFirstHalf = false
 shader_parameter/freezeSecondHalf = false
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_vedfl"]
+frames = 6
+speed_scale = 5.0
+frame_0/texture = ExtResource("4_57hia")
+frame_1/texture = ExtResource("5_ybwgp")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_hytv0")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_v8fuv")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("8_lvlst")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("9_8od86")
+frame_5/duration = 1.0
 
 [node name="battle_test_3" type="Control"]
 layout_mode = 3
@@ -41,10 +62,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 self_modulate = Color(0.239842, 0.151888, 0.374675, 1)
 material = SubResource("ShaderMaterial_kljai")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -52,9 +72,29 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ig4yn")
 
-[node name="Sprite2D" parent="." instance=ExtResource("2_rgw2a")]
-position = Vector2(982, 369)
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -475.0
+offset_right = 181.0
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("AnimatedTexture_vedfl")
 
 [node name="combat_ui" parent="." instance=ExtResource("5_wk5jd")]
+
+[node name="enemy_turn" parent="." instance=ExtResource("6_lg0x8")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
 
 [editable path="combat_ui"]

@@ -57,7 +57,7 @@ layer_7/name = "rain_splash"
 layer_7/tile_data = PackedInt32Array(2949177, 30, 0, 2818105, 30, 0, 2621497, 30, 0, 2555961, 30, 0, 2490425, 30, 0, 2228283, 30, 0, 2162749, 30, 0, 2293827, 30, 0, 2359364, 30, 0, 2752580, 30, 0, 2621508, 30, 0, 2228290, 30, 0, 2162752, 30, 0)
 
 [node name="Christina" parent="." instance=ExtResource("2_mk5oy")]
-position = Vector2(1159, 781)
+position = Vector2(1159, 776)
 
 [node name="Camera2D" type="Camera2D" parent="Christina"]
 zoom = Vector2(6, 6)

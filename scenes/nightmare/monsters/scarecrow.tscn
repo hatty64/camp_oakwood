@@ -276,6 +276,7 @@ shape = SubResource("RectangleShape2D_gfomh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_053w3")
+disabled = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BattleActor" load_steps=3 format=3 uid="uid://cksavk6hbp1ov"]
+
+[ext_resource type="Texture2D" uid="uid://m34nfco3aaip" path="res://portraits/christina/smile.png" id="1_be7nv"]
+[ext_resource type="Script" path="res://combat/scripts/battle_actor.gd" id="1_m545k"]
+
+[resource]
+script = ExtResource("1_m545k")
+actor_name = "Christina"
+hp_max = 25
+mp_max = 0
+portrait = ExtResource("1_be7nv")

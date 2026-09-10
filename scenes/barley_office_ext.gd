@@ -5,7 +5,7 @@ func _ready():
 	if Global.loadin_barley_office_ext == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, -1))
 		$Christina.position.x = 953
-		$Christina.position.y = 580
+		$Christina.position.y = 576
 	elif Global.loadin_barley_office_ext_2 == true:
 		$Christina/AnimationTree.set("parameters/idle/blend_position", Vector2(0, 1))
 		$Christina.position.x = 953

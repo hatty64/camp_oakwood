@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3 uid="uid://begaqmj3tp70c"]
+
+[ext_resource type="PackedScene" uid="uid://b00j5mhj5kaor" path="res://combat/bullets/mushroom_explode.tscn" id="1_13ojt"]
+[ext_resource type="Script" path="res://combat/enemies/enemy_data.gd" id="1_sk2xx"]
+[ext_resource type="PackedScene" uid="uid://ds0keweacbnk7" path="res://combat/bullets/sproutling_attack.tscn" id="2_hrwtf"]
+
+[resource]
+script = ExtResource("1_sk2xx")
+max_hp = 1
+attacks = [ExtResource("1_13ojt"), ExtResource("2_hrwtf")]
