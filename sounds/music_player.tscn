@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjofycd838jnm"]
+[gd_scene load_steps=6 format=3 uid="uid://cjofycd838jnm"]
 
 [ext_resource type="Script" path="res://sounds/music_player.gd" id="1_8sqyc"]
-[ext_resource type="AudioStream" uid="uid://cquhs7l3uoayl" path="res://music/camp_oakwood_dining.mp3" id="1_u5fqg"]
 
 [sub_resource type="Animation" id="Animation_10em8"]
 length = 0.001
@@ -70,7 +69,6 @@ _data = {
 }
 
 [node name="music_player" type="AudioStreamPlayer"]
-stream = ExtResource("1_u5fqg")
 volume_db = -10.0
 script = ExtResource("1_8sqyc")
 

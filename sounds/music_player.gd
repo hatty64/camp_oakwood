@@ -6,6 +6,7 @@ const scene_music = preload("res://music/a_new_day_loop.mp3")
 const a_new_day = preload("res://music/a_new_day.mp3")
 const night_scene_ver = preload("res://music/night_cutscene_ver.mp3")
 const dining = preload("res://music/camp_oakwood_dining.mp3")
+const panic = preload("res://music/panic.mp3")
 
 func play_sound(music: AudioStream, volume = -10.0):
 	if stream == music:
@@ -39,3 +40,6 @@ func play_night_cutscene():
 
 func play_dining():
 	play_sound(dining)
+
+func play_panic():
+	play_sound(panic)

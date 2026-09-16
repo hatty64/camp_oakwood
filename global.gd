@@ -127,3 +127,5 @@ var flashlight_unlocked = true
 var st_man_dead = false
 var awake = false
 var max_st_man = 0
+
+var help_damian = false

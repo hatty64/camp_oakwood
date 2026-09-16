@@ -18,5 +18,34 @@ Damian: [#chr=damian] [#mood=confident] We're playing a game where she has "amne
 ~ Start_2
 
 ???: [#chr=vicky] ...
-???: [#chr=vicky] What...
-???: [#chr=vicky] When did this happen?
+???: [#chr=vicky] [#mood=shocked1] What...
+do play_panic()
+???: [#chr=vicky] [#mood=shocked1] When did this happen?
+Damian: [#chr=damian] [#mood=sad] Like... yesterday.
+???: [#chr=vicky] [#mood=angry] And you're not worried, at all?
+Damian: [#chr=damian] [#mood=sad] She's just playing around, like always, right?
+???: [#chr=vicky] [#mood=shocked2] Wait... this happened at Camp Oakwood?
+Damian: [#chr=damian] [#mood=sad] Yeah...
+Damian: [#chr=damian] [#mood=nervous] [next=0.1]But she'll just forget about it in the morning
+do stop()
+do yell()
+???: [#chr=vicky] [#mood=yelling] [shake rate=30 level=30]CAN YOU BE NORMAL FOR FIVE SECONDS!?!?[/shake]
+
+=> END
+
+~ Start_3
+
+Damian: [#chr=damian] [#mood=worried] Vicky...
+Vicky: [#chr=vicky] [#mood=angry] You can't stay serious for one second, can you!?
+Vicky: [#chr=vicky] [#mood=angry] Everything [shake rate=30 level=30]HAS[/shake] to be about [shake rate=30 level=30]YOU[/shake] and your [shake rate=30 level=30]FUCKING[/shake] roleplay!
+
+=> END
+
+~ Step_in
+
+Christina: [#chr=christina] [#mood=default] Hey, is everything alright?
+do turn()
+Vicky: [#chr=vicky] [#mood=worried] ...
+Damian: [#chr=damian] [#mood=nervous] Oh, yeah... we were just talking, that's all...
+
+=> END
