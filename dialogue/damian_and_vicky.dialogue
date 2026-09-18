@@ -49,3 +49,29 @@ Vicky: [#chr=vicky] [#mood=worried] ...
 Damian: [#chr=damian] [#mood=nervous] Oh, yeah... we were just talking, that's all...
 
 => END
+
+~ Step_in_2
+
+Vicky: [#chr=vicky] [#mood=mad2] I should... probably go...
+
+=> END
+
+~ Step_in_3
+
+Vicky: [#chr=vicky] [#mood=mad1] Damian...
+do mad()
+Vicky: [#chr=vicky] [#mood=mad2] I'm sorry...
+
+=> END
+
+~ Step_in_4
+
+Christina: [#chr=christina] [#mood=nervous] Hey... are you okay?
+Damian: [#chr=damian] [#mood=sad] Me?
+Damian: [#chr=damian] [#mood=nervous] I'm doing just fine,  don't worry.
+Christina: [#chr=christina] [#mood=confused] Are you sure?
+Damian: [#chr=damian] [#mood=happy] Yes, I'm fine.
+Damian: [#chr=damian] [#mood=happy] You worry too much.
+Christina: [#chr=christina] [#mood=thinking] Okay... if you say so.
+
+=> END

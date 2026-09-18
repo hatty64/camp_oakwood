@@ -40,6 +40,8 @@ func yell():
 func turn():
 	$AnimationPlayer.play("turn_back")
 
+func mad():
+	$AnimationPlayer.play("mad")
 
 func _on_canvas_layer_2_visibility_changed() -> void:
 	choice_1.grab_focus()
@@ -49,6 +51,22 @@ func _on_choice_1_pressed() -> void:
 	Global.help_damian = true
 	canvas_layer_2.visible = false
 	$AnimationPlayer.play("step_in")
+	await $AnimationPlayer.animation_finished
+	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/damian_and_vicky.dialogue"), "Step_in")
+	await DialogueManager.dialogue_ended
+	timer.start()
+	await timer.timeout
+	$AnimationPlayer.play("mad")
+	await $AnimationPlayer.animation_finished
+	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/damian_and_vicky.dialogue"), "Step_in_2")
+	await DialogueManager.dialogue_ended
+	$AnimationPlayer.play("vicky_walk_off")
+	await $AnimationPlayer.animation_finished
+	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/damian_and_vicky.dialogue"), "Step_in_3")
+	await DialogueManager.dialogue_ended
+	$AnimationPlayer.play("vicky_walks_more")
+	await $AnimationPlayer.animation_finished
+	DialogueManager.show_dialogue_regular_balloon(load("res://dialogue/damian_and_vicky.dialogue"), "Step_in_4")
 
 
 func _on_choice_2_pressed() -> void:
